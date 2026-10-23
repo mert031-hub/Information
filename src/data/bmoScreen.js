@@ -1,41 +1,19 @@
-// Kullanılan BMO görselinin ekran içi: SVG koordinatları (1149 × 1369).
-// Tepki yüzü ve yakınlaşma aynı ölçüleri kullanır; hedefler birbirinden sapmaz.
+// Screen coordinates in the original 1149 × 1369 BMO artwork.
 export const bmoScreen = { x: 435, y: 315, width: 446, height: 355, skew: -8 };
 
-export function getScreenCameraGeometry(svg, viewport) {
-  const matrix = svg.getScreenCTM();
-  const slope = Math.tan((bmoScreen.skew * Math.PI) / 180);
-  const origin = new DOMPoint(
-    bmoScreen.x,
-    bmoScreen.y + (slope * bmoScreen.width) / 2,
-  ).matrixTransform(matrix);
-  const scale = Math.hypot(matrix.a, matrix.b);
-  const compact = viewport.width <= 680;
-  const margin = compact ? 8 : 24;
-  const width = Math.min(1120, viewport.width - margin * 2);
-  const height = Math.min(920, viewport.height - margin * 2);
+// Move the whole world toward the viewer's camera, centered on BMO's LCD.
+// The slight inverse skew straightens its glass as we enter the screen.
+export function getScreenCameraTarget(screen, viewport) {
+  const skewY = -bmoScreen.skew;
+  const slope = Math.tan(skewY * Math.PI / 180);
+  const scale = Math.max(
+    viewport.width / (screen.width * 0.88),
+    viewport.height / (screen.height * 0.88),
+  );
   return {
-    source: {
-      x: origin.x,
-      y: origin.y,
-      width: bmoScreen.width * scale,
-      height: bmoScreen.height * scale,
-      skewY: bmoScreen.skew,
-      borderRadius: 5,
-      borderWidth: 2,
-      padding: 1,
-      opacity: 1,
-    },
-    destination: {
-      x: (viewport.width - width) / 2,
-      y: (viewport.height - height) / 2,
-      width,
-      height,
-      skewY: 0,
-      borderRadius: compact ? 18 : 28,
-      borderWidth: compact ? 5 : 7,
-      padding: compact ? 5 : 10,
-      opacity: 1,
-    },
+    x: viewport.width / 2 - (viewport.offsetX || 0) - screen.center.x * scale,
+    y: viewport.height / 2 - (viewport.offsetY || 0) - (screen.center.y + slope * screen.center.x) * scale,
+    scale,
+    skewY,
   };
 }

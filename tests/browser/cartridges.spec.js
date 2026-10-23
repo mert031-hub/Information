@@ -308,8 +308,8 @@ test("card enters from the lower front and starts zooming immediately after inse
   await phase(page, "zooming");
   const front = await page.evaluate(() => window.frontEntry);
   expect(front.cardCenterY).toBeGreaterThan(front.portY);
-  await expect(page.locator(".bmo-screen-reaction text")).toHaveText(
-    "UWHUUUU!",
+  await expect(page.locator(".happy-bmo-face")).toHaveAttribute(
+    "data-expression", "woohoo",
   );
   await expect(page.locator(".screen-scroll")).toHaveAttribute(
     "aria-hidden",
@@ -359,6 +359,40 @@ test("camera follows a viewport resize during zoom and reading stays inside the 
     .click();
   await phase(page, "idle");
 });
+
+for (const [width, index, expression] of [[1440, 0, "play"], [390, 4, "yay"]]) {
+  test(`whole scene moves into BMO's happy screen at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto("/");
+    const original = await page.locator(".bmo-character").boundingBox();
+    await card(page, index).click({ force: true });
+    await phase(page, "approaching");
+    await expect(page.locator(".happy-bmo-face")).toHaveAttribute("data-expression", "smile");
+    await phase(page, "inserting");
+    await expect(page.locator(".happy-bmo-face")).toHaveAttribute("data-expression", expression);
+    await expect(page.locator(".bmo-screen-reaction text")).toHaveCount(0);
+    await phase(page, "zooming");
+    await page.waitForFunction(() => new DOMMatrix(getComputedStyle(document.querySelector(".scene-camera")).transform).a > 2);
+    const enlarged = await page.locator(".bmo-character").boundingBox();
+    expect(enlarged.width).toBeGreaterThan(original.width * 2);
+    // The article surface stays at viewport size; it never flies out of BMO.
+    const surface = await page.locator(".bmo-screen-frame").boundingBox();
+    expect(surface).toEqual({ x: 0, y: 0, width, height: 844 });
+    await expect(page.locator(".bmo-screen-frame")).toHaveCSS("transform", "none");
+    await phase(page, "reading");
+    const center = await page.locator(".bmo-port").evaluate(svg => {
+      const slope = Math.tan(-8 * Math.PI / 180);
+      const point = new DOMPoint(658, 492.5 + slope * 223).matrixTransform(svg.getScreenCTM());
+      return { x: point.x, y: point.y };
+    });
+    expect(center.x).toBeCloseTo(width / 2, 0);
+    expect(center.y).toBeCloseTo(422, 0);
+    await page.keyboard.press("Escape");
+    await phase(page, "idle");
+    await expect(page.locator(".scene-camera")).toHaveCSS("transform", "none");
+    await expect(card(page, index)).toBeFocused();
+  });
+}
 
 test("local speech uses a playful pitch, avoids remote voices and is cancelled by mute", async ({
   page,

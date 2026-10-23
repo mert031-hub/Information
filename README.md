@@ -37,8 +37,8 @@ Ana ekran sade tutulur: logo, ses kontrolü, BMO, kategori kartları ve gezinme 
 - Kartlar 4,8–6,2 saniyelik farklı döngülerle yaklaşık 16 piksel süzülür. Hover veya klavye odağında 14 piksel ek yükseliş ve gölge vardır.
 - Her kategorinin farklı hover melodisi vardır. Kart seçme, hazneye oturma ve çıkarma ayrıca seslendirildi.
 - Karta tıklayınca kart hazneye yaklaşır, açısını ayarlar ve haznenin kenarı arkasında kaybolarak içeri girer.
-- Kart takıldığı anda kamera yaklaşmaya başlar ve BMO’nun yüzü neşeli bir ifadeye dönüşür. Kategoriye göre “LET'S PLAY!”, “UWHUUUU!” veya “YAAAY!” tepkisi verir.
-- Kamera küçük BMO ekranından yaklaşık 860 ms içinde büyüyen ekran çerçevesine geçer; içerik hareketin son kısmında yumuşakça belirir. Haber başlığı, görseli ve metni BMO’nun yeşil LCD ekranının içinde okunur.
+- Tıklama anında BMO’nun gözleri mutlu biçimde kısılır ve yüzünde gülümseme belirir. Kaset takılırken “LET'S PLAY!” için açık gülümseme, “UWHUUUU!” için daha yuvarlak neşeli ağız, “YAAAY!” için coşkulu gözler ve ışıltılar görünür. Tepkiler ses açıkken seslendirilir; yüzün üzerine yazı basılmaz.
+- Kaset takılınca kamera yaklaşık 1200 ms içinde BMO’nun ekranına girer. Oda, kasetler ve BMO aynı kamera katmanında birlikte büyür. LCD görüş alanını doldurduğunda haber sabit, tam ekran yüzeyde belirir; ayrı bir panel sahneden dışarı taşınmaz.
 - Okuyucuda kategori, kapak görseli, başlık, özet, metin ve okuma süresi vardır. Önceki/sonraki kontrolleri ilk ve son haber arasında döngü yapar.
 - Haber değiştirince önce ekrandan uzaklaşılır, eski kart dışarı çıkar ve yerine döner; yeni kart daha sonra takılır. Hızlı tekrar tıklamaları hareketi kesmez.
 - Kapat düğmesi veya Escape önce kamerayı küçük BMO ekranına geri götürür, ardından kartı çıkarır. İşlem bittiğinde klavye odağı karta döner.
@@ -79,9 +79,11 @@ React ve Vite korunur; kart uçuşu için **Motion** kullanılır. `CartridgeFli
 
 Kart yaklaşık **840 ms** içinde yumuşak, hafif kavisli bir yoldan haznenin alt/ön tarafına yaklaşır. Kart yüzü perspektifte hafifçe yatar; üst kenarı önde olacak şekilde **480 ms** içinde içeri kayar. `clip-path` hazne çizgisinin üstünde kalan kısmı gizler. Aynı Motion öğesi yaklaşma ve yerleştirme boyunca korunur; aşama değişiminde kart yeniden çizilip pozisyon atlamaz.
 
-Kart girer girmez **860 ms** ekran yakınlaşması başlar. Ayrı yükleme veya sevinç bekleme aşaması yoktur; BMO’nun tepkisi yakınlaşmayla birlikte oynar. İçerik yakınlaşmanın 280. milisaniyesinde soluklaşan yüzün ardından belirmeye başlar. Bu sırada haber kontrolleri `inert` ile devre dışıdır; kamera varınca odak ve etkileşim açılır. Kapatmada kamera **600 ms** içinde geri döner, kart **420 ms** içinde çıkar ve **700 ms** içinde koleksiyona döner. Aşamalar `onAnimationComplete` ile ilerler; üst üste çalışan bekleme zamanlayıcıları yoktur.
+Kart girer girmez **1200 ms** kamera hareketi başlar. Ayrı yükleme veya sevinç bekleme aşaması yoktur. İçerik 860. milisaniyeden itibaren 340 ms içinde belirmeye başlar. Bu sırada haber kontrolleri `inert` ile devre dışıdır; kamera varınca odak ve etkileşim açılır. Kapatmada haber 160 ms içinde silinirken kamera **900 ms** içinde geri döner, kart **420 ms** içinde çıkar ve **700 ms** içinde koleksiyona döner. Aşamalar `onAnimationComplete` ile ilerler.
 
-`src/data/bmoScreen.js` yüz tepkisiyle kamera için ortak ekran koordinatlarını tutar. `BmoReaction.jsx` mutlu gözleri, gülümsemeyi ve kısa repliği SVG olarak ekranın üzerine çizer. `NewsReader.jsx` aynı ekran dikdörtgenini küçük, eğimli konumundan büyük okuma ekranına taşır. Ekran çerçevesi, yazılar ve kapak görseli tek bir yüzeydir; okuma alanı kendi içinde kayar. Boyut değişiminde kaynak ve hedef yeniden ölçülür.
+`SceneCamera.jsx`, oda, kasetler ve BMO’yu kapsayan tek bir katmanı taşır. `src/data/bmoScreen.js` ekranın merkezi ve boyutundan kamera hedefini hesaplar: ekranın içi görüş alanını tamamen doldurur, hafif ters eğimle yüzey düzleşir. Ekran boyutu değişirken mevcut kamera dönüşümünün tersi alınarak özgün koordinatlar ölçülür; önceki büyütme tekrar uygulanmaz. `NewsReader.jsx` kamera katmanının dışında, sabit tam ekran bir dialog olarak kalır; yalnızca saydamlığı değişir. Okuma sırasında arkadaki büyütülmüş sahne görünmez, gereksiz çizim azaltılır. Azaltılmış hareket tercihinde kamera sabit kalır ve 80 ms geçiş kullanılır.
+
+`BmoReaction.jsx` tıklama anından itibaren yüz ifadesini SVG olarak özgün BMO ekranına yerleştirir. `reactions.js` içindeki tepki türü, gözlerin ve gülümsemenin biçimini belirler. Yüz çizimi kamera yaklaşırken BMO’nun gövdesiyle birlikte hareket eder; ayrıca büyüyen ikinci bir yüz veya ekran yoktur.
 
 ### 4. Sesleri notalardan üretiyoruz
 

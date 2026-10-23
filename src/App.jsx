@@ -8,6 +8,7 @@ import useCartridgePlayer from "./hooks/useCartridgePlayer.js";
 import CartridgeFlight from "./components/CartridgeFlight.jsx";
 import BmoPort from "./components/BmoPort.jsx";
 import NewsReader from "./components/NewsReader.jsx";
+import SceneCamera from "./components/SceneCamera.jsx";
 import SoundButton from "./components/SoundButton.jsx";
 import BmoReaction from "./components/BmoReaction.jsx";
 import { getBmoReaction } from "./data/reactions.js";
@@ -67,132 +68,135 @@ export default function App() {
   }
 
   return (
-    <main className="app-shell">
-      <div className="room-background">
-        <picture>
-          <source
-            media="(max-width: 680px) and (orientation: portrait)"
-            srcSet={sceneImages.roomPortrait.srcSet}
-            sizes="100vw"
-          />
-          <img
-            src={sceneImages.roomLandscape.src}
-            srcSet={sceneImages.roomLandscape.srcSet}
-            sizes="(max-aspect-ratio: 16/9) 178vh, 100vw"
-            width={1672}
-            height={941}
-            fetchPriority="high"
-            decoding="async"
-            alt=""
-          />
-        </picture>
-      </div>
-      <div className="room-shading" />
-      <header className="site-header">
-        <a className="brand" href="#" aria-label="BMO News ana sayfa">
-          <Gamepad2 size={30} strokeWidth={1.5} />
-          <span>
-            BMO<span className="brand-news">NEWS</span>
-          </span>
-          <span className="brand-dot" />
-        </a>
-        <SoundButton sound={sound} />
-      </header>
-      <h1 className="sr-only">BMO News</h1>
-      <section
-        className="console-scene"
-        aria-label="BMO’nun etrafında süzülen haber kartları"
-      >
-        <div
-          ref={fieldRef}
-          className="card-field"
-          data-busy={busy}
-          data-phase={phase}
-          aria-busy={busy}
-          role="group"
-          aria-label="Bir haber kartı seç"
-          onKeyDown={handleKeys}
-        >
-          <div className="bmo-area">
-            <div className="bmo-ground-shadow" />
-            <img
-              className="bmo-character"
-              src={sceneImages.bmo.src}
-              srcSet={sceneImages.bmo.srcSet}
-              sizes="(max-width: 680px) 43vw, (max-width: 1100px) 32vw, 350px"
-              width={1149}
-              height={1369}
-              decoding="async"
-              alt="Yerde oturan, bacaklarını uzatmış BMO"
-            />
-            <BmoEyes />
-            <BmoPort phase={phase} color={selected.color} />
-            <BmoReaction phase={phase} category={selected.id} />
-          </div>
-          {news.map((item, index) => (
-            <NewsCartridge
-              key={item.id}
-              item={item}
-              selected={selectedIndex === index}
-              position={index}
-              away={activeIndex === index}
-              busy={busy}
-              onSelect={() => player.select(index)}
-              onHover={() => sound.play(item.id)}
-            />
-          ))}
-          {activeIndex !== null &&
-            ["approaching", "inserting", "ejecting", "returning"].includes(
-              phase,
-            ) && (
-              <CartridgeFlight
-                key={activeIndex}
-                item={news[activeIndex]}
-                index={activeIndex}
-                phase={phase}
-                fieldRef={fieldRef}
-                onComplete={player.advance}
+    <>
+      <SceneCamera phase={phase} fieldRef={fieldRef} onComplete={player.advance}>
+        <main className="app-shell">
+          <div className="room-background">
+            <picture>
+              <source
+                media="(max-width: 680px) and (orientation: portrait)"
+                srcSet={sceneImages.roomPortrait.srcSet}
+                sizes="100vw"
               />
-            )}
-        </div>
-      </section>
-      <section className="scene-controls" aria-label="Kart kontrolleri">
-        <p className="scene-status" role="status" aria-live="polite">
-          {prompt}
-        </p>
-        <div className="deck-navigation">
-          <button
-            disabled={busy}
-            onClick={() => moveSelection(-1)}
-            aria-label="Önceki haber kartı"
+              <img
+                src={sceneImages.roomLandscape.src}
+                srcSet={sceneImages.roomLandscape.srcSet}
+                sizes="(max-aspect-ratio: 16/9) 178vh, 100vw"
+                width={1672}
+                height={941}
+                fetchPriority="high"
+                decoding="async"
+                alt=""
+              />
+            </picture>
+          </div>
+          <div className="room-shading" />
+          <header className="site-header">
+            <a className="brand" href="#" aria-label="BMO News ana sayfa">
+              <Gamepad2 size={30} strokeWidth={1.5} />
+              <span>
+                BMO<span className="brand-news">NEWS</span>
+              </span>
+              <span className="brand-dot" />
+            </a>
+            <SoundButton sound={sound} />
+          </header>
+          <h1 className="sr-only">BMO News</h1>
+          <section
+            className="console-scene"
+            aria-label="BMO’nun etrafında süzülen haber kartları"
           >
-            <ArrowLeft size={16} />
-          </button>
-          <span>
-            {String(selectedIndex + 1).padStart(2, "0")} <span>/ 05</span>
-          </span>
-          <button
-            disabled={busy}
-            onClick={() => moveSelection(1)}
-            aria-label="Sonraki haber kartı"
-          >
-            <ArrowRight size={16} />
-          </button>
-        </div>
-      </section>
+            <div
+              ref={fieldRef}
+              className="card-field"
+              data-busy={busy}
+              data-phase={phase}
+              aria-busy={busy}
+              role="group"
+              aria-label="Bir haber kartı seç"
+              onKeyDown={handleKeys}
+            >
+              <div className="bmo-area">
+                <div className="bmo-ground-shadow" />
+                <img
+                  className="bmo-character"
+                  src={sceneImages.bmo.src}
+                  srcSet={sceneImages.bmo.srcSet}
+                  sizes="(max-width: 680px) 43vw, (max-width: 1100px) 32vw, 350px"
+                  width={1149}
+                  height={1369}
+                  decoding="async"
+                  alt="Yerde oturan, bacaklarını uzatmış BMO"
+                />
+                <BmoEyes />
+                <BmoPort phase={phase} color={selected.color} />
+                <BmoReaction phase={phase} category={selected.id} />
+              </div>
+              {news.map((item, index) => (
+                <NewsCartridge
+                  key={item.id}
+                  item={item}
+                  selected={selectedIndex === index}
+                  position={index}
+                  away={activeIndex === index}
+                  busy={busy}
+                  onSelect={() => player.select(index)}
+                  onHover={() => sound.play(item.id)}
+                />
+              ))}
+              {activeIndex !== null &&
+                ["approaching", "inserting", "ejecting", "returning"].includes(
+                  phase,
+                ) && (
+                  <CartridgeFlight
+                    key={activeIndex}
+                    item={news[activeIndex]}
+                    index={activeIndex}
+                    phase={phase}
+                    fieldRef={fieldRef}
+                    onComplete={player.advance}
+                  />
+                )}
+            </div>
+          </section>
+          <section className="scene-controls" aria-label="Kart kontrolleri">
+            <p className="scene-status" role="status" aria-live="polite">
+              {prompt}
+            </p>
+            <div className="deck-navigation">
+              <button
+                disabled={busy}
+                onClick={() => moveSelection(-1)}
+                aria-label="Önceki haber kartı"
+              >
+                <ArrowLeft size={16} />
+              </button>
+              <span>
+                {String(selectedIndex + 1).padStart(2, "0")} <span>/ 05</span>
+              </span>
+              <button
+                disabled={busy}
+                onClick={() => moveSelection(1)}
+                aria-label="Sonraki haber kartı"
+              >
+                <ArrowRight size={16} />
+              </button>
+            </div>
+          </section>
+        </main>
+      </SceneCamera>
       {["zooming", "reading", "zoomingOut"].includes(phase) && (
         <NewsReader
           item={news[activeIndex]}
           index={activeIndex}
           count={news.length}
           phase={phase}
-          fieldRef={fieldRef}
           onComplete={player.advance}
           onClose={player.close}
           onMove={moveSelection}
           sound={sound}
         />
       )}
-    </main>
+    </>
   );
 }

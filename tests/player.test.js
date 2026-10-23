@@ -5,6 +5,26 @@ import {
   playerReducer,
 } from "../src/hooks/useCartridgePlayer.js";
 import { getSoundSequence, soundProfiles } from "../src/data/sounds.js";
+import { getScreenCameraTarget } from "../src/data/bmoScreen.js";
+
+test("camera centers BMO's screen and fills portrait and landscape viewports", () => {
+  const screen = { center: { x: 740, y: 460 }, width: 136, height: 108 };
+  for (const viewport of [
+    { width: 390, height: 844 },
+    { width: 1440, height: 1000 },
+    { width: 844, height: 390, offsetY: -120 },
+  ]) {
+    const target = getScreenCameraTarget(screen, viewport);
+    const slope = Math.tan(target.skewY * Math.PI / 180);
+    const x = (viewport.offsetX || 0) + target.x + screen.center.x * target.scale;
+    const y = (viewport.offsetY || 0) + target.y + (screen.center.y + slope * screen.center.x) * target.scale;
+    assert.ok(Math.abs(x - viewport.width / 2) < 0.001);
+    assert.ok(Math.abs(y - viewport.height / 2) < 0.001);
+    assert.ok(screen.width * target.scale > viewport.width);
+    assert.ok(screen.height * target.scale > viewport.height);
+    assert.equal(target.skewY, 8);
+  }
+});
 
 function finish(state) {
   return playerReducer(state, { type: "advance", phase: state.phase });

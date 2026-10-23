@@ -65,6 +65,8 @@ for (const [name, viewport] of [
       height: image.naturalHeight,
     }));
     expect(natural.width / natural.height).toBeCloseTo(16 / 9, 1);
+    const bounds = await cover.boundingBox();
+    expect(bounds.width / bounds.height).toBeCloseTo(16 / 9, 1);
     await page.keyboard.press("Escape");
     await expect(page.locator(".card-field")).toHaveAttribute(
       "data-phase",
