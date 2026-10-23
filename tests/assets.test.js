@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import path from "node:path";
+import { createHash } from "node:crypto";
 
 const directory = new URL("../src/assets/optimized/", import.meta.url);
 const manifest = JSON.parse(
@@ -29,7 +29,7 @@ test("responsive images stay within transfer budgets and use actual WebP files",
   );
 });
 
-test("large backgrounds and covers have enough source resolution; BMO retains alpha", () => {
+test("responsive sources preserve native resolution and BMO retains alpha", () => {
   const largest = (group, role) =>
     manifest.images
       .filter((image) => image.group === group && image.role === role)
@@ -38,7 +38,6 @@ test("large backgrounds and covers have enough source resolution; BMO retains al
   assert.ok(largest("roomPortrait", "scene").height >= 1600);
   for (const group of [
     "technology",
-    "economy",
     "politics",
     "weather",
     "culture",
@@ -46,6 +45,21 @@ test("large backgrounds and covers have enough source resolution; BMO retains al
     assert.ok(largest(group, "article").width >= 1600);
     assert.ok(largest(group, "card").width <= 600);
   }
+  const original = fs.readFileSync(
+    new URL("../Photos/haberkapak3.jpg", import.meta.url),
+  );
+  const economy = manifest.sources.economy;
+  assert.equal(economy.file, "Photos/haberkapak3.jpg");
+  assert.equal(
+    economy.sha256,
+    createHash("sha256").update(original).digest("hex"),
+  );
+  assert.equal(largest("economy", "article").width, economy.width);
+  assert.ok(
+    manifest.images
+      .filter(image => image.group === "economy")
+      .every(image => image.width <= economy.width && image.height <= economy.height),
+  );
   assert.ok(
     manifest.images
       .filter((image) => image.group === "bmo")

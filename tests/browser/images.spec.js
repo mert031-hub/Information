@@ -46,7 +46,7 @@ for (const [name, viewport] of [
       .evaluate((image) => image.currentSrc);
     expect(bmo).toContain("bmo-character-");
     console.log(`${name} first-load images: ${(bytes / 1024).toFixed(1)} KiB`);
-    await page.locator('[data-slot="2"] button').click({ force: true });
+    await page.locator('[data-slot="1"] button').click({ force: true });
     await expect(page.locator(".card-field")).toHaveAttribute(
       "data-phase",
       "reading",
@@ -54,11 +54,11 @@ for (const [name, viewport] of [
     const cover = page.locator(".reader-cover img");
     await cover.evaluate((image) => image.decode());
     const source = await cover.evaluate((image) => image.currentSrc);
-    expect(source).toContain("politics-article-");
+    expect(source).toContain("economy-article-597");
     expect(
       responses
         .filter((response) => response.url().includes("-article-"))
-        .every((response) => response.url().includes("politics-article-")),
+        .every((response) => response.url().includes("economy-article-")),
     ).toBe(true);
     const natural = await cover.evaluate((image) => ({
       width: image.naturalWidth,

@@ -18,10 +18,8 @@ import asset15 from "../assets/optimized/technology-article-1672.webp";
 import asset16 from "../assets/optimized/economy-card-192.webp";
 import asset17 from "../assets/optimized/economy-card-384.webp";
 import asset18 from "../assets/optimized/economy-card-576.webp";
-import asset19 from "../assets/optimized/economy-article-640.webp";
-import asset20 from "../assets/optimized/economy-article-960.webp";
-import asset21 from "../assets/optimized/economy-article-1280.webp";
-import asset22 from "../assets/optimized/economy-article-1672.webp";
+import asset19 from "../assets/optimized/economy-article-480.webp";
+import asset20 from "../assets/optimized/economy-article-597.webp";
 import asset23 from "../assets/optimized/politics-card-192.webp";
 import asset24 from "../assets/optimized/politics-card-384.webp";
 import asset25 from "../assets/optimized/politics-card-576.webp";
@@ -101,23 +99,22 @@ export const coverImages = {
       1280,
     ),
   },
+  // Preserve the user's original Finn and Jake scene at its native resolution.
   economy: {
     card: makeSet(
       [
         { src: asset16, width: 192, height: 108 },
-        { src: asset17, width: 384, height: 216 },
-        { src: asset18, width: 576, height: 324 },
+        { src: asset17, width: 384, height: 215 },
+        { src: asset18, width: 576, height: 323 },
       ],
       384,
     ),
     article: makeSet(
       [
-        { src: asset19, width: 640, height: 360 },
-        { src: asset20, width: 960, height: 540 },
-        { src: asset21, width: 1280, height: 720 },
-        { src: asset22, width: 1672, height: 941 },
+        { src: asset19, width: 480, height: 269 },
+        { src: asset20, width: 597, height: 335 },
       ],
-      1280,
+      597,
     ),
   },
   politics: {

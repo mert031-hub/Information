@@ -147,69 +147,6 @@
       "alpha": false
     },
     {
-      "file": "economy-card-192.webp",
-      "group": "economy",
-      "role": "card",
-      "width": 192,
-      "height": 108,
-      "bytes": 7640,
-      "alpha": false
-    },
-    {
-      "file": "economy-card-384.webp",
-      "group": "economy",
-      "role": "card",
-      "width": 384,
-      "height": 216,
-      "bytes": 23100,
-      "alpha": false
-    },
-    {
-      "file": "economy-card-576.webp",
-      "group": "economy",
-      "role": "card",
-      "width": 576,
-      "height": 324,
-      "bytes": 44164,
-      "alpha": false
-    },
-    {
-      "file": "economy-article-640.webp",
-      "group": "economy",
-      "role": "article",
-      "width": 640,
-      "height": 360,
-      "bytes": 59202,
-      "alpha": false
-    },
-    {
-      "file": "economy-article-960.webp",
-      "group": "economy",
-      "role": "article",
-      "width": 960,
-      "height": 540,
-      "bytes": 106074,
-      "alpha": false
-    },
-    {
-      "file": "economy-article-1280.webp",
-      "group": "economy",
-      "role": "article",
-      "width": 1280,
-      "height": 720,
-      "bytes": 153984,
-      "alpha": false
-    },
-    {
-      "file": "economy-article-1672.webp",
-      "group": "economy",
-      "role": "article",
-      "width": 1672,
-      "height": 941,
-      "bytes": 218010,
-      "alpha": false
-    },
-    {
       "file": "politics-card-192.webp",
       "group": "politics",
       "role": "card",
@@ -397,6 +334,60 @@
       "height": 941,
       "bytes": 87888,
       "alpha": false
+    },
+    {
+      "file": "economy-card-192.webp",
+      "group": "economy",
+      "role": "card",
+      "width": 192,
+      "height": 108,
+      "bytes": 5398,
+      "alpha": false
+    },
+    {
+      "file": "economy-card-384.webp",
+      "group": "economy",
+      "role": "card",
+      "width": 384,
+      "height": 215,
+      "bytes": 15414,
+      "alpha": false
+    },
+    {
+      "file": "economy-card-576.webp",
+      "group": "economy",
+      "role": "card",
+      "width": 576,
+      "height": 323,
+      "bytes": 28576,
+      "alpha": false
+    },
+    {
+      "file": "economy-article-480.webp",
+      "group": "economy",
+      "role": "article",
+      "width": 480,
+      "height": 269,
+      "bytes": 26236,
+      "alpha": false
+    },
+    {
+      "file": "economy-article-597.webp",
+      "group": "economy",
+      "role": "article",
+      "width": 597,
+      "height": 335,
+      "bytes": 35950,
+      "alpha": false
     }
-  ]
+  ],
+  "sources": {
+    "economy": {
+      "file": "Photos/haberkapak3.jpg",
+      "width": 597,
+      "height": 335,
+      "sha256": "bbeb50d3ac35f4b2021ac9a69bcd51c74c68cf6cb193feb6ba0a20c3571d9db5",
+      "treatment": "Original composition; resize and WebP encoding only. No generated replacement or upscaling."
+    }
+  }
 }

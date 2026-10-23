@@ -128,7 +128,7 @@ Birim testleri aşama sırasını, eski animasyon olaylarını, hızlı seçimle
 
 ## Görsel kalitesi ve yükleme
 
-Oda arka planı ve beş kategori kapağı, düşük çözünürlüklü referanslardan yeniden çizildi. Telefon için aynı odanın ayrıca dikey kompozisyonu hazırlandı. Ekonomi kapağı kategoriye uygun altınlar ve pazar tezgâhı sahnesiyle yenilendi. Özgün `Photos/` dosyaları değişmedi.
+Oda arka planı ve dört kategori kapağı, düşük çözünürlüklü referanslardan yeniden çizildi. Telefon için aynı odanın ayrıca dikey kompozisyonu hazırlandı. Bağlam kontrolünde ekonomi kapağının özgün Finn ve Jake sahnesini değiştirdiği görüldü; altın/pazar görseli kaldırılıp `Photos/haberkapak3.jpg` doğrudan kaynak olarak geri alındı. Bu kapakta yalnızca boyutlandırma ve WebP kodlama yapılır; yeni nesne veya sahne üretilmez. Özgün `Photos/` dosyaları değişmedi.
 
 Yayında yalnızca `src/assets/optimized/` içindeki WebP türevleri kullanılır. Ham üretilmiş PNG dosyaları yayın paketine alınmaz. `src/data/imageAssets.js`, her kullanım için `srcSet` listesini ve yedek boyutu tanımlar:
 
@@ -138,17 +138,30 @@ Yayında yalnızca `src/assets/optimized/` içindeki WebP türevleri kullanılı
 | Dikey telefon arka planı | 480 / 768 / 941 px genişlik         | 157 KiB        |
 | Şeffaf BMO               | 360 / 720 / 1149 px genişlik        | 103 KiB        |
 | Küçük kart kapakları     | 192 / 384 / 576 px genişlik         | 54 KiB         |
-| Haber kapağı             | 640 / 960 / 1280 / 1672 px genişlik | 295 KiB        |
+| Haber kapağı (diğerleri) | 640 / 960 / 1280 / 1672 px genişlik | 295 KiB        |
+| Ekonomi haber kapağı    | 480 / 597 px genişlik              | 36 KiB         |
 
-En büyük arka planlar 1672 × 941 ve 941 × 1672 pikseldir. Haber kapakları 1672 × 941 pikseldir. BMO’nun biçimi, şeffaflığı ve SVG göz/hazne hizası korunur; yalnızca kodlaması ve sunulan boyutları değişti.
+En büyük arka planlar 1672 × 941 ve 941 × 1672 pikseldir. Diğer haber kapakları 1672 × 941 pikseldir. Ekonomi kapağı özgün 597 × 335 piksel kaynağın sınırında tutulur; büyütmek yeni detay kazandırmayacağından 1672 piksele yükseltilmez. Bu nedenle büyük ekranda diğer kapaklardan daha az ayrıntılı olabilir. Kaynak dosyanın yolu, boyutları ve SHA-256 özeti görsel manifestinde kayıtlıdır. BMO’nun biçimi, şeffaflığı ve SVG göz/hazne hizası korunur; yalnızca kodlaması ve sunulan boyutları değişti.
 
 `picture`, portre telefonda dikey arka planı seçer. `sizes` ve `srcSet`, ekran boyutuna ve piksel yoğunluğuna uygun kaynağı tarayıcıya bırakır. Kartlar küçük kapakları kullanır; büyük haber görselleri okuyucu açılmadan indirilmez. Haber kapağı kendi oranıyla gösterilir; siyah bant veya baş/kafa kesen aşırı kırpma eklenmez. Masaüstünde kapak 760 px ile sınırlıdır, metne de yer kalır.
 
 Boyut bilgileri önceden verilir ve görseller asenkron çözülür. Arka planın yükleme önceliği yüksektir. Vite’ın görselleri JavaScript’e gömmesi kapatıldı; kullanılmayan büyük türevler ilk pakete taşınmaz ve dosyalar ayrı önbelleklenebilir.
 
-Soğuk önbellekli, 2× piksel yoğunluğundaki Chromium ölçümünde ilk açılışın **görsel verisi** 390 × 844 telefonda **262,8 KiB**, 1440 × 1000 masaüstünde **323,0 KiB** oldu. Önceki görseller toplamı yaklaşık **1224 KiB** idi; ilk görsel aktarımı yaklaşık **%74–79 azaldı**. Bu ölçüm JavaScript/fontları kapsamaz; cihaz ve önbelleğe göre değişir.
+Soğuk önbellekli, 2× piksel yoğunluğundaki Chromium ölçümünde ilk açılışın **görsel verisi** 390 × 844 telefonda **255,3 KiB**, 1440 × 1000 masaüstünde **315,5 KiB** oldu. Önceki görseller toplamı yaklaşık **1224 KiB** idi; ilk görsel aktarımı yaklaşık **%74–79 azaldı**. Bu ölçüm JavaScript/fontları kapsamaz; cihaz ve önbelleğe göre değişir.
 
 `tests/assets.test.js` dosya başlıklarını, şeffaflık bilgisini, çözünürlükleri ve boyut bütçelerini kontrol eder. `tests/browser/images.spec.js`, gerçek tarayıcıda hangi kaynağın seçildiğini ve büyük kapakların ilk açılışta indirilmediğini doğrular.
+
+## Görsel bağlam kontrolü
+
+| Görsel | Kontrol sonucu |
+| --- | --- |
+| Oda (yatay ve dikey) | Ağaç ev, kırmızı koltuk, kutu yığınları ve sağdaki ocak korunur. |
+| Teknoloji | Mavi uyarı ekranlarıyla çevrili laboratuvar ve merkezdeki karakter korunur. |
+| Ekonomi | Bağlamı değiştiren pazar sahnesi kaldırıldı; özgün Finn ve Jake kapağı geri alındı. |
+| Politika | Takım elbiseli Buz Kralı ve iç mekân korunur. |
+| Hava durumu | Kara bulutların altında Finn ve Jake sahnesi korunur. |
+| Kültür ve yaşam | Prenses Ciklet ve Lady Rainicorn sahnesi korunur. |
+| BMO | Özgün şeffaf karakter; yalnızca boyutlandırma ve kodlama yapılır. |
 
 ## Özgün görsel referansları
 
@@ -166,7 +179,7 @@ Soğuk önbellekli, 2× piksel yoğunluğundaki Chromium ölçümünde ilk açı
 | Arka planı kaldırılmış BMO türevi | `src/assets/bmo.png`        |
 | Kullanılan oturmuş BMO türevi     | `src/assets/bmo-seated.png` |
 
-BMO türevleri, kullanıcının gönderdiği görsellerden görsel düzenleme aracıyla hazırlanmıştır. Oturan sürüm, sohbette sonradan gönderilen oturmuş BMO görselinden arka plan kaldırılarak hazırlanmıştır. Önceki ayakta duran sürüm dosyası korunur, ancak artık sahnede kullanılmaz. Yeni kapaklar üretilirken bu özgün görseller referans alındı; özgün dosyalar değişmez. Kart içindeki küçük kırpma CSS `object-fit` ile yapılır, okuyucuda tam yatay oran korunur. Tasarım referansı: https://www.adarkeser.com/ adresinin Adventure bölümü ve kullanıcının sağladığı ekran görüntüleri. Referans sitenin kaynak kodu kullanılmadı.
+BMO türevleri, kullanıcının gönderdiği görsellerden görsel düzenleme aracıyla hazırlanmıştır. Oturan sürüm, sohbette sonradan gönderilen oturmuş BMO görselinden arka plan kaldırılarak hazırlanmıştır. Önceki ayakta duran sürüm dosyası korunur, ancak artık sahnede kullanılmaz. Dört kapak üretilirken bu özgün görseller referans alındı; ekonomi kapağı ise özgün dosyadan kodlandı. Özgün dosyalar değişmez. Kart içindeki küçük kırpma CSS `object-fit` ile yapılır, okuyucuda tam yatay oran korunur. Tasarım referansı: https://www.adarkeser.com/ adresinin Adventure bölümü ve kullanıcının sağladığı ekran görüntüleri. Referans sitenin kaynak kodu kullanılmadı.
 
 ## Elle kontrol
 
