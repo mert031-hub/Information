@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { ArrowLeft, ArrowRight, Gamepad2, Keyboard, Radio } from "lucide-react";
+import { ArrowLeft, ArrowRight, Gamepad2 } from "lucide-react";
 import { news } from "./data/news.js";
 import NewsCartridge from "./components/NewsCartridge.jsx";
 import BmoEyes from "./components/BmoEyes.jsx";
@@ -46,15 +46,14 @@ export default function App() {
     player.select((selectedIndex + direction + news.length) % news.length);
   }
 
-  const prompt = {
-    idle: "Bip bop! Bir kart seç, birlikte keşfedelim.",
-    approaching: "Harika seçim! Kart hazneye geliyor…",
-    inserting: "Çıt! Kartını yerleştiriyorum…",
-    loading: "Bip bop! Hikâyen hazır oluyor…",
-    reading: "Yeni bir dünyaya hoş geldin!",
-    ejecting: "Kartını çıkarıyorum…",
-    returning: "Her maceranın koleksiyonda bir yeri var.",
-  }[phase];
+  const prompt =
+    {
+      approaching: "Kart hazırlanıyor…",
+      inserting: "Kart takılıyor…",
+      loading: "Haber açılıyor…",
+      ejecting: "Kart çıkarılıyor…",
+      returning: "Kart yerine dönüyor…",
+    }[phase] || "";
 
   function handleKeys(event) {
     if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
@@ -77,33 +76,13 @@ export default function App() {
           </span>
           <span className="brand-dot" />
         </a>
-        <div className="header-middle">
-          <span className="status-dot" /> OOO’DAN BİLDİRİYORUZ
-        </div>
-        <div className="header-actions">
-          <span className="edition">VOL. 002</span>
-          <SoundButton sound={sound} />
-        </div>
+        <SoundButton sound={sound} />
       </header>
-      <section className="hero-heading" aria-labelledby="page-title">
-        <p className="eyebrow">
-          <span /> DÜNYADAN HABER VAR.
-        </p>
-        <h1 id="page-title">
-          Bir kart, <span>yeni bir dünya.</span>
-        </h1>
-        <p className="intro">
-          BMO yerini aldı. Sen hangi hikâyeye dalmak istersin?
-        </p>
-      </section>
+      <h1 className="sr-only">BMO News</h1>
       <section
         className="console-scene"
         aria-label="BMO’nun etrafında süzülen haber kartları"
       >
-        <div className="collection-label">
-          <span>✦</span> BMO’NUN KOLEKSİYONU{" "}
-          <span className="collection-count">05 KART</span>
-        </div>
         <div
           ref={fieldRef}
           className="card-field"
@@ -123,9 +102,6 @@ export default function App() {
             />
             <BmoEyes />
             <BmoPort phase={phase} color={selected.color} />
-            <span className="bmo-nameplate">
-              <span className="status-dot" /> BMO HABER MERKEZİ
-            </span>
           </div>
           {news.map((item, index) => (
             <NewsCartridge
@@ -149,29 +125,12 @@ export default function App() {
               onComplete={player.advance}
             />
           )}
-          <div className="field-note">
-            küçük konsol,
-            <br />
-            büyük merak. <span>♡</span>
-          </div>
         </div>
       </section>
-      <section className="dialogue" aria-label="Seçili haber kartı">
-        <div className="dialogue-name">
-          <Radio size={14} /> BMO
-        </div>
-        <div className="dialogue-main" aria-live="polite" aria-atomic="true">
-          <p className="dialogue-prompt">{prompt}</p>
-          <div className="selected-story">
-            <span
-              className="selected-category"
-              style={{ "--category-color": selected.color }}
-            >
-              {selected.category}
-            </span>
-            <h2>{selected.title}</h2>
-          </div>
-        </div>
+      <section className="scene-controls" aria-label="Kart kontrolleri">
+        <p className="scene-status" role="status" aria-live="polite">
+          {prompt}
+        </p>
         <div className="deck-navigation">
           <button
             disabled={busy}
@@ -192,17 +151,6 @@ export default function App() {
           </button>
         </div>
       </section>
-      <footer className="site-footer">
-        <span>
-          <span className="footer-star">✦</span> Ooo’da sıradan bir haber günü.
-        </span>
-        <span className="keyboard-hint">
-          <Keyboard size={15} /> Kartları keşfetmek için ← →
-        </span>
-        <span className="prototype-label">
-          KARTINI TAK, HİKÂYENİ AÇ · DEMO İÇERİK
-        </span>
-      </footer>
       {phase === "reading" && (
         <NewsReader
           item={news[activeIndex]}

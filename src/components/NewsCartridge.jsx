@@ -45,7 +45,6 @@ export function CartridgeFace({ item, position }) {
   return (
     <>
       <span className="cartridge-top">
-        <span>OOO NEWS SYSTEM</span>
         <span>{String(position + 1).padStart(2, "0")}</span>
       </span>
       <span className="cartridge-label">
@@ -57,11 +56,6 @@ export function CartridgeFace({ item, position }) {
           />
         </span>
         <span className="cartridge-category">{item.label}</span>
-        <span className="cartridge-caption">{item.subtitle}</span>
-        <span className="cartridge-label-bottom">
-          <span>BMO™</span>
-          <span>NEWS CARTRIDGE</span>
-        </span>
       </span>
       <span className="cartridge-grip">
         <i />

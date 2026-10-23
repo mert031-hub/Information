@@ -21,6 +21,8 @@ Windows PowerShell `npm` için uygulama seçme penceresi açarsa `npm.cmd ci` ve
 
 ## Bu prototipte neler var?
 
+Ana ekran sade tutulur: logo, ses kontrolü, BMO, kategori kartları ve gezinme okları. Durum mesajları yalnızca kart geçişinde görünür; sloganlar ve dekoratif açıklamalar kaldırıldı.
+
 - Mevcut oda sahnesi, yerde oturan BMO ve solunda üç, sağında iki kart korunur.
 - Kartlar 4,8–6,2 saniyelik farklı döngülerle yaklaşık 16 piksel süzülür. Hover veya klavye odağında 14 piksel ek yükseliş ve gölge vardır.
 - Her kategorinin farklı hover melodisi vardır. Kart seçme, hazneye oturma ve çıkarma ayrıca seslendirildi.
@@ -28,7 +30,7 @@ Windows PowerShell `npm` için uygulama seçme penceresi açarsa `npm.cmd ci` ve
 - BMO’nun ekranında kısa bir yükleme tepkisi görünür; ardından ilgili haber okuyucusu açılır.
 - Okuyucuda kategori, kapak görseli, başlık, özet, metin ve okuma süresi vardır. Önceki/sonraki kontrolleri ilk ve son haber arasında döngü yapar.
 - Haber değiştirince eski kart önce dışarı çıkar ve yerine döner; yeni kart daha sonra takılır. Hızlı tekrar tıklamaları hareketi kesmez.
-- Kapat düğmesi, “BMO’ya dön” veya Escape kartı çıkarır. İşlem bittiğinde klavye odağı karta döner.
+- Kapat düğmesi veya Escape kartı çıkarır. İşlem bittiğinde klavye odağı karta döner.
 - Ses ilk ziyarette kapalıdır. Tercih tarayıcıda saklanır; hem ana sahnede hem haber panelinde değiştirilebilir.
 - BMO’nun gözleri imleci yavaşça takip eder. Telefon düzeni korunur; ekran boyutu değişince hazne konumu yeniden ölçülür.
 - Azaltılmış hareket tercihinde kart uçuşu, süzülme ve göz takibi kapatılır; haber akışı kısa geçişlerle çalışmaya devam eder.
@@ -58,7 +60,7 @@ reading → ejecting → returning → idle
 Haber değişimi: returning → approaching (yeni kart)
 ```
 
-`activeIndex` haznedeki/hareket eden kartı, `selectedIndex` konuşma kutusundaki kartı, `nextIndex` ise haber değişiminde sıradaki kartı tutar. Hareket sırasında gelen seçimler yok sayılır. Tamamlanma olayının aşaması güncel aşamayla uyuşmuyorsa olay da yok sayılır; eski bir animasyon akışı yanlışlıkla ilerletemez.
+`activeIndex` haznedeki/hareket eden kartı, `selectedIndex` koleksiyondaki seçili kartı, `nextIndex` ise haber değişiminde sıradaki kartı tutar. Hareket sırasında gelen seçimler yok sayılır. Tamamlanma olayının aşaması güncel aşamayla uyuşmuyorsa olay da yok sayılır; eski bir animasyon akışı yanlışlıkla ilerletemez.
 
 ### 3. Kartı gerçek hazne konumuna taşıyoruz
 

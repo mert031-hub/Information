@@ -1,12 +1,5 @@
 import { useEffect, useRef } from "react";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowUpLeft,
-  Clock3,
-  Gamepad2,
-  X,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock3, Gamepad2, X } from "lucide-react";
 import SoundButton from "./SoundButton.jsx";
 
 export default function NewsReader({
@@ -59,7 +52,7 @@ export default function NewsReader({
     >
       <div className="reader-toolbar">
         <span className="reader-brand">
-          <Gamepad2 size={22} /> BMO <span>OKUMA MODU</span>
+          <Gamepad2 size={22} /> BMO
         </span>
         <div className="reader-actions">
           <SoundButton sound={sound} />
@@ -76,12 +69,10 @@ export default function NewsReader({
       <article className="reader-article">
         <div className="reader-heading">
           <p className="reader-kicker">
-            <span /> KART {String(index + 1).padStart(2, "0")} / {item.label}
+            <span /> {item.label}
           </p>
           <h1 id="reader-title">{item.title}</h1>
-          <p className="reader-subtitle">{item.subtitle}</p>
           <div className="reader-meta">
-            <span>BMO HABER MERKEZİ</span>
             <span>
               <Clock3 size={13} /> {item.readTime} okuma
             </span>
@@ -94,10 +85,6 @@ export default function NewsReader({
             alt={`${item.category} kartının Adventure Time temalı kapak görseli`}
             style={{ objectPosition: item.imagePosition }}
           />
-          <figcaption>
-            <span>OOO’DAN BİLDİRİYORUZ</span>
-            <span>✦ {item.category}</span>
-          </figcaption>
         </figure>
         <div className="reader-copy">
           <p className="reader-lead">{item.summary}</p>
@@ -107,11 +94,6 @@ export default function NewsReader({
               <p>{section.text}</p>
             </section>
           ))}
-          <aside className="reader-note">
-            <span>✦ BMO’DAN KÜÇÜK BİR NOT</span>Bu hikâye arayüzü denemek için
-            yazılmış kurmaca bir demo içeriktir. Gerçek haber, finansal öneri
-            veya canlı hava durumu verisi değildir.
-          </aside>
         </div>
       </article>
       <nav className="reader-navigation" aria-label="Haberler arasında geçiş">
@@ -128,9 +110,6 @@ export default function NewsReader({
           <ArrowRight size={18} />
         </button>
       </nav>
-      <button className="reader-return" onClick={onClose}>
-        <ArrowUpLeft size={15} /> Kartı çıkar ve BMO’ya dön
-      </button>
     </dialog>
   );
 }
