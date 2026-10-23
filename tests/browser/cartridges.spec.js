@@ -364,7 +364,6 @@ for (const [width, index, expression] of [[1440, 0, "play"], [390, 4, "yay"]]) {
   test(`whole scene moves into BMO's happy screen at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 });
     await page.goto("/");
-    const original = await page.locator(".bmo-character").boundingBox();
     await card(page, index).click({ force: true });
     await phase(page, "approaching");
     await expect(page.locator(".happy-bmo-face")).toHaveAttribute("data-expression", "smile");
@@ -372,9 +371,46 @@ for (const [width, index, expression] of [[1440, 0, "play"], [390, 4, "yay"]]) {
     await expect(page.locator(".happy-bmo-face")).toHaveAttribute("data-expression", expression);
     await expect(page.locator(".bmo-screen-reaction text")).toHaveCount(0);
     await phase(page, "zooming");
-    await page.waitForFunction(() => new DOMMatrix(getComputedStyle(document.querySelector(".scene-camera")).transform).a > 2);
-    const enlarged = await page.locator(".bmo-character").boundingBox();
-    expect(enlarged.width).toBeGreaterThan(original.width * 2);
+    const frames = await page.evaluate(() => new Promise(resolve => {
+      const samples = [];
+      function sample() {
+        const camera = document.querySelector(".scene-camera");
+        const matrix = new DOMMatrix(getComputedStyle(camera).transform);
+        const svg = document.querySelector(".bmo-port");
+        const slope = Math.tan(-8 * Math.PI / 180);
+        const center = new DOMPoint(658, 492.5 + slope * 223).matrixTransform(svg.getScreenCTM());
+        samples.push({
+          scale: matrix.a, shear: matrix.b, x: center.x, y: center.y,
+          plate: Number(getComputedStyle(document.querySelector(".bmo-screen-frame")).opacity),
+          content: Number(getComputedStyle(document.querySelector(".screen-scroll")).opacity),
+        });
+        if (camera.dataset.phase === "reading") resolve(samples);
+        else requestAnimationFrame(sample);
+      }
+      requestAnimationFrame(sample);
+    }));
+    expect(frames.length).toBeGreaterThan(8);
+    expect(frames.at(-1).scale).toBeGreaterThan(2);
+    const destination = frames.at(-1);
+    const start = frames[0];
+    const startProgress = Math.log(start.scale) / Math.log(destination.scale);
+    const originalCenter = {
+      x: (start.x - startProgress * width / 2) / (1 - startProgress),
+      y: (start.y - startProgress * 422) / (1 - startProgress),
+    };
+    for (let index = 0; index < frames.length; index++) {
+      const frame = frames[index];
+      const progress = Math.log(frame.scale) / Math.log(destination.scale);
+      // No scene shear or cross-term drift while the camera approaches its aim.
+      expect(Math.abs(frame.shear)).toBeLessThan(0.0001);
+      expect(Math.abs(frame.x - (originalCenter.x + (width / 2 - originalCenter.x) * progress))).toBeLessThan(1);
+      expect(Math.abs(frame.y - (originalCenter.y + (422 - originalCenter.y) * progress))).toBeLessThan(1);
+      if (index) expect(frame.scale).toBeGreaterThanOrEqual(frames[index - 1].scale - 0.001);
+      // Text can never ghost over the room or the old LCD border.
+      if (frame.content > 0.01) expect(frame.plate).toBeGreaterThan(0.99);
+    }
+    expect(destination.plate).toBe(1);
+    expect(destination.content).toBe(1);
     // The article surface stays at viewport size; it never flies out of BMO.
     const surface = await page.locator(".bmo-screen-frame").boundingBox();
     expect(surface).toEqual({ x: 0, y: 0, width, height: 844 });

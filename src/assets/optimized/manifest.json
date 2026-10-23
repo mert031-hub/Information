@@ -8,7 +8,7 @@
       "role": "scene",
       "width": 768,
       "height": 432,
-      "bytes": 64536,
+      "bytes": 66486,
       "alpha": false
     },
     {
@@ -17,7 +17,7 @@
       "role": "scene",
       "width": 1280,
       "height": 720,
-      "bytes": 133860,
+      "bytes": 139542,
       "alpha": false
     },
     {
@@ -26,7 +26,7 @@
       "role": "scene",
       "width": 1672,
       "height": 941,
-      "bytes": 190424,
+      "bytes": 199866,
       "alpha": false
     },
     {
@@ -35,7 +35,7 @@
       "role": "scene",
       "width": 480,
       "height": 853,
-      "bytes": 62770,
+      "bytes": 60478,
       "alpha": false
     },
     {
@@ -44,7 +44,7 @@
       "role": "scene",
       "width": 768,
       "height": 1365,
-      "bytes": 123594,
+      "bytes": 114404,
       "alpha": false
     },
     {
@@ -53,7 +53,7 @@
       "role": "scene",
       "width": 941,
       "height": 1672,
-      "bytes": 160828,
+      "bytes": 149148,
       "alpha": false
     },
     {
@@ -388,6 +388,16 @@
       "height": 335,
       "sha256": "bbeb50d3ac35f4b2021ac9a69bcd51c74c68cf6cb193feb6ba0a20c3571d9db5",
       "treatment": "Original composition; resize and WebP encoding only. No generated replacement or upscaling."
+    },
+    "roomLandscape": {
+      "width": 1672,
+      "height": 941,
+      "treatment": "Reference-preserving edit of the existing room: only the small coffee table removed and matching floor reconstructed."
+    },
+    "roomPortrait": {
+      "width": 941,
+      "height": 1672,
+      "treatment": "Reference-preserving edit of the existing room: only the small coffee table removed and matching floor reconstructed."
     }
   }
 }

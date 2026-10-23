@@ -1,27 +1,31 @@
-import { useLayoutEffect, useRef, useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
-import { bmoScreen, getScreenCameraTarget } from "../data/bmoScreen.js";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { animate, motion, useReducedMotion, useTransform } from "motion/react";
+import { bmoScreen, getCameraScale, getScreenCameraTarget } from "../data/bmoScreen.js";
 
-const home = { x: 0, y: 0, scale: 1, skewY: 0 };
-
-export default function SceneCamera({ children, phase, fieldRef, onComplete }) {
+export default function SceneCamera({ children, phase, fieldRef, progress, onComplete }) {
   const camera = useRef(null);
   const viewport = useRef(null);
+  const complete = useRef(onComplete);
+  complete.current = onComplete;
   const [target, setTarget] = useState(null);
   const reducedMotion = useReducedMotion();
   const engaged = ["zooming", "reading", "zoomingOut"].includes(phase);
-  const inside = phase === "zooming" || phase === "reading";
 
   useLayoutEffect(() => {
     if (!engaged || reducedMotion) return;
     function measure() {
       const port = fieldRef.current.querySelector(".bmo-port");
       const svgMatrix = port.getScreenCTM();
-      const worldMatrix = new DOMMatrix(getComputedStyle(camera.current).transform);
-      const inverse = worldMatrix.inverse();
+      const style = getComputedStyle(camera.current);
+      const [originX, originY] = style.transformOrigin.split(" ").map(parseFloat);
+      // CSS transform matrices omit transform-origin. Include it before
+      // unprojecting; otherwise resize would measure an already enlarged world.
+      const world = new DOMMatrix()
+        .translate(originX, originY)
+        .multiply(new DOMMatrix(style.transform))
+        .translate(-originX, -originY);
+      const inverse = world.inverse();
       const bounds = viewport.current.getBoundingClientRect();
-      // Remove the current camera transform before measuring. Resizing while
-      // zoomed must never compound the previous magnification.
       const point = (x, y) => {
         const projected = new DOMPoint(x, y).matrixTransform(svgMatrix);
         return new DOMPoint(projected.x - bounds.x, projected.y - bounds.y)
@@ -58,6 +62,27 @@ export default function SceneCamera({ children, phase, fieldRef, onComplete }) {
     };
   }, [engaged, reducedMotion, fieldRef]);
 
+  const ready = reducedMotion || Boolean(target);
+  useEffect(() => {
+    if (!["zooming", "zoomingOut"].includes(phase) || !ready) return;
+    let cancelled = false;
+    const controls = animate(progress, phase === "zooming" ? 1 : 0, {
+      duration: reducedMotion ? 0.12 : phase === "zoomingOut" ? 0.9 : 1.3,
+      ease: [0.42, 0, 0.58, 1],
+    });
+    controls.then(() => {
+      if (!cancelled) complete.current(phase);
+    });
+    return () => {
+      cancelled = true;
+      controls.stop();
+    };
+  }, [phase, ready, reducedMotion, progress]);
+
+  const x = useTransform(progress, [0, 1], [0, reducedMotion ? 0 : target?.x || 0]);
+  const y = useTransform(progress, [0, 1], [0, reducedMotion ? 0 : target?.y || 0]);
+  const scale = useTransform(() => reducedMotion ? 1 : getCameraScale(progress.get(), target?.scale || 1));
+
   return (
     <div className="scene-viewport" ref={viewport}>
       <motion.div
@@ -65,15 +90,9 @@ export default function SceneCamera({ children, phase, fieldRef, onComplete }) {
         className="scene-camera"
         data-phase={phase}
         data-moving={phase === "zooming" || phase === "zoomingOut"}
-        initial={false}
-        animate={!reducedMotion && inside && target ? target : home}
-        transition={{
-          duration: reducedMotion ? 0 : phase === "zoomingOut" ? 0.9 : 1.2,
-          ease: phase === "zoomingOut" ? [0.42, 0, 0.4, 1] : [0.45, 0, 0.2, 1],
-        }}
-        onAnimationComplete={() => {
-          if (!reducedMotion && target && ["zooming", "zoomingOut"].includes(phase))
-            onComplete(phase);
+        style={{
+          x, y, scale,
+          transformOrigin: target ? `${target.origin.x}px ${target.origin.y}px` : "0 0",
         }}
       >
         {children}

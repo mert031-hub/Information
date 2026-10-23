@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion, useTransform } from "motion/react";
 import { ArrowLeft, ArrowRight, Clock3, Gamepad2, X } from "lucide-react";
 import SoundButton from "./SoundButton.jsx";
 
@@ -8,13 +8,14 @@ export default function NewsReader({
   index,
   count,
   phase,
-  onComplete,
+  progress,
   onClose,
   onMove,
   sound,
 }) {
   const dialog = useRef(null);
-  const reducedMotion = useReducedMotion();
+  const opacity = useTransform(progress, [0, 0.58, 0.8, 1], [0, 0, 1, 1]);
+  const contentOpacity = useTransform(progress, [0, 0.8, 1], [0, 0, 1]);
   const reading = phase === "reading";
 
   useLayoutEffect(() => {
@@ -77,23 +78,14 @@ export default function NewsReader({
     >
       <motion.div
         className="bmo-screen-frame"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: phase === "zoomingOut" ? 0 : 1 }}
-        transition={{
-          duration: reducedMotion ? 0.08 : phase === "zoomingOut" ? 0.16 : 0.34,
-          delay: !reducedMotion && phase === "zooming" ? 0.86 : 0,
-        }}
-        onAnimationComplete={() => {
-          // With reduced motion the camera stays still; the short crossfade
-          // owns completion instead. Otherwise only the world camera advances.
-          if (reducedMotion && !reading) onComplete(phase);
-        }}
+        style={{ opacity }}
       >
         <div className="bmo-screen-glass">
-          <div
+          <motion.div
             className="screen-scroll"
             aria-hidden={!reading}
             inert={!reading}
+            style={{ opacity: contentOpacity }}
           >
             <div className="reader-toolbar">
               <span className="reader-brand">
@@ -163,7 +155,7 @@ export default function NewsReader({
                 <ArrowRight size={18} />
               </button>
             </nav>
-          </div>
+          </motion.div>
         </div>
       </motion.div>
     </dialog>

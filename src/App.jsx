@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useMotionValue } from "motion/react";
 import { ArrowLeft, ArrowRight, Gamepad2 } from "lucide-react";
 import { news } from "./data/news.js";
 import NewsCartridge from "./components/NewsCartridge.jsx";
@@ -16,6 +17,7 @@ import { sceneImages } from "./data/imageAssets.js";
 
 export default function App() {
   const player = useCartridgePlayer();
+  const cameraProgress = useMotionValue(0);
   const { selectedIndex, activeIndex, phase, busy } = player;
   const selected = news[selectedIndex];
   const sound = useBmoAudio();
@@ -69,7 +71,12 @@ export default function App() {
 
   return (
     <>
-      <SceneCamera phase={phase} fieldRef={fieldRef} onComplete={player.advance}>
+      <SceneCamera
+        phase={phase}
+        fieldRef={fieldRef}
+        progress={cameraProgress}
+        onComplete={player.advance}
+      >
         <main className="app-shell">
           <div className="room-background">
             <picture>
@@ -130,7 +137,7 @@ export default function App() {
                 />
                 <BmoEyes />
                 <BmoPort phase={phase} color={selected.color} />
-                <BmoReaction phase={phase} category={selected.id} />
+                <BmoReaction phase={phase} category={selected.id} progress={cameraProgress} />
               </div>
               {news.map((item, index) => (
                 <NewsCartridge
@@ -191,7 +198,7 @@ export default function App() {
           index={activeIndex}
           count={news.length}
           phase={phase}
-          onComplete={player.advance}
+          progress={cameraProgress}
           onClose={player.close}
           onMove={moveSelection}
           sound={sound}

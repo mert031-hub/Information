@@ -71,9 +71,6 @@
 .scene-camera {
   transform-origin: 0 0;
 }
-.scene-camera[data-moving="true"] {
-  will-change: transform;
-}
 .scene-camera[data-phase="reading"] {
   visibility: hidden;
 }

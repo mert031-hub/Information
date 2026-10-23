@@ -5,7 +5,7 @@ import {
   playerReducer,
 } from "../src/hooks/useCartridgePlayer.js";
 import { getSoundSequence, soundProfiles } from "../src/data/sounds.js";
-import { getScreenCameraTarget } from "../src/data/bmoScreen.js";
+import { getCameraScale, getScreenCameraTarget } from "../src/data/bmoScreen.js";
 
 test("camera centers BMO's screen and fills portrait and landscape viewports", () => {
   const screen = { center: { x: 740, y: 460 }, width: 136, height: 108 };
@@ -15,14 +15,19 @@ test("camera centers BMO's screen and fills portrait and landscape viewports", (
     { width: 844, height: 390, offsetY: -120 },
   ]) {
     const target = getScreenCameraTarget(screen, viewport);
-    const slope = Math.tan(target.skewY * Math.PI / 180);
-    const x = (viewport.offsetX || 0) + target.x + screen.center.x * target.scale;
-    const y = (viewport.offsetY || 0) + target.y + (screen.center.y + slope * screen.center.x) * target.scale;
+    const x = (viewport.offsetX || 0) + target.x + target.origin.x;
+    const y = (viewport.offsetY || 0) + target.y + target.origin.y;
     assert.ok(Math.abs(x - viewport.width / 2) < 0.001);
     assert.ok(Math.abs(y - viewport.height / 2) < 0.001);
     assert.ok(screen.width * target.scale > viewport.width);
     assert.ok(screen.height * target.scale > viewport.height);
-    assert.equal(target.skewY, 8);
+    assert.deepEqual(target.origin, screen.center);
+    const scales = [0, 0.25, 0.5, 0.75, 1].map(progress => getCameraScale(progress, target.scale));
+    assert.equal(scales[0], 1);
+    assert.ok(Math.abs(scales.at(-1) - target.scale) < 0.001);
+    for (let index = 1; index < scales.length; index++) {
+      assert.ok(Math.abs(scales[index] / scales[index - 1] - scales[1]) < 0.001);
+    }
   }
 });
 

@@ -38,7 +38,7 @@ Ana ekran sade tutulur: logo, ses kontrolü, BMO, kategori kartları ve gezinme 
 - Her kategorinin farklı hover melodisi vardır. Kart seçme, hazneye oturma ve çıkarma ayrıca seslendirildi.
 - Karta tıklayınca kart hazneye yaklaşır, açısını ayarlar ve haznenin kenarı arkasında kaybolarak içeri girer.
 - Tıklama anında BMO’nun gözleri mutlu biçimde kısılır ve yüzünde gülümseme belirir. Kaset takılırken “LET'S PLAY!” için açık gülümseme, “UWHUUUU!” için daha yuvarlak neşeli ağız, “YAAAY!” için coşkulu gözler ve ışıltılar görünür. Tepkiler ses açıkken seslendirilir; yüzün üzerine yazı basılmaz.
-- Kaset takılınca kamera yaklaşık 1200 ms içinde BMO’nun ekranına girer. Oda, kasetler ve BMO aynı kamera katmanında birlikte büyür. LCD görüş alanını doldurduğunda haber sabit, tam ekran yüzeyde belirir; ayrı bir panel sahneden dışarı taşınmaz.
+- Kaset takılınca kamera yaklaşık 1300 ms içinde BMO’nun ekranına girer. Oda, kasetler ve BMO aynı kamera katmanında birlikte büyür. LCD görüş alanını doldurduğunda haber sabit, tam ekran yüzeyde belirir; ayrı bir panel sahneden dışarı taşınmaz.
 - Okuyucuda kategori, kapak görseli, başlık, özet, metin ve okuma süresi vardır. Önceki/sonraki kontrolleri ilk ve son haber arasında döngü yapar.
 - Haber değiştirince önce ekrandan uzaklaşılır, eski kart dışarı çıkar ve yerine döner; yeni kart daha sonra takılır. Hızlı tekrar tıklamaları hareketi kesmez.
 - Kapat düğmesi veya Escape önce kamerayı küçük BMO ekranına geri götürür, ardından kartı çıkarır. İşlem bittiğinde klavye odağı karta döner.
@@ -79,9 +79,9 @@ React ve Vite korunur; kart uçuşu için **Motion** kullanılır. `CartridgeFli
 
 Kart yaklaşık **840 ms** içinde yumuşak, hafif kavisli bir yoldan haznenin alt/ön tarafına yaklaşır. Kart yüzü perspektifte hafifçe yatar; üst kenarı önde olacak şekilde **480 ms** içinde içeri kayar. `clip-path` hazne çizgisinin üstünde kalan kısmı gizler. Aynı Motion öğesi yaklaşma ve yerleştirme boyunca korunur; aşama değişiminde kart yeniden çizilip pozisyon atlamaz.
 
-Kart girer girmez **1200 ms** kamera hareketi başlar. Ayrı yükleme veya sevinç bekleme aşaması yoktur. İçerik 860. milisaniyeden itibaren 340 ms içinde belirmeye başlar. Bu sırada haber kontrolleri `inert` ile devre dışıdır; kamera varınca odak ve etkileşim açılır. Kapatmada haber 160 ms içinde silinirken kamera **900 ms** içinde geri döner, kart **420 ms** içinde çıkar ve **700 ms** içinde koleksiyona döner. Aşamalar `onAnimationComplete` ile ilerler.
+Kart girer girmez **1300 ms** kamera hareketi başlar. Tek bir Motion ilerleme değeri (`cameraProgress`), kamera konumunu, büyütmeyi, BMO yüzünü, yeşil geçiş yüzeyini ve haber saydamlığını birlikte yönetir. Yüz, hareketin %30–64 aralığında silinir; %58–80 aralığında yeşil yüzey görüşü kaplar; yazılar ancak %80 sonrasında görünür. Böylece ekran kenarı haber metninin arkasında hayalet gibi kalmaz ve kamera tamamlanınca sahne gizlenirken boş kare oluşmaz. Ayrı bekleme zamanlayıcıları yoktur. Kapatmada aynı ilerleme **900 ms** içinde ters yönde oynar, kart ardından **420 ms** içinde çıkar ve **700 ms** içinde yerine döner.
 
-`SceneCamera.jsx`, oda, kasetler ve BMO’yu kapsayan tek bir katmanı taşır. `src/data/bmoScreen.js` ekranın merkezi ve boyutundan kamera hedefini hesaplar: ekranın içi görüş alanını tamamen doldurur, hafif ters eğimle yüzey düzleşir. Ekran boyutu değişirken mevcut kamera dönüşümünün tersi alınarak özgün koordinatlar ölçülür; önceki büyütme tekrar uygulanmaz. `NewsReader.jsx` kamera katmanının dışında, sabit tam ekran bir dialog olarak kalır; yalnızca saydamlığı değişir. Okuma sırasında arkadaki büyütülmüş sahne görünmez, gereksiz çizim azaltılır. Azaltılmış hareket tercihinde kamera sabit kalır ve 80 ms geçiş kullanılır.
+`SceneCamera.jsx`, oda, kasetler ve BMO’yu kapsayan tek bir katmanı ekranın merkezi etrafında büyütür. Büyütme oranı üstel hesaplanır; eşit ilerleme adımları eşit büyütme oranları verir. Merkez düz bir yol izler; bütün odaya eğim uygulanmaz. `src/data/bmoScreen.js` ekranın merkezi ve boyutundan kamera hedefini hesaplar. Boyut değişiminde mevcut dönüşümün ve `transform-origin` değerinin tersi alınır; önceki büyütme tekrar uygulanmaz. `NewsReader.jsx` kamera katmanının dışında sabit tam ekran bir dialog olarak kalır. Kamera ilerlemesi bittiğinde kontrollerin `inert` kilidi açılır ve odak okuyucuya geçer. Azaltılmış harekette kamera sabit kalır ve aynı ilerleme 120 ms içinde oynar.
 
 `BmoReaction.jsx` tıklama anından itibaren yüz ifadesini SVG olarak özgün BMO ekranına yerleştirir. `reactions.js` içindeki tepki türü, gözlerin ve gülümsemenin biçimini belirler. Yüz çizimi kamera yaklaşırken BMO’nun gövdesiyle birlikte hareket eder; ayrıca büyüyen ikinci bir yüz veya ekran yoktur.
 
@@ -126,18 +126,18 @@ npm run test:ui
 
 Sistemde hazır Chromium kullanmak istersen `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` değişkenini çalıştırılabilir dosyanın yoluna ayarla. Test yapılandırması bu yolu destekler. Üretim derlemesi için `npm run build` çalıştır.
 
-Birim testleri aşama sırasını, eski animasyon olaylarını, hızlı seçimleri, kart değiştirme/kapatma akışını ve beş ayrı ses profilini kontrol eder. Tarayıcı testleri gerçek kart takma/çıkarma, okuyucu, döngülü gezinme, odak dönüşü, native Web Audio, sessize alma, azaltılmış hareket, 320/390/768 piksel ekranlar, hareket sırasında boyut değişimi ve ses/depolama API’lerinin yokluğunu kapsar. Yeni kontroller kartın alt/ön taraftan girmesini, kart takıldıktan hemen sonra kameranın başlamasını, geçişteki kontrollerin kilitli kalmasını ve BMO’nun tepki vermesini, kameranın giriş/çıkış sırasını, yakınlaşırken ekran boyutunun değişmesini ve yerel konuşmanın sessize alınmasını da doğrular.
+Birim testleri aşama sırasını, eski animasyon olaylarını, hızlı seçimleri, kart değiştirme/kapatma akışını ve beş ayrı ses profilini kontrol eder. Tarayıcı testleri gerçek kart takma/çıkarma, okuyucu, döngülü gezinme, odak dönüşü, native Web Audio, sessize alma, azaltılmış hareket, 320/390/768 piksel ekranlar, hareket sırasında boyut değişimi ve ses/depolama API’lerinin yokluğunu kapsar. Yeni kontroller kartın alt/ön taraftan girmesini, kart takıldıktan hemen sonra kameranın başlamasını, geçişteki kontrollerin kilitli kalmasını ve BMO’nun tepki vermesini, kameranın giriş/çıkış sırasını, ara karelerde eğim ve merkez kayması oluşmadığını, yazıların yalnızca yeşil zemin tam kapatınca belirdiğini, yakınlaşırken ekran boyutunun değişmesini ve yerel konuşmanın sessize alınmasını da doğrular.
 
 ## Görsel kalitesi ve yükleme
 
-Oda arka planı ve dört kategori kapağı, düşük çözünürlüklü referanslardan yeniden çizildi. Telefon için aynı odanın ayrıca dikey kompozisyonu hazırlandı. Bağlam kontrolünde ekonomi kapağının özgün Finn ve Jake sahnesini değiştirdiği görüldü; altın/pazar görseli kaldırılıp `Photos/haberkapak3.jpg` doğrudan kaynak olarak geri alındı. Bu kapakta yalnızca boyutlandırma ve WebP kodlama yapılır; yeni nesne veya sahne üretilmez. Özgün `Photos/` dosyaları değişmedi.
+Oda arka planı ve dört kategori kapağı, düşük çözünürlüklü referanslardan yeniden çizildi. BMO ile çakışan küçük sehpa, aynı yatay ve dikey oda görsellerinden kaldırılıp altındaki zemin tamamlandı; koltuk, kutular, ocak ve mimari korundu. Telefon için aynı odanın ayrıca dikey kompozisyonu hazırlandı. Bağlam kontrolünde ekonomi kapağının özgün Finn ve Jake sahnesini değiştirdiği görüldü; altın/pazar görseli kaldırılıp `Photos/haberkapak3.jpg` doğrudan kaynak olarak geri alındı. Bu kapakta yalnızca boyutlandırma ve WebP kodlama yapılır; yeni nesne veya sahne üretilmez. Özgün `Photos/` dosyaları değişmedi.
 
 Yayında yalnızca `src/assets/optimized/` içindeki WebP türevleri kullanılır. Ham üretilmiş PNG dosyaları yayın paketine alınmaz. `src/data/imageAssets.js`, her kullanım için `srcSet` listesini ve yedek boyutu tanımlar:
 
 | Kullanım                 | Çözünürlükler                       | En büyük dosya |
 | ------------------------ | ----------------------------------- | -------------- |
-| Yatay arka plan          | 768 / 1280 / 1672 px genişlik       | 186 KiB        |
-| Dikey telefon arka planı | 480 / 768 / 941 px genişlik         | 157 KiB        |
+| Yatay arka plan          | 768 / 1280 / 1672 px genişlik       | 196 KiB        |
+| Dikey telefon arka planı | 480 / 768 / 941 px genişlik         | 146 KiB        |
 | Şeffaf BMO               | 360 / 720 / 1149 px genişlik        | 103 KiB        |
 | Küçük kart kapakları     | 192 / 384 / 576 px genişlik         | 54 KiB         |
 | Haber kapağı (diğerleri) | 640 / 960 / 1280 / 1672 px genişlik | 295 KiB        |
@@ -149,7 +149,7 @@ En büyük arka planlar 1672 × 941 ve 941 × 1672 pikseldir. Diğer haber kapak
 
 Boyut bilgileri önceden verilir ve görseller asenkron çözülür. Arka planın yükleme önceliği yüksektir. Vite’ın görselleri JavaScript’e gömmesi kapatıldı; kullanılmayan büyük türevler ilk pakete taşınmaz ve dosyalar ayrı önbelleklenebilir.
 
-Soğuk önbellekli, 2× piksel yoğunluğundaki Chromium ölçümünde ilk açılışın **görsel verisi** 390 × 844 telefonda **255,3 KiB**, 1440 × 1000 masaüstünde **315,5 KiB** oldu. Önceki görseller toplamı yaklaşık **1224 KiB** idi; ilk görsel aktarımı yaklaşık **%74–79 azaldı**. Bu ölçüm JavaScript/fontları kapsamaz; cihaz ve önbelleğe göre değişir.
+Soğuk önbellekli, 2× piksel yoğunluğundaki Chromium ölçümünde ilk açılışın **görsel verisi** 390 × 844 telefonda **243,9 KiB**, 1440 × 1000 masaüstünde **324,7 KiB** oldu. Önceki görseller toplamı yaklaşık **1224 KiB** idi; ilk görsel aktarımı yaklaşık **%73–80 azaldı**. Bu ölçüm JavaScript/fontları kapsamaz; cihaz ve önbelleğe göre değişir.
 
 `tests/assets.test.js` dosya başlıklarını, şeffaflık bilgisini, çözünürlükleri ve boyut bütçelerini kontrol eder. `tests/browser/images.spec.js`, gerçek tarayıcıda hangi kaynağın seçildiğini ve büyük kapakların ilk açılışta indirilmediğini doğrular.
 
@@ -157,7 +157,7 @@ Soğuk önbellekli, 2× piksel yoğunluğundaki Chromium ölçümünde ilk açı
 
 | Görsel | Kontrol sonucu |
 | --- | --- |
-| Oda (yatay ve dikey) | Ağaç ev, kırmızı koltuk, kutu yığınları ve sağdaki ocak korunur. |
+| Oda (yatay ve dikey) | Ağaç ev, kırmızı koltuk, kutu yığınları ve sağdaki ocak korunur. BMO ile çakışan küçük sehpa kaldırılmıştır. |
 | Teknoloji | Mavi uyarı ekranlarıyla çevrili laboratuvar ve merkezdeki karakter korunur. |
 | Ekonomi | Bağlamı değiştiren pazar sahnesi kaldırıldı; özgün Finn ve Jake kapağı geri alındı. |
 | Politika | Takım elbiseli Buz Kralı ve iç mekân korunur. |
