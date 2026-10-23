@@ -1,10 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
-  ArrowUpRight,
-  Check,
-  Clock3,
   Gamepad2,
   Keyboard,
   Radio,
@@ -13,26 +10,11 @@ import {
 import { news } from "./data/news.js";
 import NewsCartridge from "./components/NewsCartridge.jsx";
 import room from "../Photos/ev4.jpg";
-import bmo from "./assets/bmo.png";
+import bmo from "./assets/bmo-seated.png";
 
 export default function App() {
   const [selectedIndex, setSelectedIndex] = useState(2);
-  const deckRef = useRef(null);
   const selected = news[selectedIndex];
-
-  // Mobilde seçilen kartı yatay şeridin ortasına alır. Sayfayı dikey kaydırmaz.
-  useEffect(() => {
-    function centerSelectedCard() {
-      if (!window.matchMedia("(max-width: 680px)").matches) return;
-      const deck = deckRef.current;
-      const card = deck.children[selectedIndex];
-      deck.scrollLeft =
-        card.offsetLeft - deck.clientWidth / 2 + card.offsetWidth / 2;
-    }
-    centerSelectedCard();
-    window.addEventListener("resize", centerSelectedCard);
-    return () => window.removeEventListener("resize", centerSelectedCard);
-  }, [selectedIndex]);
 
   function moveSelection(direction) {
     setSelectedIndex(
@@ -53,7 +35,6 @@ export default function App() {
         <img src={room} alt="" />
       </div>
       <div className="room-shading" />
-
       <header className="site-header">
         <a className="brand" href="#" aria-label="BMO News ana sayfa">
           <Gamepad2 size={30} strokeWidth={1.5} />
@@ -66,7 +47,7 @@ export default function App() {
           <span className="status-dot" /> OOO’DAN BİLDİRİYORUZ
         </div>
         <div className="header-actions">
-          <span className="edition">VOL. 001</span>
+          <span className="edition">VOL. 002</span>
           <button
             className="sound-button"
             disabled
@@ -78,7 +59,6 @@ export default function App() {
           </button>
         </div>
       </header>
-
       <section className="hero-heading" aria-labelledby="page-title">
         <p className="eyebrow">
           <span /> DÜNYADAN HABER VAR.
@@ -87,31 +67,65 @@ export default function App() {
           Bir kart, <span>yeni bir dünya.</span>
         </h1>
         <p className="intro">
-          BMO haberleri topladı. Sen hangisinden başlamak istersin?
+          BMO yerini aldı. Sen hangi hikâyeye dalmak istersin?
         </p>
       </section>
-
-      <section className="console-scene" aria-label="Haber kartları ve BMO">
+      <section
+        className="console-scene"
+        aria-label="BMO’nun etrafında süzülen haber kartları"
+      >
         <div className="collection-label">
-          <span className="tiny-cross">✦</span> BMO’NUN KOLEKSİYONU{" "}
+          <span>✦</span> BMO’NUN KOLEKSİYONU{" "}
           <span className="collection-count">05 KART</span>
         </div>
         <div
-          className="card-deck"
-          ref={deckRef}
+          className="card-field"
           role="group"
           aria-label="Bir haber kartı seç"
           onKeyDown={handleKeys}
         >
+          <div className="bmo-area">
+            <div className="bmo-ground-shadow" />
+            <img
+              className="bmo-character"
+              src={bmo}
+              alt="Yerde oturan, bacaklarını uzatmış BMO"
+            />
+            <span className="bmo-nameplate">
+              <span className="status-dot" /> BMO HABER MERKEZİ
+            </span>
+          </div>
           {news.map((item, index) => (
             <NewsCartridge
               key={item.id}
               item={item}
               selected={selectedIndex === index}
-              position={index - 2}
+              position={index}
               onSelect={() => setSelectedIndex(index)}
             />
           ))}
+          <div className="field-note">
+            küçük konsol,
+            <br />
+            büyük merak. <span>♡</span>
+          </div>
+        </div>
+      </section>
+      <section className="dialogue" aria-label="Seçili haber kartı">
+        <div className="dialogue-name">
+          <Radio size={14} /> BMO
+        </div>
+        <div className="dialogue-main" aria-live="polite" aria-atomic="true">
+          <p className="dialogue-prompt">Bip bop! Bugün bunu keşfedelim mi?</p>
+          <div className="selected-story">
+            <span
+              className="selected-category"
+              style={{ "--category-color": selected.color }}
+            >
+              {selected.category}
+            </span>
+            <h2>{selected.title}</h2>
+          </div>
         </div>
         <div className="deck-navigation">
           <button
@@ -130,55 +144,7 @@ export default function App() {
             <ArrowRight size={16} />
           </button>
         </div>
-        <div className="bmo-area">
-          <div className="bmo-speech">
-            Bip bop! Gündeme hazır mısın? <span>♡</span>
-          </div>
-          <div className="bmo-character">
-            <img src={bmo} alt="El sallayan BMO" />
-          </div>
-          <div className="scene-note">
-            <span className="scene-note-line" />
-            <span>
-              küçük konsol,
-              <br />
-              büyük merak.
-            </span>
-          </div>
-        </div>
       </section>
-
-      <section className="dialogue" aria-label="Seçili haber önizlemesi">
-        <div className="dialogue-name">
-          <Radio size={14} /> BMO
-        </div>
-        <div className="dialogue-main" aria-live="polite" aria-atomic="true">
-          <div className="dialogue-topline">
-            <span
-              className="selected-category"
-              style={{ "--category-color": selected.color }}
-            >
-              {selected.category}
-            </span>
-            <span className="demo-tag">ÖRNEK HABER</span>
-            <span className="reading-time">
-              <Clock3 size={12} />
-              {selected.readTime} okuma
-            </span>
-          </div>
-          <h2>{selected.title}</h2>
-          <p>{selected.summary}</p>
-        </div>
-        <div className="dialogue-action">
-          <span className="selection-check">
-            <Check size={14} /> Kart seçildi
-          </span>
-          <span className="next-step">
-            Sıradaki adım: kartı BMO’ya takmak <ArrowUpRight size={15} />
-          </span>
-        </div>
-      </section>
-
       <footer className="site-footer">
         <span>
           <span className="footer-star">✦</span> Ooo’da sıradan bir haber günü.
@@ -186,7 +152,9 @@ export default function App() {
         <span className="keyboard-hint">
           <Keyboard size={15} /> Kartları keşfetmek için ← →
         </span>
-        <span className="prototype-label">GÖRÜNÜM PROTOTİPİ · 01</span>
+        <span className="prototype-label">
+          YERLEŞİM + SÜZÜLME · DEMO İÇERİK
+        </span>
       </footer>
     </main>
   );
