@@ -19,34 +19,93 @@ Windows PowerShell `npm` için uygulama seçme penceresi açarsa `npm.cmd ci` ve
 
 Üretim derlemesi: `npm run build`. Oluşan derlemeyi kontrol etmek için: `npm run preview`.
 
-## Bu aşamada neler var?
+## Bu prototipte neler var?
 
-- Gönderilen oda görseli üzerinde yerde oturan büyük BMO.
-- BMO'nun solunda üç, sağında iki haber kartı; farklı yüksekliklerde ve hafif açılı yerleşim.
-- Kartlarda 4,8–6,2 saniyelik farklı döngülerle yaklaşık 16 piksel süzülme; kartlar BMO çevresinde dönmez.
-- Fare veya klavye odağı üzerindeyken devam eden süzülmeye eklenen 14 piksel yumuşak yükseliş ve belirgin gölge.
-- BMO’nun gözlerinin imleci gecikmeli ve sınırlı bir hareketle takip etmesi; imleç sayfadan ayrılınca merkeze dönmesi.
-- Kart hover ve klavye odağında kısa, düşük sesli elektronik efekt; üst çubukta ses aç/kapat kontrolü. Ses ilk ziyarette kapalıdır ve tercih tarayıcıda saklanır.
-- Ses Web Audio ile yerelde üretilir. Tarayıcı kısıtları nedeniyle kayıtlı açık tercih yeniden yükleme sonrası ilk tıklama veya tuşla etkinleşir.
-- Kartlara tıklayarak konuşma kutusundaki kategori ve başlığı değiştirme.
-- Önceki/sonraki düğmeleri; kartlara odaklanıldığında sağ/sol klavye okları.
-- Telefonda da BMO'nun çevresindeki yerleşimin korunması.
-- İşletim sisteminde azaltılmış hareket tercihi açıksa süzülmenin, hover yükselişinin ve göz takibinin kapatılması.
-- Yerel fontlar; görseller ve fontlar için harici bir servise bağlantı gerekmez.
+- Mevcut oda sahnesi, yerde oturan BMO ve solunda üç, sağında iki kart korunur.
+- Kartlar 4,8–6,2 saniyelik farklı döngülerle yaklaşık 16 piksel süzülür. Hover veya klavye odağında 14 piksel ek yükseliş ve gölge vardır.
+- Her kategorinin farklı hover melodisi vardır. Kart seçme, hazneye oturma ve çıkarma ayrıca seslendirildi.
+- Karta tıklayınca kart hazneye yaklaşır, açısını ayarlar ve haznenin kenarı arkasında kaybolarak içeri girer.
+- BMO’nun ekranında kısa bir yükleme tepkisi görünür; ardından ilgili haber okuyucusu açılır.
+- Okuyucuda kategori, kapak görseli, başlık, özet, metin ve okuma süresi vardır. Önceki/sonraki kontrolleri ilk ve son haber arasında döngü yapar.
+- Haber değiştirince eski kart önce dışarı çıkar ve yerine döner; yeni kart daha sonra takılır. Hızlı tekrar tıklamaları hareketi kesmez.
+- Kapat düğmesi, “BMO’ya dön” veya Escape kartı çıkarır. İşlem bittiğinde klavye odağı karta döner.
+- Ses ilk ziyarette kapalıdır. Tercih tarayıcıda saklanır; hem ana sahnede hem haber panelinde değiştirilebilir.
+- BMO’nun gözleri imleci yavaşça takip eder. Telefon düzeni korunur; ekran boyutu değişince hazne konumu yeniden ölçülür.
+- Azaltılmış hareket tercihinde kart uçuşu, süzülme ve göz takibi kapatılır; haber akışı kısa geçişlerle çalışmaya devam eder.
+- Fontlar ve görseller yereldir. Çalışırken harici ses veya görsel servisine ihtiyaç yoktur.
 
-Haberler **kurmaca demo içeriklerdir**. Gerçek gündem veya canlı hava durumu verisi sunulmaz.
-
-Kart takma/çıkarma animasyonu, ekran yakınlaştırma, tam haber sayfası, backend ve veritabanı **henüz eklenmedi**. Bu aşama mevcut yerleşim üzerinde hareket ve ses etkileşimlerini ekler.
+Haberler **kurmaca demo içeriklerdir**. Gerçek gündem, yatırım önerisi veya canlı hava durumu verisi sunulmaz. Bu sürüm frontend prototipidir; backend, veritabanı ve gerçek haber bağlantısı yoktur. Haber paneli sayfa üzerinde açılır; henüz her haberin ayrı URL’si yoktur. Ekran yakınlaştırma eklenmedi.
 
 ## Kod nasıl çalışıyor?
 
-1. `src/data/news.js`, her kartın başlığını, rengini, kategorisini, görselini ve örnek özetini tutar.
-2. `src/App.jsx`, `selectedIndex` durumuyla seçilen kartı takip eder. Kart seçilince bu sayı değişir; konuşma kutusundaki seçili haber adı aynı veriden yeniden çizilir.
-3. `src/components/NewsCartridge.jsx`, tek bir kartın görünümüdür. `App` bu bileşeni beş haber için kullanır. Kart sırasına göre süzülme süresi ve başlangıç gecikmesi değişir.
-4. `src/styles.css`, sahneyi ve mobil düzeni belirler. `data-slot` seçicilerindeki `--x`, `--y` ve `--tilt` kartın sabit konumunu/açısını tutar. `cartridge-float` animasyonu bu konuma küçük bir dikey hareket ve açı değişimi ekler; bir animasyon kütüphanesine gerek yoktur.
-5. `src/components/BmoEyes.jsx`, özgün görseli değiştirmeden gözleri SVG katmanında hizalar; `requestAnimationFrame` ile yavaş takip ve azaltılmış hareket tercihini yönetir.
-6. `src/hooks/useHoverSound.js`, ses tercihini, kullanıcı etkileşimiyle açılan AudioContext’i, kısa ses zarfını ve hızlı hover tekrarları için 120 ms sınırını yönetir. Ses kapatılınca ana kazanç anında sıfırlanır.
-7. `src/main.jsx`, React uygulamasını başlatır ve fontları yükler.
+### 1. Veri ile görünümü ayırıyoruz
+
+`src/data/news.js`, beş kategorinin rengini, kapağını, başlığını, özetini ve haber metnini tutar. Kart ve okuyucu aynı veriyi kullanır. İçerik değiştirirken animasyon koduna dokunmak gerekmez.
+
+`NewsCartridge.jsx` sahnedeki kart düğmesidir. İçindeki `CartridgeFace` hem bu düğmede hem uçan kartta kullanılır. Uçuş sırasında asıl kartın kapladığı yer korunur ve yalnızca görünürlüğü kapatılır; diğer kartlar yer değiştirmez.
+
+### 2. Geçiş sırasını tek yerde tanımlıyoruz
+
+`src/hooks/useCartridgePlayer.js` bir reducer ile şu sırayı yönetir:
+
+```text
+idle → approaching → inserting → loading → reading
+                  kart takılıyor              haber açık
+
+reading → ejecting → returning → idle
+             kart çıkıyor       koleksiyona dönüş
+
+Haber değişimi: returning → approaching (yeni kart)
+```
+
+`activeIndex` haznedeki/hareket eden kartı, `selectedIndex` konuşma kutusundaki kartı, `nextIndex` ise haber değişiminde sıradaki kartı tutar. Hareket sırasında gelen seçimler yok sayılır. Tamamlanma olayının aşaması güncel aşamayla uyuşmuyorsa olay da yok sayılır; eski bir animasyon akışı yanlışlıkla ilerletemez.
+
+### 3. Kartı gerçek hazne konumuna taşıyoruz
+
+React ve Vite korunur; kart uçuşu için **Motion** kullanılır. `CartridgeFlight.jsx`, kartın boyutunu ve BMO üzerindeki haznenin SVG koordinatını ölçer. `getScreenCTM()` bu koordinatı ekran pikseline çevirir; böylece mobilde küçülen BMO’nun haznesi de doğru hedef olur. `ResizeObserver` ekran boyutu değişince ölçümü yeniler.
+
+Kart yaklaşık **620 ms** içinde yaklaşır, **300 ms** içinde hazneye kayar. `clip-path`, haznenin altına geçen kısmı gizler; yalnızca saydamlık azaltarak kaybolmaz. `BmoPort.jsx` hazne kenarını ve kısa yükleme tepkisini çizer. **320 ms** yükleme tepkisinden sonra okuyucu açılır. Çıkarma **300 ms**, koleksiyona dönüş **580 ms** sürer. Aşamalar `onAnimationComplete` ile ilerler; üst üste çalışan bekleme zamanlayıcıları yoktur.
+
+### 4. Sesleri notalardan üretiyoruz
+
+`src/data/sounds.js` ses tasarımını, `src/hooks/useBmoAudio.js` ise Web Audio bağlantılarını yönetir.
+
+| Kategori       | Ses karakteri                  |
+| -------------- | ------------------------------ |
+| Teknoloji      | İki notalı dijital kare dalga  |
+| Ekonomi        | Üç kısa notalı tok üçgen dalga |
+| Politika       | Daha alçak perdeli çift sinyal |
+| Hava durumu    | Yükselen üç yumuşak nota       |
+| Kültür & yaşam | Daha uzun aralıklı küçük arpej |
+
+Her notada kısa bir yükseliş ve sönüş uygulanır; ani ses kesilmeleri azaltılır. Takma sesinde kısa mekanik tonun ardından kategori melodisi gelir; çıkarırken melodi ters yönde ve daha alçak perdede çalar. Önceki sesler temizlenir; hızlı geçişlerde birikmez. Hover tekrarlarında 120 ms sınırı vardır. Sesi kapatmak ana kazancı anında sıfırlar ve henüz çalmamış notaları da durdurur.
+
+Tarayıcılar ses için kullanıcı etkileşimi ister. Kaydedilmiş “ses açık” tercihiyle sayfa yeniden yüklendiğinde ilk tıklama veya tuş sesi etkinleştirir. Ses veya yerel depolama API’si yoksa haber akışı yine çalışır.
+
+### 5. Haber okuyucusunu ayrı bir bileşen yapıyoruz
+
+`NewsReader.jsx`, yerel HTML `dialog` öğesini kullanır. Açıldığında arka plan etkileşimini ve kaydırmayı sınırlar; klavye odağını panel içinde tutar. Kapatma animasyonundan sonra odak karta döner. `SoundButton.jsx`, ana sahne ile okuyucuda aynı ses durumunu gösterir.
+
+`src/styles.css` ilk sahnenin yerleşimini, `src/interactions.css` uçuş katmanını ve haber okuyucusunu biçimlendirir. `BmoEyes.jsx` önceki yavaş göz takibini sürdürür. `src/main.jsx`, React’i ve yerel fontları yükler.
+
+## Testler
+
+Geçiş sırasını ve ses profillerini test et:
+
+```bash
+npm test
+```
+
+Tarayıcı testleri için bir kez Chromium indir:
+
+```bash
+npx playwright install chromium
+npm run test:ui
+```
+
+Sistemde hazır Chromium kullanmak istersen `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` değişkenini çalıştırılabilir dosyanın yoluna ayarla. Test yapılandırması bu yolu destekler. Üretim derlemesi için `npm run build` çalıştır.
+
+Birim testleri aşama sırasını, eski animasyon olaylarını, hızlı seçimleri, kart değiştirme/kapatma akışını ve beş ayrı ses profilini kontrol eder. Tarayıcı testleri gerçek kart takma/çıkarma, okuyucu, döngülü gezinme, odak dönüşü, native Web Audio, sessize alma, azaltılmış hareket, 320/390/768 piksel ekranlar, hareket sırasında boyut değişimi ve ses/depolama API’lerinin yokluğunu kapsar.
 
 ## Görseller
 
@@ -68,8 +127,10 @@ BMO türevleri, kullanıcının gönderdiği görsellerden görsel düzenleme ar
 
 ## Elle kontrol
 
-Beş kartı sırayla seç; konuşma kutusunda kategori ve başlığın değiştiğini kontrol et. Önceki/sonraki düğmeleri başa ve sona geldiğinde döngü yapmalı. Bir karta Tab ile odaklanıp sağ/sol oklarını dene. Fare kartın dışındayken süzülmeyi, üzerine gelince süzülmeye eklenen yumuşak yükselişi kontrol et. İmleci iki yana hareket ettir; gözler yavaşça takip etmeli, sayfadan ayrılınca merkeze dönmeli.
-
-Ses düğmesini açıp kartlara yaklaş; kısa bip duyulmalı. Sesi kapatıp aynı işlemi tekrarla; ses duyulmamalı. Sayfayı yenileyince tercih korunmalı; ses açıkken tarayıcı ilk tıklamayı veya tuşu bekleyebilir. Azaltılmış hareket tercihi açıkken kartlar ve gözler sabit kalmalı. Telefon boyutunda tüm kartlar görünmeli ve seçilebilmeli.
-
-Bu değişiklikte üretim derlemesi ve Chromium tarayıcı kontrolleri çalıştırıldı: hover yükselişi, gerçek Web Audio osilatörünün çalışması ve sessize alınması, ses tercihinin korunması, göz takibi, beş kartın seçimi, klavye oklarıyla döngü, azaltılmış hareket, 320/390/768 piksel yerleşim ve ses/depolama API’leri kullanılamadığında kart seçiminin çalışması.
+1. Sesi aç ve beş kartın üzerine sırayla gel; her kategorinin melodisi farklı olmalı.
+2. Bir kart seç; hazneye gitmesini, kenarın arkasına kaymasını ve doğru haberin açılmasını izle.
+3. Okuyucunun altındaki önceki/sonraki kart kontrollerini dene. Eski kart yerine dönmeden yeni kart takılmamalı.
+4. Okuyucunun üstündeki ses düğmesini kapat; geçişler sessiz devam etmeli.
+5. Escape veya kapatma düğmesiyle koleksiyona dön; kart kendi yerinde ve klavye odağı üzerinde olmalı.
+6. Kartlara Tab ile ulaş; Enter ve sağ/sol oklarını dene. Hareket sırasında art arda tıklayarak akışın bozulmadığını kontrol et.
+7. Mobil ekranı ve azaltılmış hareket ayarını dene. Hareket azaltıldığında haberleri açma/kapatma çalışmaya devam etmeli.

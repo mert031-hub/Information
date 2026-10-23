@@ -6,6 +6,7 @@ import "@fontsource/dm-sans/700.css";
 import "@fontsource/vt323/400.css";
 import App from "./App.jsx";
 import "./styles.css";
+import "./interactions.css";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>

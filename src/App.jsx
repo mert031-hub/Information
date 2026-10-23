@@ -1,30 +1,60 @@
-import { useState } from "react";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Gamepad2,
-  Keyboard,
-  Radio,
-  VolumeX,
-  Volume2,
-} from "lucide-react";
+import { useEffect, useRef } from "react";
+import { ArrowLeft, ArrowRight, Gamepad2, Keyboard, Radio } from "lucide-react";
 import { news } from "./data/news.js";
 import NewsCartridge from "./components/NewsCartridge.jsx";
 import BmoEyes from "./components/BmoEyes.jsx";
-import useHoverSound from "./hooks/useHoverSound.js";
+import useBmoAudio from "./hooks/useBmoAudio.js";
+import useCartridgePlayer from "./hooks/useCartridgePlayer.js";
+import CartridgeFlight from "./components/CartridgeFlight.jsx";
+import BmoPort from "./components/BmoPort.jsx";
+import NewsReader from "./components/NewsReader.jsx";
+import SoundButton from "./components/SoundButton.jsx";
 import room from "../Photos/ev4.jpg";
 import bmo from "./assets/bmo-seated.png";
 
 export default function App() {
-  const [selectedIndex, setSelectedIndex] = useState(2);
+  const player = useCartridgePlayer();
+  const { selectedIndex, activeIndex, phase, busy } = player;
   const selected = news[selectedIndex];
-  const sound = useHoverSound();
+  const sound = useBmoAudio();
+  const fieldRef = useRef(null);
+  const previousPhase = useRef("idle");
+  const lastSoundPhase = useRef(null);
+  const phaseSound = useRef(sound.play);
+  phaseSound.current = sound.play;
+
+  useEffect(() => {
+    if (phase === "idle" && previousPhase.current !== "idle") {
+      fieldRef.current
+        .querySelector(`[data-slot="${selectedIndex}"] button`)
+        .focus({ preventScroll: true });
+    }
+    previousPhase.current = phase;
+    const key = `${activeIndex}:${phase}`;
+    if (key === lastSoundPhase.current) return;
+    lastSoundPhase.current = key;
+    const event = {
+      approaching: "select",
+      loading: "insert",
+      ejecting: "eject",
+    }[phase];
+    if (event && activeIndex !== null)
+      phaseSound.current(news[activeIndex].id, event);
+  }, [phase, activeIndex, selectedIndex]);
 
   function moveSelection(direction) {
-    setSelectedIndex(
-      (index) => (index + direction + news.length) % news.length,
-    );
+    player.select((selectedIndex + direction + news.length) % news.length);
   }
+
+  const prompt = {
+    idle: "Bip bop! Bir kart seç, birlikte keşfedelim.",
+    approaching: "Harika seçim! Kart hazneye geliyor…",
+    inserting: "Çıt! Kartını yerleştiriyorum…",
+    loading: "Bip bop! Hikâyen hazır oluyor…",
+    reading: "Yeni bir dünyaya hoş geldin!",
+    ejecting: "Kartını çıkarıyorum…",
+    returning: "Her maceranın koleksiyonda bir yeri var.",
+  }[phase];
 
   function handleKeys(event) {
     if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
@@ -52,16 +82,7 @@ export default function App() {
         </div>
         <div className="header-actions">
           <span className="edition">VOL. 002</span>
-          <button
-            className="sound-button"
-            onClick={sound.toggle}
-            aria-pressed={sound.enabled}
-            title={sound.enabled ? "Ses efektlerini kapat" : "Ses efektlerini aç"}
-            aria-label="Ses efektleri"
-          >
-            {sound.enabled ? <Volume2 size={17} /> : <VolumeX size={17} />}
-            <span>{sound.enabled ? "SES AÇIK" : "SES KAPALI"}</span>
-          </button>
+          <SoundButton sound={sound} />
         </div>
       </header>
       <section className="hero-heading" aria-labelledby="page-title">
@@ -84,7 +105,11 @@ export default function App() {
           <span className="collection-count">05 KART</span>
         </div>
         <div
+          ref={fieldRef}
           className="card-field"
+          data-busy={busy}
+          data-phase={phase}
+          aria-busy={busy}
           role="group"
           aria-label="Bir haber kartı seç"
           onKeyDown={handleKeys}
@@ -97,6 +122,7 @@ export default function App() {
               alt="Yerde oturan, bacaklarını uzatmış BMO"
             />
             <BmoEyes />
+            <BmoPort phase={phase} color={selected.color} />
             <span className="bmo-nameplate">
               <span className="status-dot" /> BMO HABER MERKEZİ
             </span>
@@ -107,10 +133,22 @@ export default function App() {
               item={item}
               selected={selectedIndex === index}
               position={index}
-              onSelect={() => setSelectedIndex(index)}
-              onHover={sound.play}
+              away={activeIndex === index}
+              busy={busy}
+              onSelect={() => player.select(index)}
+              onHover={() => sound.play(item.id)}
             />
           ))}
+          {activeIndex !== null && phase !== "reading" && (
+            <CartridgeFlight
+              key={activeIndex}
+              item={news[activeIndex]}
+              index={activeIndex}
+              phase={phase}
+              fieldRef={fieldRef}
+              onComplete={player.advance}
+            />
+          )}
           <div className="field-note">
             küçük konsol,
             <br />
@@ -123,7 +161,7 @@ export default function App() {
           <Radio size={14} /> BMO
         </div>
         <div className="dialogue-main" aria-live="polite" aria-atomic="true">
-          <p className="dialogue-prompt">Bip bop! Bugün bunu keşfedelim mi?</p>
+          <p className="dialogue-prompt">{prompt}</p>
           <div className="selected-story">
             <span
               className="selected-category"
@@ -136,6 +174,7 @@ export default function App() {
         </div>
         <div className="deck-navigation">
           <button
+            disabled={busy}
             onClick={() => moveSelection(-1)}
             aria-label="Önceki haber kartı"
           >
@@ -145,6 +184,7 @@ export default function App() {
             {String(selectedIndex + 1).padStart(2, "0")} <span>/ 05</span>
           </span>
           <button
+            disabled={busy}
             onClick={() => moveSelection(1)}
             aria-label="Sonraki haber kartı"
           >
@@ -160,9 +200,19 @@ export default function App() {
           <Keyboard size={15} /> Kartları keşfetmek için ← →
         </span>
         <span className="prototype-label">
-          YERLEŞİM + SÜZÜLME · DEMO İÇERİK
+          KARTINI TAK, HİKÂYENİ AÇ · DEMO İÇERİK
         </span>
       </footer>
+      {phase === "reading" && (
+        <NewsReader
+          item={news[activeIndex]}
+          index={activeIndex}
+          count={news.length}
+          onClose={player.close}
+          onMove={moveSelection}
+          sound={sound}
+        />
+      )}
     </main>
   );
 }
