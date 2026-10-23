@@ -11,8 +11,7 @@ import NewsReader from "./components/NewsReader.jsx";
 import SoundButton from "./components/SoundButton.jsx";
 import BmoReaction from "./components/BmoReaction.jsx";
 import { getBmoReaction } from "./data/reactions.js";
-import room from "../Photos/ev4.jpg";
-import bmo from "./assets/bmo-seated.png";
+import { sceneImages } from "./data/imageAssets.js";
 
 export default function App() {
   const player = useCartridgePlayer();
@@ -70,7 +69,23 @@ export default function App() {
   return (
     <main className="app-shell">
       <div className="room-background">
-        <img src={room} alt="" />
+        <picture>
+          <source
+            media="(max-width: 680px) and (orientation: portrait)"
+            srcSet={sceneImages.roomPortrait.srcSet}
+            sizes="100vw"
+          />
+          <img
+            src={sceneImages.roomLandscape.src}
+            srcSet={sceneImages.roomLandscape.srcSet}
+            sizes="(max-aspect-ratio: 16/9) 178vh, 100vw"
+            width={1672}
+            height={941}
+            fetchPriority="high"
+            decoding="async"
+            alt=""
+          />
+        </picture>
       </div>
       <div className="room-shading" />
       <header className="site-header">
@@ -102,7 +117,12 @@ export default function App() {
             <div className="bmo-ground-shadow" />
             <img
               className="bmo-character"
-              src={bmo}
+              src={sceneImages.bmo.src}
+              srcSet={sceneImages.bmo.srcSet}
+              sizes="(max-width: 680px) 43vw, (max-width: 1100px) 32vw, 350px"
+              width={1149}
+              height={1369}
+              decoding="async"
               alt="Yerde oturan, bacaklarını uzatmış BMO"
             />
             <BmoEyes />

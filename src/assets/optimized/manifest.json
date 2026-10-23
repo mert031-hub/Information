@@ -1,0 +1,402 @@
+{
+  "format": "webp",
+  "generatedAt": "2026-10-23",
+  "images": [
+    {
+      "file": "roomLandscape-scene-768.webp",
+      "group": "roomLandscape",
+      "role": "scene",
+      "width": 768,
+      "height": 432,
+      "bytes": 64536,
+      "alpha": false
+    },
+    {
+      "file": "roomLandscape-scene-1280.webp",
+      "group": "roomLandscape",
+      "role": "scene",
+      "width": 1280,
+      "height": 720,
+      "bytes": 133860,
+      "alpha": false
+    },
+    {
+      "file": "roomLandscape-scene-1672.webp",
+      "group": "roomLandscape",
+      "role": "scene",
+      "width": 1672,
+      "height": 941,
+      "bytes": 190424,
+      "alpha": false
+    },
+    {
+      "file": "roomPortrait-scene-480.webp",
+      "group": "roomPortrait",
+      "role": "scene",
+      "width": 480,
+      "height": 853,
+      "bytes": 62770,
+      "alpha": false
+    },
+    {
+      "file": "roomPortrait-scene-768.webp",
+      "group": "roomPortrait",
+      "role": "scene",
+      "width": 768,
+      "height": 1365,
+      "bytes": 123594,
+      "alpha": false
+    },
+    {
+      "file": "roomPortrait-scene-941.webp",
+      "group": "roomPortrait",
+      "role": "scene",
+      "width": 941,
+      "height": 1672,
+      "bytes": 160828,
+      "alpha": false
+    },
+    {
+      "file": "bmo-character-360.webp",
+      "group": "bmo",
+      "role": "character",
+      "width": 360,
+      "height": 429,
+      "bytes": 23734,
+      "alpha": true
+    },
+    {
+      "file": "bmo-character-720.webp",
+      "group": "bmo",
+      "role": "character",
+      "width": 720,
+      "height": 858,
+      "bytes": 55778,
+      "alpha": true
+    },
+    {
+      "file": "bmo-character-1149.webp",
+      "group": "bmo",
+      "role": "character",
+      "width": 1149,
+      "height": 1369,
+      "bytes": 105658,
+      "alpha": true
+    },
+    {
+      "file": "technology-card-192.webp",
+      "group": "technology",
+      "role": "card",
+      "width": 192,
+      "height": 108,
+      "bytes": 8918,
+      "alpha": false
+    },
+    {
+      "file": "technology-card-384.webp",
+      "group": "technology",
+      "role": "card",
+      "width": 384,
+      "height": 216,
+      "bytes": 27914,
+      "alpha": false
+    },
+    {
+      "file": "technology-card-576.webp",
+      "group": "technology",
+      "role": "card",
+      "width": 576,
+      "height": 324,
+      "bytes": 54850,
+      "alpha": false
+    },
+    {
+      "file": "technology-article-640.webp",
+      "group": "technology",
+      "role": "article",
+      "width": 640,
+      "height": 360,
+      "bytes": 75412,
+      "alpha": false
+    },
+    {
+      "file": "technology-article-960.webp",
+      "group": "technology",
+      "role": "article",
+      "width": 960,
+      "height": 540,
+      "bytes": 141896,
+      "alpha": false
+    },
+    {
+      "file": "technology-article-1280.webp",
+      "group": "technology",
+      "role": "article",
+      "width": 1280,
+      "height": 720,
+      "bytes": 209812,
+      "alpha": false
+    },
+    {
+      "file": "technology-article-1672.webp",
+      "group": "technology",
+      "role": "article",
+      "width": 1672,
+      "height": 941,
+      "bytes": 301774,
+      "alpha": false
+    },
+    {
+      "file": "economy-card-192.webp",
+      "group": "economy",
+      "role": "card",
+      "width": 192,
+      "height": 108,
+      "bytes": 7640,
+      "alpha": false
+    },
+    {
+      "file": "economy-card-384.webp",
+      "group": "economy",
+      "role": "card",
+      "width": 384,
+      "height": 216,
+      "bytes": 23100,
+      "alpha": false
+    },
+    {
+      "file": "economy-card-576.webp",
+      "group": "economy",
+      "role": "card",
+      "width": 576,
+      "height": 324,
+      "bytes": 44164,
+      "alpha": false
+    },
+    {
+      "file": "economy-article-640.webp",
+      "group": "economy",
+      "role": "article",
+      "width": 640,
+      "height": 360,
+      "bytes": 59202,
+      "alpha": false
+    },
+    {
+      "file": "economy-article-960.webp",
+      "group": "economy",
+      "role": "article",
+      "width": 960,
+      "height": 540,
+      "bytes": 106074,
+      "alpha": false
+    },
+    {
+      "file": "economy-article-1280.webp",
+      "group": "economy",
+      "role": "article",
+      "width": 1280,
+      "height": 720,
+      "bytes": 153984,
+      "alpha": false
+    },
+    {
+      "file": "economy-article-1672.webp",
+      "group": "economy",
+      "role": "article",
+      "width": 1672,
+      "height": 941,
+      "bytes": 218010,
+      "alpha": false
+    },
+    {
+      "file": "politics-card-192.webp",
+      "group": "politics",
+      "role": "card",
+      "width": 192,
+      "height": 108,
+      "bytes": 2820,
+      "alpha": false
+    },
+    {
+      "file": "politics-card-384.webp",
+      "group": "politics",
+      "role": "card",
+      "width": 384,
+      "height": 216,
+      "bytes": 7882,
+      "alpha": false
+    },
+    {
+      "file": "politics-card-576.webp",
+      "group": "politics",
+      "role": "card",
+      "width": 576,
+      "height": 324,
+      "bytes": 15002,
+      "alpha": false
+    },
+    {
+      "file": "politics-article-640.webp",
+      "group": "politics",
+      "role": "article",
+      "width": 640,
+      "height": 360,
+      "bytes": 20796,
+      "alpha": false
+    },
+    {
+      "file": "politics-article-960.webp",
+      "group": "politics",
+      "role": "article",
+      "width": 960,
+      "height": 540,
+      "bytes": 37562,
+      "alpha": false
+    },
+    {
+      "file": "politics-article-1280.webp",
+      "group": "politics",
+      "role": "article",
+      "width": 1280,
+      "height": 720,
+      "bytes": 56812,
+      "alpha": false
+    },
+    {
+      "file": "politics-article-1672.webp",
+      "group": "politics",
+      "role": "article",
+      "width": 1672,
+      "height": 941,
+      "bytes": 81336,
+      "alpha": false
+    },
+    {
+      "file": "weather-card-192.webp",
+      "group": "weather",
+      "role": "card",
+      "width": 192,
+      "height": 108,
+      "bytes": 4334,
+      "alpha": false
+    },
+    {
+      "file": "weather-card-384.webp",
+      "group": "weather",
+      "role": "card",
+      "width": 384,
+      "height": 216,
+      "bytes": 13112,
+      "alpha": false
+    },
+    {
+      "file": "weather-card-576.webp",
+      "group": "weather",
+      "role": "card",
+      "width": 576,
+      "height": 324,
+      "bytes": 24722,
+      "alpha": false
+    },
+    {
+      "file": "weather-article-640.webp",
+      "group": "weather",
+      "role": "article",
+      "width": 640,
+      "height": 360,
+      "bytes": 35154,
+      "alpha": false
+    },
+    {
+      "file": "weather-article-960.webp",
+      "group": "weather",
+      "role": "article",
+      "width": 960,
+      "height": 540,
+      "bytes": 62452,
+      "alpha": false
+    },
+    {
+      "file": "weather-article-1280.webp",
+      "group": "weather",
+      "role": "article",
+      "width": 1280,
+      "height": 720,
+      "bytes": 93474,
+      "alpha": false
+    },
+    {
+      "file": "weather-article-1672.webp",
+      "group": "weather",
+      "role": "article",
+      "width": 1672,
+      "height": 941,
+      "bytes": 133900,
+      "alpha": false
+    },
+    {
+      "file": "culture-card-192.webp",
+      "group": "culture",
+      "role": "card",
+      "width": 192,
+      "height": 108,
+      "bytes": 4776,
+      "alpha": false
+    },
+    {
+      "file": "culture-card-384.webp",
+      "group": "culture",
+      "role": "card",
+      "width": 384,
+      "height": 216,
+      "bytes": 12540,
+      "alpha": false
+    },
+    {
+      "file": "culture-card-576.webp",
+      "group": "culture",
+      "role": "card",
+      "width": 576,
+      "height": 324,
+      "bytes": 21270,
+      "alpha": false
+    },
+    {
+      "file": "culture-article-640.webp",
+      "group": "culture",
+      "role": "article",
+      "width": 640,
+      "height": 360,
+      "bytes": 27102,
+      "alpha": false
+    },
+    {
+      "file": "culture-article-960.webp",
+      "group": "culture",
+      "role": "article",
+      "width": 960,
+      "height": 540,
+      "bytes": 43946,
+      "alpha": false
+    },
+    {
+      "file": "culture-article-1280.webp",
+      "group": "culture",
+      "role": "article",
+      "width": 1280,
+      "height": 720,
+      "bytes": 62254,
+      "alpha": false
+    },
+    {
+      "file": "culture-article-1672.webp",
+      "group": "culture",
+      "role": "article",
+      "width": 1672,
+      "height": 941,
+      "bytes": 87888,
+      "alpha": false
+    }
+  ]
+}

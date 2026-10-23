@@ -126,7 +126,31 @@ Sistemde hazır Chromium kullanmak istersen `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH
 
 Birim testleri aşama sırasını, eski animasyon olaylarını, hızlı seçimleri, kart değiştirme/kapatma akışını ve beş ayrı ses profilini kontrol eder. Tarayıcı testleri gerçek kart takma/çıkarma, okuyucu, döngülü gezinme, odak dönüşü, native Web Audio, sessize alma, azaltılmış hareket, 320/390/768 piksel ekranlar, hareket sırasında boyut değişimi ve ses/depolama API’lerinin yokluğunu kapsar. Yeni kontroller kartın alt/ön taraftan girmesini, kart takıldıktan hemen sonra kameranın başlamasını, geçişteki kontrollerin kilitli kalmasını ve BMO’nun tepki vermesini, kameranın giriş/çıkış sırasını, yakınlaşırken ekran boyutunun değişmesini ve yerel konuşmanın sessize alınmasını da doğrular.
 
-## Görseller
+## Görsel kalitesi ve yükleme
+
+Oda arka planı ve beş kategori kapağı, düşük çözünürlüklü referanslardan yeniden çizildi. Telefon için aynı odanın ayrıca dikey kompozisyonu hazırlandı. Ekonomi kapağı kategoriye uygun altınlar ve pazar tezgâhı sahnesiyle yenilendi. Özgün `Photos/` dosyaları değişmedi.
+
+Yayında yalnızca `src/assets/optimized/` içindeki WebP türevleri kullanılır. Ham üretilmiş PNG dosyaları yayın paketine alınmaz. `src/data/imageAssets.js`, her kullanım için `srcSet` listesini ve yedek boyutu tanımlar:
+
+| Kullanım                 | Çözünürlükler                       | En büyük dosya |
+| ------------------------ | ----------------------------------- | -------------- |
+| Yatay arka plan          | 768 / 1280 / 1672 px genişlik       | 186 KiB        |
+| Dikey telefon arka planı | 480 / 768 / 941 px genişlik         | 157 KiB        |
+| Şeffaf BMO               | 360 / 720 / 1149 px genişlik        | 103 KiB        |
+| Küçük kart kapakları     | 192 / 384 / 576 px genişlik         | 54 KiB         |
+| Haber kapağı             | 640 / 960 / 1280 / 1672 px genişlik | 295 KiB        |
+
+En büyük arka planlar 1672 × 941 ve 941 × 1672 pikseldir. Haber kapakları 1672 × 941 pikseldir. BMO’nun biçimi, şeffaflığı ve SVG göz/hazne hizası korunur; yalnızca kodlaması ve sunulan boyutları değişti.
+
+`picture`, portre telefonda dikey arka planı seçer. `sizes` ve `srcSet`, ekran boyutuna ve piksel yoğunluğuna uygun kaynağı tarayıcıya bırakır. Kartlar küçük kapakları kullanır; büyük haber görselleri okuyucu açılmadan indirilmez. Haber kapağı kendi oranıyla gösterilir; siyah bant veya baş/kafa kesen aşırı kırpma eklenmez. Masaüstünde kapak 760 px ile sınırlıdır, metne de yer kalır.
+
+Boyut bilgileri önceden verilir ve görseller asenkron çözülür. Arka planın yükleme önceliği yüksektir. Vite’ın görselleri JavaScript’e gömmesi kapatıldı; kullanılmayan büyük türevler ilk pakete taşınmaz ve dosyalar ayrı önbelleklenebilir.
+
+Soğuk önbellekli, 2× piksel yoğunluğundaki Chromium ölçümünde ilk açılışın **görsel verisi** 390 × 844 telefonda **262,8 KiB**, 1440 × 1000 masaüstünde **323,0 KiB** oldu. Önceki görseller toplamı yaklaşık **1224 KiB** idi; ilk görsel aktarımı yaklaşık **%74–79 azaldı**. Bu ölçüm JavaScript/fontları kapsamaz; cihaz ve önbelleğe göre değişir.
+
+`tests/assets.test.js` dosya başlıklarını, şeffaflık bilgisini, çözünürlükleri ve boyut bütçelerini kontrol eder. `tests/browser/images.spec.js`, gerçek tarayıcıda hangi kaynağın seçildiğini ve büyük kapakların ilk açılışta indirilmediğini doğrular.
+
+## Özgün görsel referansları
 
 `Photos/` kullanıcının gönderdiği özgün dosyaları içerir; dosyalar değiştirilmedi.
 
@@ -142,7 +166,7 @@ Birim testleri aşama sırasını, eski animasyon olaylarını, hızlı seçimle
 | Arka planı kaldırılmış BMO türevi | `src/assets/bmo.png`        |
 | Kullanılan oturmuş BMO türevi     | `src/assets/bmo-seated.png` |
 
-BMO türevleri, kullanıcının gönderdiği görsellerden görsel düzenleme aracıyla hazırlanmıştır. Oturan sürüm, sohbette sonradan gönderilen oturmuş BMO görselinden arka plan kaldırılarak hazırlanmıştır. Önceki ayakta duran sürüm dosyası korunur, ancak artık sahnede kullanılmaz. Haber kapaklarının kırpılması CSS `object-fit` ile yapılır; özgün görseller değişmez. Tasarım referansı: https://www.adarkeser.com/ adresinin Adventure bölümü ve kullanıcının sağladığı ekran görüntüleri. Referans sitenin kaynak kodu kullanılmadı.
+BMO türevleri, kullanıcının gönderdiği görsellerden görsel düzenleme aracıyla hazırlanmıştır. Oturan sürüm, sohbette sonradan gönderilen oturmuş BMO görselinden arka plan kaldırılarak hazırlanmıştır. Önceki ayakta duran sürüm dosyası korunur, ancak artık sahnede kullanılmaz. Yeni kapaklar üretilirken bu özgün görseller referans alındı; özgün dosyalar değişmez. Kart içindeki küçük kırpma CSS `object-fit` ile yapılır, okuyucuda tam yatay oran korunur. Tasarım referansı: https://www.adarkeser.com/ adresinin Adventure bölümü ve kullanıcının sağladığı ekran görüntüleri. Referans sitenin kaynak kodu kullanılmadı.
 
 ## Elle kontrol
 

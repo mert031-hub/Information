@@ -174,7 +174,12 @@ export default function NewsReader({
                 </div>
                 <figure className="reader-cover">
                   <img
-                    src={item.image}
+                    src={item.image.article.src}
+                    srcSet={item.image.article.srcSet}
+                    sizes="(max-width: 680px) calc(100vw - 60px), (max-width: 900px) calc(100vw - 140px), 760px"
+                    width={1672}
+                    height={941}
+                    decoding="async"
                     alt={`${item.category} kartının Adventure Time temalı kapak görseli`}
                     style={{ objectPosition: item.imagePosition }}
                   />

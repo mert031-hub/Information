@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node --test tests/player.test.js",
+    "test": "node --test tests/player.test.js tests/assets.test.js",
     "test:ui": "playwright test"
   },
   "dependencies": {

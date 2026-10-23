@@ -271,7 +271,9 @@
   letter-spacing: 1px;
 }
 .reader-cover {
-  margin: 0 30px;
+  width: calc(100% - 60px);
+  max-width: 760px;
+  margin: 0 auto;
   overflow: hidden;
   border: 2px solid #34513975;
   border-radius: 5px;
@@ -280,8 +282,7 @@
 .reader-cover > img {
   display: block;
   width: 100%;
-  aspect-ratio: 2.1;
-  max-height: 330px;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   filter: saturate(0.85);
 }
@@ -380,10 +381,10 @@
     gap: 10px;
   }
   .reader-cover {
-    margin: 0 13px;
+    width: calc(100% - 26px);
   }
   .reader-cover > img {
-    aspect-ratio: 1.4;
+    aspect-ratio: 16 / 9;
   }
   .reader-copy {
     padding: 23px 23px 10px;

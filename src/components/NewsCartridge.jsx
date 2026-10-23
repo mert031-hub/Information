@@ -50,7 +50,12 @@ export function CartridgeFace({ item, position }) {
       <span className="cartridge-label">
         <span className="cartridge-art">
           <img
-            src={item.image}
+            src={item.image.card.src}
+            srcSet={item.image.card.srcSet}
+            sizes="(max-width: 680px) 116px, (max-width: 1100px) 157px, 185px"
+            width={576}
+            height={324}
+            decoding="async"
             alt=""
             style={{ objectPosition: item.imagePosition }}
           />
