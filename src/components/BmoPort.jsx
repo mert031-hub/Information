@@ -10,19 +10,6 @@ export default function BmoPort({ phase, color }) {
       <path className="port-glow" d="M445 726 L723 681" />
       {/* Sabit ön kenar, kayan kartın hazne arkasında kaldığı hissini güçlendirir. */}
       <path className="port-lip" d="M444 748 L724 703" />
-      {phase === "loading" && (
-        <g className="bmo-loading">
-          <path d="M490 555 L810 505 L810 565 L490 615 Z" fill="#143a30" />
-          <text
-            x="650"
-            y="568"
-            transform="rotate(-8 650 568)"
-            textAnchor="middle"
-          >
-            BİP BOP...
-          </text>
-        </g>
-      )}
     </svg>
   );
 }

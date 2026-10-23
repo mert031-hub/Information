@@ -32,26 +32,35 @@ export default function CartridgeFlight({
       };
       const x = target.x - bounds.left;
       const y = target.y - bounds.top;
+      // Kart haznenin ALT/ÖN tarafından gelir. Üst kenarı önce içeri kayar.
+      const pitch = 48;
+      const projectedHalfHeight =
+        (height * scale * Math.cos((pitch * Math.PI) / 180)) / 2;
       const pose = (distance) => ({
         x: x + normal.x * distance - width / 2,
         y: y + normal.y * distance - height / 2,
         scale,
         rotate: -9,
+        rotateX: pitch,
+        rotateY: -4,
         opacity: 1,
       });
       setGeometry({
         width,
         height,
+        perspectiveOrigin: `${x}px ${y}px`,
         home: {
           x: source.x - bounds.left + source.width / 2 - width / 2,
           y: source.y - bounds.top + source.height / 2 - height / 2,
           rotate: parseFloat(getComputedStyle(slot).getPropertyValue("--tilt")),
           scale: 1,
+          rotateX: 0,
+          rotateY: 0,
           opacity: 1,
         },
-        dock: pose((-height * scale) / 2 - 5),
-        inside: pose((height * scale) / 2 + 5),
-        mask: `polygon(0 0, 100% 0, 100% ${y - (bounds.width - x) * 0.158}px, 0 ${y + x * 0.158}px)`,
+        dock: pose(projectedHalfHeight + 8),
+        inside: pose(-projectedHalfHeight - 8),
+        mask: `polygon(0 ${y + x * 0.158}px, 100% ${y - (bounds.width - x) * 0.158}px, 100% 100%, 0 100%)`,
       });
     }
     measure();
@@ -64,23 +73,25 @@ export default function CartridgeFlight({
   if (!geometry) return null;
   const { home, dock, inside, mask } = geometry;
   const poses = {
-    approaching: dock,
+    approaching: {
+      ...dock,
+      x: [home.x, dock.x + 6, dock.x],
+      y: [home.y, dock.y + 22, dock.y],
+      scale: [1, dock.scale * 1.06, dock.scale],
+    },
     inserting: inside,
-    loading: { ...inside, opacity: 0 },
     ejecting: dock,
     returning: home,
   };
   const durations = {
-    approaching: 0.62,
-    inserting: 0.3,
-    loading: 0.32,
-    ejecting: 0.3,
-    returning: 0.58,
+    approaching: 0.84,
+    inserting: 0.48,
+    ejecting: 0.42,
+    returning: 0.7,
   };
   const initial = {
     approaching: home,
     inserting: dock,
-    loading: inside,
     ejecting: inside,
     returning: dock,
   }[phase];
@@ -89,14 +100,16 @@ export default function CartridgeFlight({
       className="flight-mask"
       aria-hidden="true"
       style={{
+        perspective: reducedMotion ? "none" : 900,
+        perspectiveOrigin: geometry.perspectiveOrigin,
         clipPath:
-          !reducedMotion && ["inserting", "ejecting", "loading"].includes(phase)
+          !reducedMotion && ["inserting", "ejecting"].includes(phase)
             ? mask
             : "none",
       }}
     >
       <motion.div
-        key={phase}
+        key={reducedMotion ? phase : "flight"}
         className="flying-cartridge"
         style={{
           width: geometry.width,
@@ -107,7 +120,8 @@ export default function CartridgeFlight({
         animate={reducedMotion ? { ...home, opacity: [0, 0] } : poses[phase]}
         transition={{
           duration: reducedMotion ? 0.04 : durations[phase],
-          ease: [0.22, 0.7, 0.25, 1],
+          ease: [0.4, 0, 0.2, 1],
+          ...(phase === "approaching" ? { times: [0, 0.72, 1] } : {}),
         }}
         onAnimationComplete={() => onComplete(phase)}
       >

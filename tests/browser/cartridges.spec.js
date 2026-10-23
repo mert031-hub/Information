@@ -4,6 +4,10 @@ const phase = (page, value) =>
   expect(page.locator(".card-field")).toHaveAttribute("data-phase", value);
 const card = (page, index) => page.locator(`[data-slot="${index}"] button`);
 const reader = (page) => page.getByRole("dialog");
+const story = async (page, title) => {
+  await phase(page, "reading");
+  await expect(page.locator("#reader-title")).toHaveText(title);
+};
 
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => {
@@ -12,6 +16,20 @@ test.beforeEach(async ({ page }) => {
       const value = document.querySelector(".card-field")?.dataset.phase;
       if (value && window.observedPhases.at(-1) !== value)
         window.observedPhases.push(value);
+      if (value === "inserting" && !window.frontEntry) {
+        const port = document.querySelector(".bmo-port");
+        const card = document.querySelector(".flying-cartridge");
+        if (port && card) {
+          const target = new DOMPoint(584, 714).matrixTransform(
+            port.getScreenCTM(),
+          );
+          const bounds = card.getBoundingClientRect();
+          window.frontEntry = {
+            portY: target.y,
+            cardCenterY: bounds.y + bounds.height / 2,
+          };
+        }
+      }
     }).observe(document, {
       attributes: true,
       childList: true,
@@ -29,15 +47,11 @@ test("inserts, reads, switches with ejection, wraps and returns keyboard focus",
   await page.goto("/");
   await card(page, 0).click({ force: true });
   await expect(reader(page)).toBeVisible();
-  await expect(page.locator("#reader-title")).toHaveText(
-    "Gelecek sandığından daha yakın.",
-  );
+  await story(page, "Gelecek sandığından daha yakın.");
   expect(await page.evaluate(() => window.observedPhases)).toEqual([
     "idle",
     "approaching",
     "inserting",
-    "loading",
-    "celebrating",
     "zooming",
     "reading",
   ]);
@@ -52,25 +66,19 @@ test("inserts, reads, switches with ejection, wraps and returns keyboard focus",
   }
   await page.getByRole("button", { name: "ÖNCEKİ KART", exact: true }).click();
   await expect(reader(page)).toBeVisible();
-  await expect(page.locator("#reader-title")).toHaveText(
-    "Biraz renk, biraz macera.",
-  );
+  await story(page, "Biraz renk, biraz macera.");
   const phases = await page.evaluate(() => window.observedPhases);
-  expect(phases.slice(-9)).toEqual([
+  expect(phases.slice(-7)).toEqual([
     "zoomingOut",
     "ejecting",
     "returning",
     "approaching",
     "inserting",
-    "loading",
-    "celebrating",
     "zooming",
     "reading",
   ]);
   await page.getByRole("button", { name: "SONRAKİ KART", exact: true }).click();
-  await expect(page.locator("#reader-title")).toHaveText(
-    "Gelecek sandığından daha yakın.",
-  );
+  await story(page, "Gelecek sandığından daha yakın.");
   await page.keyboard.press("Escape");
   await phase(page, "idle");
   await expect(card(page, 0)).toBeFocused();
@@ -91,18 +99,14 @@ test("rapid clicks are ignored while the selected cartridge is moving", async ({
   await page
     .locator('[data-slot="2"] button')
     .evaluate((button) => button.click());
-  await expect(page.locator("#reader-title")).toHaveText(
-    "Altınlar nereye gidiyor?",
-  );
+  await story(page, "Altınlar nereye gidiyor?");
   await expect(page.locator(".is-away")).toHaveCount(1);
   await page
     .getByRole("button", { name: "Haberi kapat ve kartı çıkar" })
     .click();
   await phase(page, "idle");
   await card(page, 1).press("ArrowRight");
-  await expect(page.locator("#reader-title")).toHaveText(
-    "Krallıkta gündem değişiyor.",
-  );
+  await story(page, "Krallıkta gündem değişiyor.");
 });
 
 test("five hover melodies reach native Web Audio; mute cancels even scheduled notes", async ({
@@ -219,9 +223,7 @@ test("reduced motion still opens and closes stories without a moving flight", as
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   await card(page, 3).click();
-  await expect(page.locator("#reader-title")).toHaveText(
-    "Macera için hava nasıl?",
-  );
+  await story(page, "Macera için hava nasıl?");
   await expect(page.locator(".news-reader")).toHaveCSS(
     "animation-name",
     "none",
@@ -252,9 +254,7 @@ for (const width of [320, 390, 768]) {
     await page
       .getByRole("button", { name: "SONRAKİ KART", exact: true })
       .click();
-    await expect(page.locator("#reader-title")).toHaveText(
-      "Gelecek sandığından daha yakın.",
-    );
+    await story(page, "Gelecek sandığından daha yakın.");
     await page
       .getByRole("button", { name: "Haberi kapat ve kartı çıkar" })
       .click();
@@ -273,9 +273,7 @@ test("resizing during insertion recomputes the port position and completes", asy
   await page.goto("/");
   await card(page, 2).click({ force: true });
   await page.setViewportSize({ width: 390, height: 844 });
-  await expect(page.locator("#reader-title")).toHaveText(
-    "Krallıkta gündem değişiyor.",
-  );
+  await story(page, "Krallıkta gündem değişiyor.");
   await page.keyboard.press("Escape");
   await phase(page, "idle");
 });
@@ -297,33 +295,43 @@ test("unavailable audio and blocked storage do not prevent reading", async ({
     .getByRole("button", { name: "Ses efektleri", exact: true })
     .click();
   await card(page, 2).click({ force: true });
-  await expect(page.locator("#reader-title")).toHaveText(
-    "Krallıkta gündem değişiyor.",
-  );
+  await story(page, "Krallıkta gündem değişiyor.");
   await page.keyboard.press("Escape");
   await phase(page, "idle");
 });
 
-test("BMO celebrates before the camera enters the screen, then reverses the camera on exit", async ({
+test("card enters from the lower front and starts zooming immediately after insertion", async ({
   page,
 }) => {
   await page.goto("/");
   await card(page, 1).click({ force: true });
-  await phase(page, "celebrating");
+  await phase(page, "zooming");
+  const front = await page.evaluate(() => window.frontEntry);
+  expect(front.cardCenterY).toBeGreaterThan(front.portY);
   await expect(page.locator(".bmo-screen-reaction text")).toHaveText(
     "UWHUUUU!",
   );
-  await phase(page, "zooming");
-  await expect(page.locator(".screen-boot")).toBeVisible();
-  await expect(page.locator("#reader-title")).toHaveCount(0);
-  await phase(page, "reading");
-  await expect(page.locator(".bmo-screen-glass #reader-title")).toHaveText(
-    "Altınlar nereye gidiyor?",
+  await expect(page.locator(".screen-scroll")).toHaveAttribute(
+    "aria-hidden",
+    "true",
   );
+  await expect(page.locator(".screen-scroll")).toHaveAttribute("inert", "");
+  await page.keyboard.press("Tab");
+  expect(
+    await page.evaluate(() => document.activeElement.matches(".news-reader")),
+  ).toBe(true);
+  await story(page, "Altınlar nereye gidiyor?");
+  expect(await page.evaluate(() => window.observedPhases)).toEqual([
+    "idle",
+    "approaching",
+    "inserting",
+    "zooming",
+    "reading",
+  ]);
+  await expect(page.locator(".screen-scroll")).not.toHaveAttribute("inert", "");
   await expect(page.locator(".screen-scroll")).toHaveCSS("overflow-y", "auto");
   await page.keyboard.press("Escape");
   await phase(page, "zoomingOut");
-  await expect(page.locator(".screen-boot")).toBeVisible();
   await phase(page, "idle");
   await expect(reader(page)).toHaveCount(0);
 });

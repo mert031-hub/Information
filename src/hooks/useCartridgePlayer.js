@@ -9,8 +9,6 @@ export const initialPlayer = {
 export const busyPhases = new Set([
   "approaching",
   "inserting",
-  "loading",
-  "celebrating",
   "zooming",
   "zoomingOut",
   "ejecting",
@@ -40,10 +38,6 @@ export function playerReducer(state, action) {
     case "approaching":
       return { ...state, phase: "inserting" };
     case "inserting":
-      return { ...state, phase: "loading" };
-    case "loading":
-      return { ...state, phase: "celebrating" };
-    case "celebrating":
       return { ...state, phase: "zooming" };
     case "zooming":
       return { ...state, phase: "reading" };

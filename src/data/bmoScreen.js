@@ -11,8 +11,8 @@ export function getScreenCameraGeometry(svg, viewport) {
   ).matrixTransform(matrix);
   const scale = Math.hypot(matrix.a, matrix.b);
   const compact = viewport.width <= 680;
-  const margin = compact ? 10 : 28;
-  const width = Math.min(1060, viewport.width - margin * 2);
+  const margin = compact ? 8 : 24;
+  const width = Math.min(1120, viewport.width - margin * 2);
   const height = Math.min(920, viewport.height - margin * 2);
   return {
     source: {
@@ -32,9 +32,9 @@ export function getScreenCameraGeometry(svg, viewport) {
       width,
       height,
       skewY: 0,
-      borderRadius: compact ? 22 : 36,
-      borderWidth: compact ? 6 : 10,
-      padding: compact ? 6 : 14,
+      borderRadius: compact ? 18 : 28,
+      borderWidth: compact ? 5 : 7,
+      padding: compact ? 5 : 10,
       opacity: 1,
     },
   };

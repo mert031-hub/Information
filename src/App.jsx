@@ -37,8 +37,8 @@ export default function App() {
     lastSoundPhase.current = key;
     const event = {
       approaching: "select",
-      loading: "insert",
-      celebrating: "cheer",
+      inserting: "insert",
+      zooming: "cheer",
       zoomingOut: "stop",
       ejecting: "eject",
     }[phase];
@@ -54,9 +54,7 @@ export default function App() {
     {
       approaching: "Kart hazırlanıyor…",
       inserting: "Kart takılıyor…",
-      loading: "Haber açılıyor…",
-      celebrating: getBmoReaction(selected.id).text,
-      zooming: "BMO ekranına giriliyor…",
+      zooming: getBmoReaction(selected.id).text,
       zoomingOut: "Koleksiyona dönülüyor…",
       ejecting: "Kart çıkarılıyor…",
       returning: "Kart yerine dönüyor…",
@@ -109,11 +107,7 @@ export default function App() {
             />
             <BmoEyes />
             <BmoPort phase={phase} color={selected.color} />
-            <BmoReaction
-              phase={phase}
-              category={selected.id}
-              onComplete={player.advance}
-            />
+            <BmoReaction phase={phase} category={selected.id} />
           </div>
           {news.map((item, index) => (
             <NewsCartridge
@@ -128,13 +122,9 @@ export default function App() {
             />
           ))}
           {activeIndex !== null &&
-            [
-              "approaching",
-              "inserting",
-              "loading",
-              "ejecting",
-              "returning",
-            ].includes(phase) && (
+            ["approaching", "inserting", "ejecting", "returning"].includes(
+              phase,
+            ) && (
               <CartridgeFlight
                 key={activeIndex}
                 item={news[activeIndex]}

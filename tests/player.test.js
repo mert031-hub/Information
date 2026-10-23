@@ -10,16 +10,10 @@ function finish(state) {
   return playerReducer(state, { type: "advance", phase: state.phase });
 }
 
-test("a story opens only after insertion, celebration and screen entry", () => {
+test("insertion goes directly to the screen without a loading or celebration hold", () => {
   let state = playerReducer(initialPlayer, { type: "select", index: 0 });
   assert.equal(state.phase, "approaching");
-  for (const expected of [
-    "inserting",
-    "loading",
-    "celebrating",
-    "zooming",
-    "reading",
-  ]) {
+  for (const expected of ["inserting", "zooming", "reading"]) {
     state = finish(state);
     assert.equal(state.phase, expected);
   }

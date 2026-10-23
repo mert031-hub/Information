@@ -1,4 +1,3 @@
-import { motion, useReducedMotion } from "motion/react";
 import { getBmoReaction } from "../data/reactions.js";
 import { bmoScreen } from "../data/bmoScreen.js";
 
@@ -30,10 +29,8 @@ export function HappyBmoFace({ category }) {
   );
 }
 
-export default function BmoReaction({ phase, category, onComplete }) {
-  const reducedMotion = useReducedMotion();
-  if (!["celebrating", "zooming", "reading", "zoomingOut"].includes(phase))
-    return null;
+export default function BmoReaction({ phase, category }) {
+  if (!["zooming", "reading", "zoomingOut"].includes(phase)) return null;
   const face = <HappyBmoFace category={category} />;
   return (
     <svg
@@ -44,21 +41,7 @@ export default function BmoReaction({ phase, category, onComplete }) {
       <g
         transform={`translate(${bmoScreen.x} ${bmoScreen.y}) skewY(${bmoScreen.skew})`}
       >
-        {phase === "celebrating" ? (
-          <motion.g
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 1, 1] }}
-            transition={{
-              duration: reducedMotion ? 0.12 : 0.95,
-              times: [0, 0.12, 1],
-            }}
-            onAnimationComplete={() => onComplete("celebrating")}
-          >
-            {face}
-          </motion.g>
-        ) : (
-          face
-        )}
+        {face}
       </g>
     </svg>
   );
