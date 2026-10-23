@@ -17,6 +17,16 @@ Depo zaten bilgisayarındaysa kendi değişikliklerini koruyarak `git pull --ff-
 
 Windows PowerShell `npm` için uygulama seçme penceresi açarsa `npm.cmd ci` ve `npm.cmd run dev` kullan. Node.js 24 kurulumu npm'i de sağlar.
 
+`motion/react` bulunamadı hatası, genellikle kod güncellenirken bağımlılıkların yerelde kurulmadığını gösterir. `git pull` paket kurmaz. PowerShell’de Vite’ı **Ctrl+C** ile durdurup depo klasöründe şu sırayı kullan:
+
+```powershell
+git pull --ff-only origin main
+npm.cmd ci
+npm.cmd run dev
+```
+
+`motion`, hem `package.json` hem `package-lock.json` içinde kayıtlıdır; import satırını değiştirmek gerekmez.
+
 Üretim derlemesi: `npm run build`. Oluşan derlemeyi kontrol etmek için: `npm run preview`.
 
 ## Bu prototipte neler var?
@@ -27,16 +37,17 @@ Ana ekran sade tutulur: logo, ses kontrolü, BMO, kategori kartları ve gezinme 
 - Kartlar 4,8–6,2 saniyelik farklı döngülerle yaklaşık 16 piksel süzülür. Hover veya klavye odağında 14 piksel ek yükseliş ve gölge vardır.
 - Her kategorinin farklı hover melodisi vardır. Kart seçme, hazneye oturma ve çıkarma ayrıca seslendirildi.
 - Karta tıklayınca kart hazneye yaklaşır, açısını ayarlar ve haznenin kenarı arkasında kaybolarak içeri girer.
-- BMO’nun ekranında kısa bir yükleme tepkisi görünür; ardından ilgili haber okuyucusu açılır.
+- Kart takılınca BMO’nun yüzü neşeli bir ifadeye dönüşür. Kategoriye göre “LET'S PLAY!”, “UWHUUUU!” veya “YAAAY!” tepkisi verir.
+- Kamera küçük BMO ekranından yaklaşık 780 ms içinde büyüyen ekran çerçevesine geçer. Haber başlığı, görseli ve metni BMO’nun yeşil LCD ekranının içinde okunur.
 - Okuyucuda kategori, kapak görseli, başlık, özet, metin ve okuma süresi vardır. Önceki/sonraki kontrolleri ilk ve son haber arasında döngü yapar.
-- Haber değiştirince eski kart önce dışarı çıkar ve yerine döner; yeni kart daha sonra takılır. Hızlı tekrar tıklamaları hareketi kesmez.
-- Kapat düğmesi veya Escape kartı çıkarır. İşlem bittiğinde klavye odağı karta döner.
+- Haber değiştirince önce ekrandan uzaklaşılır, eski kart dışarı çıkar ve yerine döner; yeni kart daha sonra takılır. Hızlı tekrar tıklamaları hareketi kesmez.
+- Kapat düğmesi veya Escape önce kamerayı küçük BMO ekranına geri götürür, ardından kartı çıkarır. İşlem bittiğinde klavye odağı karta döner.
 - Ses ilk ziyarette kapalıdır. Tercih tarayıcıda saklanır; hem ana sahnede hem haber panelinde değiştirilebilir.
 - BMO’nun gözleri imleci yavaşça takip eder. Telefon düzeni korunur; ekran boyutu değişince hazne konumu yeniden ölçülür.
-- Azaltılmış hareket tercihinde kart uçuşu, süzülme ve göz takibi kapatılır; haber akışı kısa geçişlerle çalışmaya devam eder.
+- Azaltılmış hareket tercihinde kart uçuşu, kamera yakınlaşması, süzülme ve göz takibi kapatılır; haber akışı kısa geçişlerle çalışmaya devam eder.
 - Fontlar ve görseller yereldir. Çalışırken harici ses veya görsel servisine ihtiyaç yoktur.
 
-Haberler **kurmaca demo içeriklerdir**. Gerçek gündem, yatırım önerisi veya canlı hava durumu verisi sunulmaz. Bu sürüm frontend prototipidir; backend, veritabanı ve gerçek haber bağlantısı yoktur. Haber paneli sayfa üzerinde açılır; henüz her haberin ayrı URL’si yoktur. Ekran yakınlaştırma eklenmedi.
+Haberler **kurmaca demo içeriklerdir**. Gerçek gündem, yatırım önerisi veya canlı hava durumu verisi sunulmaz. Bu sürüm frontend prototipidir; backend, veritabanı ve gerçek haber bağlantısı yoktur. İçerik BMO ekranı içinde açılır; henüz her haberin ayrı URL’si yoktur.
 
 ## Kod nasıl çalışıyor?
 
@@ -51,11 +62,11 @@ Haberler **kurmaca demo içeriklerdir**. Gerçek gündem, yatırım önerisi vey
 `src/hooks/useCartridgePlayer.js` bir reducer ile şu sırayı yönetir:
 
 ```text
-idle → approaching → inserting → loading → reading
-                  kart takılıyor              haber açık
+idle → approaching → inserting → loading → celebrating → zooming → reading
+                      kart takılıyor         BMO tepki verir   ekran açılır
 
-reading → ejecting → returning → idle
-             kart çıkıyor       koleksiyona dönüş
+reading → zoomingOut → ejecting → returning → idle
+          ekrandan çıkış  kart çıkıyor       koleksiyona dönüş
 
 Haber değişimi: returning → approaching (yeni kart)
 ```
@@ -66,7 +77,9 @@ Haber değişimi: returning → approaching (yeni kart)
 
 React ve Vite korunur; kart uçuşu için **Motion** kullanılır. `CartridgeFlight.jsx`, kartın boyutunu ve BMO üzerindeki haznenin SVG koordinatını ölçer. `getScreenCTM()` bu koordinatı ekran pikseline çevirir; böylece mobilde küçülen BMO’nun haznesi de doğru hedef olur. `ResizeObserver` ekran boyutu değişince ölçümü yeniler.
 
-Kart yaklaşık **620 ms** içinde yaklaşır, **300 ms** içinde hazneye kayar. `clip-path`, haznenin altına geçen kısmı gizler; yalnızca saydamlık azaltarak kaybolmaz. `BmoPort.jsx` hazne kenarını ve kısa yükleme tepkisini çizer. **320 ms** yükleme tepkisinden sonra okuyucu açılır. Çıkarma **300 ms**, koleksiyona dönüş **580 ms** sürer. Aşamalar `onAnimationComplete` ile ilerler; üst üste çalışan bekleme zamanlayıcıları yoktur.
+Kart yaklaşık **620 ms** içinde yaklaşır, **300 ms** içinde hazneye kayar. `clip-path`, haznenin altına geçen kısmı gizler; yalnızca saydamlık azaltarak kaybolmaz. `BmoPort.jsx` hazne kenarını ve kısa yükleme tepkisini çizer. **320 ms** yükleme tepkisinden sonra **950 ms** neşeli yüz tepkisi, ardından **780 ms** ekran yakınlaşması oynar. Kapatmada kamera **600 ms** içinde geri döner, sonra kart çıkarılır. Çıkarma **300 ms**, koleksiyona dönüş **580 ms** sürer. Aşamalar `onAnimationComplete` ile ilerler; üst üste çalışan bekleme zamanlayıcıları yoktur.
+
+`src/data/bmoScreen.js` yüz tepkisiyle kamera için ortak ekran koordinatlarını tutar. `BmoReaction.jsx` mutlu gözleri, gülümsemeyi ve kısa repliği SVG olarak ekranın üzerine çizer. `NewsReader.jsx` aynı ekran dikdörtgenini küçük, eğimli konumundan büyük okuma ekranına taşır. Ekran çerçevesi, yazılar ve kapak görseli tek bir yüzeydir; okuma alanı kendi içinde kayar. Boyut değişiminde kaynak ve hedef yeniden ölçülür.
 
 ### 4. Sesleri notalardan üretiyoruz
 
@@ -82,11 +95,13 @@ Kart yaklaşık **620 ms** içinde yaklaşır, **300 ms** içinde hazneye kayar.
 
 Her notada kısa bir yükseliş ve sönüş uygulanır; ani ses kesilmeleri azaltılır. Takma sesinde kısa mekanik tonun ardından kategori melodisi gelir; çıkarırken melodi ters yönde ve daha alçak perdede çalar. Önceki sesler temizlenir; hızlı geçişlerde birikmez. Hover tekrarlarında 120 ms sınırı vardır. Sesi kapatmak ana kazancı anında sıfırlar ve henüz çalmamış notaları da durdurur.
 
+`src/data/reactions.js`, kategorilerin kısa repliklerini tutar. Tepki anında cihazda yerel bir İngilizce konuşma sesi varsa Web Speech API ile daha ince perdede (`pitch: 1.7`) seslendirilir. Bu, orijinal BMO ses kaydı değildir; karaktere uygun neşeli bir robot tepkisidir. Uygulama uzak konuşma servislerini seçmez. Yerel ses yoksa veya konuşma API’si hata verirse Web Audio ile yükselen elektronik heceler çalar. Konuşma da sessize alma, ekrandan çıkma ve uygulamanın kapanması sırasında temizlenir.
+
 Tarayıcılar ses için kullanıcı etkileşimi ister. Kaydedilmiş “ses açık” tercihiyle sayfa yeniden yüklendiğinde ilk tıklama veya tuş sesi etkinleştirir. Ses veya yerel depolama API’si yoksa haber akışı yine çalışır.
 
 ### 5. Haber okuyucusunu ayrı bir bileşen yapıyoruz
 
-`NewsReader.jsx`, yerel HTML `dialog` öğesini kullanır. Açıldığında arka plan etkileşimini ve kaydırmayı sınırlar; klavye odağını panel içinde tutar. Kapatma animasyonundan sonra odak karta döner. `SoundButton.jsx`, ana sahne ile okuyucuda aynı ses durumunu gösterir.
+`NewsReader.jsx`, yerel HTML `dialog` öğesini kullanır. Kamera geçişiyle açıldığında arka plan etkileşimini ve kaydırmayı sınırlar; klavye odağını panel içinde tutar. Kapatma animasyonundan sonra odak karta döner. `SoundButton.jsx`, ana sahne ile okuyucuda aynı ses durumunu gösterir.
 
 `src/styles.css` ilk sahnenin yerleşimini, `src/interactions.css` uçuş katmanını ve haber okuyucusunu biçimlendirir. `BmoEyes.jsx` önceki yavaş göz takibini sürdürür. `src/main.jsx`, React’i ve yerel fontları yükler.
 
@@ -107,7 +122,7 @@ npm run test:ui
 
 Sistemde hazır Chromium kullanmak istersen `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` değişkenini çalıştırılabilir dosyanın yoluna ayarla. Test yapılandırması bu yolu destekler. Üretim derlemesi için `npm run build` çalıştır.
 
-Birim testleri aşama sırasını, eski animasyon olaylarını, hızlı seçimleri, kart değiştirme/kapatma akışını ve beş ayrı ses profilini kontrol eder. Tarayıcı testleri gerçek kart takma/çıkarma, okuyucu, döngülü gezinme, odak dönüşü, native Web Audio, sessize alma, azaltılmış hareket, 320/390/768 piksel ekranlar, hareket sırasında boyut değişimi ve ses/depolama API’lerinin yokluğunu kapsar.
+Birim testleri aşama sırasını, eski animasyon olaylarını, hızlı seçimleri, kart değiştirme/kapatma akışını ve beş ayrı ses profilini kontrol eder. Tarayıcı testleri gerçek kart takma/çıkarma, okuyucu, döngülü gezinme, odak dönüşü, native Web Audio, sessize alma, azaltılmış hareket, 320/390/768 piksel ekranlar, hareket sırasında boyut değişimi ve ses/depolama API’lerinin yokluğunu kapsar. Yeni kontroller BMO’nun tepki vermesini, kameranın giriş/çıkış sırasını, yakınlaşırken ekran boyutunun değişmesini ve yerel konuşmanın sessize alınmasını da doğrular.
 
 ## Görseller
 
@@ -130,8 +145,8 @@ BMO türevleri, kullanıcının gönderdiği görsellerden görsel düzenleme ar
 ## Elle kontrol
 
 1. Sesi aç ve beş kartın üzerine sırayla gel; her kategorinin melodisi farklı olmalı.
-2. Bir kart seç; hazneye gitmesini, kenarın arkasına kaymasını ve doğru haberin açılmasını izle.
-3. Okuyucunun altındaki önceki/sonraki kart kontrollerini dene. Eski kart yerine dönmeden yeni kart takılmamalı.
+2. Bir kart seç; hazneye gitmesini, BMO’nun mutlu yüzünü/repliğini ve ekranına yaklaşarak doğru haberin açılmasını izle.
+3. Okuyucunun altındaki önceki/sonraki kart kontrollerini dene. Kamera geri dönmeli, eski kart çıkarılmalı ve ardından yeni kart takılmalı.
 4. Okuyucunun üstündeki ses düğmesini kapat; geçişler sessiz devam etmeli.
 5. Escape veya kapatma düğmesiyle koleksiyona dön; kart kendi yerinde ve klavye odağı üzerinde olmalı.
 6. Kartlara Tab ile ulaş; Enter ve sağ/sol oklarını dene. Hareket sırasında art arda tıklayarak akışın bozulmadığını kontrol et.

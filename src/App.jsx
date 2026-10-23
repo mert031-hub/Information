@@ -9,6 +9,8 @@ import CartridgeFlight from "./components/CartridgeFlight.jsx";
 import BmoPort from "./components/BmoPort.jsx";
 import NewsReader from "./components/NewsReader.jsx";
 import SoundButton from "./components/SoundButton.jsx";
+import BmoReaction from "./components/BmoReaction.jsx";
+import { getBmoReaction } from "./data/reactions.js";
 import room from "../Photos/ev4.jpg";
 import bmo from "./assets/bmo-seated.png";
 
@@ -36,6 +38,8 @@ export default function App() {
     const event = {
       approaching: "select",
       loading: "insert",
+      celebrating: "cheer",
+      zoomingOut: "stop",
       ejecting: "eject",
     }[phase];
     if (event && activeIndex !== null)
@@ -51,6 +55,9 @@ export default function App() {
       approaching: "Kart hazırlanıyor…",
       inserting: "Kart takılıyor…",
       loading: "Haber açılıyor…",
+      celebrating: getBmoReaction(selected.id).text,
+      zooming: "BMO ekranına giriliyor…",
+      zoomingOut: "Koleksiyona dönülüyor…",
       ejecting: "Kart çıkarılıyor…",
       returning: "Kart yerine dönüyor…",
     }[phase] || "";
@@ -102,6 +109,11 @@ export default function App() {
             />
             <BmoEyes />
             <BmoPort phase={phase} color={selected.color} />
+            <BmoReaction
+              phase={phase}
+              category={selected.id}
+              onComplete={player.advance}
+            />
           </div>
           {news.map((item, index) => (
             <NewsCartridge
@@ -115,16 +127,23 @@ export default function App() {
               onHover={() => sound.play(item.id)}
             />
           ))}
-          {activeIndex !== null && phase !== "reading" && (
-            <CartridgeFlight
-              key={activeIndex}
-              item={news[activeIndex]}
-              index={activeIndex}
-              phase={phase}
-              fieldRef={fieldRef}
-              onComplete={player.advance}
-            />
-          )}
+          {activeIndex !== null &&
+            [
+              "approaching",
+              "inserting",
+              "loading",
+              "ejecting",
+              "returning",
+            ].includes(phase) && (
+              <CartridgeFlight
+                key={activeIndex}
+                item={news[activeIndex]}
+                index={activeIndex}
+                phase={phase}
+                fieldRef={fieldRef}
+                onComplete={player.advance}
+              />
+            )}
         </div>
       </section>
       <section className="scene-controls" aria-label="Kart kontrolleri">
@@ -151,11 +170,14 @@ export default function App() {
           </button>
         </div>
       </section>
-      {phase === "reading" && (
+      {["zooming", "reading", "zoomingOut"].includes(phase) && (
         <NewsReader
           item={news[activeIndex]}
           index={activeIndex}
           count={news.length}
+          phase={phase}
+          fieldRef={fieldRef}
+          onComplete={player.advance}
           onClose={player.close}
           onMove={moveSelection}
           sound={sound}

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { getSoundSequence } from "../data/sounds.js";
+import { getBmoReaction } from "../data/reactions.js";
 
 const preferenceKey = "bmo-news-sound";
 
@@ -14,6 +15,9 @@ export default function useBmoAudio() {
   const audio = useRef(null);
   const lastPlayed = useRef(-Infinity);
   const voices = useRef(new Set());
+  const speech = useRef(null);
+  const enabledRef = useRef(enabled);
+  enabledRef.current = enabled;
 
   function unlock() {
     const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -52,6 +56,7 @@ export default function useBmoAudio() {
 
   useEffect(
     () => () => {
+      stopVoices();
       if (audio.current) {
         void audio.current.context.close().catch(() => {});
         audio.current = null;
@@ -61,8 +66,8 @@ export default function useBmoAudio() {
   );
 
   function toggle() {
-    if (enabled && audio.current) {
-      audio.current.master.gain.value = 0;
+    if (enabled) {
+      if (audio.current) audio.current.master.gain.value = 0;
       stopVoices();
     }
     if (!enabled) unlock();
@@ -70,6 +75,10 @@ export default function useBmoAudio() {
   }
 
   function stopVoices() {
+    if (speech.current) {
+      speech.current = null;
+      window.speechSynthesis?.cancel();
+    }
     for (const voice of voices.current) {
       voice.stop();
     }
@@ -77,7 +86,44 @@ export default function useBmoAudio() {
   }
 
   function play(category, event = "hover") {
-    if (!enabled || !audio.current) return;
+    if (!enabledRef.current) return;
+    if (event === "stop") {
+      stopVoices();
+      return;
+    }
+    if (event === "cheer") {
+      stopVoices();
+      try {
+        // Yalnızca cihazdaki İngilizce sesleri kullan; harici TTS servisi gerekmez.
+        const voice = window.speechSynthesis
+          ?.getVoices()
+          .find((voice) => voice.localService && voice.lang.startsWith("en"));
+        if (voice && window.SpeechSynthesisUtterance) {
+          const line = new window.SpeechSynthesisUtterance(
+            getBmoReaction(category).spoken,
+          );
+          line.voice = voice;
+          line.lang = voice.lang;
+          line.pitch = 1.7;
+          line.rate = 1.15;
+          line.volume = 0.5;
+          speech.current = line;
+          line.onend = () => {
+            if (speech.current === line) speech.current = null;
+          };
+          line.onerror = () => {
+            if (speech.current !== line) return;
+            speech.current = null;
+            if (enabledRef.current) play(category, "cheer-tone");
+          };
+          window.speechSynthesis.speak(line);
+          return;
+        }
+      } catch {
+        /* Yerel ses kullanılamıyorsa aşağıdaki elektronik tepki çalar. */
+      }
+    }
+    if (!audio.current) return;
     const { context, master } = audio.current;
     if (context.state !== "running") return;
     if (event === "hover" && performance.now() - lastPlayed.current < 120)

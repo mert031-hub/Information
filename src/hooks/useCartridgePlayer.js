@@ -10,6 +10,9 @@ export const busyPhases = new Set([
   "approaching",
   "inserting",
   "loading",
+  "celebrating",
+  "zooming",
+  "zoomingOut",
   "ejecting",
   "returning",
 ]);
@@ -20,7 +23,7 @@ export function playerReducer(state, action) {
     if (busyPhases.has(state.phase)) return state;
     if (state.phase === "reading") {
       if (state.activeIndex === action.index) return state;
-      return { ...state, phase: "ejecting", nextIndex: action.index };
+      return { ...state, phase: "zoomingOut", nextIndex: action.index };
     }
     return {
       ...state,
@@ -30,7 +33,7 @@ export function playerReducer(state, action) {
     };
   }
   if (action.type === "close" && state.phase === "reading") {
-    return { ...state, phase: "ejecting", nextIndex: null };
+    return { ...state, phase: "zoomingOut", nextIndex: null };
   }
   if (action.type !== "advance" || action.phase !== state.phase) return state;
   switch (state.phase) {
@@ -39,7 +42,13 @@ export function playerReducer(state, action) {
     case "inserting":
       return { ...state, phase: "loading" };
     case "loading":
+      return { ...state, phase: "celebrating" };
+    case "celebrating":
+      return { ...state, phase: "zooming" };
+    case "zooming":
       return { ...state, phase: "reading" };
+    case "zoomingOut":
+      return { ...state, phase: "ejecting" };
     case "ejecting":
       return { ...state, phase: "returning" };
     case "returning":

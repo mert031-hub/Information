@@ -1,3 +1,5 @@
+import { getBmoReaction } from "./reactions.js";
+
 // Frekanslar Hz, zamanlar saniye. Her kategori ayrı bir kısa melodi taşır.
 export const soundProfiles = {
   technology: {
@@ -39,6 +41,34 @@ export const soundProfiles = {
 
 export function getSoundSequence(category, event = "hover") {
   const profile = soundProfiles[category] || soundProfiles.technology;
+  if (event === "cheer" || event === "cheer-tone") {
+    const style = getBmoReaction(category).style;
+    // Yerel konuşma sesi yoksa karakterin neşesini yükselen elektronik heceler taşır.
+    const notes =
+      style === "woohoo"
+        ? [
+            [420, 880, 0, 0.19],
+            [620, 1450, 0.22, 0.34],
+          ]
+        : style === "yay"
+          ? [
+              [660, 990, 0, 0.12],
+              [880, 1320, 0.14, 0.12],
+              [1100, 1650, 0.28, 0.28],
+            ]
+          : [
+              [660, 880, 0, 0.12],
+              [880, 1320, 0.17, 0.25],
+            ];
+    return notes.map(([frequency, endFrequency, start, length]) => ({
+      wave: "triangle",
+      frequency,
+      endFrequency,
+      start,
+      length,
+      volume: 0.06,
+    }));
+  }
   if (event === "insert") {
     return [
       {

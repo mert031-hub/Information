@@ -10,10 +10,16 @@ function finish(state) {
   return playerReducer(state, { type: "advance", phase: state.phase });
 }
 
-test("a story opens only after approaching, inserting and loading", () => {
+test("a story opens only after insertion, celebration and screen entry", () => {
   let state = playerReducer(initialPlayer, { type: "select", index: 0 });
   assert.equal(state.phase, "approaching");
-  for (const expected of ["inserting", "loading", "reading"]) {
+  for (const expected of [
+    "inserting",
+    "loading",
+    "celebrating",
+    "zooming",
+    "reading",
+  ]) {
     state = finish(state);
     assert.equal(state.phase, expected);
   }
@@ -39,8 +45,10 @@ test("switching returns the old cartridge before approaching with the next one",
   };
   assert.equal(playerReducer(state, { type: "select", index: 0 }), state);
   state = playerReducer(state, { type: "select", index: 4 });
-  assert.equal(state.phase, "ejecting");
+  assert.equal(state.phase, "zoomingOut");
   assert.equal(state.activeIndex, 0);
+  state = finish(state);
+  assert.equal(state.phase, "ejecting");
   state = finish(state);
   assert.equal(state.phase, "returning");
   assert.equal(state.activeIndex, 0);
@@ -58,6 +66,8 @@ test("closing ejects and restores the collection without inserting another card"
     selectedIndex: 3,
   };
   state = playerReducer(state, { type: "close" });
+  assert.equal(state.phase, "zoomingOut");
+  state = finish(state);
   assert.equal(state.phase, "ejecting");
   state = finish(finish(state));
   assert.equal(state.phase, "idle");
@@ -81,4 +91,33 @@ test("five categories have distinct, bounded melodies and separate transition so
   }
   assert.equal(signatures.size, 5);
   assert.deepEqual(getSoundSequence("unknown"), getSoundSequence("technology"));
+});
+
+test("late screen animation events and clicks cannot skip the zoom-out before ejection", () => {
+  let state = {
+    ...initialPlayer,
+    phase: "reading",
+    activeIndex: 1,
+    selectedIndex: 1,
+  };
+  state = playerReducer(state, { type: "close" });
+  assert.equal(state.phase, "zoomingOut");
+  assert.equal(
+    playerReducer(state, { type: "advance", phase: "zooming" }),
+    state,
+  );
+  assert.equal(playerReducer(state, { type: "select", index: 4 }), state);
+  assert.equal(finish(state).phase, "ejecting");
+});
+
+test("robot cheers use rising syllables within a short, bounded envelope", () => {
+  for (const category of Object.keys(soundProfiles)) {
+    const cheer = getSoundSequence(category, "cheer");
+    assert.notDeepEqual(cheer, getSoundSequence(category));
+    for (const note of cheer) {
+      assert.ok(note.endFrequency > note.frequency);
+      assert.ok(note.start + note.length < 0.9);
+      assert.ok(note.volume <= 0.1);
+    }
+  }
 });

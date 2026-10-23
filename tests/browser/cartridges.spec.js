@@ -37,6 +37,8 @@ test("inserts, reads, switches with ejection, wraps and returns keyboard focus",
     "approaching",
     "inserting",
     "loading",
+    "celebrating",
+    "zooming",
     "reading",
   ]);
   await expect(page.locator(".is-away")).toHaveAttribute("data-slot", "0");
@@ -54,12 +56,15 @@ test("inserts, reads, switches with ejection, wraps and returns keyboard focus",
     "Biraz renk, biraz macera.",
   );
   const phases = await page.evaluate(() => window.observedPhases);
-  expect(phases.slice(-6)).toEqual([
+  expect(phases.slice(-9)).toEqual([
+    "zoomingOut",
     "ejecting",
     "returning",
     "approaching",
     "inserting",
     "loading",
+    "celebrating",
+    "zooming",
     "reading",
   ]);
   await page.getByRole("button", { name: "SONRAKİ KART", exact: true }).click();
@@ -234,13 +239,14 @@ for (const width of [320, 390, 768]) {
     await page.setViewportSize({ width, height: 844 });
     await page.goto("/");
     await card(page, 4).click({ force: true });
+    await phase(page, "reading");
     await expect(reader(page)).toBeVisible();
     expect(
       await reader(page).evaluate(
         (element) => element.scrollWidth <= element.clientWidth,
       ),
     ).toBe(true);
-    const bounds = await reader(page).boundingBox();
+    const bounds = await page.locator(".bmo-screen-frame").boundingBox();
     expect(bounds.x).toBeGreaterThanOrEqual(0);
     expect(bounds.x + bounds.width).toBeLessThanOrEqual(width);
     await page
@@ -296,4 +302,104 @@ test("unavailable audio and blocked storage do not prevent reading", async ({
   );
   await page.keyboard.press("Escape");
   await phase(page, "idle");
+});
+
+test("BMO celebrates before the camera enters the screen, then reverses the camera on exit", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await card(page, 1).click({ force: true });
+  await phase(page, "celebrating");
+  await expect(page.locator(".bmo-screen-reaction text")).toHaveText(
+    "UWHUUUU!",
+  );
+  await phase(page, "zooming");
+  await expect(page.locator(".screen-boot")).toBeVisible();
+  await expect(page.locator("#reader-title")).toHaveCount(0);
+  await phase(page, "reading");
+  await expect(page.locator(".bmo-screen-glass #reader-title")).toHaveText(
+    "Altınlar nereye gidiyor?",
+  );
+  await expect(page.locator(".screen-scroll")).toHaveCSS("overflow-y", "auto");
+  await page.keyboard.press("Escape");
+  await phase(page, "zoomingOut");
+  await expect(page.locator(".screen-boot")).toBeVisible();
+  await phase(page, "idle");
+  await expect(reader(page)).toHaveCount(0);
+});
+
+test("camera follows a viewport resize during zoom and reading stays inside the LCD frame", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await card(page, 0).click({ force: true });
+  await phase(page, "zooming");
+  await page.setViewportSize({ width: 390, height: 844 });
+  await phase(page, "reading");
+  const bounds = await page.locator(".bmo-screen-frame").boundingBox();
+  expect(bounds.x).toBeGreaterThanOrEqual(0);
+  expect(bounds.x + bounds.width).toBeLessThanOrEqual(390);
+  expect(bounds.y + bounds.height).toBeLessThanOrEqual(844);
+  expect(
+    await page
+      .locator(".screen-scroll")
+      .evaluate((el) => el.scrollWidth <= el.clientWidth),
+  ).toBe(true);
+  await page.setViewportSize({ width: 844, height: 390 });
+  await page
+    .getByRole("button", { name: "Haberi kapat ve kartı çıkar" })
+    .click();
+  await phase(page, "idle");
+});
+
+test("local speech uses a playful pitch, avoids remote voices and is cancelled by mute", async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    window.speechProbe = { lines: [], cancellations: 0 };
+    Object.defineProperty(window, "SpeechSynthesisUtterance", {
+      configurable: true,
+      value: class {
+        constructor(text) {
+          this.text = text;
+        }
+      },
+    });
+    Object.defineProperty(window, "speechSynthesis", {
+      configurable: true,
+      value: {
+        getVoices: () => [
+          { name: "Remote", lang: "en-US", localService: false },
+          { name: "Local", lang: "en-US", localService: true },
+        ],
+        speak: (line) =>
+          window.speechProbe.lines.push({
+            text: line.text,
+            voice: line.voice.name,
+            pitch: line.pitch,
+          }),
+        cancel: () => {
+          window.speechProbe.cancellations++;
+        },
+      },
+    });
+  });
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "Ses efektleri", exact: true })
+    .click();
+  await card(page, 0).click({ force: true });
+  await phase(page, "reading");
+  expect(await page.evaluate(() => window.speechProbe.lines)).toEqual([
+    { text: "Let's play!", voice: "Local", pitch: 1.7 },
+  ]);
+  await reader(page)
+    .getByRole("button", { name: "Ses efektleri", exact: true })
+    .click();
+  expect(await page.evaluate(() => window.speechProbe.cancellations)).toBe(1);
+  await page.keyboard.press("Escape");
+  await phase(page, "idle");
+  await card(page, 1).click({ force: true });
+  await phase(page, "reading");
+  expect(await page.evaluate(() => window.speechProbe.lines.length)).toBe(1);
 });
