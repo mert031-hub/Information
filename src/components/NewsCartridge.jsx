@@ -1,8 +1,11 @@
-export default function NewsCartridge({ item, selected, position, onSelect }) {
+export default function NewsCartridge({ item, selected, position, onSelect, onHover }) {
   return (
     <div
       className="cartridge-slot"
       data-slot={position}
+      onPointerEnter={(event) => {
+        if (event.pointerType !== "touch") onHover();
+      }}
       style={{
         "--card-color": item.color,
         "--float-duration": `${4.8 + position * 0.35}s`,
@@ -14,6 +17,9 @@ export default function NewsCartridge({ item, selected, position, onSelect }) {
         aria-pressed={selected}
         aria-label={`${item.category}: ${item.title}`}
         onClick={onSelect}
+        onFocus={(event) => {
+          if (event.currentTarget.matches(":focus-visible")) onHover();
+        }}
       >
         <span className="cartridge-top">
           <span>OOO NEWS SYSTEM</span>

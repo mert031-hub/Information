@@ -6,15 +6,19 @@ import {
   Keyboard,
   Radio,
   VolumeX,
+  Volume2,
 } from "lucide-react";
 import { news } from "./data/news.js";
 import NewsCartridge from "./components/NewsCartridge.jsx";
+import BmoEyes from "./components/BmoEyes.jsx";
+import useHoverSound from "./hooks/useHoverSound.js";
 import room from "../Photos/ev4.jpg";
 import bmo from "./assets/bmo-seated.png";
 
 export default function App() {
   const [selectedIndex, setSelectedIndex] = useState(2);
   const selected = news[selectedIndex];
+  const sound = useHoverSound();
 
   function moveSelection(direction) {
     setSelectedIndex(
@@ -50,12 +54,13 @@ export default function App() {
           <span className="edition">VOL. 002</span>
           <button
             className="sound-button"
-            disabled
-            title="Ses efektleri sonraki aşamada eklenecek"
-            aria-label="Ses efektleri henüz eklenmedi"
+            onClick={sound.toggle}
+            aria-pressed={sound.enabled}
+            title={sound.enabled ? "Ses efektlerini kapat" : "Ses efektlerini aç"}
+            aria-label="Ses efektleri"
           >
-            <VolumeX size={17} />
-            <span>SES YAKINDA</span>
+            {sound.enabled ? <Volume2 size={17} /> : <VolumeX size={17} />}
+            <span>{sound.enabled ? "SES AÇIK" : "SES KAPALI"}</span>
           </button>
         </div>
       </header>
@@ -91,6 +96,7 @@ export default function App() {
               src={bmo}
               alt="Yerde oturan, bacaklarını uzatmış BMO"
             />
+            <BmoEyes />
             <span className="bmo-nameplate">
               <span className="status-dot" /> BMO HABER MERKEZİ
             </span>
@@ -102,6 +108,7 @@ export default function App() {
               selected={selectedIndex === index}
               position={index}
               onSelect={() => setSelectedIndex(index)}
+              onHover={sound.play}
             />
           ))}
           <div className="field-note">

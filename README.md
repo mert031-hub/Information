@@ -23,17 +23,20 @@ Windows PowerShell `npm` için uygulama seçme penceresi açarsa `npm.cmd ci` ve
 
 - Gönderilen oda görseli üzerinde yerde oturan büyük BMO.
 - BMO'nun solunda üç, sağında iki haber kartı; farklı yüksekliklerde ve hafif açılı yerleşim.
-- Kartlarda 4,8–6,2 saniyelik farklı döngülerle yaklaşık 9 piksel süzülme; kartlar BMO çevresinde dönmez.
-- Fare veya klavye odağı üzerindeyken kartın süzülmesinin durması.
+- Kartlarda 4,8–6,2 saniyelik farklı döngülerle yaklaşık 16 piksel süzülme; kartlar BMO çevresinde dönmez.
+- Fare veya klavye odağı üzerindeyken devam eden süzülmeye eklenen 14 piksel yumuşak yükseliş ve belirgin gölge.
+- BMO’nun gözlerinin imleci gecikmeli ve sınırlı bir hareketle takip etmesi; imleç sayfadan ayrılınca merkeze dönmesi.
+- Kart hover ve klavye odağında kısa, düşük sesli elektronik efekt; üst çubukta ses aç/kapat kontrolü. Ses ilk ziyarette kapalıdır ve tercih tarayıcıda saklanır.
+- Ses Web Audio ile yerelde üretilir. Tarayıcı kısıtları nedeniyle kayıtlı açık tercih yeniden yükleme sonrası ilk tıklama veya tuşla etkinleşir.
 - Kartlara tıklayarak konuşma kutusundaki kategori ve başlığı değiştirme.
 - Önceki/sonraki düğmeleri; kartlara odaklanıldığında sağ/sol klavye okları.
 - Telefonda da BMO'nun çevresindeki yerleşimin korunması.
-- İşletim sisteminde azaltılmış hareket tercihi açıksa süzülmenin kapatılması.
+- İşletim sisteminde azaltılmış hareket tercihi açıksa süzülmenin, hover yükselişinin ve göz takibinin kapatılması.
 - Yerel fontlar; görseller ve fontlar için harici bir servise bağlantı gerekmez.
 
 Haberler **kurmaca demo içeriklerdir**. Gerçek gündem veya canlı hava durumu verisi sunulmaz.
 
-Kart takma/çıkarma animasyonu, ses efektleri, tam haber sayfası, backend ve veritabanı **henüz eklenmedi**. Ses düğmesi bu nedenle bilinçli olarak devre dışıdır. İlk tasarım onayından sonra bu özelliklere ayrı aşamalarda geçilecek.
+Kart takma/çıkarma animasyonu, ekran yakınlaştırma, tam haber sayfası, backend ve veritabanı **henüz eklenmedi**. Bu aşama mevcut yerleşim üzerinde hareket ve ses etkileşimlerini ekler.
 
 ## Kod nasıl çalışıyor?
 
@@ -41,7 +44,9 @@ Kart takma/çıkarma animasyonu, ses efektleri, tam haber sayfası, backend ve v
 2. `src/App.jsx`, `selectedIndex` durumuyla seçilen kartı takip eder. Kart seçilince bu sayı değişir; konuşma kutusundaki seçili haber adı aynı veriden yeniden çizilir.
 3. `src/components/NewsCartridge.jsx`, tek bir kartın görünümüdür. `App` bu bileşeni beş haber için kullanır. Kart sırasına göre süzülme süresi ve başlangıç gecikmesi değişir.
 4. `src/styles.css`, sahneyi ve mobil düzeni belirler. `data-slot` seçicilerindeki `--x`, `--y` ve `--tilt` kartın sabit konumunu/açısını tutar. `cartridge-float` animasyonu bu konuma küçük bir dikey hareket ve açı değişimi ekler; bir animasyon kütüphanesine gerek yoktur.
-5. `src/main.jsx`, React uygulamasını başlatır ve fontları yükler.
+5. `src/components/BmoEyes.jsx`, özgün görseli değiştirmeden gözleri SVG katmanında hizalar; `requestAnimationFrame` ile yavaş takip ve azaltılmış hareket tercihini yönetir.
+6. `src/hooks/useHoverSound.js`, ses tercihini, kullanıcı etkileşimiyle açılan AudioContext’i, kısa ses zarfını ve hızlı hover tekrarları için 120 ms sınırını yönetir. Ses kapatılınca ana kazanç anında sıfırlanır.
+7. `src/main.jsx`, React uygulamasını başlatır ve fontları yükler.
 
 ## Görseller
 
@@ -63,4 +68,8 @@ BMO türevleri, kullanıcının gönderdiği görsellerden görsel düzenleme ar
 
 ## Elle kontrol
 
-Beş kartı sırayla seç; konuşma kutusunda kategori ve başlığın değiştiğini kontrol et. Önceki/sonraki düğmeleri başa ve sona geldiğinde döngü yapmalı. Bir karta Tab ile odaklanıp sağ/sol oklarını dene. Fare kartın dışındayken süzülmeyi, üzerine gelince durmasını kontrol et. Azaltılmış hareket tercihi açıkken kartlar sabit kalmalı. Telefon boyutunda tüm kartlar görünmeli ve seçilebilmeli. Bu kontroller kart takma, ekran yakınlaştırma veya ses doğrulaması değildir; bu özellikler henüz uygulanmadı.
+Beş kartı sırayla seç; konuşma kutusunda kategori ve başlığın değiştiğini kontrol et. Önceki/sonraki düğmeleri başa ve sona geldiğinde döngü yapmalı. Bir karta Tab ile odaklanıp sağ/sol oklarını dene. Fare kartın dışındayken süzülmeyi, üzerine gelince süzülmeye eklenen yumuşak yükselişi kontrol et. İmleci iki yana hareket ettir; gözler yavaşça takip etmeli, sayfadan ayrılınca merkeze dönmeli.
+
+Ses düğmesini açıp kartlara yaklaş; kısa bip duyulmalı. Sesi kapatıp aynı işlemi tekrarla; ses duyulmamalı. Sayfayı yenileyince tercih korunmalı; ses açıkken tarayıcı ilk tıklamayı veya tuşu bekleyebilir. Azaltılmış hareket tercihi açıkken kartlar ve gözler sabit kalmalı. Telefon boyutunda tüm kartlar görünmeli ve seçilebilmeli.
+
+Bu değişiklikte üretim derlemesi ve Chromium tarayıcı kontrolleri çalıştırıldı: hover yükselişi, gerçek Web Audio osilatörünün çalışması ve sessize alınması, ses tercihinin korunması, göz takibi, beş kartın seçimi, klavye oklarıyla döngü, azaltılmış hareket, 320/390/768 piksel yerleşim ve ses/depolama API’leri kullanılamadığında kart seçiminin çalışması.
