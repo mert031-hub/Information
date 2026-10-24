@@ -301,6 +301,21 @@ h1 > span {
   transform: translate(-50%, -50%);
   z-index: 2;
 }
+.cartridge-slot::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 12%;
+  right: 12%;
+  bottom: -13px;
+  height: 18px;
+  border-radius: 50%;
+  background: #07180f80;
+  filter: blur(9px);
+  opacity: 0.72;
+  transform: scaleX(0.92);
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
 .cartridge-slot[data-slot="0"] {
   --x: 24%;
   --y: 19%;
@@ -342,8 +357,7 @@ h1 > span {
   background: linear-gradient(105deg, #41473c, #30382f 70%, #252d27);
   box-shadow:
     inset 1px 1px 0 #ffffff25,
-    inset -1px -2px 0 #0007,
-    6px 18px 24px #07180f86;
+    inset -1px -2px 0 #0007;
   color: #172c26;
   text-align: left;
   filter: brightness(0.94);
@@ -360,8 +374,7 @@ h1 > span {
   box-shadow:
     inset 1px 1px 0 #ffffff25,
     inset -1px -2px 0 #0007,
-    0 0 0 2px #dceca7a3,
-    0 16px 30px #07180fa0;
+    0 0 0 2px #dceca7a3;
 }
 .cartridge-slot:hover .cartridge,
 .cartridge:focus-visible {
@@ -370,8 +383,12 @@ h1 > span {
   box-shadow:
     inset 1px 1px 0 #ffffff25,
     inset -1px -2px 0 #0007,
-    0 0 0 2px #dceca7a3,
-    8px 28px 38px #07180fc0;
+    0 0 0 2px #dceca7a3;
+}
+.cartridge-slot:hover::after,
+.cartridge-slot:has(:focus-visible)::after {
+  opacity: 0.58;
+  transform: scaleX(0.72);
 }
 .cartridge-top {
   display: flex;

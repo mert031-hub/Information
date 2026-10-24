@@ -9,6 +9,9 @@
   opacity: 0;
   animation-play-state: paused;
 }
+.cartridge-slot.is-away::after {
+  opacity: 0;
+}
 .cartridge[aria-disabled="true"] {
   cursor: default;
 }
