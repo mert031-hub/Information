@@ -39,8 +39,7 @@ export default function App() {
     lastSoundPhase.current = key;
     const event = {
       approaching: "select",
-      inserting: "insert",
-      zooming: "cheer",
+      inserting: "insert-cheer",
       zoomingOut: "stop",
       ejecting: "eject",
     }[phase];

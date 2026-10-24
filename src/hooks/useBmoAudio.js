@@ -95,6 +95,10 @@ export default function useBmoAudio() {
       speech.current = null;
       window.speechSynthesis?.cancel();
     }
+    stopOscillators();
+  }
+
+  function stopOscillators() {
     for (const voice of voices.current) {
       voice.stop();
     }
@@ -107,7 +111,9 @@ export default function useBmoAudio() {
       stopVoices();
       return;
     }
-    if (event === "cheer") {
+    const speechEvent = event === "cheer" || event === "insert-cheer";
+    let speechPlayed = false;
+    if (speechEvent) {
       stopVoices();
       try {
         // Yalnızca cihazdaki İngilizce sesleri kullan; harici TTS servisi gerekmez.
@@ -131,7 +137,8 @@ export default function useBmoAudio() {
             if (enabledRef.current) play(category, "cheer-tone");
           };
           window.speechSynthesis.speak(line);
-          return;
+          speechPlayed = true;
+          if (event === "cheer") return;
         }
       } catch {
         /* Yerel ses kullanılamıyorsa aşağıdaki elektronik tepki çalar. */
@@ -144,8 +151,21 @@ export default function useBmoAudio() {
       return;
     lastPlayed.current = performance.now();
     // Önceki melodiyi temizle; hızlı kart değişimlerinde sesler birikmesin.
-    stopVoices();
-    for (const tone of getSoundSequence(category, event)) {
+    stopOscillators();
+    let sequence = getSoundSequence(
+      category,
+      event === "insert-cheer" ? "insert" : event,
+    );
+    if (event === "insert-cheer" && !speechPlayed) {
+      sequence = [
+        ...sequence,
+        ...getSoundSequence(category, "cheer-tone").map((tone) => ({
+          ...tone,
+          start: tone.start + 0.38,
+        })),
+      ];
+    }
+    for (const tone of sequence) {
       const oscillator = context.createOscillator();
       const envelope = context.createGain();
       const start = context.currentTime + tone.start;
