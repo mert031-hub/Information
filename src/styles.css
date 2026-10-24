@@ -343,7 +343,7 @@ h1 > span {
   box-shadow:
     inset 1px 1px 0 #ffffff25,
     inset -1px -2px 0 #0007,
-    5px 14px 17px #07180f66;
+    6px 18px 24px #07180f86;
   color: #172c26;
   text-align: left;
   filter: brightness(0.94);
@@ -361,7 +361,7 @@ h1 > span {
     inset 1px 1px 0 #ffffff25,
     inset -1px -2px 0 #0007,
     0 0 0 2px #dceca7a3,
-    0 13px 25px #07180f88;
+    0 16px 30px #07180fa0;
 }
 .cartridge-slot:hover .cartridge,
 .cartridge:focus-visible {
@@ -371,7 +371,7 @@ h1 > span {
     inset 1px 1px 0 #ffffff25,
     inset -1px -2px 0 #0007,
     0 0 0 2px #dceca7a3,
-    7px 25px 30px #07180f99;
+    8px 28px 38px #07180fc0;
 }
 .cartridge-top {
   display: flex;
