@@ -23,9 +23,10 @@ function chooseBmoVoice() {
 export default function useBmoAudio() {
   const [enabled, setEnabled] = useState(() => {
     try {
-      return localStorage.getItem(preferenceKey) === "on";
+      const saved = localStorage.getItem(preferenceKey);
+      return saved === null ? true : saved === "on";
     } catch {
-      return false;
+      return true;
     }
   });
   const audio = useRef(null);

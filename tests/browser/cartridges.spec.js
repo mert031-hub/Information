@@ -153,7 +153,10 @@ test("five hover melodies reach native Web Audio; mute cancels even scheduled no
     name: "Ses efektleri",
     exact: true,
   });
-  await expect(sound).toHaveAttribute("aria-pressed", "false");
+  await expect(sound).toHaveAttribute("aria-pressed", "true");
+  // İlk açılışta ses açıktır; düğmeyi bir kez kapatıp yeniden açmak
+  // tarayıcının ses bağlamını kullanıcı etkileşimiyle uyandırır.
+  await sound.click();
   await sound.click();
   await page.waitForFunction(
     () => window.audioProbe.contexts[0]?.state === "running",
