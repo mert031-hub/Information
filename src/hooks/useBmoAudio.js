@@ -138,14 +138,15 @@ export default function useBmoAudio() {
           };
           window.speechSynthesis.speak(line);
           speechPlayed = true;
-          if (event === "cheer") return;
         }
       } catch {
         /* Yerel ses kullanılamıyorsa aşağıdaki elektronik tepki çalar. */
       }
     }
+    if (!audio.current || audio.current.context.state === "suspended") unlock();
     if (!audio.current) return;
     const { context, master } = audio.current;
+    if (master.gain.value === 0) master.gain.value = 1;
     if (context.state !== "running") return;
     if (event === "hover" && performance.now() - lastPlayed.current < 120)
       return;
