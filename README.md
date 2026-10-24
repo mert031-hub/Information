@@ -37,7 +37,7 @@ Ana ekran sade tutulur: logo, ses kontrolü, BMO, kategori kartları ve gezinme 
 - Kartlar 4,8–6,2 saniyelik farklı döngülerle yaklaşık 16 piksel süzülür. Hover veya klavye odağında 14 piksel ek yükseliş ve gölge vardır.
 - Her kategorinin farklı hover melodisi vardır. Kart seçme, hazneye oturma ve çıkarma ayrıca seslendirildi.
 - Karta tıklayınca kart hazneye yaklaşır, açısını ayarlar ve haznenin kenarı arkasında kaybolarak içeri girer.
-- Tıklama anında BMO’nun gözleri mutlu biçimde kısılır ve yüzünde gülümseme belirir. Kaset takılırken “LET'S PLAY!” için açık gülümseme, “UWHUUUU!” için daha yuvarlak neşeli ağız, “YAAAY!” için coşkulu gözler ve ışıltılar görünür. Tepkiler ses açıkken seslendirilir; yüzün üzerine yazı basılmaz.
+- Tıklama anında BMO’nun gözleri mutlu biçimde kısılır ve yüzünde gülümseme belirir. Kaset takılırken kategoriye göre “LET'S PLAY!”, “UWHUUUU!”, “OH YEAH!”, “ADVENTURE TIME!” veya “YAAAY!” tepkileri görünür. Tepkiler ses açıkken cihazın yerel İngilizce seslerinden en uygun olanıyla seslendirilir; yüzün üzerine yazı basılmaz.
 - Kaset takılınca kamera yaklaşık 1300 ms içinde BMO’nun ekranına girer. Oda, kasetler ve BMO aynı kamera katmanında birlikte büyür. LCD görüş alanını doldurduğunda haber sabit, tam ekran yüzeyde belirir; ayrı bir panel sahneden dışarı taşınmaz.
 - Okuyucuda kategori, kapak görseli, başlık, özet, metin ve okuma süresi vardır. Önceki/sonraki kontrolleri ilk ve son haber arasında döngü yapar.
 - Haber değiştirince önce ekrandan uzaklaşılır, eski kart dışarı çıkar ve yerine döner; yeni kart daha sonra takılır. Hızlı tekrar tıklamaları hareketi kesmez.

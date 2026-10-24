@@ -4,6 +4,22 @@ import { getBmoReaction } from "../data/reactions.js";
 
 const preferenceKey = "bmo-news-sound";
 
+function chooseBmoVoice() {
+  const voices = window.speechSynthesis?.getVoices?.() || [];
+  const localEnglish = voices.filter(
+    (voice) => voice.localService && /^en(?:-|$)/i.test(voice.lang),
+  );
+  if (!localEnglish.length) return null;
+  // Prefer the clearer, friendlier voices exposed by common desktop browsers;
+  // the fallback keeps this deterministic on devices with a single local voice.
+  const preferred = /(samantha|ava|zira|jenny|google us english|microsoft).*(natural|online|enhanced)?/i;
+  return (
+    localEnglish.find((voice) => preferred.test(`${voice.name} ${voice.voiceURI || ""}`)) ||
+    localEnglish.find((voice) => /female|woman/i.test(voice.name)) ||
+    localEnglish[0]
+  );
+}
+
 export default function useBmoAudio() {
   const [enabled, setEnabled] = useState(() => {
     try {
@@ -95,9 +111,7 @@ export default function useBmoAudio() {
       stopVoices();
       try {
         // Yalnızca cihazdaki İngilizce sesleri kullan; harici TTS servisi gerekmez.
-        const voice = window.speechSynthesis
-          ?.getVoices()
-          .find((voice) => voice.localService && voice.lang.startsWith("en"));
+        const voice = chooseBmoVoice();
         if (voice && window.SpeechSynthesisUtterance) {
           const line = new window.SpeechSynthesisUtterance(
             getBmoReaction(category).spoken,
@@ -105,8 +119,8 @@ export default function useBmoAudio() {
           line.voice = voice;
           line.lang = voice.lang;
           line.pitch = 1.7;
-          line.rate = 1.15;
-          line.volume = 0.5;
+          line.rate = 1.05;
+          line.volume = 0.62;
           speech.current = line;
           line.onend = () => {
             if (speech.current === line) speech.current = null;
