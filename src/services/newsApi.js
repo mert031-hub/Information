@@ -1,5 +1,6 @@
 const GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc";
 const CACHE_TTL = 5 * 60 * 1000;
+const REQUEST_TIMEOUT = 4500;
 
 const categoryQueries = {
   technology: [
@@ -36,6 +37,17 @@ const categoryQueries = {
 
 const cache = new Map();
 
+function fetchWithTimeout(endpoint, signal) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT);
+  const abort = () => controller.abort();
+  signal?.addEventListener("abort", abort, { once: true });
+  return fetch(endpoint, { signal: controller.signal, headers: { Accept: "application/json" } }).finally(() => {
+    clearTimeout(timeout);
+    signal?.removeEventListener("abort", abort);
+  });
+}
+
 function normalizeArticle(article, index) {
   const title = String(article.title || "").trim();
   const url = String(article.url || "").trim();
@@ -58,44 +70,33 @@ export async function fetchPolandNews(category, signal) {
   const cached = cache.get(category);
   if (cached && cached.expiresAt > Date.now()) return cached.articles;
 
-  let lastError;
-  for (const query of queries) {
+  const endpoints = queries.flatMap((query) => {
     const params = new URLSearchParams({
       query,
       mode: "artlist",
       format: "json",
-      maxrecords: "5",
+      maxrecords: "3",
       sort: "datedesc",
     });
     const target = `${GDELT_ENDPOINT}?${params}`;
-    const endpoints = [
+    return [
       target,
       `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`,
     ];
-    for (const endpoint of endpoints) {
-      try {
-        const response = await fetch(endpoint, {
-          signal,
-          headers: { Accept: "application/json" },
-        });
-        if (!response.ok)
-          throw new Error(`News API responded with ${response.status}`);
-        const data = await response.json();
-        const articles = (Array.isArray(data.articles) ? data.articles : [])
-          .map(normalizeArticle)
-          .filter(Boolean)
-          .filter((article, index, list) =>
-            list.findIndex((candidate) => candidate.url === article.url) === index,
-          );
-        if (articles.length) {
-          cache.set(category, { articles, expiresAt: Date.now() + CACHE_TTL });
-          return articles;
-        }
-      } catch (error) {
-        if (error.name === "AbortError") throw error;
-        lastError = error;
-      }
-    }
-  }
-  throw lastError || new Error("News API returned no articles");
+  });
+  const articles = await Promise.any(endpoints.map(async (endpoint) => {
+    const response = await fetchWithTimeout(endpoint, signal);
+    if (!response.ok) throw new Error(`News API responded with ${response.status}`);
+    const data = await response.json();
+    const result = (Array.isArray(data.articles) ? data.articles : [])
+      .map(normalizeArticle)
+      .filter(Boolean)
+      .filter((article, index, list) =>
+        list.findIndex((candidate) => candidate.url === article.url) === index,
+      );
+    if (!result.length) throw new Error("News API returned no articles");
+    return result;
+  }));
+  cache.set(category, { articles, expiresAt: Date.now() + CACHE_TTL });
+  return articles;
 }
