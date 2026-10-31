@@ -20,10 +20,11 @@ export default function App() {
   const player = useCartridgePlayer();
   const cameraProgress = useMotionValue(0);
   const { selectedIndex, activeIndex, phase, busy } = player;
-  const selected = news[selectedIndex];
   const sound = useBmoAudio();
   const [liveArticles, setLiveArticles] = useState({});
-  const [newsLoading, setNewsLoading] = useState(false);
+  const [newsStatus, setNewsStatus] = useState(() =>
+    Object.fromEntries(news.map((item) => [item.id, "loading"])),
+  );
   const fieldRef = useRef(null);
   const previousPhase = useRef("idle");
   const lastSoundPhase = useRef(null);
@@ -51,25 +52,44 @@ export default function App() {
   }, [phase, activeIndex, selectedIndex]);
 
   useEffect(() => {
-    if (phase !== "approaching" || activeIndex === null) return;
-    const category = news[activeIndex].id;
-    if (liveArticles[category]) return;
     const controller = new AbortController();
-    setNewsLoading(true);
-    fetchPolandNews(category, controller.signal)
-      .then((articles) => {
-        if (!articles.length) return;
-        setLiveArticles((current) => ({ ...current, [category]: articles }));
-      })
-      .catch((error) => {
-        if (error.name !== "AbortError")
-          console.warn("Güncel Polonya haberleri alınamadı.", error);
-      })
-      .finally(() => {
-        if (!controller.signal.aborted) setNewsLoading(false);
-      });
+    news.forEach((item) => {
+      fetchPolandNews(item.id, controller.signal)
+        .then((articles) => {
+          setLiveArticles((current) => ({ ...current, [item.id]: articles }));
+          setNewsStatus((current) => ({ ...current, [item.id]: "ready" }));
+        })
+        .catch((error) => {
+          if (error.name === "AbortError") return;
+          console.warn(`Güncel ${item.category} haberleri alınamadı.`, error);
+          setNewsStatus((current) => ({ ...current, [item.id]: "error" }));
+        });
+    });
     return () => controller.abort();
-  }, [phase, activeIndex, liveArticles]);
+  }, []);
+
+  const displayNews = news.map((item) => {
+    const articles = liveArticles[item.id] || [];
+    const status = newsStatus[item.id];
+    const first = articles[0];
+    return {
+      ...item,
+      title:
+        first?.title ||
+        (status === "error" ? "Güncel haber bulunamadı" : "Haberler yükleniyor…"),
+      subtitle: first?.source || "Polonya’dan canlı haber akışı",
+      summary:
+        first?.summary ||
+        (status === "error"
+          ? "Bu kategori için haber alınamadı. Lütfen biraz sonra tekrar dene."
+          : "Polonya’dan güncel haberler getiriliyor…"),
+      body: [],
+      liveArticles: articles,
+      newsLoading: status === "loading",
+      newsError: status === "error",
+    };
+  });
+  const selected = displayNews[selectedIndex];
 
   function moveSelection(direction) {
     player.select((selectedIndex + direction + news.length) % news.length);
@@ -162,7 +182,7 @@ export default function App() {
                 <BmoPort phase={phase} color={selected.color} />
                 <BmoReaction phase={phase} category={selected.id} progress={cameraProgress} />
               </div>
-              {news.map((item, index) => (
+              {displayNews.map((item, index) => (
                 <NewsCartridge
                   key={item.id}
                   item={item}
@@ -180,7 +200,7 @@ export default function App() {
                 ) && (
                   <CartridgeFlight
                     key={activeIndex}
-                    item={news[activeIndex]}
+                    item={displayNews[activeIndex]}
                     index={activeIndex}
                     phase={phase}
                     fieldRef={fieldRef}
@@ -218,9 +238,7 @@ export default function App() {
       {["zooming", "reading", "zoomingOut"].includes(phase) && (
         <NewsReader
           item={{
-            ...news[activeIndex],
-            liveArticles: liveArticles[news[activeIndex].id] || [],
-            newsLoading,
+            ...displayNews[activeIndex],
           }}
           index={activeIndex}
           count={news.length}

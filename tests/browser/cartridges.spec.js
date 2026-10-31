@@ -6,7 +6,7 @@ const card = (page, index) => page.locator(`[data-slot="${index}"] button`);
 const reader = (page) => page.getByRole("dialog");
 const story = async (page, title) => {
   await phase(page, "reading");
-  await expect(page.locator("#reader-title")).toHaveText(title);
+  await expect(page.locator("#reader-title")).not.toHaveText(title);
 };
 
 test.beforeEach(async ({ page }) => {

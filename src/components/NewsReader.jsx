@@ -113,7 +113,7 @@ export default function NewsReader({
                   <span>
                     <Clock3 size={13} /> {item.readTime} okuma
                   </span>
-                  <span>KURMACA DEMO</span>
+                  <span>POLONYA CANLI AKIŞI</span>
                 </div>
               </div>
               <figure className="reader-cover">
@@ -149,14 +149,11 @@ export default function NewsReader({
                       </article>
                     ))}
                   </section>
-                ) : (
-                  item.body.map((section) => (
-                    <section key={section.heading}>
-                      <h2>{section.heading}</h2>
-                      <p>{section.text}</p>
-                    </section>
-                  ))
-                )}
+                ) : !item.newsLoading ? (
+                  <p className="live-news-status" role="status">
+                    Bu kategori için güncel haber alınamadı. Lütfen biraz sonra tekrar dene.
+                  </p>
+                ) : null}
               </div>
             </article>
             <nav
