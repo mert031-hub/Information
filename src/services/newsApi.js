@@ -2,11 +2,36 @@ const GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc";
 const CACHE_TTL = 5 * 60 * 1000;
 
 const categoryQueries = {
-  technology: ["sourcecountry:PL technology", "Poland technology"],
-  economy: ["sourcecountry:PL economy", "Poland economy"],
-  politics: ["sourcecountry:PL politics", "Poland politics"],
-  weather: ["sourcecountry:PL weather", "Poland weather"],
-  culture: ["sourcecountry:PL culture", "Poland culture"],
+  technology: [
+    "sourcecountry:PL technologia",
+    "sourcecountry:PL technologie",
+    "sourcecountry:PL sztuczna inteligencja",
+    "sourcecountry:PL technology",
+  ],
+  economy: [
+    "sourcecountry:PL gospodarka",
+    "sourcecountry:PL ekonomia",
+    "sourcecountry:PL biznes",
+    "sourcecountry:PL finanse",
+  ],
+  politics: [
+    "sourcecountry:PL polityka",
+    "sourcecountry:PL rząd",
+    "sourcecountry:PL parlament",
+    "sourcecountry:PL politics",
+  ],
+  weather: [
+    "sourcecountry:PL pogoda",
+    "sourcecountry:PL prognoza",
+    "sourcecountry:PL deszcz",
+    "sourcecountry:PL weather",
+  ],
+  culture: [
+    "sourcecountry:PL kultura",
+    "sourcecountry:PL muzyka",
+    "sourcecountry:PL film",
+    "sourcecountry:PL sztuka",
+  ],
 };
 
 const cache = new Map();
