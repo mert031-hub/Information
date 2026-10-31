@@ -2,7 +2,7 @@
 // cross a public CORS proxy or absorb its rate limits.
 const NEWS_API_BASE = "https://bmo-news-api.demirmustafamrt7.chatgpt.site/api/news";
 const CACHE_TTL = 5 * 60 * 1000;
-const REQUEST_TIMEOUT = 10000;
+const REQUEST_TIMEOUT = 6500;
 
 const cache = new Map();
 
