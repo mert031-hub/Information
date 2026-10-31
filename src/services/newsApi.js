@@ -169,6 +169,7 @@ export async function fetchPolandNews(category, signal) {
     });
     const target = `${GDELT_ENDPOINT}?${params}`;
     return [
+      `https://r.jina.ai/${target.replace("https://", "http://")}`,
       target,
       `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`,
     ];
@@ -176,7 +177,8 @@ export async function fetchPolandNews(category, signal) {
   const articles = await Promise.any(endpoints.map(async (endpoint) => {
     const response = await fetchWithTimeout(endpoint, signal);
     if (!response.ok) throw new Error(`News API responded with ${response.status}`);
-    const data = await response.json();
+    const raw = await response.text();
+    const data = JSON.parse(raw.replace(/^```json\s*|\s*```$/g, ""));
     const result = (Array.isArray(data.articles) ? data.articles : [])
       .map(normalizeArticle)
       .filter(Boolean)
