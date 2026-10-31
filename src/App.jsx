@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMotionValue } from "motion/react";
 import { ArrowLeft, ArrowRight, Gamepad2 } from "lucide-react";
 import { news } from "./data/news.js";
@@ -14,6 +14,7 @@ import SoundButton from "./components/SoundButton.jsx";
 import BmoReaction from "./components/BmoReaction.jsx";
 import { getBmoReaction } from "./data/reactions.js";
 import { sceneImages } from "./data/imageAssets.js";
+import { fetchPolandNews } from "./services/newsApi.js";
 
 export default function App() {
   const player = useCartridgePlayer();
@@ -21,6 +22,8 @@ export default function App() {
   const { selectedIndex, activeIndex, phase, busy } = player;
   const selected = news[selectedIndex];
   const sound = useBmoAudio();
+  const [liveArticles, setLiveArticles] = useState({});
+  const [newsLoading, setNewsLoading] = useState(false);
   const fieldRef = useRef(null);
   const previousPhase = useRef("idle");
   const lastSoundPhase = useRef(null);
@@ -46,6 +49,27 @@ export default function App() {
     if (event && activeIndex !== null)
       phaseSound.current(news[activeIndex].id, event);
   }, [phase, activeIndex, selectedIndex]);
+
+  useEffect(() => {
+    if (phase !== "approaching" || activeIndex === null) return;
+    const category = news[activeIndex].id;
+    if (liveArticles[category]) return;
+    const controller = new AbortController();
+    setNewsLoading(true);
+    fetchPolandNews(category, controller.signal)
+      .then((articles) => {
+        if (!articles.length) return;
+        setLiveArticles((current) => ({ ...current, [category]: articles }));
+      })
+      .catch((error) => {
+        if (error.name !== "AbortError")
+          console.warn("Güncel Polonya haberleri alınamadı.", error);
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setNewsLoading(false);
+      });
+    return () => controller.abort();
+  }, [phase, activeIndex, liveArticles]);
 
   function moveSelection(direction) {
     player.select((selectedIndex + direction + news.length) % news.length);
@@ -193,7 +217,11 @@ export default function App() {
       </SceneCamera>
       {["zooming", "reading", "zoomingOut"].includes(phase) && (
         <NewsReader
-          item={news[activeIndex]}
+          item={{
+            ...news[activeIndex],
+            liveArticles: liveArticles[news[activeIndex].id] || [],
+            newsLoading,
+          }}
           index={activeIndex}
           count={news.length}
           phase={phase}

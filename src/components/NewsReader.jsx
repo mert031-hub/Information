@@ -130,12 +130,33 @@ export default function NewsReader({
               </figure>
               <div className="reader-copy">
                 <p className="reader-lead">{item.summary}</p>
-                {item.body.map((section) => (
-                  <section key={section.heading}>
-                    <h2>{section.heading}</h2>
-                    <p>{section.text}</p>
+                {item.newsLoading && (
+                  <p className="live-news-status" role="status">
+                    Polonya’dan güncel haberler getiriliyor…
+                  </p>
+                )}
+                {item.liveArticles?.length ? (
+                  <section className="live-news-list" aria-label="Güncel Polonya haberleri">
+                    <h2>Polonya’dan güncel haberler</h2>
+                    {item.liveArticles.map((article) => (
+                      <article className="live-news-item" key={article.id}>
+                        <p className="live-news-source">{article.source}</p>
+                        <h3>{article.title}</h3>
+                        <p>{article.summary}</p>
+                        <a href={article.url} target="_blank" rel="noreferrer">
+                          Haberin kaynağına git →
+                        </a>
+                      </article>
+                    ))}
                   </section>
-                ))}
+                ) : (
+                  item.body.map((section) => (
+                    <section key={section.heading}>
+                      <h2>{section.heading}</h2>
+                      <p>{section.text}</p>
+                    </section>
+                  ))
+                )}
               </div>
             </article>
             <nav

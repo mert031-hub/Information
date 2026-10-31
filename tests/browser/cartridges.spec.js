@@ -466,9 +466,6 @@ test("local speech uses a playful pitch, avoids remote voices and is cancelled b
     });
   });
   await page.goto("/");
-  await page
-    .getByRole("button", { name: "Ses efektleri", exact: true })
-    .click();
   await card(page, 0).click({ force: true });
   await phase(page, "reading");
   expect(await page.evaluate(() => window.speechProbe.lines)).toEqual([
