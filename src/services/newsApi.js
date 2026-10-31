@@ -106,58 +106,22 @@ function parseRssXml(xml) {
     .slice(0, 3);
 }
 
+function parseJsonPayload(raw) {
+  const text = raw.replace(/^```json\s*|\s*```$/g, "").trim();
+  try {
+    return JSON.parse(text);
+  } catch {
+    const start = text.indexOf("{");
+    const end = text.lastIndexOf("}");
+    if (start < 0 || end <= start) throw new Error("News API returned invalid JSON");
+    return JSON.parse(text.slice(start, end + 1));
+  }
+}
+
 export async function fetchPolandNews(category, signal) {
   const queries = categoryQueries[category] || categoryQueries.technology;
   const cached = cache.get(category);
   if (cached && cached.expiresAt > Date.now()) return cached.articles;
-
-  try {
-    const rssQueriesForCategory = rssQueries[category] || rssQueries.technology;
-    const rssArticles = await Promise.any(rssQueriesForCategory.map(async (query) => {
-      const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=pl&gl=PL&ceid=PL:pl`;
-      const proxyRequests = [
-        {
-          url: `https://cors.isomorphic-git.org/${rssUrl}`,
-          parse: (response) => response.text(),
-        },
-        {
-          url: `https://proxy.corsfix.com/?${rssUrl}`,
-          parse: (response) => response.text(),
-        },
-        {
-          url: `https://corsproxy.org/?url=${encodeURIComponent(rssUrl)}`,
-          parse: (response) => response.text(),
-        },
-        {
-          url: `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`,
-          parse: (response) => response.text(),
-        },
-        {
-          url: `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`,
-          parse: async (response) => (await response.json()).contents,
-        },
-        {
-          url: `https://corsproxy.io/?url=${encodeURIComponent(rssUrl)}`,
-          parse: (response) => response.text(),
-        },
-        {
-          url: `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(rssUrl)}`,
-          parse: (response) => response.text(),
-        },
-      ];
-      const articles = await Promise.any(proxyRequests.map(async ({ url, parse }) => {
-        const response = await fetchWithTimeout(url, signal);
-        if (!response.ok) throw new Error(`RSS proxy responded with ${response.status}`);
-        return parseRssXml(await parse(response));
-      }));
-      if (!articles.length) throw new Error("RSS returned no articles");
-      return articles;
-    }));
-    cache.set(category, { articles: rssArticles, expiresAt: Date.now() + CACHE_TTL });
-    return rssArticles;
-  } catch (error) {
-    if (error.name === "AbortError") throw error;
-  }
 
   const endpoints = queries.flatMap((query) => {
     const params = new URLSearchParams({
@@ -168,17 +132,13 @@ export async function fetchPolandNews(category, signal) {
       sort: "datedesc",
     });
     const target = `${GDELT_ENDPOINT}?${params}`;
-    return [
-      `https://r.jina.ai/${target.replace("https://", "http://")}`,
-      target,
-      `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`,
-    ];
+    return [`https://r.jina.ai/${target.replace("https://", "http://")}`];
   });
   const articles = await Promise.any(endpoints.map(async (endpoint) => {
     const response = await fetchWithTimeout(endpoint, signal);
     if (!response.ok) throw new Error(`News API responded with ${response.status}`);
     const raw = await response.text();
-    const data = JSON.parse(raw.replace(/^```json\s*|\s*```$/g, ""));
+    const data = parseJsonPayload(raw);
     const result = (Array.isArray(data.articles) ? data.articles : [])
       .map(normalizeArticle)
       .filter(Boolean)
