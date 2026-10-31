@@ -1,5 +1,4 @@
 const GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc";
-const RSS2JSON_ENDPOINT = "https://api.rss2json.com/v1/api.json";
 const CACHE_TTL = 5 * 60 * 1000;
 const REQUEST_TIMEOUT = 4500;
 
@@ -93,6 +92,20 @@ function normalizeRssArticle(article, index) {
   };
 }
 
+function parseRssXml(xml) {
+  const document = new DOMParser().parseFromString(xml, "text/xml");
+  return [...document.querySelectorAll("item")]
+    .map((item, index) => normalizeRssArticle({
+      title: item.querySelector("title")?.textContent,
+      link: item.querySelector("link")?.textContent,
+      description: item.querySelector("description")?.textContent,
+      pubDate: item.querySelector("pubDate")?.textContent,
+      author: item.querySelector("source")?.textContent,
+    }, index))
+    .filter(Boolean)
+    .slice(0, 3);
+}
+
 export async function fetchPolandNews(category, signal) {
   const queries = categoryQueries[category] || categoryQueries.technology;
   const cached = cache.get(category);
@@ -102,14 +115,15 @@ export async function fetchPolandNews(category, signal) {
     const rssQueriesForCategory = rssQueries[category] || rssQueries.technology;
     const rssArticles = await Promise.any(rssQueriesForCategory.map(async (query) => {
       const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=pl&gl=PL&ceid=PL:pl`;
-      const rssParams = new URLSearchParams({ rss_url: rssUrl });
-      const rssResponse = await fetchWithTimeout(`${RSS2JSON_ENDPOINT}?${rssParams}`, signal);
-      if (!rssResponse.ok) throw new Error(`RSS API responded with ${rssResponse.status}`);
-      const rssData = await rssResponse.json();
-      const articles = (Array.isArray(rssData.items) ? rssData.items : [])
-        .map(normalizeRssArticle)
-        .filter(Boolean)
-        .slice(0, 3);
+      const proxyUrls = [
+        `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`,
+        `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(rssUrl)}`,
+      ];
+      const articles = await Promise.any(proxyUrls.map(async (proxyUrl) => {
+        const response = await fetchWithTimeout(proxyUrl, signal);
+        if (!response.ok) throw new Error(`RSS proxy responded with ${response.status}`);
+        return parseRssXml(await response.text());
+      }));
       if (!articles.length) throw new Error("RSS returned no articles");
       return articles;
     }));
