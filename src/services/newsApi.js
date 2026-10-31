@@ -37,11 +37,11 @@ const categoryQueries = {
 };
 
 const rssQueries = {
-  technology: "Polska technologia sztuczna inteligencja",
-  economy: "Polska gospodarka ekonomia biznes",
-  politics: "Polska polityka rząd parlament",
-  weather: "Polska pogoda prognoza",
-  culture: "Polska kultura muzyka film sztuka",
+  technology: ["Polska technologia", "Polska sztuczna inteligencja", "Poland technology"],
+  economy: ["Polska gospodarka", "Polska ekonomia biznes", "Poland economy"],
+  politics: ["Polska polityka", "Polska rząd parlament", "Poland politics"],
+  weather: ["Polska pogoda", "Polska prognoza pogody", "Poland weather"],
+  culture: ["Polska kultura", "Polska muzyka film", "Polish culture"],
 };
 
 const cache = new Map();
@@ -98,25 +98,23 @@ export async function fetchPolandNews(category, signal) {
   const cached = cache.get(category);
   if (cached && cached.expiresAt > Date.now()) return cached.articles;
 
-  const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(
-    rssQueries[category] || rssQueries.technology,
-  )}&hl=pl&gl=PL&ceid=PL:pl`;
   try {
-    const rssParams = new URLSearchParams({ rss_url: rssUrl });
-    const rssResponse = await fetchWithTimeout(
-      `${RSS2JSON_ENDPOINT}?${rssParams}`,
-      signal,
-    );
-    if (!rssResponse.ok) throw new Error(`RSS API responded with ${rssResponse.status}`);
-    const rssData = await rssResponse.json();
-    const rssArticles = (Array.isArray(rssData.items) ? rssData.items : [])
-      .map(normalizeRssArticle)
-      .filter(Boolean)
-      .slice(0, 3);
-    if (rssArticles.length) {
-      cache.set(category, { articles: rssArticles, expiresAt: Date.now() + CACHE_TTL });
-      return rssArticles;
-    }
+    const rssQueriesForCategory = rssQueries[category] || rssQueries.technology;
+    const rssArticles = await Promise.any(rssQueriesForCategory.map(async (query) => {
+      const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=pl&gl=PL&ceid=PL:pl`;
+      const rssParams = new URLSearchParams({ rss_url: rssUrl });
+      const rssResponse = await fetchWithTimeout(`${RSS2JSON_ENDPOINT}?${rssParams}`, signal);
+      if (!rssResponse.ok) throw new Error(`RSS API responded with ${rssResponse.status}`);
+      const rssData = await rssResponse.json();
+      const articles = (Array.isArray(rssData.items) ? rssData.items : [])
+        .map(normalizeRssArticle)
+        .filter(Boolean)
+        .slice(0, 3);
+      if (!articles.length) throw new Error("RSS returned no articles");
+      return articles;
+    }));
+    cache.set(category, { articles: rssArticles, expiresAt: Date.now() + CACHE_TTL });
+    return rssArticles;
   } catch (error) {
     if (error.name === "AbortError") throw error;
   }
