@@ -115,14 +115,28 @@ export async function fetchPolandNews(category, signal) {
     const rssQueriesForCategory = rssQueries[category] || rssQueries.technology;
     const rssArticles = await Promise.any(rssQueriesForCategory.map(async (query) => {
       const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=pl&gl=PL&ceid=PL:pl`;
-      const proxyUrls = [
-        `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`,
-        `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(rssUrl)}`,
+      const proxyRequests = [
+        {
+          url: `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`,
+          parse: (response) => response.text(),
+        },
+        {
+          url: `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`,
+          parse: async (response) => (await response.json()).contents,
+        },
+        {
+          url: `https://corsproxy.io/?url=${encodeURIComponent(rssUrl)}`,
+          parse: (response) => response.text(),
+        },
+        {
+          url: `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(rssUrl)}`,
+          parse: (response) => response.text(),
+        },
       ];
-      const articles = await Promise.any(proxyUrls.map(async (proxyUrl) => {
-        const response = await fetchWithTimeout(proxyUrl, signal);
+      const articles = await Promise.any(proxyRequests.map(async ({ url, parse }) => {
+        const response = await fetchWithTimeout(url, signal);
         if (!response.ok) throw new Error(`RSS proxy responded with ${response.status}`);
-        return parseRssXml(await response.text());
+        return parseRssXml(await parse(response));
       }));
       if (!articles.length) throw new Error("RSS returned no articles");
       return articles;
