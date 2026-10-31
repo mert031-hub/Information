@@ -117,6 +117,18 @@ export async function fetchPolandNews(category, signal) {
       const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=pl&gl=PL&ceid=PL:pl`;
       const proxyRequests = [
         {
+          url: `https://cors.isomorphic-git.org/${rssUrl}`,
+          parse: (response) => response.text(),
+        },
+        {
+          url: `https://proxy.corsfix.com/?${rssUrl}`,
+          parse: (response) => response.text(),
+        },
+        {
+          url: `https://corsproxy.org/?url=${encodeURIComponent(rssUrl)}`,
+          parse: (response) => response.text(),
+        },
+        {
           url: `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`,
           parse: (response) => response.text(),
         },
