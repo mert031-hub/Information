@@ -35,33 +35,41 @@ export async function fetchPolandNews(category, signal) {
 
   let lastError;
   for (const query of queries) {
-    try {
-      const params = new URLSearchParams({
-        query,
-        mode: "artlist",
-        format: "json",
-        maxrecords: "5",
-        sort: "datedesc",
-      });
-      const response = await fetch(`${GDELT_ENDPOINT}?${params}`, {
-        signal,
-        headers: { Accept: "application/json" },
-      });
-      if (!response.ok) throw new Error(`News API responded with ${response.status}`);
-      const data = await response.json();
-      const articles = (Array.isArray(data.articles) ? data.articles : [])
-        .map(normalizeArticle)
-        .filter(Boolean)
-        .filter((article, index, list) =>
-          list.findIndex((candidate) => candidate.url === article.url) === index,
-        );
-      if (articles.length) {
-        cache.set(category, { articles, expiresAt: Date.now() + CACHE_TTL });
-        return articles;
+    const params = new URLSearchParams({
+      query,
+      mode: "artlist",
+      format: "json",
+      maxrecords: "5",
+      sort: "datedesc",
+    });
+    const target = `${GDELT_ENDPOINT}?${params}`;
+    const endpoints = [
+      target,
+      `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`,
+    ];
+    for (const endpoint of endpoints) {
+      try {
+        const response = await fetch(endpoint, {
+          signal,
+          headers: { Accept: "application/json" },
+        });
+        if (!response.ok)
+          throw new Error(`News API responded with ${response.status}`);
+        const data = await response.json();
+        const articles = (Array.isArray(data.articles) ? data.articles : [])
+          .map(normalizeArticle)
+          .filter(Boolean)
+          .filter((article, index, list) =>
+            list.findIndex((candidate) => candidate.url === article.url) === index,
+          );
+        if (articles.length) {
+          cache.set(category, { articles, expiresAt: Date.now() + CACHE_TTL });
+          return articles;
+        }
+      } catch (error) {
+        if (error.name === "AbortError") throw error;
+        lastError = error;
       }
-    } catch (error) {
-      if (error.name === "AbortError") throw error;
-      lastError = error;
     }
   }
   throw lastError || new Error("News API returned no articles");
