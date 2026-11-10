@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useMotionValue } from "motion/react";
 import { ArrowLeft, ArrowRight, Gamepad2 } from "lucide-react";
 import { news } from "./data/news.js";
@@ -14,17 +14,16 @@ import SoundButton from "./components/SoundButton.jsx";
 import BmoReaction from "./components/BmoReaction.jsx";
 import { getBmoReaction } from "./data/reactions.js";
 import { sceneImages } from "./data/imageAssets.js";
-import { fetchPolandNews } from "./services/newsApi.js";
+import useLiveNews from "./hooks/useLiveNews.js";
+import HowItWorks from "./components/HowItWorks.jsx";
+import { modeLabels } from "./data/format.js";
 
 export default function App() {
   const player = useCartridgePlayer();
   const cameraProgress = useMotionValue(0);
   const { selectedIndex, activeIndex, phase, busy } = player;
   const sound = useBmoAudio();
-  const [liveArticles, setLiveArticles] = useState({});
-  const [newsStatus, setNewsStatus] = useState(() =>
-    Object.fromEntries(news.map((item) => [item.id, "loading"])),
-  );
+  const live = useLiveNews();
   const fieldRef = useRef(null);
   const previousPhase = useRef("idle");
   const lastSoundPhase = useRef(null);
@@ -51,42 +50,31 @@ export default function App() {
       phaseSound.current(news[activeIndex].id, event);
   }, [phase, activeIndex, selectedIndex]);
 
-  useEffect(() => {
-    const controller = new AbortController();
-    news.forEach((item) => {
-      fetchPolandNews(item.id, controller.signal)
-        .then((articles) => {
-          setLiveArticles((current) => ({ ...current, [item.id]: articles }));
-          setNewsStatus((current) => ({ ...current, [item.id]: "ready" }));
-        })
-        .catch((error) => {
-          if (error.name === "AbortError") return;
-          console.warn(`Güncel ${item.category} haberleri alınamadı.`, error);
-          setNewsStatus((current) => ({ ...current, [item.id]: "error" }));
-        });
-    });
-    return () => controller.abort();
-  }, []);
-
+  // Her kart için üç durumdan biri: canlı haber var / önbellekten / örnek içerik.
   const displayNews = news.map((item) => {
-    const articles = liveArticles[item.id] || [];
-    const status = newsStatus[item.id];
+    const entry = live.data?.categories?.[item.id];
+    const articles = entry?.articles ?? [];
+    if (!articles.length)
+      return {
+        ...item,
+        mode: live.status === "loading" ? "loading" : "demo",
+        liveArticles: [],
+        explain: entry?.explain ?? {},
+        loadError: live.error || entry?.explain?.lastError || "",
+      };
     const first = articles[0];
     return {
       ...item,
-      title:
-        first?.title ||
-        (status === "error" ? "Güncel haber bulunamadı" : "Haberler yükleniyor…"),
-      subtitle: first?.source || "Polonya’dan canlı haber akışı",
-      summary:
-        first?.summary ||
-        (status === "error"
-          ? "Bu kategori için haber alınamadı. Lütfen biraz sonra tekrar dene."
-          : "Polonya’dan güncel haberler getiriliyor…"),
+      title: first.title,
+      subtitle: first.source,
+      summary: first.summary || entry.explain.why || item.summary,
+      readTime: `${articles.length} haber`,
       body: [],
+      mode: ["cached", "snapshot"].includes(live.status) ? live.status : "live",
+      sample: first.why?.provider === "demo-seed", // npm run seed ile yüklenen gerçek olmayan veri
       liveArticles: articles,
-      newsLoading: status === "loading",
-      newsError: status === "error",
+      explain: entry.explain,
+      loadError: live.error || "",
     };
   });
   const selected = displayNews[selectedIndex];
@@ -149,7 +137,10 @@ export default function App() {
               </span>
               <span className="brand-dot" />
             </a>
-            <SoundButton sound={sound} />
+            <div className="header-actions">
+              <HowItWorks news={live} />
+              <SoundButton sound={sound} />
+            </div>
           </header>
           <h1 className="sr-only">BMO News</h1>
           <section
@@ -246,6 +237,8 @@ export default function App() {
           progress={cameraProgress}
           onClose={player.close}
           onMove={moveSelection}
+          onRetry={live.retry}
+          cachedAt={live.data?.cachedAt ?? live.data?.generatedAt}
           sound={sound}
         />
       )}

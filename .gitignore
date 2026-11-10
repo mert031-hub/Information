@@ -8,3 +8,4 @@ dist/
 work/
 test-results/
 playwright-report/
+server/data/

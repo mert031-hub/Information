@@ -9,7 +9,28 @@ const story = async (page, title) => {
   await expect(page.locator("#reader-title")).not.toHaveText(title);
 };
 
+// Gerçek ağa çıkmadan, her kategori için sahte "canlı" haberler döndüren API.
+const liveBody = {
+  generatedAt: new Date().toISOString(),
+  store: "test",
+  refreshing: false,
+  categories: Object.fromEntries(
+    ["technology", "economy", "politics", "weather", "culture"].map((id) => [
+      id,
+      {
+        explain: { why: `${id} test akışı`, provider: "google-news-rss", lastFetchedAt: new Date().toISOString() },
+        articles: [1, 2].map((n) => ({
+          id: `${id}-${n}`, title: `Canlı ${id} haberi ${n}`, url: `https://example.test/${id}/${n}`,
+          source: "example.test", summary: "", publishedAt: new Date().toISOString(),
+          why: { provider: "google-news-rss", query: "test", fetchedAt: new Date().toISOString() },
+        })),
+      },
+    ]),
+  ),
+};
+
 test.beforeEach(async ({ page }) => {
+  await page.route("**/api/news/all", (route) => route.fulfill({ json: liveBody }));
   await page.addInitScript(() => {
     window.observedPhases = [];
     new MutationObserver(() => {
@@ -480,4 +501,43 @@ test("local speech uses a playful pitch, avoids remote voices and is cancelled b
   await card(page, 1).click({ force: true });
   await phase(page, "reading");
   expect(await page.evaluate(() => window.speechProbe.lines.length)).toBe(1);
+});
+
+test("canlı haber varken okuyucu CANLI etiketini, kaynağı ve 'Neden burada?' kutusunu gösterir", async ({ page }) => {
+  await page.goto("/");
+  await expect(card(page, 0)).toHaveAttribute("aria-label", /CANLI/);
+  await card(page, 0).click({ force: true });
+  await phase(page, "reading");
+  await expect(page.locator("#reader-title")).toHaveText("Canlı technology haberi 1");
+  await expect(page.locator(".reader-meta [data-mode]")).toHaveText(/CANLI/);
+  await expect(page.locator(".source-notice")).toContainText("Bu akış nasıl oluştu?");
+  await page.locator(".why-here summary").first().click();
+  await expect(page.locator(".why-here dl").first()).toContainText("Google Haberler");
+});
+
+test("API düşünce kurmaca içerik ÖRNEK olarak etiketlenir ve 'Tekrar dene' haberi getirir", async ({ page }) => {
+  let healthy = false;
+  await page.route("**/api/news/all", (route) =>
+    healthy ? route.fulfill({ json: liveBody }) : route.fulfill({ status: 503, json: { error: "down" } }),
+  );
+  await page.goto("/");
+  await expect(card(page, 0)).toHaveAttribute("aria-label", /ÖRNEK/, { timeout: 15000 });
+  await card(page, 0).click({ force: true });
+  await phase(page, "reading");
+  await expect(page.locator(".source-notice")).toContainText("kurmaca örnek içerik");
+  healthy = true;
+  await page.getByRole("button", { name: "Tekrar dene" }).click();
+  await expect(page.locator("#reader-title")).toHaveText("Canlı technology haberi 1");
+});
+
+test("API yokken statik news.json okunur ve ANLIK GÖRÜNTÜ olarak etiketlenir", async ({ page }) => {
+  await page.route("**/api/news/all", (route) => route.fulfill({ status: 404, json: { error: "yok" } }));
+  await page.route("**/news.json", (route) => route.fulfill({ json: liveBody }));
+  await page.goto("/");
+  await expect(card(page, 0)).toHaveAttribute("aria-label", /ANLIK GÖRÜNTÜ/, { timeout: 15000 });
+  await card(page, 0).click({ force: true });
+  await phase(page, "reading");
+  await expect(page.locator("#reader-title")).toHaveText("Canlı technology haberi 1");
+  await expect(page.locator(".source-notice")).toContainText("news.json");
+  await expect(page.locator(".source-reason")).toContainText("Sebep");
 });

@@ -1,0 +1,23 @@
+# Saatte bir haberleri toplayıp public/news.json'a yazar ve depoya işler.
+# Siten bu depodan otomatik yayınlanıyorsa (Pages, Vercel, Netlify...) yeni haberler kendiliğinden yayına çıkar.
+name: Haber anlik goruntusu
+on:
+  schedule: [{ cron: "17 * * * *" }]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run news:snapshot
+      - name: Degisiklik varsa kaydet
+        run: |
+          git config user.name "bmo-news-bot"
+          git config user.email "bmo-news-bot@users.noreply.github.com"
+          git add public/news.json
+          git diff --cached --quiet || (git commit -m "chore: haber anlik goruntusu" && git push)

@@ -1,35 +1,89 @@
 # BMO NEWS
 
-Adventure Time temalı haber sitesi — oturan BMO ve çevresinde süzülen kartlar.
+Adventure Time temalı, **canlı Polonya haberleri** gösteren web uygulaması: oturan BMO, çevresinde süzülen kategori kartları, kartı hazneye takınca ekrana giren kamera.
 
-## Yerelde çalıştırma
+> **Ders projesi notu (Technologies of Internet Applications):** Uygulama veritabanında veri saklar ve okur (MongoDB), React arayüzü + Express API + Docker ile paketlenir. Her haberin "neden burada?" sorusunun cevabı hem arayüzde hem API'de vardır. Ayrıntı: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
-Node.js 24 önerilir; bu sürüm 24.19.0 ile doğrulandı. nvm kullanıyorsan `nvm use` komutu `.nvmrc` dosyasındaki sürümü seçer.
+## Hızlı başlangıç
 
 ```bash
-git clone https://github.com/mert031-hub/Information.git
-cd Information
 npm ci
-npm run dev
+npm run seed        # (isteğe bağlı) internet yokken denemek için ÖRNEK veri yükler
+npm run dev:all     # TEK KOMUT: haber sunucusu (8787) + arayüz birlikte -> terminalde yazan adresi aç
 ```
 
-Depo zaten bilgisayarındaysa kendi değişikliklerini koruyarak `git pull --ff-only origin main` çalıştır, ardından `npm ci` ve `npm run dev` komutlarını kullan. Geliştirme sunucusunun adresi terminalde görünür.
+İki ayrı terminal tercih edersen: `npm run server` (API + toplayıcı) ve `npm run dev` (arayüz; `/api` otomatik 8787'ye gider). **Sunucu çalışmazsa haber gelmez**, sayfa "ÖRNEK" içeriğe düşer.
 
-Windows PowerShell `npm` için uygulama seçme penceresi açarsa `npm.cmd ci` ve `npm.cmd run dev` kullan. Node.js 24 kurulumu npm'i de sağlar.
+MongoDB ile: `MONGODB_URI=mongodb://localhost:27017 npm run server`. `MONGODB_URI` yoksa ya da bağlanılamazsa uygulama `server/data/store.json` dosyasına yazar ve çalışmaya devam eder.
 
-`motion/react` bulunamadı hatası, genellikle kod güncellenirken bağımlılıkların yerelde kurulmadığını gösterir. `git pull` paket kurmaz. PowerShell’de Vite’ı **Ctrl+C** ile durdurup depo klasöründe şu sırayı kullan:
+Tek komutla (MongoDB dahil): `docker compose up --build` → http://localhost:8787
 
-```powershell
-git pull --ff-only origin main
-npm.cmd ci
-npm.cmd run dev
+Ortam değişkenleri için `.env.example` dosyasına bak. Node 22+ yeterlidir (`.nvmrc` 24.19.0 önerir).
+
+## Mimari (kısaca)
+
+```text
+Google Haberler RSS ──(yedek)──> GDELT
+          │                         │
+          └──────────┬──────────────┘
+                     ▼
+   server/ingest.js  (15 dk'da bir, kategoriler sırayla)
+                     ▼
+   MongoDB:  articles (haberler)   runs (her denemenin günlüğü)
+                     ▼
+   Express API:  /api/news/all   /api/sources   /api/health
+                     ▼
+   React arayüzü  →  hata olursa: tarayıcı önbelleği → örnek içerik
 ```
 
-`motion`, hem `package.json` hem `package-lock.json` içinde kayıtlıdır; import satırını değiştirmek gerekmez.
+| Soru | Cevap nerede? |
+| --- | --- |
+| Hangi kategori hangi haberi getiriyor? | `server/categories.js` (tek dosya) |
+| Haber nereden alındı, ne zaman? | Her haberin altında **"Neden burada?"** kutusu; API'de `why` alanı |
+| Toplama başarısız mı oldu? | Arayüzde **NASIL ÇALIŞIR?** düğmesi → "Son toplama denemeleri"; API'de `/api/sources` |
+| Kaynak çökerse ne olur? | Önce GDELT, sonra DB'deki eski haberler, sonra tarayıcı önbelleği, en son etiketli örnek içerik |
 
-Üretim derlemesi: `npm run build`. Oluşan derlemeyi kontrol etmek için: `npm run preview`.
+## API
 
-## Bu prototipte neler var?
+| Uç nokta | Ne verir |
+| --- | --- |
+| `GET /api/news/all` | 5 kategorinin haberleri + `explain` (neden/servis/zaman) |
+| `GET /api/news?category=technology` | Tek kategori |
+| `GET /api/sources` | Kategori ayarları, kaynak sırası, son 25 toplama denemesi |
+| `GET /api/health` | Depo türü, kategori başına haber sayısı |
+| `POST /api/refresh` | Elle yenile; `x-admin-token` başlığı ve `ADMIN_TOKEN` ister, yoksa kapalı |
+
+## Haberler gelmiyorsa (ekranda "ÖRNEK" yazıyorsa)
+
+Okuyucudaki pembe kutuda **Sebep:** satırı vardır; ayrıca **NASIL ÇALIŞIR?** penceresi toplama günlüğünü gösterir.
+
+| Sebep satırı | Anlamı | Çözüm |
+| --- | --- | --- |
+| "…/api yerine bir web sayfası döndü" veya "(404)" | Site yayında ama **Express sunucusu yok** (statik barındırma) | Sunucuyu da yayınla (Docker) **ya da** aşağıdaki `news.json` yolunu kullan |
+| "Haber sunucusuna bağlanılamadı" | `npm run server` çalışmıyor | Ayrı terminalde `npm run server` |
+| "Google Haberler (RSS): … ENOTFOUND / ECONNREFUSED" | Sunucu çalışıyor ama internete çıkamıyor | Sunucunun ağ/DNS/güvenlik duvarı ayarı |
+| "… HTTP 429 / 503" | Kaynak geçici olarak engelliyor | Birkaç dakika bekle; GDELT yedeği devreye girer |
+
+### Sunucusuz yol: `public/news.json`
+
+Statik barındırmada çalışması için haberler bir dosyaya yazılabilir; arayüz `/api` yoksa bu dosyayı okur ve **ANLIK GÖRÜNTÜ** etiketiyle gösterir.
+
+```bash
+npm run news:snapshot      # haberleri toplar, public/news.json yazar (hiç haber alamazsa eski dosyayı korur)
+```
+
+`.github/workflows/news.yml` bunu saatte bir otomatik yapıp depoya işler; site bu depodan yayınlanıyorsa haberler kendiliğinden güncellenir. Elle başlatmak için GitHub'da Actions → "Haber anlik goruntusu" → Run workflow.
+
+## Testler
+
+```bash
+npm test          # birim + API testleri (ağ gerekmez, kaynaklar sahte fetch ile taklit edilir)
+npm run test:ui   # Playwright tarayıcı testleri (önce: npx playwright install chromium)
+```
+
+`tests/server.test.js` RSS/GDELT ayrıştırmayı, yedek kaynağa geçişi, tekrar yazımı ve API'yi; `tests/newsApi.test.js` istemcinin yeniden deneme ve önbellek davranışını kapsar.
+
+## Arayüz ve animasyonlar
 
 Ana ekran sade tutulur: logo, ses kontrolü, BMO, kategori kartları ve gezinme okları. Durum mesajları yalnızca kart geçişinde görünür; sloganlar ve dekoratif açıklamalar kaldırıldı.
 
@@ -47,7 +101,7 @@ Ana ekran sade tutulur: logo, ses kontrolü, BMO, kategori kartları ve gezinme 
 - Azaltılmış hareket tercihinde kart uçuşu, kamera yakınlaşması, süzülme ve göz takibi kapatılır; haber akışı kısa geçişlerle çalışmaya devam eder.
 - Fontlar ve görseller yereldir. Çalışırken harici ses veya görsel servisine ihtiyaç yoktur.
 
-Haberler **kurmaca demo içeriklerdir**. Gerçek gündem, yatırım önerisi veya canlı hava durumu verisi sunulmaz. Bu sürüm frontend prototipidir; backend, veritabanı ve gerçek haber bağlantısı yoktur. İçerik BMO ekranı içinde açılır; henüz her haberin ayrı URL’si yoktur.
+Kartlardaki canlı haberler Polonya medyasından gelir (aşağıdaki mimariye bak). Sunucu ve önbellek de yoksa ekranda **kurmaca örnek içerik** görünür ve bu açıkça etiketlenir. İçerik BMO ekranı içinde açılır; henüz her haberin ayrı URL’si yoktur.
 
 ## Kod nasıl çalışıyor?
 

@@ -1,0 +1,18 @@
+# Tek komut: docker compose up --build  ->  http://localhost:8787
+services:
+  mongo:
+    image: mongo:7
+    volumes: [mongo-data:/data/db]
+    restart: unless-stopped
+  app:
+    build: .
+    ports: ["8787:8787"]
+    environment:
+      MONGODB_URI: mongodb://mongo:27017
+      MONGODB_DB: bmo_news
+      REFRESH_MINUTES: "15"
+      ADMIN_TOKEN: ${ADMIN_TOKEN:-}
+    depends_on: [mongo]
+    restart: unless-stopped
+volumes:
+  mongo-data:

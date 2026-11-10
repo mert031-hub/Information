@@ -1,3 +1,5 @@
+import { modeLabels } from "../data/format.js";
+
 export default function NewsCartridge({
   item,
   selected,
@@ -23,7 +25,7 @@ export default function NewsCartridge({
       <button
         className={`cartridge ${selected ? "is-selected" : ""}`}
         aria-pressed={selected}
-        aria-label={`${item.category}: ${item.title}`}
+        aria-label={`${item.category} (${modeLabels[item.mode] ?? ""}): ${item.title}`}
         aria-disabled={busy || away}
         tabIndex={away ? -1 : 0}
         onClick={() => {
@@ -46,6 +48,7 @@ export function CartridgeFace({ item, position }) {
     <>
       <span className="cartridge-top">
         <span>{String(position + 1).padStart(2, "0")}</span>
+        <span className="cartridge-mode" data-mode={item.mode} aria-hidden="true" />
       </span>
       <span className="cartridge-label">
         <span className="cartridge-art">

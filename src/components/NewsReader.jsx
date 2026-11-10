@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import { motion, useTransform } from "motion/react";
 import { ArrowLeft, ArrowRight, Clock3, Gamepad2, X } from "lucide-react";
 import SoundButton from "./SoundButton.jsx";
+import { formatAgo, formatClock, providerLabel } from "../data/format.js";
 
 export default function NewsReader({
   item,
@@ -11,6 +12,8 @@ export default function NewsReader({
   progress,
   onClose,
   onMove,
+  onRetry,
+  cachedAt,
   sound,
 }) {
   const dialog = useRef(null);
@@ -113,7 +116,7 @@ export default function NewsReader({
                   <span>
                     <Clock3 size={13} /> {item.readTime} okuma
                   </span>
-                  <span>POLONYA CANLI AKIŞI</span>
+                  <span data-mode={item.mode}>{metaLabel(item, cachedAt)}</span>
                 </div>
               </div>
               <figure className="reader-cover">
@@ -130,30 +133,33 @@ export default function NewsReader({
               </figure>
               <div className="reader-copy">
                 <p className="reader-lead">{item.summary}</p>
-                {item.newsLoading && (
-                  <p className="live-news-status" role="status">
-                    Polonya’dan güncel haberler getiriliyor…
-                  </p>
-                )}
-                {item.liveArticles?.length ? (
-                  <section className="live-news-list" aria-label="Güncel Polonya haberleri">
-                    <h2>Polonya’dan güncel haberler</h2>
+                <SourceNotice item={item} cachedAt={cachedAt} onRetry={onRetry} />
+                {item.liveArticles.length > 0 ? (
+                  <section className="live-news-list" aria-label="Polonya'dan güncel haberler">
+                    <h2>{item.sample ? "Örnek haberler (gerçek değil)" : "Polonya’dan güncel haberler"}</h2>
                     {item.liveArticles.map((article) => (
                       <article className="live-news-item" key={article.id}>
-                        <p className="live-news-source">{article.source}</p>
+                        <p className="live-news-source">
+                          {article.source}
+                          {article.publishedAt && <time dateTime={article.publishedAt}> · {formatAgo(article.publishedAt)}</time>}
+                        </p>
                         <h3>{article.title}</h3>
-                        <p>{article.summary}</p>
+                        {article.summary && <p>{article.summary}</p>}
                         <a href={article.url} target="_blank" rel="noreferrer">
                           Haberin kaynağına git →
                         </a>
+                        <WhyHere article={article} />
                       </article>
                     ))}
                   </section>
-                ) : !item.newsLoading ? (
-                  <p className="live-news-status" role="status">
-                    Bu kategori için güncel haber alınamadı. Lütfen biraz sonra tekrar dene.
-                  </p>
-                ) : null}
+                ) : (
+                  item.body.map((section) => (
+                    <section key={section.heading}>
+                      <h2>{section.heading}</h2>
+                      <p>{section.text}</p>
+                    </section>
+                  ))
+                )}
               </div>
             </article>
             <nav
@@ -177,5 +183,78 @@ export default function NewsReader({
         </div>
       </motion.div>
     </dialog>
+  );
+}
+
+function metaLabel(item, cachedAt) {
+  if (item.sample) return "ÖRNEK VERİ · GERÇEK DEĞİL";
+  if (item.mode === "live") return "POLONYA · CANLI AKIŞ";
+  if (item.mode === "snapshot") return `ANLIK GÖRÜNTÜ · ${formatAgo(cachedAt)}`;
+  if (item.mode === "cached") return `ÖNBELLEKTEN · ${formatAgo(cachedAt)}`;
+  if (item.mode === "loading") return "YÜKLENİYOR";
+  return "ÖRNEK İÇERİK";
+}
+
+// Okuyucuya "bu akış nereden geldi?" sorusunun cevabını verir; canlı değilse nedenini ve çaresini söyler.
+function SourceNotice({ item, cachedAt, onRetry }) {
+  const { explain = {}, mode } = item;
+  if (mode === "live")
+    return (
+      <p className="source-notice" data-mode="live">
+        <strong>Bu akış nasıl oluştu?</strong> {explain.why} Kaynak servis:{" "}
+        {providerLabel(explain.provider)}. Son toplama: {formatAgo(explain.lastFetchedAt) || "bilinmiyor"}. En yeni haberler en üstte.
+      </p>
+    );
+  if (mode === "snapshot")
+    return (
+      <p className="source-notice" data-mode="snapshot" role="status">
+        Canlı sunucuya ulaşılamadı; <strong>{formatAgo(cachedAt)}</strong> alınan haber dosyası (news.json) gösteriliyor.{" "}
+        <button type="button" onClick={onRetry}>Tekrar dene</button>
+        {item.loadError && <span className="source-reason"><b>Sebep:</b> {item.loadError}</span>}
+      </p>
+    );
+  if (mode === "cached")
+    return (
+      <p className="source-notice" data-mode="cached" role="status">
+        Sunucuya ulaşılamadı; bu tarayıcıda {formatAgo(cachedAt)} saklanan son haberler gösteriliyor.{" "}
+        <button type="button" onClick={onRetry}>Tekrar dene</button>
+      </p>
+    );
+  if (mode === "loading")
+    return (
+      <p className="source-notice" data-mode="loading" role="status">
+        Polonya’dan güncel haberler getiriliyor… Bu sırada örnek içerik gösteriliyor.
+      </p>
+    );
+  return (
+    <p className="source-notice" data-mode="demo" role="status">
+      Güncel haberler alınamadı; <strong>kurmaca örnek içerik</strong> gösteriliyor. Gerçek bir haber değildir.{" "}
+      <button type="button" onClick={onRetry}>Tekrar dene</button>
+      {item.loadError && (
+        <span className="source-reason">
+          <b>Sebep:</b> {item.loadError}
+        </span>
+      )}
+    </p>
+  );
+}
+
+// Her haberin altındaki açılır kutu: o haber neden bu kartta?
+function WhyHere({ article }) {
+  const { why = {} } = article;
+  return (
+    <details className="why-here">
+      <summary>Neden burada?</summary>
+      <dl>
+        <dt>Kaynak servis</dt>
+        <dd>{providerLabel(why.provider)}</dd>
+        <dt>Arama</dt>
+        <dd>{why.query || "—"}</dd>
+        <dt>Toplandığı zaman</dt>
+        <dd>{formatClock(why.fetchedAt) || "—"}</dd>
+        <dt>Yayın zamanı</dt>
+        <dd>{formatClock(article.publishedAt) || "bilinmiyor"}</dd>
+      </dl>
+    </details>
   );
 }
