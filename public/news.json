@@ -1,11 +1,203 @@
 {
- "generatedAt": "2026-11-11T06:35:36.766Z",
+ "generatedAt": "2026-11-11T15:19:27.550Z",
  "store": "snapshot",
  "categories": {
   "technology": {
    "category": "technology",
    "label": "Teknoloji",
    "articles": [
+    {
+     "id": "technology-7784209130af1861132c",
+     "title": "Atak dronów i pożar w kluczowym rosyjskim porcie. Alarmy w krajach bałtyckich",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNmg3Y21tUVF0MWRwSFczTGtIay1ueFh5c3ZIMmExMzdBUjNYRS1ieFBLc3RYb2lQbVR2RG96QkJqZEg0VjNxdFJXaXBNTFFCLUwydjFYSGZvZGhDMHR6dnhJLXlKeWRSTWdBM2NsRkp3OGJIQkU1QlE4Q0l1dFEwR1JueWhkc0ZiNFFILTN2ZE5WQVBDNFFlanBSMkpCZlJ5VTZ2RXNWdXJHTFN5TjZ5eWJxNVZmNGdPM1V3V0lQNVA?oc=5",
+     "source": "Gazeta",
+     "sourceUrl": "https://wiadomosci.gazeta.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T14:34:30.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
+     }
+    },
+    {
+     "id": "technology-af90c75d90d212db46ee",
+     "title": "Oskarżyli go o użycie AI przy kolekcji ubrań z Wiedźmina. Pokazał dowody",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNFFkUXlRczJ1NTJEVzQyMUl1c3lHUUtiMy00b190SjFfQmZwMUZ6ek81VkJPZ2tQdEhQSXJsRzBWd3B1R2RCQkUxMUFZWXZvMHF6NEVIZ3huanU1czliUHVpeENPc1gxdEJqa0JYWXFqX3I3c25PekRiYnZpdnBpTE1Ucmt0bTdiQW1JTlFDYkVIQ3VUWFNJMHJMMHlwNTNoTkFRcW1iRjZDUEFK?oc=5",
+     "source": "WP Tech",
+     "sourceUrl": "https://tech.wp.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T13:19:18.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
+     }
+    },
+    {
+     "id": "technology-a3b757045d055039307a",
+     "title": "Quiz PRL. Pokolenie AI polegnie, a dzieci PRL odniosą spektakularny sukces i zgarną komplet punktów",
+     "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOdU16THloV2Z1QklBTWpiaXhaWUJ4M2ZhRFMtdjBHbzhMVFhaandqQ2MtTjZNVVE2T3pNTHJFbUZXS2ZaNk5Eb2UwNVM2YnV0eGZfVXVQLXlEOVBLbGlqMlRGazVvTjc4QzhlS2l2eGdzZjlqOXJSOWwzZUdNWU5qODhGR2hEQTZLQzBFVFBrLU9BWGJZU2NERml5NkUwbk9ObG80LUh2NzVkNnZINW95RElpWGt1YUlJSzVjcjRiRkxORWUzNjBuNlR2Z2ZfMWVROWNGSHM4RE9BbXFwcHV3TUQtMHNSNEkxUG5aSENaanQ5WWI3TzZLTlZjOVZWRDY1NFA0VmhZSUxzS0tiOWc?oc=5",
+     "source": "Dziennik.pl",
+     "sourceUrl": "https://edukacja.dziennik.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T13:17:03.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
+     }
+    },
+    {
+     "id": "technology-aea05b9f3ef79818a76b",
+     "title": "Ile jest warte Anthropic i kto dostanie pieniądze z debiutu twórcy Claude?",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUnc2WjFFdjBNNHVVNW1Pb3QyNDBEcG1XSjFjbm5WVUZKY2xiYkZEWEp0VHBnYXBpOTBjODFia0JfRXFNX2k1T015WlplNzFhV0lpQ3gzX1dWbWZidUEtUml5OF9uaHprNVQ5c2FLM0U2ekFuc2NPd0stN29kdmh5NXYtUXd4R3NKWXVkelBReWcyZzA0emZ2WlVFNmlvQVUxTWowU3BlUlNyX196UVg5OWdiVGU4SVE2TDlzcWM3eklMb1ZiZEE?oc=5",
+     "source": "WP",
+     "sourceUrl": "https://informacje.wp.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T13:10:27.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
+     }
+    },
+    {
+     "id": "technology-407563317ec2559f126c",
+     "title": "Jeden gigawat leży na stole. Pięć prostych decyzji, które mogą go odblokować [OPINIA]",
+     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOSHpVSW00ajZtX0RSYkxNTGFZMy1IY0I2dDFyWEZCZEF4THl5aDFReUlST1BKUFZUcTZfRVMzakw4WmIwVlpVUEJHcGNPWFhlSGExX3c5RG5RdGJVYUFMWWpzYU53N1RqSk50TkowdzN6RGhLRXp1ZlpXRm9BZ0ZTSy1GTE5LQmllT2FfTExfOGdodFJfX3Fra3h1MzRyS2NrRDZKYkNDTDU4TUlMdlJkT09zclkyV05YTEg2R1hGSVcyWG5wQ1NYMG9YMDlTeEo4OXc?oc=5",
+     "source": "Money.pl",
+     "sourceUrl": "https://www.money.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T11:24:24.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
+     }
+    },
+    {
+     "id": "technology-0a2061483fbe91a8e9fb",
+     "title": "Myślał, że to złom. Po wyczyszczeniu okazało się, że znalazł złotego Rolexa",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQRG9fWmI2ME13dzVNQjBndTFnckFHaDhzWTdRaW8tTzNaYXlrRW1FWXJDRk1vb0JLdE9tcXNxRUFGZ3lsTGF2anVObkVOcnZvNXZLMHF0TllVNXVyUTFEOWRUZ3l4enJiWG8wdDVSaG1sN3ZKTlh1SUl3Tzdjcms0a2hIWkFZMGVOTjJ3cURpc3RXOXZIWXd3QTlSc1c1TGdJcVN6cURvM092X3ltZzkyWHVIQ2Yxd25EMVE?oc=5",
+     "source": "Onet",
+     "sourceUrl": "https://www.onet.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T10:54:13.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
+     }
+    },
+    {
+     "id": "technology-a70d9b42cafd13ec6ea1",
+     "title": "Fairgame$ byłoby NAJWIĘKSZYM pośmiewiskiem PlayStation? Testerzy exa Sony pękali ze śmiechu",
+     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQajFNVkJaS0twcVlKLUFIQ3FnYU5hS2RoOVF3c3Y4Rm1RZGhhY3hEbEEtMFp6OF9nbVN3MFVkeWdVTGx2SkRIelZ3LTJXd2dMREZxdUpRWUR2X1diLVFkanFyczdxZl9MWWVWTVZDZHhMNmZlbVQyZ1JOSGlkYmdodWo3am5xVmJIT3A2YnhDZmtBQmswX3FaOWZwaGpTVFVZbURxQUN1Y3BjNHZaQWdKYTYyTjFTdnlCRXo2NTZqMGdwTlE?oc=5",
+     "source": "PPE",
+     "sourceUrl": "https://www.ppe.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T10:30:45.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
+     }
+    },
+    {
+     "id": "technology-14874f9fadfcb588ff6e",
+     "title": "Generałowie pokazują Putinowi wygenerowane przez AI nagrania fałszywych zwycięstw w Ukrainie",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcWd6ajJvWmZuWnZ2U1dJVkVTX2VVd3g4Y3A0ajJZSmd6SVR6eFNhWlk3SzliRmx2X2VKczluR0o5VEk4ZjJza2h2S0VNN0xXRmFFbmx4N1BtVHM1UkRVVm9DVzh2cDBJUHh2dFdGZkhEd2JGbFZlc01weE1WMVRjSkFSWHNUdkEzbTBickhNcjRMWTF4ME1FVjIwNHVJMnhm?oc=5",
+     "source": "Wyborcza.pl",
+     "sourceUrl": "https://wyborcza.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T09:46:47.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
+     }
+    },
+    {
+     "id": "technology-da95298ae2d9046bf53d",
+     "title": "Amerykańskie sankcje mają lukę. Chińska uczelnia kupiła układy AI",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNSm5aOTlSeGVlLWFZaGVIS0hweGNGV3hvcG11b05mSGh5elgxSFM0NERUV0V5VDJTWk1FZnlZaG82TzJndWtsam5TaE12czV5enhreW0xU010N0JwbDU5TktjdGRzVDNiUmNFOUItUkZNWkoxaDZiWFgwalh3ZjFEb0JISmM0ZkNYSVVvbjEzLUxHdTktTlZsYUxuNEZzZHYxbjNOYWg0ZFdxeUNBYW5qbi1ucVdFQQ?oc=5",
+     "source": "Interia Biznes",
+     "sourceUrl": "https://biznes.interia.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T08:58:54.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
+     }
+    },
+    {
+     "id": "technology-28688120be72626f12b6",
+     "title": "Sony traci kontrolę nad swoimi exclusivami. Kilka hitów z PS5 już działa w 60 fps na PC",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNaWhzYWlfXzJvM3BBQm9wODMtVlNoY1JWY3hVamtKWkE2aVZPNTFnNTdoMGRURjVnbGNFRGN5SHRfdWhGRkRyaWVrWnMxNFhvb0FVd3VpTU8tNWpDVTlhN2M5dXJXWkpyYndTM1NMYTVubGUzNlNHTkpvRnNfSzJDSGRSTFk4b0V3RWEwMk1Denl4VEgyZkthVEM0UXBsWm9ucFhXMkJRM0J4TUhrQk1lS3U3akx5UmZkNmx5Rzk5VQ?oc=5",
+     "source": "PPE",
+     "sourceUrl": "https://www.ppe.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T08:33:04.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
+     }
+    },
+    {
+     "id": "technology-64de404afd49574a71b3",
+     "title": "Prawnik zbudował prywatny serwer AI z ośmioma procesorami graficznymi Nvidia V100, aby przechowywać dokumenty prawne offline",
+     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB0Um56d1E4dkc4RkJVTXdGSkJRUGpta1AxbmhIWEpFUnZaQkp5ZkdDdnRSTWswRXBnRkZROWpET1g4M1ZZWUFDOU4wOFp0YjkxUFJNMVNrRmN5WHJ3ejJBejQwYjRyUkY5eXdRQnFyakU3Z0hTOWo0Qkd3?oc=5",
+     "source": "PC Format",
+     "sourceUrl": "https://pcformat.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T08:21:49.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
+     }
+    },
+    {
+     "id": "technology-e7f75830834e28543be8",
+     "title": "ePUAP wyłączono po cyberataku. Nie ma terminu powrotu",
+     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcjZvYm5zaXhsM1VURzYxU0wyTTBCaUlMUUlRX3BsU19kNnlJOWZLczVXa0RNMlUyRGk0ZEdXVDNpQ2pFdktFR1dRTWZ4cFNIVm5Zb3BOcUh6MUI5WElJb1hEMEU3SmdBUkRjVGl6WXJZc1ItajN0WlFrbjlVRFJfQm91dVI3REpEZXQwYnlmX1pIb3RsQ2lOTWUyQUVFQWhLQlNOMDBfeGxwNXlfdE5OQ0J0MFVtWXNtMl9aak1XTmdzUQ?oc=5",
+     "source": "Onet",
+     "sourceUrl": "https://www.onet.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T03:39:11.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
+     }
+    },
     {
      "id": "technology-b837a6bff43ad264d903",
      "title": "Dron z Litwy wleciał do Polski? Wojsko: nie potwierdzamy",
@@ -19,7 +211,7 @@
       "provider": "google-news-rss",
       "query": "konu:TECHNOLOGY",
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
      }
     },
     {
@@ -51,7 +243,7 @@
       "provider": "google-news-rss",
       "query": "konu:TECHNOLOGY",
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
      }
     },
     {
@@ -71,6 +263,22 @@
      }
     },
     {
+     "id": "technology-a391c688e77a2a0940ad",
+     "title": "Rząd zgłasza nielegalne treści na X, ale bez odzewu. W tym czasie Musk sieje dezinformację o ataku w Krakowie",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQZTl1MTUwTkVMUWsxTVdZdml5dU8yN0xTdFEzMkdTZHZaUGs3N05leWlDbXdScFUzT1E0LWtWZ1VlTUNHLXR1TUJQcDJkTFRiUHNGTE9qWEp5c0lrbk9XNElNaFpRaUg1UTA1dDZ1NjUtazVUX0VPQlk4cUk4d28xbHdISWhIQXAzcGhmMTBEbVFZcE9BTjBjT2FjV0dGYkd4YjFxUWFPbWNUX0FxckRKTkpBSGRDMlA4V2c?oc=5",
+     "source": "Gazeta",
+     "sourceUrl": "https://wiadomosci.gazeta.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-10T17:52:45.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
+     }
+    },
+    {
      "id": "technology-d68b8b0eebe1f728caab",
      "title": "Słowacki, Konopnicka, Mickiewicz i inni. Tak wyglądaliby dzisiaj słynni pisarze",
      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQUzdKdzBqSVhDM2VKX2VlaVNLeUoxTjE3OEQ5ejY2VVhiVG9XTUR1am5kZnRXOThpZXRGblppVWtCMTNuN2VMZ2RNN2JIN09MbFhGVERnQWxxeEZSTGZJQUQ4MlkzMS1XN2NEU2xjZlZxZ29GWFBsY2dFNmNqaGtWREFINjJvSFBMSVYyNllZcVFyNy14bll3TkxxMjRGQnRGbTBzWndNRmowZw?oc=5",
@@ -83,7 +291,7 @@
       "provider": "google-news-rss",
       "query": "konu:TECHNOLOGY",
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
      }
     },
     {
@@ -99,7 +307,7 @@
       "provider": "google-news-rss",
       "query": "konu:TECHNOLOGY",
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
+      "fetchedAt": "2026-11-11T15:19:18.197Z"
      }
     },
     {
@@ -117,226 +325,226 @@
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
       "fetchedAt": "2026-11-11T06:35:26.956Z"
      }
-    },
-    {
-     "id": "technology-03a1e5503d514220dc36",
-     "title": "Policja wycina z przetargu polskie komputery? Rząd chwali się \"local content\"",
-     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQdEJFVnV4MmU5a0hHNUpoRzMzdUhiMlJqUnZacjZnVVc5b3RWSmRPM3FsbGhBMktZaXNBdFNoM2ZjUlN3XzN4VW15QzRoU1pfUWlBYmNRVDByU2V5QjJJVkMxNGVuMlFOcjNiSDh0cGxwelpXZnZDLUd2bEtUdUd2RDZ6UnFCWVc2T1Npa2hZTHI1NlRDYVpORHJBaGVLRE1vc0laT1V4WkhjLUw0WFd4ZtIBrwFBVV95cUxQZ0pIVWRmczk4NW9TM2dKZlZBYWxVX0JpbUxrbmFhVUpvLVFlZnNpalJackhkdmxac1FNTVJHSFVjNWNKdnU2T1IzR050UnlqWmR4Rkg3elVjVjZZbVdPZkxYNVRqTW5kTml2WUlQNE5zejhkRE8taUZaQWZERnhBb3NDNGpiTTdKOF80OVNfZzNaVF9qYUdiVlBWMWFXS1pEQWl6WThoVXpGSVlVaXVZ?oc=5",
-     "source": "Do Rzeczy",
-     "sourceUrl": "https://dorzeczy.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T15:00:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
-     }
-    },
-    {
-     "id": "technology-938b57b5a90da456f669",
-     "title": "\"Miłosna pułapka\". Mistrzowska zagrywka Chin to ostrzeżenie dla Zachodu [OPINIA]",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdTlMMThjcGI0aEpueVJ2d3drQ2g5bEl3VjBTTnNUdld5dkFBaGNDRkZkLXgxUG5HN2E5ZllsT2FmQkFDcFh6QnNkVW54blJSZGp1M0xRcmlILUJldkxiWnpIdW52OHdjTFRuRkx0N044N3F5cnZBdTRTMnRmdlM4b0FaUlNBQjI3XzlfUjI0eWUzV1FyeC1oZ2M0cEYzOF93RUNmZ19hUnhxaU84Smc?oc=5",
-     "source": "Wiadomości Onet",
-     "sourceUrl": "https://wiadomosci.onet.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T13:06:27.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
-     }
-    },
-    {
-     "id": "technology-e20c33cd1416e43f0488",
-     "title": "Kto zestrzeli wrogi cel? \"Nie ma tu miejsca na wolną amerykankę\"",
-     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNV2pieVB2bFhaQjBPSEgxY1FrRDZsUG1jQ0lmMnlBRktUYkMwcmRSUU9GMnNsRUtwUUc1NXEwWlZmQW9YcVhrX0VlWkJvNEhrUDk2bDB1NWh2N0RHWFZKcGs0bV9tZDRZSnd2MnV5cEhwaTFwa3VVM2YzQlFaQXNtdHZNTVFsd290a3NnN1JVOHhUcDRqck5WaElXSHc4Q01PakNlWVZCbk9TVkpZQml0ZjBUVXlENlRLekE?oc=5",
-     "source": "TVN24",
-     "sourceUrl": "https://tvn24.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T10:46:30.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
-     }
-    },
-    {
-     "id": "technology-e03539c8efaa5ce50731",
-     "title": "\"Staroświeckie\" PlayStation właśnie zostało w tyle za Steam, Xbox i Nintendo",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxON1l6WWJLZ29KNHRHRWtTaEFXRk1DWTJGS2FsaVBGWVJKYnBaXzhyZjE4S2h4RHZXMzJpMHI2d3dmVmNjaWk0Q1VzTzMtMDBsOTdRZ0RvOWRtMkIzZUFGWkZRSU5ZNUxCWlp2MkYzeWI1OENVOVpPQk4tbUxlX0FUSTZyd1RhVU1qa0p4UGZPajRsa3R1TFNFTHJ0a1BRNkFGOGlXdmxDM2Z3bTA2d1E?oc=5",
-     "source": "PPE",
-     "sourceUrl": "https://www.ppe.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T10:32:02.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
-     }
-    },
-    {
-     "id": "technology-7ce70b6be53dad1fc1f5",
-     "title": "Owce na \"etacie\" w fabryce aut. Mają ważne zadania",
-     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOQ01NWjlMNzQ4akhFTzV0VU8yczhKbTgybV92cWNRQ0Y0aWlTNHlIZEVDd0hpdTBTMG1MSzhPVEd1WTg2SGo1MFFUbHpqVE5EQlF3Njh0cWZDOGVzWElJWHBuX1FWX01Fbzg0R3Z4VFRTN3JNUWV6cVRUMlhJdDBsNDFIVW5EX0FEMVlvZHNBUnhjc2JX?oc=5",
-     "source": "WP Wiadomości",
-     "sourceUrl": "https://wiadomosci.wp.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T10:24:33.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
-     }
-    },
-    {
-     "id": "technology-3f45ae369d7a49520c05",
-     "title": "Nintendo w opałach. Najwyżej oceniana gra 2026 roku działa idealnie na PC po 4 dniach od premiery",
-     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNeXlpS0kzeUZKVW9JQU9wWHdnNE4zLUM1OElINkRFbGFVa1BVUE5jM1lrZXpUMGhzLWVWMXp1RFliam9TOXlyMHpNYnNRVW82MVV4enpXcjZkM2txMGJlcVFVZkhaWlo5S3k0MzNqcm9BQ2lDU3V6Qk9vYTU0SV93ZUljUXAxMkk1NWhxYldfeU9XQVVfSmxIQ19ncDA3LUZqaUlwZlV6MXcxX3loazRKN0ZhblVPRzJobjlkWDFzUURZNDAyTzdsNEdLRzA?oc=5",
-     "source": "PPE",
-     "sourceUrl": "https://www.ppe.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T08:37:20.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
-     }
-    },
-    {
-     "id": "technology-e3463ebb9b7408e0839c",
-     "title": "\"Ukraina się zgodziła\". Minister Tomczyk zapowiada transfer technologii",
-     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPREU4TVVZd3hmbi1raXJWb2RXUU9EWFVIUnBPSWFZYS1HS1ZJMkMtVVFBb19MY3lIQ3pZd2tNQTN1SlVvLURKTmVEQjY0SmpWb3BZY3A2QzRhM09pVWRNWUpzOHN4TFdGLTV3T1VtYWtacGhDb3BKMlo1WldOa1daODQyYW5WYTNnZmJPNXNvMnZkYjZMZ08wcWZIbHNGdkFKWWJpWTlGb09jVmZQZHFCNUVuSldwSU5lVkw1ODhLVFFjaHBweUhtWUI3MA?oc=5",
-     "source": "Onet",
-     "sourceUrl": "https://www.onet.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T08:19:52.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
-     }
-    },
-    {
-     "id": "technology-64de404afd49574a71b3",
-     "title": "Prawnik zbudował prywatny serwer AI z ośmioma procesorami graficznymi Nvidia V100, aby przechowywać dokumenty prawne offline",
-     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB0Um56d1E4dkc4RkJVTXdGSkJRUGpta1AxbmhIWEpFUnZaQkp5ZkdDdnRSTWswRXBnRkZROWpET1g4M1ZZWUFDOU4wOFp0YjkxUFJNMVNrRmN5WHJ3ejJBejQwYjRyUkY5eXdRQnFyakU3Z0hTOWo0Qkd3?oc=5",
-     "source": "PC Format",
-     "sourceUrl": "https://pcformat.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T08:00:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
-     }
-    },
-    {
-     "id": "technology-b0feb3cb52b5896118f7",
-     "title": "AI-czystka. Gigant odprawia z kwitkiem 850 pracowników",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNblNtOGhYXzJLbkxsUFN5R0pWQmtUSTdLaF9JakJtZWNnc2wxZEhVUTJJYU9DNmNkUi1vSHQ0RXZ1a1FrUlhRd2lJempiRE5kRnJYVVFaU0VrSE1OQXNJTUFIVVhob2dXbUJrSGkyVmdQOHVnRTNCazczQlhOc2VJLWZ5bkZMRE9OejF1Znl6ckRJZVlreS1zT1EzLXZodS11?oc=5",
-     "source": "Bankier.pl",
-     "sourceUrl": "https://www.bankier.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T07:20:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
-     }
-    },
-    {
-     "id": "technology-f43179ff27eb0ae08d33",
-     "title": "Microsoft nawiązał długą współpracę z wydawcą GTA 6. Hity Rockstara wkrótce trafią do chmury",
-     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQWDVLTTdWV0QwTjhtMU4tdWhLRXFKODYxZ0VDczYtaU5tQVFnMVVxOTRWck9vclBqS1F0dmhKX3RJSDdfU2p1d3I3azU3TDRqTEsxYVh5T2VsR01qbm9Zb0drWVNmRVRMempjRHhFNGw2OFp1RmlPcjY2b2lZSXA3R2pKTnRfOWRpRFVxb3o1by05b0JtUUxZMHRqdXZHMDRiZDlrWUQ5aXJaaVphNVktZmQtWlZvdUNSWUFBaEZUM2JMTmVhYnc?oc=5",
-     "source": "PPE",
-     "sourceUrl": "https://www.ppe.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T05:10:21.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
-     }
-    },
-    {
-     "id": "technology-3bdf26e3a74fcb395f3a",
-     "title": "Smartfony i laptopy podrożeją tuż przed świętami. Oto wyliczenia",
-     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYVFLYmhkZC1EOUsyTUMwOGg2emxOWTJYWXhIUzhmT3NPQi1yLS13a3JKR2tpNURkcThXM2s4SHhRSURabk1RbnJjakMySVVLeXl6X2ZFazU2eXQyREhtLUFOcVdmcWFTUjloLUpMeGFtVXVENE1RV3NvX0t0QlFrLTgxUzhkVy1pTnZMbWFZa2lWN1JiZXJ3S2o1NldRTW44bUFXZ3lwN19oUXM2b1owRg?oc=5",
-     "source": "Next Gazeta.pl",
-     "sourceUrl": "https://next.gazeta.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T05:00:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
-     }
-    },
-    {
-     "id": "technology-852644c7caab91f313fe",
-     "title": "Tajemnicza planetoida 1998 KY26. W rzeczywistości może być \"ciemną\" kometą",
-     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbGpfeFBvVUlyWFhmVFdyejlUeFYxUlFPRERWUl9iZ0EzNXliMjVuLTY4U2ZiMlFtVFRvVnVaUDE3ZGNaYXZLY0RyWGp2UHdvbzFCV1ZPaDhuOGk1ZGY0NUE0eXNURWo1U3dXSHd6N1hwT1R0a19YNi14aFVnUFpNRVFYQnZfbzlORy1jMU5ZZlI4M29MbzIyM1BuQTJsaWRQZURidlBDYWJUSGhOV1FMMWR3?oc=5",
-     "source": "Geekweek Interia",
-     "sourceUrl": "https://geekweek.interia.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-09T18:35:04.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
-     }
-    },
-    {
-     "id": "technology-e301d12d8e8624ded662",
-     "title": "Niezwykły szturm Ukrainy. 28 robotów i ani jednego człowieka",
-     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPb1NtbTFRMk44bmROdWs0c2RBVUdXbHhJRXVBUzRaVG1rMnkwc3lheGFMZmFLdlhuTmdpTkdWMXNiTHFmaWhIUFpscnVCWFdvYzB4ZHpSWmZENkdoUE5ZR2x1cm9GUDJfZkZKUTR2UnFabE9sTHFsUVBPSzgzaVN0QlFtTzdWeVZNM2x5ZTdmSnpMLTdKWU4yY0pjM0ozdkJpNHc?oc=5",
-     "source": "Wiadomości Onet",
-     "sourceUrl": "https://wiadomosci.onet.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-09T13:27:19.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:26.956Z"
-     }
     }
    ],
    "explain": {
     "why": "Google Haberler'in Polonya 'Teknoloji' konu akışı.",
     "provider": "google-news-rss",
-    "lastFetchedAt": "2026-11-11T06:35:26.956Z"
+    "lastFetchedAt": "2026-11-11T15:19:18.197Z"
    }
   },
   "economy": {
    "category": "economy",
    "label": "Ekonomi",
    "articles": [
+    {
+     "id": "economy-0faf9e96952870e2592b",
+     "title": "Złoty traci do dolara. Kurs najwyżej od roku",
+     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZWhLS3N6ZHN2cmNkSHlHSXo0bERSUUU3V0owU2FiUjVCMXlMTXE2Z0hFSU1pYlJkVHppUjZpNTJlQmFWZFVpX0VHVWdLUEFfbW9sUjVGUko2QkF0Z1RYRjZfZktSakM1WXNBSEdzUHo2OWtJTF9yLUJRR2RXN1RRM3RZbnRPanlxeVlLcGhPRGg1a05MQUNTX3djRTZ0LWM?oc=5",
+     "source": "Money.pl",
+     "sourceUrl": "https://www.money.pl",
+     "summary": "Złoty traci do dolara. Kurs najwyżej od roku Money.pl Kursy walut. Osłabienie złotego, mocniejszy dolar. \"Dominują dwa czynniki\" Interia Biznes Kurs euro 11.11.2026 r. Business Insider Polska DZIEŃ NA FX: FI: Złoty relatywnie stabilny, pod wpływem czynników globalnych wnp.pl Kursy walut 10 listopada 2026. Po ile dolar, euro, frank i funt? Biznes Wprost",
+     "image": "",
+     "publishedAt": "2026-11-11T14:46:13.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:BUSINESS",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
+     }
+    },
+    {
+     "id": "economy-597e5ea5bf65b2b452ac",
+     "title": "Aldi szuka rąk do pracy. Tyle może zarobić sprzedawca",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOeHlBeUpRSHFTanVpUlpmQlhPcDVTV25oQkdrMHZXdWs4RzhHblB0bktmZmFWaHJDR3dLTU4xcHo5SUVDYWxRUDk4Vm04QWFwWjh4ZmIyMjBna1ZDU3F3LXNhdTZrM052dUpUbkRPVmE3a3pHVktYQzZJZm5WTFVOQmh1ekgwX1hJZGpEYmZoZGpmdUtLcDlr?oc=5",
+     "source": "WP Finanse",
+     "sourceUrl": "https://finanse.wp.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T14:33:54.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:BUSINESS",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
+     }
+    },
+    {
+     "id": "economy-508ab4971428b2ca0607",
+     "title": "ZUS ma nowy plan. Wiemy już, co stanie się z emeryturami w 2027 r. Wielu seniorów na pewno się zdziwi",
+     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOR3QzSEpwVUJHTnhqczUwcmRaNlhnYTJxSE1GVGswQ0tlSW9kMWdyMUNaX3dldVU0aEJ1dmQweHFfU1RYdDhCWE1BNXBkNjIwUEMxU1U0Ny15eXIzVW8tZm1Wb0NoZXk1bVdRbEljeFMzZ2NPQm5Oc196ZGk5Z2IyZUlzRy1Wd0R2TDlWS2F3WnNSamdGdGhSdC1RV3dmbm5HNTJ2ajFObjlQVVJxdS1EREFlbko5WFIzeGp2LW04MkxUdDlpMzFLYQ?oc=5",
+     "source": "INFOR.PL",
+     "sourceUrl": "https://www.infor.pl",
+     "summary": "ZUS ma nowy plan. Wiemy już, co stanie się z emeryturami w 2027 r. Wielu seniorów na pewno się zdziwi INFOR.PL Waloryzacja rent i emerytur 2027 będzie wyższa? Gazeta Wrocławska Emerytury i renty 2027. Zobacz wyliczenia nowych kwot na rękę 11.11.2026 GP24 Renta wdowia będzie wyższa. Zmiana wypłaty drugiego świadczenia 11.11.2026 GK24 ZUS ma nowy plan. Wiemy już, co z emeryturami i rentami w 2027 r. Wielu seniorów na pewno się zdziwi Forsal.pl",
+     "image": "",
+     "publishedAt": "2026-11-11T13:31:02.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:BUSINESS",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
+     }
+    },
+    {
+     "id": "economy-a5efa73415a80e861722",
+     "title": "Ponad 10 tys. zł brutto już nie tylko dla kierownika. Coraz dłuższa lista zawodów z pięciocyfrowym wynagrodzeniem",
+     "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQTmJ1MXJwNlhmTXBvQTVNR1R6MFd4OVM3ZGVucWtOWEh2dFdsN0pzRzdlVVZFZXJJNjlyY2lxMnlRTTlkM21JZS15TFEyNU1TeVlFMGg3Zk90ZFB5eU9McU82a3Y4a3BiUHA4WEU0NlZMU01YX2p4X1BTdF81QU0tMkt2Um5wUVhYVXN6dGNWLUd4RHBLU0M0MHB1UkJvSkIyVzRXVWptZ09la3lySlg0WmV0eVlQejFLLXBFYl9yaWZiYnJNT2F1VnhuX2ZuX09zamlET01XaHgyY1N0Q21PNzdUaVd4MDJlTW1nR01FeDZaZEE?oc=5",
+     "source": "Money.pl",
+     "sourceUrl": "https://www.money.pl",
+     "summary": "Ponad 10 tys. zł brutto już nie tylko dla kierownika. Coraz dłuższa lista zawodów z pięciocyfrowym wynagrodzeniem Money.pl Pensje na wielu stanowiskach wystrzeliły do 35 - 40 tys. zł. IT wychodzi z dołka Strefa Biznesu Zarabiasz mniej niż inni? To nie musi być zła wiadomość. Zaskakujące dane o płacach PulsHR.pl Zarobki w IT: pion IT jest na szczycie listy płac CRN Polska Koniec eldorado na B2B? W IT znowu opłaca się etat. Stawki poszybowały! Super Biznes",
+     "image": "",
+     "publishedAt": "2026-11-11T12:20:32.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:BUSINESS",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
+     }
+    },
+    {
+     "id": "economy-244a6d7a9f19356a5efc",
+     "title": "Bruksela chce zmienić zasady gry. Internet czekają nowe regulacje",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPdC1LMGF5anZmWHRuTjBtdVJGbG02WDZFUnpTckNfaVBpbkoxeWN5TFdsZll3NWFPZFNFMk5rVlBkUENBcTUzeU9FU2l3U3phYUZVWWFuanRBVmVPOE45R1p2NlgzUkxsRi1TbV9FX0xhWUtlQkkzVGlJOTBmYU43VWh4bS1vc0hZcDhWdi1zRmRMZUE2a3lMXzBKRlF0NzV5Zl9pRTZya2NfOE9BdktsMjZn?oc=5",
+     "source": "Interia Biznes",
+     "sourceUrl": "https://biznes.interia.pl",
+     "summary": "Bruksela chce zmienić zasady gry. Internet czekają nowe regulacje Interia Biznes Unia bierze się za sklepy internetowe. Gradobicie zmian Money.pl Digital Fairness Act zastąpi dyrektywę o nieuczciwych praktykach handlowych. Obejmuje subskrypcje, loot boxy i chatboty AI PurePC UE: Komisja Europejska przedstawiła propozycję ws. uregulowania działalności sklepów internetowych wnp.pl Unia bierze się za promocje, abonamenty i całą resztę. Będzie bolało ITHardware",
+     "image": "",
+     "publishedAt": "2026-11-11T12:04:41.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:BUSINESS",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
+     }
+    },
+    {
+     "id": "economy-fcf1adf581a5d5c6228b",
+     "title": "Paliwowe trzęsienie ziemi na stacjach w Polsce. Po 12 listopada benzyna 95, LPG i diesel już po tyle. Mamy najnowsze zestawienie",
+     "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPVXNMZ1FMejJvQm1uV3Uzekl3ejM1bVJVaVFKSVhfQV9yZTByaFk0NmtlY2xYU1RVa1ZISDA0UXh2Zy1HWXJyOTN5U3VuVnJoUkJTakRFSS1QVTV3RlZWZTRZZ3hpWTVsNTVQclhfUTRKUC1tZXUxYXJCeVR3aHlDcEY2TkJuTHkyN2ZQbnlhWjVmWVR1TWM3TXFuOFQ3aWo1a0NEZmozVG90eE5iUDFMbEJwTnZpT3hHczl5TnpjTkJZRzdUNlA2eURVRW1vU2ctMzFKbXlIUVFNTEZWanFqMGZJb2c0OEJIMW4zUXNIRmRDM213REhOWkZkdHF1M3lpWHhsbVQ5VTVwYzdqNDJNa0lhMA?oc=5",
+     "source": "Dziennik.pl",
+     "sourceUrl": "https://auto.dziennik.pl",
+     "summary": "Paliwowe trzęsienie ziemi na stacjach w Polsce. Po 12 listopada benzyna 95, LPG i diesel już po tyle. Mamy najnowsze zestawienie Dziennik.pl Ceny paliw wystrzeliły. GUS ujawnił rekordową skalę podwyżek Interia Motoryzacja Autogaz coraz droższy. Złe wieści dla części kierowców RMF24 Tusk obiecywał benzynę za 5,19 zł. Wiemy, jakie są na to szanse. Eksperci potwierdzają Rzeczpospolita Nowe ceny paliw od dzisiaj. Zamieszanie z benzyną i dieslem. LPG na rekord Auto Świat",
+     "image": "",
+     "publishedAt": "2026-11-11T10:58:47.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:BUSINESS",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
+     }
+    },
+    {
+     "id": "economy-339a10e068e8890767ad",
+     "title": "Prezes Nvidii wdał się w romans z chińską szpieżką. Trump: \"niesamowity człowiek\"",
+     "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPSWVEV3JiX1RIZU93ZWlyZk1pZW5CNzhPNjQ1ZUVhenFnN1BmR0FfUjRicEZTUDdjbk5TVEozRnRSUjItVXNMZVZBRVZWZU1zTU9mbFo4cjRidUxOWkVSSHJiQ21WU1gwOHJRLWNhVl9hNFNGSXRuSDR3b1Q3NEdmd2wweHNrT01zQXk3aTFsMTBXaFVMZ3JQOVd6dHdmNnBuaWNTVU1vTjF5U3Z5YkFNYzFoT1VwLUx2aW41NDd6TTB2VHFhLUdmNzdhbW1zRXRCbG42bDg1ZzRJaGhYbWQ5ODVLeEdIUQ?oc=5",
+     "source": "Pudelek.pl",
+     "sourceUrl": "https://www.pudelek.pl",
+     "summary": "Prezes Nvidii wdał się w romans z chińską szpieżką. Trump: \"niesamowity człowiek\" Pudelek.pl Republikanie chcą wykorzystać skandal z udziałem prezesa Nvidii, by podstawić nogę Chinom Wiadomości Onet Michael Burry po tąpnięciu Nvidii. Wciąż gra na spadki, ale widzi okazję dla rynku Money.pl Była dziennikarką, dziś stoi za biznesem wartym miliardy. Kim jest Alice Huang? Business Insider Polska Trump miał być ostrzegany przed szefem Nvidii więcej niż raz. Nowe kulisy TVN24",
+     "image": "",
+     "publishedAt": "2026-11-11T10:45:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:BUSINESS",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
+     }
+    },
+    {
+     "id": "economy-53b36ae345bde622b26d",
+     "title": "Prezes ujawnia kulisy branży. \"Ta sama fabryka, inna metka\"",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNcENYWEs0M25nOVBENUE1M1pWcjFxSlpoTGlIaGx0eGlGUFROUzFEOWRRaU5TSzNNRTBtMUQwVG9NN29WVUJWWWw2THZBd2tobW9UUjZhZ2MwZEtHX1ctZVd5TGhpTWozMjc0QVVzVDhiNi1iTDlIRWtrRmY4MERGUWlZX3JMb3hiOWdEQUZTYU1pUHVwUXVQdzhhSnVPYXRqV3JUNjA3Q0VvaFRXekE?oc=5",
+     "source": "Money.pl",
+     "sourceUrl": "https://www.money.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T10:17:42.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:BUSINESS",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
+     }
+    },
+    {
+     "id": "economy-a9cba452fdf08b0949fb",
+     "title": "Chiński wywiad celował w szefa Nvidii. Pekin kupił chipy AI Nvidii mimo sankcji",
+     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPcjkzU29IZTg0VERxVXpUMTZhOWVCR3h5LTBReFo0T0c3eWJDRGh1eW9Vb1ZxYlRlcVE1Qm5uejdHY3p5UnQxcms1TmFGWHIxS0trTU9oaFZ4N2FIRnNvTHJxVV9JTDM2MUlwZEI2T3NDcTdIdEo3djVlQkV0NkZOOGFua0VBNW5MNnpBX1VIY2w0Z0RyNXR3aU51NERSek5vdnllOVNLZGJaV2RhcHlUVmhYTHVIcHhaWC1ueURvRFJXUQ?oc=5",
+     "source": "Bankier.pl",
+     "sourceUrl": "https://www.bankier.pl",
+     "summary": "Chiński wywiad celował w szefa Nvidii. Pekin kupił chipy AI Nvidii mimo sankcji Bankier.pl Amerykańskie sankcje mają lukę. Chińska uczelnia kupiła układy AI Interia Biznes Chińska uczelnia kupuje kluczowe chipy z USA. Pomimo \"czarnej listy\" Money.pl Co stało się z 50 tys. czipów Nvidii? Amerykanie badają możliwy przemyt do Chin pb.pl NVIDIA utknęła z układami H200. 600 tys. chipów czeka na zgodę Chin Dobreprogramy",
+     "image": "",
+     "publishedAt": "2026-11-11T07:57:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:BUSINESS",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
+     }
+    },
+    {
+     "id": "economy-9902f836f330c2eaaf05",
+     "title": "EU ostrzega: możliwe ataki hakerskie na routery i sprzęty domowe -",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPSzJ5UWdUZU5PZGZ5LU1KWTdCanduYVZuLTJGMXdYejdJTnRwM2dMMlNURlJQS3M0RTc2dlJHb3JTZWo5R25RUkpaSHlfSEFweGRwYXhSUjZ6NW15N0ZaZkFDcVAyS3pXS1ZEaU85YnZKRkNwbk91ZmEyWDJINWNDNU9GQ3FkbGJUZm9iU19HRTZIcDFaN0IxVmhsY1pEamVoS29LNXV5LWpxV0dKRXRXVXdYUF9oUHlKeVRkc2kzVUE4cU9F?oc=5",
+     "source": "Onet",
+     "sourceUrl": "https://www.onet.pl",
+     "summary": "EU ostrzega: możliwe ataki hakerskie na routery i sprzęty domowe - Onet Kraj UE traci cierpliwość, ambasador pilnie wezwany. W tle seria ataków Interia Wydarzenia Cyberataki na branżę spożywczą i medyczną to nowy front wojny hybrydowej w Europie Wiadomości Onet \"Dziś były to lodówki, jutro mogą to być routery\". Ekspert ostrzega TVN24 Nikt nie ma pewności, kto i dlaczego. Celem nie są już tylko markety Money.pl",
+     "image": "",
+     "publishedAt": "2026-11-11T07:19:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:BUSINESS",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
+     }
+    },
+    {
+     "id": "economy-dca9f6103ba2ec75f5c6",
+     "title": "\"Poważny sygnał ostrzegawczy\". Minister finansów o ruchach prezydenta",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOMGxOZjBqaGstazVLV3dSWHlLLS1vOXNZdHhHeUhhVHNLX2huQ2N0YlJmYkZmWFBpdTU2YjBqbS1DXzhXTXV4bE5vN3BUZkt0Ykp6MllTYWtDcXZ6cEo4Q1JDOXh3RWl1T2U1LUJ1dWRMbjdEZ2ViTGFtQXBxUjEwS2JuclU4UTRfWnFTWFpIaldfZlZQQk5KQ3Y0cDY4WGlRbzZPVGw2aFhDbU1yU0EyZ2ZUeWJ6NXpFdHNN?oc=5",
+     "source": "PolsatNews.pl",
+     "sourceUrl": "https://www.polsatnews.pl",
+     "summary": "\"Poważny sygnał ostrzegawczy\". Minister finansów o ruchach prezydenta PolsatNews.pl Finanse Polski w pułapce. Ani Tusk, ani PiS nie mają rozwiązania Money.pl Agencja S&P ostrzega Polskę przed zadłużeniem. Ekonomiści wyjaśniają Business Insider Polska „Nie ma wyjścia”. Ludwik Kotecki mówi, co trzeba zrobić z podatkami i 800+ Rzeczpospolita Żenada! Domański obwinia o to prezydenta. Zareagował prowadzący wPolityce.pl",
+     "image": "",
+     "publishedAt": "2026-11-11T07:16:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:BUSINESS",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
+     }
+    },
+    {
+     "id": "economy-3b6fd8161f35b3eaad68",
+     "title": "Gorąco wokół cen gazu. Włosi wkurzyli się na Niemców nie na żarty",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOb1YtWVhKMXlUUi11dUtLSEFnOXhCdFc4a1VVcDB4TnNBbUhONmRmQlNOekIzSlR2Tjc2M0N4bDRycEJFYTBzU3N5eVI1RXhNemNBN19Ia1Q1aVRxelNqamNrTkJKWFdrZ0ZOdkdtcGd4VHJmdXZ2MDhnSzlUWnZNWWNBcEo2YUpSc29FMTJlNTJlR1VqYWI2aFRwRTRJcXp3SnBpdllZVm8yY3ZDVmNqdw?oc=5",
+     "source": "Next Gazeta.pl",
+     "sourceUrl": "https://next.gazeta.pl",
+     "summary": "Gorąco wokół cen gazu. Włosi wkurzyli się na Niemców nie na żarty Next Gazeta.pl Niemcy chcą zabezpieczyć się przed sabotażem. Powstanie rezerwa gazu Interia Biznes Niemcy tworzą specjalną rezerwę na wypadek sabotażu wnp.pl Prognozują czarny scenariusz dla Niemiec. Sytuacja w Polsce wygląda dużo lepiej Zero.pl Gaz w Europie drożeje do niemal 87 euro za MWh. Rynek obawia się eskalacji wokół Iranu Bankier.pl",
+     "image": "",
+     "publishedAt": "2026-11-11T06:51:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:BUSINESS",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
+     }
+    },
+    {
+     "id": "economy-23d4004c6b716897ffb1",
+     "title": "Koniec chwilowej ulgi na stacjach? Ceny ropy znów idą w górę przez konflikt z Iranem",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQYXlUM21GbWdzYnMtVWljNDNQT2JBOTladUl4OXJsc3ItS3hnQktEWnJDUi1XMzBnOGVVc1JCX2t6TGhHeXdTRUNHNWQ2eFNqLXpoT0dRdnpXakEyY0tUNWJYRldVaVFBbTg0LUhTVGhqdjZYbHItbmwyYzNUSjFUZExFc2w0RTRnczhlbkxaR2VwNDlmY1FJcFdVV1RFb0dCMHIyVkwxTFc3N2FVQS1Lb3hscGI3NkgtYW1yNHg3V1RTOTEtQjNn?oc=5",
+     "source": "Bankier.pl",
+     "sourceUrl": "https://www.bankier.pl",
+     "summary": "Koniec chwilowej ulgi na stacjach? Ceny ropy znów idą w górę przez konflikt z Iranem Bankier.pl Trump ogłosił zwrot ws. Iranu. Oto co się dzieje z cenami ropy Money.pl Trump nie chce już atakować Iranu. Jest reakcja na rynku ropy Interia Biznes Czy paliwo będzie tańsze? Cena ropy naftowej zeszła poniżej kolejnej granicy Business Insider Polska Ceny ropy lecą w dół. Inwestorzy obstawiają pokój zamiast wojny Wyborcza.biz",
+     "image": "",
+     "publishedAt": "2026-11-11T06:50:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:BUSINESS",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
+     }
+    },
     {
      "id": "economy-77eb7180ef57bfe99fff",
      "title": "Trzy wygrane w Lotto i Eurojackpot. Oto gdzie kupili kupony",
@@ -354,19 +562,19 @@
      }
     },
     {
-     "id": "economy-fcf1adf581a5d5c6228b",
-     "title": "Paliwowe trzęsienie ziemi na stacjach w Polsce. Po 12 listopada benzyna 95, LPG i diesel już po tyle. Mamy najnowsze zestawienie",
-     "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPVXNMZ1FMejJvQm1uV3Uzekl3ejM1bVJVaVFKSVhfQV9yZTByaFk0NmtlY2xYU1RVa1ZISDA0UXh2Zy1HWXJyOTN5U3VuVnJoUkJTakRFSS1QVTV3RlZWZTRZZ3hpWTVsNTVQclhfUTRKUC1tZXUxYXJCeVR3aHlDcEY2TkJuTHkyN2ZQbnlhWjVmWVR1TWM3TXFuOFQ3aWo1a0NEZmozVG90eE5iUDFMbEJwTnZpT3hHczl5TnpjTkJZRzdUNlA2eURVRW1vU2ctMzFKbXlIUVFNTEZWanFqMGZJb2c0OEJIMW4zUXNIRmRDM213REhOWkZkdHF1M3lpWHhsbVQ5VTVwYzdqNDJNa0lhMA?oc=5",
-     "source": "Dziennik.pl",
-     "sourceUrl": "https://auto.dziennik.pl",
-     "summary": "Paliwowe trzęsienie ziemi na stacjach w Polsce. Po 12 listopada benzyna 95, LPG i diesel już po tyle. Mamy najnowsze zestawienie Dziennik.pl Nowe limity cen paliw. Sprawdź, ile zapłacisz w środę 11 listopada Business Insider Polska Autogaz zbliża się do psychologicznej bariery. Co z benzyną i ropą? Jest nowy raport Money.pl W środę maksymalne ceny diesla niższe niż we wtorek, a benzyny - wyższe wnp.pl Ceny paliw na środę i czwartek (11-12.11). Minister podał nowe stawki Interia Biznes",
+     "id": "economy-caa85e201eaeed3030b5",
+     "title": "Wzrost cen wyhamował a na kupca czeka się już nawet cztery miesiące, Zobacz, gdzie wynegocjujesz najwięcej",
+     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNUkpJRnVuckhQNDVBbnBnUTcxQXdUOXI5azJWQVoxY1UxSlRTaVNrRWVLM1RoVjhneW05bFNNY0ZLQThKbll3MEJleVpIaU85RkcyUzI2c3NRZGNaNUd2T2NpMmRWaWFOR2J6OWpKQ2QyT1J5b2owS1JkWDZmMUcwd3F3S2l1Zw?oc=5",
+     "source": "Bankier.pl",
+     "sourceUrl": "https://www.bankier.pl",
+     "summary": "Wzrost cen wyhamował a na kupca czeka się już nawet cztery miesiące, Zobacz, gdzie wynegocjujesz najwięcej Bankier.pl Deweloperzy obawiają się zahamowania sprzedaży. Mniej mieszkań w ofercie i obawy o 2027 rok Forsal.pl Rynek wtórny traci przewagę. Deweloperzy mają mocny argument Interia Biznes Średnia cena metra mieszkania w Warszawie to już 20 tys. zł. Za połowę tej ceny można wprowadzić się całkiem niedaleko pb.pl Warszawie przybyło 200 000 mieszkań w 10 lat. I... nie potaniały Subiektywnie o finansach",
      "image": "",
-     "publishedAt": "2026-11-11T04:29:09.000Z",
+     "publishedAt": "2026-11-11T05:00:00.000Z",
      "why": {
       "provider": "google-news-rss",
       "query": "konu:BUSINESS",
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
      }
     },
     {
@@ -375,14 +583,14 @@
      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPQmpwMDBmOWtxQjd3OGp6UFQtVDNzazlsLWh1UkE0R2tJZVBfeHprSE91azZxWFVlTFNuS3JGTENsNmhGTUZ3MzN2aThZZFkxTTF0OFFjcVdSR1VvV19Ndmlqd3pieFNzMVR5ZG9mVHNKNWd4enI2TkgxVFhFbXpOWENIUG9Fdm9PdjVtWjFWa3lnZFJVOEVFeEY5VGY4UnRmcC1aOG11eXpsNlhW?oc=5",
      "source": "PolsatNews.pl",
      "sourceUrl": "https://www.polsatnews.pl",
-     "summary": "Orlen wypowiada umowę na katarski gaz. Znamy powód PolsatNews.pl Orlen wypowiada umowę z QatarEnergy na dostawy LNG. Powołał się klauzulę Money.pl Orlen wypowiada jedną z umów na dostawy gazu. \"Nie wpływa na bezpieczeństwo\" Interia Biznes Orlen rezygnuje z katarskiego gazu. Wartość umowy to ok. 2,5 mld zł wnp.pl Orlen wypowiedział jedną z umów na dostawy LNG z Kataru. Kontrakt był wart 2,5 mld zł rocznie pb.pl",
+     "summary": "Orlen wypowiada umowę na katarski gaz. Znamy powód PolsatNews.pl Orlen zerwał umowę z Katarczykami. Do tej pory nikt tego nie zrobił Business Insider Polska Orlen wypowiada umowę z QatarEnergy na dostawy LNG. Powołał się klauzulę Money.pl Orlen wypowiada kontrakt na katarski gaz. Wartość kontraktu szacowana na 570 mln euro Bankier.pl Orlen zrywa kluczową umowę. Czeka nas wstrząs kursu paliwowego giganta? Investing.com Polska: Kursy walut, kryptowalut, notowania akcji",
      "image": "",
      "publishedAt": "2026-11-10T22:25:00.000Z",
      "why": {
       "provider": "google-news-rss",
       "query": "konu:BUSINESS",
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
+      "fetchedAt": "2026-11-11T15:19:20.453Z"
      }
     },
     {
@@ -448,220 +656,12 @@
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
       "fetchedAt": "2026-11-11T06:35:29.341Z"
      }
-    },
-    {
-     "id": "economy-3ba60b03668236ade816",
-     "title": "Eksperci: AI stworzy więcej miejsc pracy, niż zlikwiduje",
-     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOc3lGN3M2UGZ2b254UnZlMlNCT09fdERYQ1lidFVwYkJZZFdwTjJuSTMxcW1oUEZSeGtMVmpiSjQ0a3VUVjdjZUxkZWM5ek5LSVZpR241R0FBZ2UxVWgtLTdPd25aQmM2dTh2dF9nVVVwTU9TaC1kUmwtRjN6bDdDTUtsZm9WNFlXbVNPMUZnSlUwb1NYcTY3R0I4bUxZalZqSEdncy1TU08yUVNrcEl2eFhoVVpLUQ?oc=5",
-     "source": "Onet",
-     "sourceUrl": "https://www.onet.pl",
-     "summary": "Eksperci: AI stworzy więcej miejsc pracy, niż zlikwiduje Onet Ci specjaliści są rozchwytywani na rynku pracy. Zarobki dochodzą do 45 tys. zł PulsHR.pl Obawiamy się AI w miejscach pracy. Bardziej niż kryzysu gospodarczego salon24.pl Firmy zwalniają przez AI, a potem zatrudniają ponownie. Pracownicy chcą podwyżek pb.pl Start z polskim AI – Wywiad z Aleksandrą Przegalińską Polski Fundusz Rozwoju S.A.",
-     "image": "",
-     "publishedAt": "2026-11-10T16:39:57.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:BUSINESS",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
-     }
-    },
-    {
-     "id": "economy-0e5d72d8cdf96015ff47",
-     "title": "Kursy walut. Osłabienie złotego, mocniejszy dolar. \"Dominują dwa czynniki\"",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTDZwdjk5aXo4V3Z1TDF6QTJzQTlpSF9sczZ4Nk42V2pUbl9nU0hMNk5BYjBCbzBmNTlOU0FkS1ptVmhkMm96M0g3bGJwUkVtRGRnSi1zSHZrcEF2V3MtWVFLSkx0cE5Yek5uX3hSS3lpMHpIczhXRmJGMGVIX1RhSGZEaXFUTWh6bGVaNDJyWkFsa3NReFVtYmxGMGhFS21LaUYtMDhLXzhZNEdmZFpXMEtadUIzeW93U3VaalA1Vzk?oc=5",
-     "source": "Interia Biznes",
-     "sourceUrl": "https://biznes.interia.pl",
-     "summary": "Kursy walut. Osłabienie złotego, mocniejszy dolar. \"Dominują dwa czynniki\" Interia Biznes Kurs dolara amerykańskiego 11.11.2026 r. Business Insider Polska DZIEŃ NA FX: FI: Złoty relatywnie stabilny, pod wpływem czynników globalnych wnp.pl Ile kosztuje euro? Kurs euro do złotego PLN/EUR 10.11.2026 Money.pl Kurs euro do złotego (EUR/PLN) 11 listopada 2026 Next Gazeta.pl",
-     "image": "",
-     "publishedAt": "2026-11-10T16:39:51.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:BUSINESS",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
-     }
-    },
-    {
-     "id": "economy-8eb3747e8218d4c75470",
-     "title": "Przecena Orlenu zatrzymana. Uderzenie popytu w ostatnich minutach sesji",
-     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPU25TSDJtaElxazJpWmhiU2NfeGVxOGw1bHBqOGZsY3dneGZsMk5DVkxzR2RWcXpFYThHZDRDQnpUNGJVU1p0YkpvRzBYbWlyTDV5TTNYQnlwMmxhdV8xWVNwWGp0ZlRnaFAxMmMwbXBETDFFZTZiRHBwdG5BSEhQZkxFdl9GQk1VdGhUZTVqdGViSlRlWGNHeUQ0VERoSWg1M1BjVmUxVGJjSmJfaHJsM2FOS0VEYzg?oc=5",
-     "source": "Bankier.pl",
-     "sourceUrl": "https://www.bankier.pl",
-     "summary": "Przecena Orlenu zatrzymana. Uderzenie popytu w ostatnich minutach sesji Bankier.pl DZIEŃ NA GPW: Na giełdzie spokojna sesja; rosną m. in. LPP, Kruk i Orlen, ale spada energetyka wnp.pl WIG20 wraca do środka konsolidacji Parkiet Odbicie na giełdach przed inflacją CPI. Nvidia pod prąd StockWatch.pl DZIEŃ NA GPW: WIG20 i WIG lekko rosną, ale spada mWIG40; odbija kurs Orlenu Strefa Inwestorów",
-     "image": "",
-     "publishedAt": "2026-11-10T16:24:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:BUSINESS",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
-     }
-    },
-    {
-     "id": "economy-2907de35ffd27c7b36e5",
-     "title": "Rząd przyjął projekt nowelizacji specustawy jądrowej. Ruch na rzecz inwestycji",
-     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSHZTTWVNdDlzaGpOWHJUYUZEYjRUVjlNTy1TZ19hMzgwN0RfV0RjRjVtOFJ4Y2ttS0VvM3RSS2NxNXpER1k3S1pka1ZOVzlRUG1KeXR5ajhBTGUxVjZiY0xrS0pLakVLZk9abTEyeHJiMGloR2Y3YzBkNXp4bzROY0RteGF2aGc0enNhX3hvRklTanRNeTJEZlYxcGRjbHpCclkySHkwRzQtUjlHRnhxdHNPOWIyTXgzSmfSAbMBQVVfeXFMT2NyOEJXM1RCZ1hQU2dIMjR6RVQyNEVBb2VWbGRZZHc2RWM3LXZVMUZ3YzNhSThQN2JaM0tyemRBUmtwWGg1ZVRRLXZ3MHlCRXJvanRVYVJSNGdYbHQyWnlzN3J5WkZmaWFfSkxuZngwMENnQ08tVlhVc1E1U1FXcG9LNDNmUks3YXhONlJKN0xqOXFGdXRpMlZ4OHZfcFlYV1V4S2RySmFCSHdlMTNYcmQ4dGs?oc=5",
-     "source": "Do Rzeczy",
-     "sourceUrl": "https://dorzeczy.pl",
-     "summary": "Rząd przyjął projekt nowelizacji specustawy jądrowej. Ruch na rzecz inwestycji Do Rzeczy Rząd zmienia specustawę jądrową. W najbliższych dwóch latach „oszczędzi” na atomie Rzeczpospolita Coraz bliżej polskiej elektrowni atomowej. Kluczowa decyzja zapadła Wyborcza.biz Budowa polskiego atomu ma być łatwiejsza. Jest zielone światło od rządu wnp.pl Rząd przyjął ustawę usprawniającą budowę pierwszej elektrowni jądrowej Bankier.pl",
-     "image": "",
-     "publishedAt": "2026-11-10T16:00:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:BUSINESS",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
-     }
-    },
-    {
-     "id": "economy-690163030de137f3198e",
-     "title": "Drożyzna uderza w Amerykanów. Tak rosną ceny w USA",
-     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPcWVMLXJ4RWFBZlBMN1NJU29oc0FVTkdLRVlUTXZsOG9QZHB3T3hmQ0RJUU9sU2x3S2cyYkFfZzJVVnl4ZTBMRmtnUHgxQm96NXluZTFfS2EyUDJXdGRzUG1Ob19JYkZlT29ReXlRM0dtTU1wRUZyM1JvY2ctV0JRNEpSTDVlRnB5VGZNLXhzdFNMdVFYMjNfeFVMXy1FWHluMjM0?oc=5",
-     "source": "Business Insider Polska",
-     "sourceUrl": "https://businessinsider.com.pl",
-     "summary": "Drożyzna uderza w Amerykanów. Tak rosną ceny w USA Business Insider Polska Stany płacą wysoką cenę za wojnę. Ważny wskaźnik gorszy od śmiałych prognoz Money.pl Przed sesją na Wall Street: rynek czeka na dane o inflacji, Fed studzi nadzieje na obniżki stóp, a branża AI traci impet pb.pl \"Dane te zdają się pieczętować grudniową podwyżkę stóp\" TVN24 Inflacja CPI w USA zwalnia, ale nie aż tak jak prognozowano. Chaos sprzed roku odbił się na statystyce danych Bankier.pl",
-     "image": "",
-     "publishedAt": "2026-11-10T13:43:06.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:BUSINESS",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
-     }
-    },
-    {
-     "id": "economy-9c88bf332d522dc44f93",
-     "title": "BNP Paribas BP planuje zwolnienia grupowe. Redukcja może objąć 400 pracowników",
-     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPMERwdVRwMi1iSFo0Q2RaeTF6Q09MM2VETXVFR2FieG83UEJrU0d5VkpaczZvS045MFQ1WVlWQmhTUHlDM1RLVUEwN21GdHYyUEpELWZyVjBYN0hlVFlaRy1WRXVqNTdYZDdaV1RaaDNpUjFOQ3dpU01iWmFaLXhZTHAyQzhBNlJNUUx4ZUp0ZUlEVVlMOGZWamhuREl5amlyajJYTzZR?oc=5",
-     "source": "pb.pl",
-     "sourceUrl": "https://www.pb.pl",
-     "summary": "BNP Paribas BP planuje zwolnienia grupowe. Redukcja może objąć 400 pracowników pb.pl Zwolnienia grupowe w jednym z największych banków w Polsce TVN24 Zatrudnienie w bankach zaczęło się obniżać. Czy to początek trendu? pb.pl Zwolnienia w wielkim banku. Pracę straci nawet 400 osób Interia Biznes Zwolnienia grupowe w dużym banku. Zapadła decyzja Money.pl",
-     "image": "",
-     "publishedAt": "2026-11-10T12:12:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:BUSINESS",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
-     }
-    },
-    {
-     "id": "economy-856dfc912d27886e9fd7",
-     "title": "FBI bada sprawę Jensena Huanga. Akcje Nvidii spadają",
-     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVjU1anhUX2t0aTl4RU83ZE1kWW9SZjRwcTkxSTJMWGduUzVfVjl2T1I0UjV3UmJlWUF3amdOMi1PRFpaZENMX1lZSENWYWdtemdIWWQ1cWFNU0ZjZW5faVJoUHhabjVfSjFpNTFiLVJqMlJmZDcwREsyYl9sLWt6SjBXdFdjalJJQXJUbE5uNTBpZlA1bm4tUEd3?oc=5",
-     "source": "Benchmark.pl",
-     "sourceUrl": "https://www.benchmark.pl",
-     "summary": "FBI bada sprawę Jensena Huanga. Akcje Nvidii spadają Benchmark.pl \"Miłosna pułapka\". Mistrzowska zagrywka Chin to ostrzeżenie dla Zachodu [OPINIA] Wiadomości Onet Miłość czy operacja wywiadowcza? Ekspert o romansie miliardera o2 \"Byłem niewierny żonie\". Huang, 190 mld dol. i kobieta, którą amerykański wywiad uważa za chińskiego szpiega Money.pl Trump machnął ręką na chińska agentkę. I zabrał szefa Nvidii do Pekinu Bankier.pl",
-     "image": "",
-     "publishedAt": "2026-11-10T10:32:05.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:BUSINESS",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
-     }
-    },
-    {
-     "id": "economy-6f737684eabbd8657fcc",
-     "title": "Prognozują czarny scenariusz dla Niemiec. Sytuacja w Polsce wygląda dużo lepiej",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQZ0ZlVG5TaFA4M2xoY0lvaDFKWm9FVVhacW5Vd2pKSVNOek9CMWE1T2lKZWIyRjlXT244UHl6bHRVT2xqaW9NWk8zeEdpNzZ0bThCQURZTm9GUVRoYVVrUEhsVmlkNDR2Um1XTVk5YTdxeG5mOVFtR2FCSmU5eWJLUmVob1pNQkZNMFJ1aVY0YWd2b3h4MEFzaEhIMWNUVzBD?oc=5",
-     "source": "Zero.pl",
-     "sourceUrl": "https://zero.pl",
-     "summary": "Prognozują czarny scenariusz dla Niemiec. Sytuacja w Polsce wygląda dużo lepiej Zero.pl Niepokojące dane z Niemiec. Zimą może zabraknąć gazu TVN24 Zapasy gazu w magazynach UE poniżej średniej. A zima za pasem Money.pl Firmy grzewcze mają coraz większy problem. Chodzi o ceny gazu Strefa Biznesu Niemcom może zabraknąć gazu. Magazyny są zapełnione zaledwie w 59 proc. Farmer.pl",
-     "image": "",
-     "publishedAt": "2026-11-10T10:26:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:BUSINESS",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
-     }
-    },
-    {
-     "id": "economy-5e51984ae15672836b40",
-     "title": "Czy paliwo będzie tańsze? Cena ropy naftowej zeszła poniżej kolejnej granicy",
-     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNQzV5RGt5TWhHS0hpV2hYampsdjhXUldoQTJpZkh3UXc5blRob1g0SG5uMFdNbjluMVZyRW10Um40N09Bd0gyQU16SFFPb2E5YnB5QUtNRVlmZGZKOEktMjNtTFg1TWxRX1pRakRyWEV2b3M1ZjRJMm5xbjR5b0JaQ05FaTczZ0M4WjZJS20zWnhNNXdDMDFnUXJOVlVBenJuWVhnQnZLZFVaOWpoSkpiLXpCV3VjOWx1Y0RrOFZCaHVBVWxSbWJz?oc=5",
-     "source": "Business Insider Polska",
-     "sourceUrl": "https://businessinsider.com.pl",
-     "summary": "Czy paliwo będzie tańsze? Cena ropy naftowej zeszła poniżej kolejnej granicy Business Insider Polska Trump ogłosił zwrot ws. Iranu. Oto co się dzieje z cenami ropy Money.pl Trump nie chce już atakować Iranu. Jest reakcja na rynku ropy Interia Biznes Ropa Brent już poniżej 90 USD. Rosną szanse na brak podwyżki stóp w Polsce. Obligacje drożeją pb.pl Ceny ropy lecą w dół. Inwestorzy obstawiają pokój zamiast wojny Wyborcza.biz",
-     "image": "",
-     "publishedAt": "2026-11-10T10:17:57.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:BUSINESS",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
-     }
-    },
-    {
-     "id": "economy-59eb8fc9fac1e5e9fef9",
-     "title": "Obligacje skarbowe znów przyciągają miliardy. Te kupowaliśmy najczęściej w październiku",
-     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQeXotQ2pQWGh6QW1rTDZkRTlTSndzMzBVbXI4YzI3M05OdGU1ZlNpaWFrYTZvSERSQkppSUJkZ0xhTVNLTDhpa0dYYmJSYkZWWV9OblpQTVpiR3NnWXZUQ2FZX0VPd3dZaENObUNPaVpFRWhEZFRoTXJBajFYY3BkMTFkV1RyY3RMUG54UGMtZ0tuWHB6cEhETUtIRXAyQnNRemV5aVdOT1FySERmQ3dWN0pHUzAwMEhOaTdzLWRNX2ZiRm16VFVOQVozNTY?oc=5",
-     "source": "Bankier.pl",
-     "sourceUrl": "https://www.bankier.pl",
-     "summary": "Obligacje skarbowe znów przyciągają miliardy. Te kupowaliśmy najczęściej w październiku Bankier.pl Polacy w ten sposób ulokowali w ostatnim miesiącu miliardy złotych Business Insider Polska Sprzedaż obligacji detalicznych w październiku wyniosła ok. 8,2 mld zł - MF Strefa Inwestorów Polacy oszczędzają w obligacjach. Tyle wpłacili w październiku Rzeczpospolita Polacy nadal kochają obligacje. Idziemy na rekord Parkiet",
-     "image": "",
-     "publishedAt": "2026-11-10T09:42:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:BUSINESS",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
-     }
-    },
-    {
-     "id": "economy-0dda8b5c954e088c0ec9",
-     "title": "RPP może podnieść stopy procentowe. Kotecki wskazuje termin",
-     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNSWN0YzFBSjhyNU14WEpjWDg0ZzltN3dtU1FEbDBzdE5qWkd5WFdEOE1qVjJycmd4LXJBNVdmUkJ4Y2hGZXJDVTJyak1fZ3ZEd0pYYVRSUFY3N2RiUGF4WEQ4OVN3dkdILThoRHZRX2VPVEJ4MGo3NE42LXNpWnZtcEFMckNnUEFpYzBNaVpCZ0VBS3Vjb1NZaGFxWUhOSVlURTg0SkZMa3JtVmdaOTZoUllZX2VnUQ?oc=5",
-     "source": "Interia Biznes",
-     "sourceUrl": "https://biznes.interia.pl",
-     "summary": "RPP może podnieść stopy procentowe. Kotecki wskazuje termin Interia Biznes Członkini RPP dostrzega wzrost zasadności podwyżki stóp w styczniu pb.pl ceny mieszkań w warszawie Subiektywnie o finansach Szok naftowy poza zasięgiem polityki pieniężnej ale podwyżki stóp nie są wykluczone Gazeta Prawna Nadpłacać kredyt czy lepiej inwestować? FXMAG",
-     "image": "",
-     "publishedAt": "2026-11-10T08:48:04.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:BUSINESS",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
-     }
-    },
-    {
-     "id": "economy-22fbd93a199ee9bb5c83",
-     "title": "Sklepy zmieniają dziś godziny otwarcia. Tak będzie działała Biedronka",
-     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQdy1CUy1CNGFiNV85ck1VTEhzM2Y5Y24yNHZGSmItYUNrR2dDSHpYZVZoamwtbk1KNjg4VW8xTUNzbng0VDM4d0ZuUGMxeENFcFh2bHJCb3NTUEc1bXNoaXlCNUdsR29wenZxMTNsU3N4RTk2N01jZ3VxVTMwZmNCLW1BalEzS2duZVRDMXViaUdsMWJvc3FYY3kzcjRBVU8zSXJ2NUZR?oc=5",
-     "source": "WP Finanse",
-     "sourceUrl": "https://finanse.wp.pl",
-     "summary": "Sklepy zmieniają dziś godziny otwarcia. Tak będzie działała Biedronka WP Finanse Nie wszystkie sklepy 11 listopada będą zamknięte. Tam zrobisz zakupy w święto Polskie Radio 24 Święto Niepodległości 2026. Te sklepy będą otwarte 11 listopada Wiadomości Onet Święto Niepodległości. Te sklepy zmieniają godziny otwarcia Business Insider Polska Zakaz handlu 11 listopada. Gdzie tego dnia można zrobić zakupy? RMF24",
-     "image": "",
-     "publishedAt": "2026-11-10T06:45:45.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:BUSINESS",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
-     }
-    },
-    {
-     "id": "economy-137a8b62102a8a25c7e6",
-     "title": "Rynek wtórny traci przewagę. Deweloperzy mają mocny argument",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYzRNS1paQjdaNGpEa1RFb3k5Z3ZZYTJMS2N4SlE0Zy1hUW05QlJZUUdzTndra1FCcG4yOGluT2hkb3hSTXBBZ3Z0R1kyTTFQRXdoWmFnbXZuVy1aR0hOOG5sNlo2dERpcWt5WFg0SmlyTmVYT0FwVXlkN01QS2dtQzJSb2lWYkVZRFEzU2N4bGVCVnNYVUpEZ3l4ektLQmNWcVg1Y2pORFBMRWNj?oc=5",
-     "source": "Interia Biznes",
-     "sourceUrl": "https://biznes.interia.pl",
-     "summary": "Rynek wtórny traci przewagę. Deweloperzy mają mocny argument Interia Biznes Wzrost cen wyhamował a na kupca czeka się już nawet cztery miesiące, Zobacz, gdzie wynegocjujesz najwięcej Bankier.pl Średnia cena metra mieszkania w Warszawie to już 20 tys. zł. Za połowę tej ceny można wprowadzić się całkiem niedaleko pb.pl Deweloperzy obawiają się zahamowania sprzedaży. Mniej mieszkań w ofercie i obawy o 2027 rok Forsal.pl Warszawie przybyło 200 000 mieszkań w 10 lat. I... nie potaniały Subiektywnie o finansach",
-     "image": "",
-     "publishedAt": "2026-11-10T05:20:03.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:BUSINESS",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:29.341Z"
-     }
     }
    ],
    "explain": {
     "why": "Google Haberler'in Polonya 'İş dünyası / Ekonomi' konu akışı.",
     "provider": "google-news-rss",
-    "lastFetchedAt": "2026-11-11T06:35:29.341Z"
+    "lastFetchedAt": "2026-11-11T15:19:20.453Z"
    }
   },
   "politics": {
@@ -681,7 +681,23 @@
       "provider": "google-news-rss",
       "query": "polityka Sejm rząd prezydent",
       "feedUrl": "https://news.google.com/rss/search?q=polityka%20Sejm%20rz%C4%85d%20prezydent%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:31.794Z"
+      "fetchedAt": "2026-11-11T15:19:22.651Z"
+     }
+    },
+    {
+     "id": "politics-86f7464f0096a97d9ada",
+     "title": "» Sejm przyjął ustawę o blokowaniu treści przez UKE. Czy to oznacza cenzurę internetu? -- Niebezpiecznik.pl --",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPREsyU0Zfbll6Z3lKZWJqMy05azRVZXdIUWlMbUZyTEdXb2dvTmRiNWpTM3l6RzdRWnBwY2VDenpxNGx5b25LN3A2bmJ6djc4TUd3SVUzVl9Rdk56TE1TWTlJUjN6WEZYWWNEZEQ4UlBYOXBHcHBPZjlDRG01TUxnNFItTTFKbHIxVElVRUJHdmtvWnVmd2ZHdkR4UUYzRC1Iek13TEo3dC15RWVpSjVodGJLWG4?oc=5",
+     "source": "-- Niebezpiecznik.pl --",
+     "sourceUrl": "https://niebezpiecznik.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-10T08:00:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "polityka Sejm rząd prezydent",
+      "feedUrl": "https://news.google.com/rss/search?q=polityka%20Sejm%20rz%C4%85d%20prezydent%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:22.651Z"
      }
     },
     {
@@ -697,7 +713,7 @@
       "provider": "google-news-rss",
       "query": "polityka Sejm rząd prezydent",
       "feedUrl": "https://news.google.com/rss/search?q=polityka%20Sejm%20rz%C4%85d%20prezydent%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:31.794Z"
+      "fetchedAt": "2026-11-11T15:19:22.651Z"
      }
     },
     {
@@ -720,13 +736,93 @@
    "explain": {
     "why": "Google Haberler'de 'polityka Sejm rząd prezydent' araması (son 2 gün).",
     "provider": "google-news-rss",
-    "lastFetchedAt": "2026-11-11T06:35:31.794Z"
+    "lastFetchedAt": "2026-11-11T15:19:22.651Z"
    }
   },
   "weather": {
    "category": "weather",
    "label": "Hava durumu",
    "articles": [
+    {
+     "id": "weather-5d1474012cb2df5ea116",
+     "title": "Pierwsza prognoza pogody na Boże Narodzenie już jest. El Niño mocno namiesza",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxORjNYYV9TMXp2RUFWZFR3VTc3aEdhYklMOFZxZVpKbFdTSVpGOW55dlI3MThpNmw3SFBoS1VnYXp3Z1g4X2FkTG5RU1g0Y3JDRmdCSHNvMVBSU1kzbUNaXzd4SjNfbl8wVGZ0WExlZFhmQlVCaTBGSXFqUm1zQXByU2JUeDhJNVJaNkY1RWJKVnN0N0dDVlE3ZnhBVm5kMkhocnJz?oc=5",
+     "source": "naTemat.pl",
+     "sourceUrl": "https://natemat.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T13:00:01.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
+     }
+    },
+    {
+     "id": "weather-f1ec8752336974fbdc92",
+     "title": "IMGW: prognoza pogody na 11–12 listopada. Mgły, opady i zmiana temperatur",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSXRlUzZpcG91MVNSZ3FqdzcyaDYwNlM0Q0RSencxZmFLUmN6aVVnZkNGdzBHcV9hLUt4ZmVWSlhRLVlRV2gwc3BfVVJQeGdWNXJiMk04VW05UkpZNkVZblZHYzNxYkhSM3BXakRZOW5KWlg2elNrM2tkUUt3aEFSX1J2YXlMV3ZuOGRyaklwTXd2MER0SjhEb1I2OVF4OTlOcGNVRUxQMmZyRHhOU3c4?oc=5",
+     "source": "Farmer.pl",
+     "sourceUrl": "https://www.farmer.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T05:46:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
+     }
+    },
+    {
+     "id": "weather-26e604b7d65502914a68",
+     "title": "Pogoda Częstochowa 11.11.2026 (środa): przymrozek do 0°C, w dzień do 4°C",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOM3I2N3NNbWcwQWFFTUJaLXV6Y1cxRVBaeVQxNnFYLVNaV3Y1WUJ1ellSRWNqeDFLb3FxbmpycHhKSnlfZmJYSzdJLUZwaTFpbzVGQUxtRWFRSFlmY1k2d2w2djhUNXYzN3Q0Mm9YNmVrV1dqQ0pHNWQyS0l1aHlFLWZDeW45dHAwX213ck13QQ?oc=5",
+     "source": "Tylko Śląsk",
+     "sourceUrl": "https://tylkoslask.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T04:30:52.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
+     }
+    },
+    {
+     "id": "weather-67a5f04d65dfd4a31705",
+     "title": "Pogoda Bielsko-Biała, Cieszyn 11.11.2026 (środa): przymrozek do 0°C, w dzień do 6°C",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPYWNjV01FT3JZWXFJemE4cFpEYWRDMEpjekFXWEtCckU5bXlHRXdRYTJQMng3RGNMSVdNT0lnSnJrc0pYWkJ1bWNjVkNvckxIVzRMOThjMk9LMllYdU9iaU5fbWJBZm5IWkZ1QkROWkhtUjVmYlhITy00UFhBNE00VUlUUmwxdUZ2RTRhbkxNczU2Yl9vZk0teWJldHhiNVEw?oc=5",
+     "source": "Tylko Śląsk",
+     "sourceUrl": "https://tylkoslask.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T04:30:40.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
+     }
+    },
+    {
+     "id": "weather-46288f5886d306c4231d",
+     "title": "Nawet –7 stopni w weekend, potem nagły zwrot. Tak będzie wyglądać druga połowa listopada",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNTFBHMDFkLXZoZVlKOXNmTE9qOHliV1FhR2MyVUY2TzJzWVZOU1N1LVM1U04yQ1YxeVM4ZDEydkc2VHZGV3hZWTFNaW5GMy1pVjlpWDcwOWpYS3EwU1VqU3M2dVFWWm9nTlZLbmF3U05WWTJUWWEweFNCMFFnQWtvcFFBMmw5QXVyTExqZ0ROencybjNuUFhBaFJuT19Fc2ZUYlg5RS1TUUdFbEpNMFJIZg?oc=5",
+     "source": "naTemat.pl",
+     "sourceUrl": "https://natemat.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-10T21:30:01.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
+     }
+    },
     {
      "id": "weather-2024c01b1ca6e9ad9ac3",
      "title": "Pierwszy atak zimy sparaliżował Polskę. Samochody grzęzły w śniegu, są nagrania",
@@ -740,7 +836,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
      }
     },
     {
@@ -756,7 +852,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
      }
     },
     {
@@ -772,7 +868,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
      }
     },
     {
@@ -788,7 +884,55 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
+     }
+    },
+    {
+     "id": "weather-9706b1e0eac25e5534c9",
+     "title": "Nadchodzi pierwsze uderzenie zimy. Poważna zmiana w pogodzie",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUzZjLXVvOUkzUlpXNXp0TTltQjl3UUhRcWxKMFdaSmZzMWNiMjFTU1FLdXpEd0dlWXZNQXhnSzlJRnBHdHZmN2dEejlKNFJ6Qmo5Z3NLV01WT25NU2hrWXVOMThZdEtmUGJNSDJWNGhHSWlWSjZBRU1qeVFwT3N3QXdHb18yVG1idEtUZkxmMnROaC1FTWZSbHJDN2xSUzVtSC1aVU1MQUt4cUU?oc=5",
+     "source": "PolsatNews.pl",
+     "sourceUrl": "https://www.polsatnews.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-10T11:54:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
+     }
+    },
+    {
+     "id": "weather-7311a22bf4ce17b8e0d1",
+     "title": "Prognozy wskazują jasno: już od wtorku opady śniegu w wielu regionach kraju",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQk1MT1doZDNvalp3WExHdUFFMGFYQU5zbnJXQUNuQzl1enVYaDQ2ZWl1dFMwNXpWRUZoRTdlQ2FtQzZLTTBuYkJ5NXVzWFduSkpsSDlHQ09IcVV0a1Q5eXdvUkItYTVBZnhOZ0ZMR3R3Tmw2SGVIdGRmNzdvUk5xRFNCekpuMUtBQmhJYnlNcVdSZ3ZUQy1wMG5fdVhxQzdtSnhhLU1XdmNtTG0tUWVpNw?oc=5",
+     "source": "Interia Kobieta",
+     "sourceUrl": "https://kobieta.interia.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-10T07:27:55.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
+     }
+    },
+    {
+     "id": "weather-a8c6de0d9cd1cf0e9fe6",
+     "title": "W tych rejonach Polski we wtorek spadnie pierwszy śnieg. IMGW już ostrzega",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOa1pzcXBnRlFjQzl3NFFqWW9QLTAyZGNBVUliRUNXbXJRWklLVEJzT1VZRVpUNEI0NXU0QV9pdXRQX0I1RXVtU3lNOUxJY0ZvSEd1WnVBYndOMDJRYmZ0cmRFTDNQUEwwN243TFJxcU8yNS0wbVBMM3lPeDMxVFpYS2xXSTNvbkxZZ3NGem5kYl96Sl8wRG5qYWpMdHdmLTVzc0xHQksyTWl4aTFyRzlObVlvZElydw?oc=5",
+     "source": "Strefa Biznesu",
+     "sourceUrl": "https://strefabiznesu.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-10T06:42:26.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
      }
     },
     {
@@ -804,7 +948,23 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
+     }
+    },
+    {
+     "id": "weather-060755af06495f38875c",
+     "title": "Śnieg wraca do Polski. IMGW ostrzega mieszkańców kilku województw",
+     "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOTVN1dXk1RlVKSEVNSjV0ZDlZTVJJWGdFSTUyclBvN1hNRFNlY1ZLbEFsbDUzSm1KUTFENFVJQ1g1RjRVWUZtY1NOdHhFVm5vbDIwUk41OEp3T3k2NHZHWm05bGlERVJYVTNCNHVqSk9VY0FYUmRQS0ZmdFRDVUFiME9ySjRWeVdrMmJv?oc=5",
+     "source": "Zero.pl",
+     "sourceUrl": "https://zero.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-10T06:01:29.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
      }
     },
     {
@@ -820,7 +980,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
      }
     },
     {
@@ -836,7 +996,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
      }
     },
     {
@@ -868,7 +1028,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
      }
     },
     {
@@ -884,7 +1044,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
      }
     },
     {
@@ -900,164 +1060,276 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
-     }
-    },
-    {
-     "id": "weather-89795fa0d31a3d2b091c",
-     "title": "Pogoda na jutro, wtorek 10.11: Katowice, Gliwice, Sosnowiec. Ostrzeżenie IMGW 1. stopnia, gęsta mgła",
-     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNVnpESXJEOVU3aF9ta0c4X3g1QWpuRE91dXBabXc1Yk5KTlFrcVEyUzcyUzM0WW85aTEzUjM4X1doVkx1Nml2X24xTUFKSVkwUUNERmROaUM5LTRpWTZ4NU5hQXctUExKSnJvYktpazVHR0dkZnhlYXlhUFVXaVR1NTdn?oc=5",
-     "source": "Tylko Śląsk",
-     "sourceUrl": "https://tylkoslask.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-09T18:30:34.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
-     }
-    },
-    {
-     "id": "weather-36eea235cc018aa0fdaa",
-     "title": "Pogoda na 11 listopada szykuje zmianę. Deszcz, śnieg, mróz i wiatr",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPcDdraUF0bkYzQ1REU3JfZ2paVVJtZmZ1VzNzZ3JScDVNMkJUeVFSdGtENVlSd25nalR0cm1NMFZlY3ZVVDl3M3gyS29kek5aZVVxcDJuMS1XQ3gyWXVyMEw0d2E1R0NlUWE3SktweXdZS2NLWDA4c2hFMFdtRGE3N0xSUGI0RUVNY1VHS2lxWFoyeURNSFJtakp0V1JVUWZJWjQyOVZhNG42d0dHN1E?oc=5",
-     "source": "Fakt",
-     "sourceUrl": "https://www.fakt.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-09T15:30:50.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
-     }
-    },
-    {
-     "id": "weather-a5cbf4baf7d8c1a36e3c",
-     "title": "Na drogach i chodnikach pojawi się śliska warstwa. Synoptycy wydali masę ostrzeżeń pogodowych",
-     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNLVBOdWtzcWlCV19jUGxnVWdkY0Q1d3Fpek9UMkZZQUxBNUJnQmFQSE1aUDB2Q0xTeGNNOXVSNGswQTVhM0p5eFZhTzFGalJGSDAtbWtRUU5vM2pncTFLcGNMd3lHNGU4UnB1YW0tTzBwZ010VVQwekVXN2NmU21rU2FONnhra3ZMV0NUY0xpUTlIdzgza1IzZFR0WlB1bXlJZDdyLUxB?oc=5",
-     "source": "Interia Wydarzenia",
-     "sourceUrl": "https://wydarzenia.interia.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-09T14:10:04.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
-     }
-    },
-    {
-     "id": "weather-653c0b542cfe65998187",
-     "title": "Zderzenie dwóch frontów nad Polską. 11 listopada w pogodzie namieszają niże znad Atlantyku",
-     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOOHFUaFFNZFBKUmRiWVQySFlZV0NIVkxLOUNFZkxudE5kVHVwYTlUSzVuQ0FncXJndzZKdDBxTk1sTXZZTEpKSGRqb0xDV1l2TUw0emRhSTNSalFlTC15MU1LMGRBOFJUUmlaam9BQUtxRDVja0t4dFE2X2ZiZmZtam9Cb01JcmRkZUFWankwdGtDSEdtclFubDVLZTdJT3E3OVd0LTZCTzh6YWozVmQtTXhRSFpxZGdacDFxRjRFUEdtT2M?oc=5",
-     "source": "Rzeczpospolita",
-     "sourceUrl": "https://www.rp.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-09T13:24:53.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
-     }
-    },
-    {
-     "id": "weather-fefeabe0101e46b76736",
-     "title": "Coraz bliżej przełomu w pogodzie. Nastąpi tuż przed 11 listopada",
-     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZ0phMUctT0tLTDROT2JtTUU0NUFQRHJiTENncl80SDNxNVRFT1pjUk1EWlVnWEtIVFJ5N21EbVlVeDVQY2hfNExFdGZ0bnhWTkg5bF93UHl0RlJlM2FwNDE0WlBHUFduQmhxVlZVc0J3WVdoZEI4UV9BZk44SzJKT0pkLUZ1aHo5M3lUTlhOVHB0UFl4alZtZ0FYV29MMmNYdWtBakR5ZTlaZjFnVE4tMDVDc1IzRGI5d2Mw?oc=5",
-     "source": "PolsatNews.pl",
-     "sourceUrl": "https://www.polsatnews.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-09T12:37:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
-     }
-    },
-    {
-     "id": "weather-f34f1befe2f9ef43bb01",
-     "title": "Nawet -6 stopni w najbliższych godzinach! Zima już tu jest. Nie ma złudzeń",
-     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQR0tlNkdsRndyYU02cDdhY0FvczhTOWNIUHNJUVYwSFo0VmtJTTRwOVNDMjBaMnpHbEs5ZjVUNGVfNU9OMVAxeVItSWtra3V6alcyN2tTcmdXdWxZcml3UzE2ZzdraklnM0ZtM1lKRXJKSGZNQXZ3UUtGazNfUU1Ld1hzNDB1eGhpMzNNMndySElKUWlrbnAyQkpseVRxRGdKUjBtYUJaTllfeVJvcmdUallROHZaZw?oc=5",
-     "source": "Super Express",
-     "sourceUrl": "https://pogoda.se.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-09T09:57:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
-     }
-    },
-    {
-     "id": "weather-4295103f61906b44b112",
-     "title": "Synoptyczna prognoza pogody od 06.11 do 08.11.2026 r.",
-     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5fX1l3dTFOMVh2MTF3cDRMVzJIOFlZUUpjSW5Vb1d1NEZ6MW8taDVHZU9lLU5iMUp3NHp1eXpQRmxiM1o2WlBSaGFFZW13R2l0dl9iWGx6bkRtZDkxV2F5WHRLVlVQa3djdE1NX1BWeEFPVkpfUUpQaA?oc=5",
-     "source": "IMGW-PIB – Instytut Meteorologii i Gospodarki Wodnej",
-     "sourceUrl": "https://imgw.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-09T09:08:28.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
-     }
-    },
-    {
-     "id": "weather-5d0fde39f03fd456e393",
-     "title": "Pogoda na dzisiaj - Warszawa i inne miasta. Gdzie będzie padać deszcz ze śniegiem?",
-     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPS3g5UFg5RkpvTzJZQS0zeWhGdGdzejI4WDFUV1RVcHQyQ2RuWFRnV3BRX09xREQzVExKWUE3cWs1TlBYNXZWVlFVbmw3aDlOTlRLRlJIUmpBYldnWXVNajFoN2dfZzhkR29oMFB4TGM0TFRUeDR5OHN5aVVTTEFuaHgyVHZxS1RqaHBFT2xwMi1famtPN3JsLWRtYTBuSXRsak5PYzhHX2J0R3R2Ukp5U2t3?oc=5",
-     "source": "Dzień Dobry TVN",
-     "sourceUrl": "https://dziendobry.tvn.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-09T07:10:52.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
-     }
-    },
-    {
-     "id": "weather-078dee9218ef8c2bf529",
-     "title": "Pogoda na Boże Narodzenie 2026. IMGW nie przewiduje \"zimy stulecia\"",
-     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPMU1yVWg0Uy1yZDBuV2JCa1Rub1Y0WF9Kc2c5M3hKOFJYWUpib0h1dDBIdHBDRkUxT0NLdzE4Q05kTEhKRTlRZUxCdmxISjN4UGhyU2tOZUxldW9fRlJ6UjlkWnh0anZ6bVZ5bjU1bjY0dXVKUDFmV2RMVHJhTnlMTWNuWkg2M1cwb2lVVWZ0VzJ0V21jWmZhT2VhTjF6SnNMdm16S3kzUTMydkk?oc=5",
-     "source": "o2",
-     "sourceUrl": "https://www.o2.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-09T07:07:20.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:34.026Z"
+      "fetchedAt": "2026-11-11T15:19:25.005Z"
      }
     }
    ],
    "explain": {
     "why": "Google Haberler'de 'pogoda prognoza IMGW' araması (son 2 gün).",
     "provider": "google-news-rss",
-    "lastFetchedAt": "2026-11-11T06:35:34.026Z"
+    "lastFetchedAt": "2026-11-11T15:19:25.005Z"
    }
   },
   "culture": {
    "category": "culture",
    "label": "Kültür & yaşam",
    "articles": [
+    {
+     "id": "culture-e388abc822558eb30b8e",
+     "title": "Hanna Bieluszko ma raka jelita grubego. W takim jest obecnie stanie",
+     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQOTZNZkc4MTVvNnhvSlgxWGxkZnZiOG5ZV3FMMUZDZFNVNFhTdmt6TkFjZkZKbUZxNWEyRXJtbGl1T0w3S2pHM1FnNVN4RjZhTTJsbUQ4ZGpVbUJCUWtNVnl1dWZ1NnVtNnZzV29vYWhzWVFoM1V6TmhYcDVJZW5vRks5OU1lNGU2WldTYmU5NnhiNTBVcERpS2NFQ2QyYXc?oc=5",
+     "source": "WP Kobieta",
+     "sourceUrl": "https://kobieta.wp.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T13:58:15.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-09f8e0f1c01c22944955",
+     "title": "NAPAKOWANY Hugh Jackman plażuje w Australii razem z nową ukochaną. To dla niej PORZUCIŁ ŻONĘ po 27 latach (ZDJĘCIA)",
+     "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNRF85eHVReThCRFF6OWZjWDQ4YzVpV0JmNy01ZmZORzFBVzJDcWZnMGQwQWVTUkFKMk9nNVdmT0NScXQ0MUt5WkRiNGJaeWFHd25lZTRCdDV5MFNwX3dFRHgyVThySF9VZWpNeTlDeEZWc1JSX3VPRVN4OFI2ejVRUE8zUTdGNktiZU1yd1pPR2YwSTRSV2REdmFKaE1DV0pqTm55SFVCYUtQVzZOdFJjSW02M1E2cTRVQVM5Qkl2bFU4SEJ2SGVnLXltck54Qk9KX3hwZXgyRXJWb3o3WjNCcnhWT0tkdnVU?oc=5",
+     "source": "Pudelek.pl",
+     "sourceUrl": "https://www.pudelek.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T13:45:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-24e74a9071c6306cc332",
+     "title": "Damięcka wrzuciła grafiki z okazji 11 listopada. \"Wymowne\"",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPeXBzTHo2TXpPLWtNaGNZSGV5OTBOSFVEOUhTbVpaakcwbURhRXIzT0UtRjcyVUJ3TXZ0Z1ExbjhQOHBvZ0ctcFBvMVZTTXBzVTJEMzNJSVZ1M1ZhaEs5cDZMeEloVWhBYkZFWmVsZ2VHZHJyRW50UmsyMFR4VDlVNDJRck50WnBqSk1KeFFjVVM5T3VG?oc=5",
+     "source": "WP Kobieta",
+     "sourceUrl": "https://kobieta.wp.pl",
+     "summary": "Damięcka wrzuciła grafiki z okazji 11 listopada. \"Wymowne\" WP Kobieta \"Więcej niż tysiąc słów\". Nowe grafiki Matyldy Damięckiej poruszają Plotek.pl Matylda Damięcka pokazała nowe grafiki na 11 listopada. \"Dość!\" Onet Nowe grafiki Matyldy Damięckiej. Internauci nie kryją wzruszenia [ZDJĘCIA] Fakt \"Wolność/Ulotność\". Matylda Damięcka przypomniała grafiki na 11 listopada WP Kultura",
+     "image": "",
+     "publishedAt": "2026-11-11T12:27:23.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-25858b3f1c8899b8b87b",
+     "title": "Robert Moskwa publicznie wyśmiał Republikę. W komentarzach zawierucha na całego",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQY2NpWXFOcXhXeU1wX3NoVTJMbHBVcWhNQndacTZKcmFPSWtnLXN4aUdmWjlfM251alNSRzFpUmNzXzN2bl9jR1kySUQta2h2MXlsVU1VMTRCWGNoM1gwMllDSXpTa1UxMEE3NGJwM1dyT19HVUN0M2dzekQ0MDV3aEpMSkx6Y3VXWGN3UzE0T2tROUVkT0tPSkF0M2dYSTVuaFFrQzBpU0dsZFVI?oc=5",
+     "source": "Jastrząb Post",
+     "sourceUrl": "https://jastrzabpost.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T11:32:01.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-d495d360e976ce5b77e0",
+     "title": "Ogromna wypłata Johnny'ego Deppa. Ale to i tak ułamek tego, co kasował",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNcEtjcTNSclZ1a2kyWWg4M254cU12VzRPeGxxNHc1WG83cFItV0xaZy15a2hQZlNLTkpHSWJMZWFXRTczVmVPVDdRRkQzbGVMSFpiVFlFZWVDcl9HTW5SUEoyalI1QXRoc0FkY0VYTENXMFBHaHNzbzBfYzcteVBlWkgwQUpWUC0zMkg5ejhsRFQ2a3o2ZXVLdHUxSHk2YVR6XzI5eENtRQ?oc=5",
+     "source": "WP Film",
+     "sourceUrl": "https://film.wp.pl",
+     "summary": "Ogromna wypłata Johnny'ego Deppa. Ale to i tak ułamek tego, co kasował WP Film Jak wypadł Johnny Depp w \"Ebenezerze\"? Do sieci trafiły pierwsze reakcje Filmweb Johnny Depp znów błyszczy na ekranie. Nowy film oczarował krytyków Onet Wigilijna Opowieść w Warszawie Warszawa Nasze Miasto Johnny Depp skończył 63 lata. Tak teraz wygląda aktor Rozrywka o2",
+     "image": "",
+     "publishedAt": "2026-11-11T10:32:06.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-4f603ca4f125fa50bb11",
+     "title": "\"Mam polską żonę\". Hollywoodzki aktor wspiera Polaków po zamachu",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxON2hEdzQ3cWF3LXFpX1ZmcExFZTRBNUM2YU5SYkdjT0xMdDZ0UUJCQXFlU0NGWlRnaWdkdGxNeFVTeEVrZWJwMTk3ZXZKMTFQZGJMejQxZHpVTEZ4dVhrQkRBT1RkVlUxU1RyR1VlMTRDNHl1clZrOHpSWXh5RlZmNlgyMmZYZFhXczRRRTNnYVVjQ28wTmdIdjNLRi1ULU51aDdtcTJySXRZNS1pWWc?oc=5",
+     "source": "WP Kobieta",
+     "sourceUrl": "https://kobieta.wp.pl",
+     "summary": "\"Mam polską żonę\". Hollywoodzki aktor wspiera Polaków po zamachu WP Kobieta Patrick Wilson o zamachu w Krakowie. \"Współczuję Polakom\" WP Film Dagmara Domińczyk i Patrick Wilson zabrali głos ws. tragedii w Krakowie Pudelek.pl Amerykański aktor pokazał zdjęcie z Krakowa. \"Serce mi pęka\" TVN24 Gwiazda Hollywood o tragedii w Krakowie. Poruszające słowa na festiwalu Gazeta",
+     "image": "",
+     "publishedAt": "2026-11-11T09:56:02.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-2a889810189bc026fb16",
+     "title": "Stacy Keach nie żyje. Amerykański aktor zmarł pod Warszawą",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPelZULWhsQ3JhaE5OQ3h3bzZtU2Q4NmRpYmJQdk02d1ZnTnRGNFJjaU5OTy1wdURKOGJOOE9ENW95eHpSdjZPb24xZGpFcXJEbGw2WUFTVTJVaGUzTG9LNHJnY252UUtJSmZMN3hXaU9mNFloaWx6ZDdsUThneTAwelFHYXNZZ25jbTdRZlY5YjZUcmRZR2lsZ3NwY18zM2R2RzdhX25UakxrQQ?oc=5",
+     "source": "PolsatNews.pl",
+     "sourceUrl": "https://www.polsatnews.pl",
+     "summary": "Stacy Keach nie żyje. Amerykański aktor zmarł pod Warszawą PolsatNews.pl Amerykański aktor Stacy Keach nie żyje. Zmarł w Polsce Wyborcza.pl Stacy Keach nie żyje. Grał m.in. w \"Skazanym na śmierć\", \"Więźniu nienawiści\" i \"Ucieczce z Los Angeles\" Filmweb Nie żyje Stacy Keach. Od lat zmagał się z chorobą serca Medonet Stacy Keach nie żyje. Wybitny aktor zmarł w Polsce TVN24",
+     "image": "",
+     "publishedAt": "2026-11-11T09:49:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-c7c3e171399be9995016",
+     "title": "Katarzyna Glinka o osobistym dramacie. W tle adopcja córki. \"Nigdy więcej jej nie zobaczę\"",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPRS1kNnF4MzRBVnJtajZuQ00yMFVzNncweDVoNzhUWlhTZjc3dXk3V3NGVmI2bG1Rd0I3c2FTdHZNQlk2QUdnZk9CRjljU2NrYlBuREtRdl9uWUNaVlVlOWRXd1VkaGQxbVFnVXcwUTQ0QklkUGVaV1MzNzFFaEtWN05va3VjTmFtYTJ3RU9DeXY5cC01bVE?oc=5",
+     "source": "Fakt",
+     "sourceUrl": "https://ludzie.fakt.pl",
+     "summary": "Katarzyna Glinka o osobistym dramacie. W tle adopcja córki. \"Nigdy więcej jej nie zobaczę\" Fakt Katarzyna Glinka ledwo powstrzymała łzy, mówiąc o adopcji córki. \"Nigdy więcej jej nie zobaczę\" Onet Katarzyna Glinka o losach adopcyjnej córki. \"Nigdy więcej jej nie zobaczę\" Plotek.pl \"Dla mnie oznacza to, że nigdy więcej jej nie zobaczę\" WP Kobieta Katarzyna Glinka nie zobaczy nigdy adopcyjnej córki. Oto powód Pudelek.pl",
+     "image": "",
+     "publishedAt": "2026-11-11T09:48:40.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-691fbf1dfd5f9e25f36f",
+     "title": "Krzysztof Skiba opublikował wiersz na 11 listopada. Uderzył w TV Republikę",
+     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOTVJnZ05FMlNnWGNSWkhoVGhsbDI4UDktUmZJSUdjM1prQ1hPdGt1SnJQcm9WRHZTT19uanhGLS1zaS1MVy1RRThodW1lZUtvckliOFpHcklRNUs1cEllVW1XMDMyMjdnRHNVdUdMQzFFQjJiWURjOVdJWnVPUUs3ZC1wSkZkZDZvLTdUaWxSdGxJeWU4d0l0QTlwbG1wZzI3MFhPbFlWMFN5NW1DRFBIcV9XQ0tGSTc5N3RERw?oc=5",
+     "source": "Jastrząb Post",
+     "sourceUrl": "https://jastrzabpost.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T09:13:05.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-cb0a3d4d659f443b185a",
+     "title": "ZUS przysłał list. To nie pomyłka. Tyle jej wyliczyli",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPNFlUNGlkMjVqWEZoNXVldDhjOE1ONzNBNnI3RTBCYl9fYzkyZC15Z1h3THdUc0VnczNoWmFvOFpmUEp5RFk3cjQyd1M5VHFkMDg1MTNZekc0UWRiVVhrLWk4ZFVxU3dDcXlIN2hlR2xGS2RNZVJTb1p5dVQ2X1pNS0NSU2NzbGkxb3drNUowbk01dDdDZU9FUjhnbDE5YUlB?oc=5",
+     "source": "Rozrywka o2",
+     "sourceUrl": "https://rozrywka.o2.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T09:01:42.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-3da38d7af46514ecfa39",
+     "title": "Z pierwszą żoną spędził 58 lat, druga była młodsza o 60. Tak kochał Łapicki",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZlFhZmo0bU1kNHVsbVJuX0thLW44blhFWTJDWXVldjZJMk52VjhoRVY0U2hIWWVHSjlyVFBTb3pQb2tFVjY0OXdMandQY2pGRzNNSWpkYVlEOU5GbkVNNjFiamJtN1JzNW1wRllMT29obkk4bVFTc0RIVk9MNUJqV3RuR0RMM0VEUHFmN0VuUUhhbGFfczFpakNHN2lwSGM0VHJyU0RIei1NRzl1QXNYM3FYdw?oc=5",
+     "source": "Plotek.pl",
+     "sourceUrl": "https://www.plotek.pl",
+     "summary": "Z pierwszą żoną spędził 58 lat, druga była młodsza o 60. Tak kochał Łapicki Plotek.pl Walczył w powstaniu, później został gwiazdą. Polki za nim szalały WP Film Poznajesz ikonę kina PRL? Zagrał w „Lalce\", „Ziemi obiecanej\" i „M jak miłość\" Radio zet Rozrywka 102 lata temu urodził się Mistrz polskiego kina. Polacy w minutę potrafią wymienić arcydzieła, w których zagrał Radio zet Rozrywka",
+     "image": "",
+     "publishedAt": "2026-11-11T08:30:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-2bf08d0dcde841346db3",
+     "title": "„Wśród nocnej ciszy” Jana Holoubka. Serial o zabijaniu w Wigilię z krzyżem w ręku",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTFRUQmxRYlBWTHFsYzNaa3Jsczg4ckg2eWN5WjhlYzZ1OFdLdjctUUNEY0NfcG5qdmRmaERRM3lHcTg4RkhjUkttUVEwWHBmMWpqUm9tYnhVdGRnVU5DTHRGX1pwQzNNaTUxN0daNnpCS3hRR3RJM1VnTE0yNTF6X1VLOFZhNnF6aHkwdXFxbzFVQ21QTi1Gel96WFlsaHU2TnNobUVLblpPUkx4QS1wcFo5SQ?oc=5",
+     "source": "Rzeczpospolita",
+     "sourceUrl": "https://www.rp.pl",
+     "summary": "„Wśród nocnej ciszy” Jana Holoubka. Serial o zabijaniu w Wigilię z krzyżem w ręku Rzeczpospolita Wśród nocnej ciszy (2026) - recenzja serialu Filmweb Najlepszy polski serial 2026 roku? Recenzujemy Wśród nocnej ciszy naEKRANIE.pl Ile kosztuje prawda? Simlat i Hycnar w RMF FM o serialu \"Wśród nocnej ciszy” RMF24 Premiery w listopadzie 2026. Holoubek wraca z nowym serialem o tajemniczej zbrodni i szokującym procesie PRL-u WP Film",
+     "image": "",
+     "publishedAt": "2026-11-11T08:24:50.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-d53ab28af24190f9c249",
+     "title": "Bartosz Gelner delektuje się kawusią i puszcza dymka podczas spotkania z Zofią Zborowską. Fajny duet? (ZDJĘCIA)",
+     "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNMDEzT3VwRlo2TG5kQVFCSGNld1VYWGlQQThrQm1iMVZzLXVfMktvNmt6UFdmRjJFVlc1R3FqcjQ1MHFWenNIOGJNemhKaXBFSHVfdDN5UGNxbDBKU0xFM3RMNWNkRk1RWGNMNlZwZVBPWUNiNmYwOEtyOUdtN1Rjd3lMaFNwOGc1UjFVTzZUYUcwWHF3LWxOT21xNFk4cUVwams3WDhWazNEWDltZVFDS1JPc3d2ZVhpS1AxaXRZa2Z3dE9wLUVZTkhZM3hCSmxqdkRzaUI4ZXA5cGxVUVdQTGpn?oc=5",
+     "source": "Pudelek.pl",
+     "sourceUrl": "https://www.pudelek.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T08:00:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-2b0fa8bb0fa733740590",
+     "title": "Zamiast króla zostanie artystą? Książę George ma wielki talent po mamie",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUmZJci00clZ5OWI3MENjLXZjLTM3VXFJUjV0QkZNenZBYWJTenU2blhJOF83WVZjd1ZBMXd6Nl9TTDRKRENqUDlLREczYWUxY21xVjJ0aE1hWWF4Q1ROdmVOdmpCVjE4SWo4X1N0QVFNUnFQaS1nY1ZMUWs3T3FFeGlmbk85MmJfdHhmb1BiZmpwOW1oVjJIWWp5a1BWc3ZnTTRFeTc1VQ?oc=5",
+     "source": "Plejada",
+     "sourceUrl": "https://plejada.pl",
+     "summary": "Zamiast króla zostanie artystą? Książę George ma wielki talent po mamie Plejada Zobacz więcej nagłówków i punktów widzenia w aplikacji Google News",
+     "image": "",
+     "publishedAt": "2026-11-11T07:27:20.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-e58f71aaa2cac2186881",
+     "title": "Demi Moore przeżyła koszmar w związku z Ashtonem Kutcherem",
+     "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNS3ZwY0E1RXRMaWVYYkYyTEZvM0lOLTlvQ0hPRS14d1JPNWEyclFJSnhJSW1PMEJwbUxYbjlXMzItN2M1aWdSUTFpSnFlNGo0d1k5aC1GLUszSmFNX0ZNa2dfSWc2bmdRQmRrQ1J1NEVEZ0t1b3BWY3dudmtxX1NGU2VaUFRhSDRDNlRwR2xlR3VpZFhrVzNITkFDMndrQmVXdkZJREY5MzUyaHZaOUVSc0tSMTFNOFdmZWU5Y0VWTklrREp5UXlCU1dXNThyVmF5d01IZnB1eEpNWVd2WU0zd2NaOVREMmlxM1NGZzB0ekdKTGNyTHc?oc=5",
+     "source": "Pudelek.pl",
+     "sourceUrl": "https://www.pudelek.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T06:30:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
+    {
+     "id": "culture-f1ec9ac2dd8adb626514",
+     "title": "Zmarł w pijackiej melinie. Nikt nie zauważył jego śmierci",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPY1RuczVodkNOTFBHdE1zWmNHbDE4Qks0enR6aWVMNmxsdFBFTkJPU0FOYUJJRDM2N1p5RngxbkFvSTU0WDNKQmhmTXhOX3planM2bUVid3RsMHZYLUFXMmdtR2VPWW8yMzA4SWEzZmhwdE5namkycmQ1dTF5NmZ3TzUwMjIzajRrN1BYQmJ1QU1OaUJxekRWQg?oc=5",
+     "source": "WP Film",
+     "sourceUrl": "https://film.wp.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-11T06:07:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:ENTERTAINMENT",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-11T15:19:27.368Z"
+     }
+    },
     {
      "id": "culture-a95d580f06e7086bbf6d",
      "title": "Demi Moore zachwyca figurą. Oto, co wykluczyła z diety",
@@ -1121,268 +1393,12 @@
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
       "fetchedAt": "2026-11-11T06:35:36.304Z"
      }
-    },
-    {
-     "id": "culture-971ad113bed0420b0beb",
-     "title": "Stacy Keach nie żyje. Aktor znany z roli Mike'a Hammera zmarł w Polsce",
-     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaDVGVFZsOXRhTlNZV0ROOFlGcXpXeUNneTd2WGhPUjgwYnNTLXVtaHFtTkhPdHdCSmhwdVpUcExYektvM282SXRFMVpBU3pCNHNQVGwtVFg2SGFSdVg3T004UHdQUkNUN2ctM3NSTl8wV0lWTXBibUEtRU85UTBXRF90WTlNbUFHSWZkOTRMX3FOSmFZY0c3RlV6S2tKM3luVmZ0b0dRb0E0eTdBTlRVUGw1TDdoeFBZREV3Vg?oc=5",
-     "source": "Rozrywka o2",
-     "sourceUrl": "https://rozrywka.o2.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-11T04:27:56.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-fd1d1e1af5fab8b2a696",
-     "title": "Jungle w Atlas Arenie. \"Jak w najgorętszy dzień wakacji\" [RELACJA]",
-     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWjAtY0NnTlFHWWUxTkpTSVNDdDlTWl9UY19HMDVqTTAxaEJpZ0R1ODkxRFBfZVpaQTh5RzN3X1dTRHF4NXdoSmZYR25hLVlRRFVvZ0pOZmZBMjRQRGJJNGViUWtGdWZZLXMzNjdRWHhvNG52RHFzejZZaUpPWTZWb2N0OWJ1T2tMckZ4eV8tak9vNWFBNENmX1VldEdHdnhKQVY1NVZWZW45MVNiVE5zMnpwTQ?oc=5",
-     "source": "Interia Muzyka",
-     "sourceUrl": "https://muzyka.interia.pl",
-     "summary": "Jungle w Atlas Arenie. \"Jak w najgorętszy dzień wakacji\" [RELACJA] Interia Muzyka Słoneczna ucieczka. Tom McFarland w Trójce o nowym albumie Jungle Trójka - Program Trzeci Polskiego Radia Trzy koncerty w Atlas Arenie. Jungle, The Masters of Symphony i Coma w jednym tygodniu: Turystyczny Portal Łodzi Lodz.Travel Muzyczne wieczory w Atlas Arenie w Łodzi. To będzie solidna dawka dźwięków ŁÓDŹ.PL Jungle w Atlas Arenie. Godziny koncertu, wejścia i zmiany w komunikacji miejskiej Atlas Arena",
-     "image": "",
-     "publishedAt": "2026-11-10T23:02:54.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-2eb8f3fd230657dc7527",
-     "title": "Friz o przyszłości dzieci. \"Nie dam im mieszkania. Do roboty\"",
-     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxON3BWc3NaTzFnLVdKSUNOSGpTNHR1MjVpdkZ5S1hoSU03Z01VcUdQbTg3QkVnSmp1a0JXa2RPOUFZTUF4OTBVSnNJVzdPX2N1TUNhdkZqbDFyeGdheElUa1hVdXc2cUptdm5oUjhjOUgyV0xNaG1zZGIzYnZKdE5VTjNKNFZUMThBZ05IQU1Qd2lIRmNvQkluMEVPUXVlNVprUWJlcHU4ZkkxbmxISzlTY1lhRjRqMlBPWnFjUTl2MG0yUEQwdDZ1VnBfWk9mUFYxaVp3YklqMGVVSEp4eVU2T25UZ1lSVjE1Snc?oc=5",
-     "source": "Pudelek.pl",
-     "sourceUrl": "https://www.pudelek.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T21:24:10.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-a0d2694f176c3531d855",
-     "title": "Pompeo nie chciała sceny intymnej z przyjacielem. \"Wyszło to bardzo źle\"",
-     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPbDhZMzc3cjZNVHBmX2l5clRZZm5ySzVTbXFrTUNHSjF6NFhZTi1UNGVMTGhEMmItcWc3U1lmNTQxbG1jdnFvbGpfZzdCbXdSOFpKcEZFbDJkbS04MXNUdnJpN1JpYUluaDhKWWFVUGN5UTZoVjFWS1R6VVN3Y1llZ216OGRzLUxXYTh6ZkV0dHFDdHJDUFUw?oc=5",
-     "source": "WP Kobieta",
-     "sourceUrl": "https://kobieta.wp.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T19:58:24.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-838b80859a48e664c355",
-     "title": "Karty Tarota na środę 11 LISTOPADA 2026. Baran, Byk, Bliźnięta, Rak, Lew, Panna, Waga, Skorpion, Strzelec, Koziorożec, Wodnik, Ryby",
-     "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNTG9peVRNOGFwS0d6dDZaWjRwTWtkM1VZM2s5bjVXZWd3aFVWeUxhM2xPZW14OWNXajdxVE1CQXI2WTVwSndJcGJZdTlCR19EODZlNk9UbHA4WndMcWlSSFFKOG84OHo4YXM3UEZBQmNsbzE4OWszUUxnbjRMTWZkeTNPQ0RidC1teGJzS1NSYk9fTk9yeDMxeVItUno3bFdidlBzVDJsSnVrc2RERDFIamZxYjJVZ1NmNWROLVFZZEZ1cTVIWlllZWRxRVFEUW1EZ2xkVDBHQ24tSG9oMjBGR1BoZDVWZw?oc=5",
-     "source": "NTO",
-     "sourceUrl": "https://nto.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T19:45:30.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-a36c9725613fb985ac0a",
-     "title": "Plejada gwiazd na premierze serialu. Nie zabrakło Jana Holoubeka i Magdaleny Różczki",
-     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxObkZVZGE3VmlNdG1NYlhfMVNHSkUtTmx5MDlKeGZEWUl6ZEtZNHEycHh3UkJ0SGpOYXV6YVN3VWJsTFJISV9PTFdrb0ZwdFRfdVU1OVptbC1LUWRMTHlua1B5RXpiSXdvUEhpM0xKMHZYRm1CU2xidVlscjFqb0swT0FJV2JYZV9ROWN6bjlSR0NFcXd6TFVTWnFGYnBlU1pmajBRM1o4Zm01a24yTTR5bjhjZjJPeEkySkpZWWNfalVZcXFSaGF3ZERXUXgydVVx?oc=5",
-     "source": "Onet",
-     "sourceUrl": "https://www.onet.pl",
-     "summary": "Plejada gwiazd na premierze serialu. Nie zabrakło Jana Holoubeka i Magdaleny Różczki Onet Wśród nocnej ciszy (2026) - recenzja serialu Filmweb Premiery w listopadzie 2026. Holoubek wraca z nowym serialem o tajemniczej zbrodni i szokującym procesie PRL-u WP Film Ile kosztuje prawda? Simlat i Hycnar w RMF FM o serialu \"Wśród nocnej ciszy” RMF24 Poznaj bohaterów serialu HBO Max „Wśród nocnej ciszy”. Po stronie prawdy i milczenia Rozrywka Wprost",
-     "image": "",
-     "publishedAt": "2026-11-10T19:41:52.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-839b2ebaad0561df9a24",
-     "title": "Lider Beatlesów miliarderem. Ustępuje jednak dwóm gwiazdom",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQOWoycWpZN0VPWExpaE1aMjJDV2phNTJyMmYzMzRxOGtUXzhUd3VNcVYxcml6NzExck5aaFRuX2ZSb0xSQW5fTC11Ny1aTlotT19RVVVLRTNLZ3BHYUI1dmxQLUpVY1FGUlFBNnM0WTdnSDRfaWN5aXB1OWZISk82ZGJ0eGtaUnBWemV3bDk1SF9sVF9maFNZREJDLUgydnpQdFBaZDNxMHFKQWs2NWc?oc=5",
-     "source": "Money.pl",
-     "sourceUrl": "https://www.money.pl",
-     "summary": "Lider Beatlesów miliarderem. Ustępuje jednak dwóm gwiazdom Money.pl Dorobił się już 5,3 mld zł. Jego fortuna wciąż rośnie Onet Były Beatles trzeci na liście najbogatszych muzyków. Wyprzedza go m.in. Taylor Swift Rzeczpospolita 84-letnia legenda to jeden z najbogatszych muzyków w historii ZlotePrzeboje.pl Paul McCartney został miliarderem. Tylko dwójka przed nim TVN24",
-     "image": "",
-     "publishedAt": "2026-11-10T18:02:55.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-81a411cef05e701cb534",
-     "title": "Nowe doniesienia o Marzenie Rogalskiej i Łukaszu Kadziewiczu. Ich przyszłość w TVP jest przesądzona",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQaUhkcDh0VXdFRVQzUy1qTks0Zm9Gc01KTWh0bUFtUDB4MUlwbnNpSHdVWDMwZENwaFFwVk9wY2hGc0VpNmRwMjhsRDhSMFFrQlcxU2t6azNjQXdPYldEbHUzMmc1ZWNMZC13anZqLVBpRWRvYS04YXlnRFJWTzBoT0xYLUFkNjkxM1lMUHFfQ3VQeUVkS0drdTNvdTdHazJWVnZFWGl2S0JhdGxMcXc?oc=5",
-     "source": "Pomponik",
-     "sourceUrl": "https://www.pomponik.pl",
-     "summary": "Nowe doniesienia o Marzenie Rogalskiej i Łukaszu Kadziewiczu. Ich przyszłość w TVP jest przesądzona Pomponik „Jedna Polska” – lokalna duma, wielkie emocje i 250 tysięcy złotych dla zwycięzców. TVP rozpoczęła zdjęcia do nowego teleturnieju Centrum Informacji TVP Marzena Rogalska i Łukasz Kadziewicz poprowadzą nowy teleturniej TVP 2 Press.pl Rogalska i Kadziewicz poprowadzą nowy teleturniej. Ruszył casting! Świat Seriali W nowym teleturniejów TVP będą rywalizowały ze sobą polskie miasta naEKRANIE.pl",
-     "image": "",
-     "publishedAt": "2026-11-10T17:18:25.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-b3e977849cd3b74db5f8",
-     "title": "Finał \"Jaka to melodia?\" przeszedł do historii. \"Nie wierzę w to, co widzę\"",
-     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOb3c1blBfU2F5WUViMEpxeHR6TWEtY3c3ZWVPakFpWFIwVUxkSVprZDgxN000cDRCMU10NDVvRVJjQ2ZSQWlzZkdQSERoVjRheGZkZDBIRXpwUlZLWEdJcWpTVVJ6R2NkYktBVGlUbzZGSVBSY2tWMHhScGpROE1ZV0NwNGtJOU51aVRuX05Kc1pkMlIza2pCRWYzSlExaTJ4dEU2MHVLSXVDQQ?oc=5",
-     "source": "Plotek.pl",
-     "sourceUrl": "https://www.plotek.pl",
-     "summary": "Finał \"Jaka to melodia?\" przeszedł do historii. \"Nie wierzę w to, co widzę\" Plotek.pl Niebywały finał programu \"Jaka to melodia?\". Janowski zaniemówił Onet Takiego finału \"Jakiej to melodii?\" nikt się nie spodziewał. Uczestnik wygrał w TRZY SEKUNDY [WIDEO] Jastrząb Post Wyrównał rekord wszech czasów w \"Jaka to melodia?\". Janowski nie mógł w to uwierzyć Radio zet Rozrywka Muzyczny geniusz w \"Jaka to melodia?\" wprawił wszystkich w osłupienie. Siedem piosenek odgadł w trzy sekundy! Super Express",
-     "image": "",
-     "publishedAt": "2026-11-10T17:03:24.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-52eb8087dba214cf5df3",
-     "title": "\"Nasza rewolucja\": Jakubik, Popławska i Domalewski na premierze biografii Jacka i Gajki Kuroniów",
-     "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQMXRVdC1DR1V3VG1tall0emMyRzRpZENCeWJkWTRCY2wzdWN0VXhXbDliU253ZU5tUElhS1pOYTU4U3Z1b3pqdzRPRFRlMUF5Ymd3b0RaWG50N0VuVEhnbkJGV3RFMXQ0bXp3V2w2SU04UE03WGlHMmw3NHF3TTRZUlIxODFhZVhVeWdzejJXd3BsRGEzdF90cWV0eEdTT1g5MzBCSk9pTHdNMW9rNk8zQU5NaU1qc2lyeVlwZTJ1Uzk5LUpZYkkyanhWQnl5Ym04MEsyVmRTV0VDSXBKZDVOUkpnWQ?oc=5",
-     "source": "Filmweb",
-     "sourceUrl": "https://www.filmweb.pl",
-     "summary": "\"Nasza rewolucja\": Jakubik, Popławska i Domalewski na premierze biografii Jacka i Gajki Kuroniów Filmweb Kim była Grażyna Kuroń? Prawdziwa historia bohaterki filmu „Nasza rewolucja” Styl Interia \"Nasza Rewolucja\" w kinach. Kto jest kim w filmie o Jacku i Gai Kuroniach? Polskie Radio 24 \"To nie dla mnie\". Magdalena Popławska o \"braku przestrzeni\" na miłość Onet „Takich ludzi trzeba przywrócić zbiorowej pamięci”. Wywiad z Piotrem Domalewskim, reżyserem filmu o Kuroniach Rzeczpospolita",
-     "image": "",
-     "publishedAt": "2026-11-10T15:29:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-27e786e4d15c59a50bd2",
-     "title": "Ślubował ubóstwo. Teraz dawny aktor będzie miał szóste dziecko i prosi o pieniądze",
-     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdGxkMndPQm52VnZQT3lqMnM0T0prUy1wYTFWenFjS3RMY1dVSkZjREpjclVSRHlHcEJKUVpkeExnSUNFYmZHNDktaVBmRlhnUHBXMnR4OF9qZEFkTW1IMXpIeUVXN1llZjhLWnVKYXVrWGtBZnlxSUJCMU90RnRXX3p0dUl6cVNuZ1V3MzJEQWF5TkZiYUllYWtUcWlPeVlpSjBTbVFFYmtFcGdCZHVPZ000aERvZC1JN3c?oc=5",
-     "source": "WP Film",
-     "sourceUrl": "https://film.wp.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-10T13:58:51.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-d876e52e4fcb6aa7d999",
-     "title": "Nagłe zmiany emisji show Polsatu. Wtedy odbędzie się finał",
-     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQeG9KblBFR1FHZV8wc0ZxdUdSZ1VRTm0xWldfWTI5RG82eFdWcjkwYm84ZU9NUmxiT2dScVBpYmtpMjlDWVYwaXExYlBydzF4RzVwWktBZ28xQUtpSTZUam83WTV3WktUV2ZrYUd5aENXVGpocC1hdVFXM2VaNDl5V3VkNzB1SVdON2tsV1VsbTFzQVRoZktWWC11bjBSYThCZGM3Wmo3MA?oc=5",
-     "source": "Plejada",
-     "sourceUrl": "https://plejada.pl",
-     "summary": "Nagłe zmiany emisji show Polsatu. Wtedy odbędzie się finał Plejada Zobacz więcej nagłówków i punktów widzenia w aplikacji Google News",
-     "image": "",
-     "publishedAt": "2026-11-10T11:26:13.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-23f3f7db8ef7ac3dafaf",
-     "title": "Stół z powyłamywanymi nogami. O \"Mieście smutku\" Hou Hsiao-hsiena",
-     "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPMzFiVGJncXBmd25TTDU1Um83U19Ram9iWmEzX1dpbDM3SFRHSml4bEZ0eEtMVVlneklyb0Jrb2Q0azg5aVV3Q0c2bzMyQlkwVFdmN0hxaUN6TG9XSGJwMmh2UWF6Zl9aNF9uNFo4OE1vVGZMWGVlWXkyb3ZTQmxpVTBKRzFmR2RTcWNaY1dKdzk4Qmh5VlJYSFhYeW4ybWVCanlwNk4wckRpRjNpNzBrYnB3Q3l4dEFMaTlMZjRKWjlIc1dJNXhOZ1ExajRtNGtFUGRweFhTT2RoRlRwLWw2ZDB6cw?oc=5",
-     "source": "Filmweb",
-     "sourceUrl": "https://www.filmweb.pl",
-     "summary": "Stół z powyłamywanymi nogami. O \"Mieście smutku\" Hou Hsiao-hsiena Filmweb Kino azjatyckie w najlepszym wydaniu. Co warto obejrzeć na festiwalu Pięć Smaków? Interia Film Wietnam, którego nie zobaczysz z okna hotelu Kultura Onet Jutro fani Azji zjadą się do Warszawy! Rusza Festiwal Filmów Azjatyckich Pięć Smaków RMF FM Festiwal filmów azjatyckich w kinie EC1 Łódź. Seanse, warsztaty i goście [SZCZEGÓŁY] ŁÓDŹ.PL",
-     "image": "",
-     "publishedAt": "2026-11-10T08:19:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-afb17d617728c1df25ac",
-     "title": "Przed laty wyjawiła prawdę o Russellu Brandzie. Przypominają jej słowa",
-     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNVVRRUFpfZTY4UV9xR2Z0eU1hTS1zdEQ4NkZTNDNNZXZEMHZ6S0hQdkZpdEpVT0xqdUJnQU1heVcwRW5nakRMWHdSZENhbnRBV1dqTXBfSFc5eVFRNkxrWmFWU2o0V3UtcWlTWDRZaUg1cDlGRU9XbmFXcU1QVFdQSmxBYndMYlFPSFd6UWR4Qklva0lMNG9TUEV2YS1WZGpiRzY2bENn?oc=5",
-     "source": "Kobieta Onet",
-     "sourceUrl": "https://kobieta.onet.pl",
-     "summary": "Przed laty wyjawiła prawdę o Russellu Brandzie. Przypominają jej słowa Kobieta Onet Aktor Russell Brand skazany za gwałt i napaści seksualne TVN24 \"Bądź gotowy na najgorsze\". Gwiazda trafiła do wiezienia Onet Pogrążyła upadłego gwiazdora. Teraz otrzymuje groźby śmierci WP Film Skandowanie pod celami i wulgarne wyzwiska. Brutalne powitanie Russella Branda za kratami TVN.pl",
-     "image": "",
-     "publishedAt": "2026-11-10T06:35:12.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-07f548a8f0cbfc8491a2",
-     "title": "Ledwo Hancer się rozwiodła, a już takie wieści w \"Pannie młodej\"",
-     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQUDFrQ3J4Z3dMdFExdlFkSEF4VVAtU2o5TFNGakl0cDhBWXFtSUh6dWFnNkNJanRFWUIyTzNqZWx0Y1R0dXV6UVRMaGpnbnYwZ2dnangyYVpTcU5vZk82N1NyQ3BrS1hMYWJEVUgyTkpDRXRnQk5CT1lJWUdaenA4bUVuVFVVVUxvdXJUU3dMVzluaFNXQ09kTmczWjJ6MmVScXY3c1RQc3ZkbWpiS0Ruc2Itb1NmS0xJek96clFERGtXQU50OElOS0EwTWFNcXY3?oc=5",
-     "source": "Świat Seriali",
-     "sourceUrl": "https://swiatseriali.interia.pl",
-     "summary": "Ledwo Hancer się rozwiodła, a już takie wieści w \"Pannie młodej\" Świat Seriali Cihan mówi „dość” w 245. odcinku „Panny młodej” i stawia Mukadder ultimatum Telewizja Polska S.A. Zmiana programu TV. „Barwy szczęścia” i inne seriale znikają z anteny TVP! Telemagazyn Panna młoda: Hancer ponownie zamieszka z Cihanem naEKRANIE.pl TVP przekazała wieści ws. popularnych seriali. Chodzi o 11 listopada Świat Seriali",
-     "image": "",
-     "publishedAt": "2026-11-10T05:20:02.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
-    },
-    {
-     "id": "culture-7e4adc8ca55f8b2d22dc",
-     "title": "Booker 2026. Wiemy, kto wyda nagrodzoną powieść po polsku",
-     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPdDJpWmRXYm9yZk1SZ3JZSnFWbVZtdEFFZWltX1FCWnJBUVI1WWwtVlZRN09jU01HQXAtN2NGQmZZaTF1MXZuam5DRTBkU1JIYTZ5NDBfZ3J3cU1mRDJPZ3hjdkdpdFhHMkxpR3FnWHBaTkYtRGEwVXl4eS1wZm5MVVVZY3BQQ2ZxM0NKYnZ4Q3Z5ejgxWkNDS1lwVEh6a0phSDQw?oc=5",
-     "source": "Wyborcza.pl",
-     "sourceUrl": "https://wyborcza.pl",
-     "summary": "Booker 2026. Wiemy, kto wyda nagrodzoną powieść po polsku Wyborcza.pl \"Miałem 30 lat i byłem znudzony\". Kim jest zwycięzca nagrody Bookera? Onet \"Koniec wszystkiego\". Nagroda Bookera 2026 przyznana TVN24 \"Koniec wszystkiego\" z Nagrodą Bookera. Historyczny triumf pisarza science fiction Polskie Radio 24 Najstarszy w historii. 81-latek zdobywa Bookera za apokaliptyczną powieść RMF24",
-     "image": "",
-     "publishedAt": "2026-11-09T21:58:08.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:ENTERTAINMENT",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-11T06:35:36.304Z"
-     }
     }
    ],
    "explain": {
     "why": "Google Haberler'in Polonya 'Eğlence / Kültür' konu akışı.",
     "provider": "google-news-rss",
-    "lastFetchedAt": "2026-11-11T06:35:36.304Z"
+    "lastFetchedAt": "2026-11-11T15:19:27.368Z"
    }
   }
  },
@@ -1390,50 +1406,50 @@
   {
    "category": "culture",
    "provider": "google-news-rss",
-   "at": "2026-11-11T06:35:36.304Z",
+   "at": "2026-11-11T15:19:27.368Z",
    "status": "ok",
    "count": 20,
-   "durationMs": 452,
+   "durationMs": 174,
    "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
    "query": "konu:ENTERTAINMENT"
   },
   {
    "category": "weather",
    "provider": "google-news-rss",
-   "at": "2026-11-11T06:35:34.026Z",
+   "at": "2026-11-11T15:19:25.005Z",
    "status": "ok",
    "count": 20,
-   "durationMs": 278,
+   "durationMs": 362,
    "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
    "query": "pogoda prognoza IMGW"
   },
   {
    "category": "politics",
    "provider": "google-news-rss",
-   "at": "2026-11-11T06:35:31.794Z",
+   "at": "2026-11-11T15:19:22.651Z",
    "status": "ok",
    "count": 3,
-   "durationMs": 230,
+   "durationMs": 353,
    "feedUrl": "https://news.google.com/rss/search?q=polityka%20Sejm%20rz%C4%85d%20prezydent%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
    "query": "polityka Sejm rząd prezydent"
   },
   {
    "category": "economy",
    "provider": "google-news-rss",
-   "at": "2026-11-11T06:35:29.341Z",
+   "at": "2026-11-11T15:19:20.453Z",
    "status": "ok",
    "count": 20,
-   "durationMs": 451,
+   "durationMs": 195,
    "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
    "query": "konu:BUSINESS"
   },
   {
    "category": "technology",
    "provider": "google-news-rss",
-   "at": "2026-11-11T06:35:26.956Z",
+   "at": "2026-11-11T15:19:18.197Z",
    "status": "ok",
    "count": 20,
-   "durationMs": 382,
+   "durationMs": 254,
    "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
    "query": "konu:TECHNOLOGY"
   }
