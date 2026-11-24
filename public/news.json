@@ -1,11 +1,139 @@
 {
- "generatedAt": "2026-11-24T00:57:44.779Z",
+ "generatedAt": "2026-11-24T11:01:46.985Z",
  "store": "snapshot",
  "categories": {
   "technology": {
    "category": "technology",
    "label": "Teknoloji",
    "articles": [
+    {
+     "id": "technology-79565f828b177b6524b8",
+     "title": "Majstersztyk Rosji. Tak oszukuje Ukrainę. Putin \"odwraca uwagę\"",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOdFJjemdZaHV4TmNXeEYwbDBUQlBCbGFhYjFtOG9ONUFiZDcxWWtvM18tNnhnMmltTXI0MnZjdTZqcXQ4UkVOazN6LW5Jc19QRGo1UzhWVVYyZ2FwaVN4M2d1aFlrWWRSMi14RlZNVXBfckxJTnZGVVFEc0V1cEFyVEJfc2ZhNUh4SUlqQXpNSl94Z3RyaGJvSTFsYUdraUh6QWtFRHBqbEtLTWh4ZndB?oc=5",
+     "source": "Wiadomości Onet",
+     "sourceUrl": "https://wiadomosci.onet.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-24T09:45:11.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
+     }
+    },
+    {
+     "id": "technology-5047baaf97fdacd9dbf7",
+     "title": "Rosyjski robot humanoidalny leci na ISS. NASA nie podała nawet godziny startu",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNazgtMXd1bEo5cFhHT3ZyVTBVbTdhUGIwX3lEUzZlQ3FSX0xqRTQxWEtiUmNnOXdJZHdMSXZjZ1ltMG5aNno3MzYydXllcTFxb3Bma0tUaHZtdUxuSkpidUhqOTZNNlAwc21yc09DeWxlaXJDckliaVJYVkRwLW1uMmFtbXRHVjAyWGhRcklKdk5KbEN5TmF6VzZQSmJBOGFVYzB3OVRoei05NGU0UjMzWUd2UQ?oc=5",
+     "source": "Geekweek Interia",
+     "sourceUrl": "https://geekweek.interia.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-24T09:19:31.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
+     }
+    },
+    {
+     "id": "technology-c854804ac2349a1b5ca9",
+     "title": "AI jako przyjaciółka, dziewczyna, kochanka. Skończyło się to tragicznie [OPINIA]",
+     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQSVhPNUlmV2h1WmN2cXk1RkdlbElLMHVKWTVUR3paWDVvOW5TcXVMb2V5SDJyenMtc0liOGJiYnoybHNLR2hyUnpJcFoyTXkxVkJDVGdDcFU4QnFVSU1QdHB5dHlEbXZLNk1kaTVPZ2lRbkNCNUY0eUkyZ193bXhvZHhBcGN6aGxWTkdTNmo5RTFQUmZ2TEhHOUR1bUIzVFQzVnV1TmFSX2ZBUHZDRFoxcjhrazFGVXM?oc=5",
+     "source": "Wiadomości Onet",
+     "sourceUrl": "https://wiadomosci.onet.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-24T08:48:55.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
+     }
+    },
+    {
+     "id": "technology-a0d52866a9b0a4b76927",
+     "title": "Sony ujawniło statystyki GTA 6. Największa premiera w historii PlayStation",
+     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZk1icnVEVjlJOHZMRkdKMnl5clF0QVp4WnA1WlBySVc1WGxXeC1nd25BdlFuaHJKMTlvNl9qbXhvMk9CTm9jdzc3Q1JvSUNGT09FamtaREJXVkJLdDNRbEpMWDF5TDE1NFNDa25xWmxYaVROOGJndFNpLXN3X19COFBqOFJDcGlCNFV4ZWl5TXk1N1FwVFJMNF8zeWdQYW13TWVWeGNDZkVvNU12RmpSQ0dGYmlBTlE?oc=5",
+     "source": "Benchmark.pl",
+     "sourceUrl": "https://www.benchmark.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-24T07:14:01.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
+     }
+    },
+    {
+     "id": "technology-4c2999d74f0865fa0f3e",
+     "title": "Nowe konsole Xbox miały pozwolić na integrację z platformą Steam i znieść opłaty za grę wieloosobową – nowe kierownictwo zdecydowało się na zmianę strategii",
+     "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5VUU5JS3lkNnlaN0ZabnU5cVdUUzVieUlPRkt5bzhvODdUNHNNTGpFZW9WR0ZqbkwyRXQ2cGQ5dlliQmg2enVUdkVnUjVRZTl3eWdJN2FNcVE4bU5USDd0VXN5dTFDQVBtZEZreW10QmdrWmh6Tld2cGVpem00Zw?oc=5",
+     "source": "PC Format",
+     "sourceUrl": "https://pcformat.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-24T07:00:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
+     }
+    },
+    {
+     "id": "technology-b889e493f674597182fb",
+     "title": "SMS o planowanym doręczeniu. Proszą o numer domu",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPMF9VZ1N6SmpPNnB1QkJmbk5ld1BVNmRIaVRxMUFfcHlXOVhKZFpzUFVYb2g2MktRa0wwMUxnamY0R0lUQ1NfeGJqNUNRell5TmRmYTBzV1lhWFpCREZ3VkRTTkc5WF95eVVlNjI4cFhhZDljSUJwR1RRc05RSXBEMTJxeHdSMGd6RkhUSlRITG8wbm9nRUhEQW53?oc=5",
+     "source": "Dobreprogramy",
+     "sourceUrl": "https://www.dobreprogramy.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-24T06:45:33.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
+     }
+    },
+    {
+     "id": "technology-3c895c5bb86f9a7eb6b4",
+     "title": "Putin bezbronny wobec tej broni. Tajna operacja zaskoczyła Rosjan. Flota Kremla nigdzie nie może czuć się bezpieczna",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNZHExMkVaSGRnVEJfXzRDazIyYnZzZzBXYjJwUlRJR3ZnY1hadUhNU29iNHo2dll1VmhRc19FQVNWYVZ0ZkZJWUdpMW9HQkZ3RGRqZkVocjg4SFlXMktCWjl4azk3VThMQWlfNjVDTU5jY0laR3Nybkptczl3cUlIVDgybC14dEFnRUo3ckgxcVduekN5TUN5T2p3M1hKdHo4VEJ1U0lXQXktWTgtSE1OWWFCeHF5bDNCY2hzVkxSVFVrQlZw?oc=5",
+     "source": "Wiadomości Onet",
+     "sourceUrl": "https://wiadomosci.onet.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-24T05:56:21.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
+     }
+    },
+    {
+     "id": "technology-c3f00d2042bf97dd30e4",
+     "title": "\"Poczułam się upokorzona\". Agata poskarżyła się chatowi na partnera",
+     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNcDUybHV5OUpINnpRVHgycmk2U2djRnJiUndza2dwVjU5Xy1oYXVxakRGT01VY3YyT2hOdjlWTDhKc3VHQ0NObWRDa1VQVFBlXzQ0NUxfaWQyQWFmMG83REZaT096bXhQbVNuLXppVmlwcnVhaW1jZlRDZkI0VU1YZUliWDlEa1cweWJIXzBwMVFvNC1IVk5jajNpd0NhTkd2OVFCRjFFTjZQeW9XWldycERkeDFoWjcwbnlDYlpGQjV4YjQ?oc=5",
+     "source": "Newsweek",
+     "sourceUrl": "https://www.newsweek.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-24T05:10:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
+     }
+    },
     {
      "id": "technology-a8cbb7fc3457579c37e5",
      "title": "Wojsko wydało nowy komunikat. Rosyjski dron naruszył polską przestrzeń",
@@ -19,7 +147,7 @@
       "provider": "google-news-rss",
       "query": "konu:TECHNOLOGY",
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:35.329Z"
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
      }
     },
     {
@@ -35,7 +163,7 @@
       "provider": "google-news-rss",
       "query": "konu:TECHNOLOGY",
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:35.329Z"
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
      }
     },
     {
@@ -51,7 +179,7 @@
       "provider": "google-news-rss",
       "query": "konu:TECHNOLOGY",
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:35.329Z"
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
      }
     },
     {
@@ -83,7 +211,7 @@
       "provider": "google-news-rss",
       "query": "konu:TECHNOLOGY",
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:35.329Z"
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
      }
     },
     {
@@ -135,6 +263,22 @@
      }
     },
     {
+     "id": "technology-2a2404bfc773f3ad90f5",
+     "title": "Były dyrektor firmy Nvidia wraca na stanowisko. Donald Trump komentuje",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNHZPZ3N5YmlFczRja2Qwc1RraWltUnpnVWJ2QmN1UU9nektJaVZfbXA4RFJWVG53dWFMQ05SU25vYWRnM1RuNmw5Z0k3dVp0aGR0c0dZLWtLTm5SU2tnZ1ZFU2FVcHJhYmJaT3ZVV0lGTG1maUtOY21mSFlnYV9PZkRqUTVLYUQzbEFtMkNaM09QZlU3bVQ1WG1rRkhJUQ?oc=5",
+     "source": "Wiadomości Onet",
+     "sourceUrl": "https://wiadomosci.onet.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-23T14:10:42.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
+     }
+    },
+    {
      "id": "technology-12e0a269d28febf5dc68",
      "title": "Sztuczna inteligencja rozwiązała zagadkę Riemanna. Matematycy potwierdzają historyczny przełom",
      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOaVFvVHlZNjhfWlhZRUhsRkVjcUQyaWQySGlrNTRuOE5iWHZfVm9KT0JqT21fZ1dfOFRFVDdaTElRcmhsLTAzVnBTOXVPZUVVU2lUM3FSY0ltNU10Y2RjV29uaHBWdHg2Q3RNd1YyM1NiZHhYb2l6VXI2czhZZTM5UnE0b2JKUU1DenRHelNmeXpFTDlkTExHTnBNeWhOaEdYcWdkOA?oc=5",
@@ -147,7 +291,23 @@
       "provider": "google-news-rss",
       "query": "konu:TECHNOLOGY",
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:35.329Z"
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
+     }
+    },
+    {
+     "id": "technology-ac27d5996a69c69c8e09",
+     "title": "\"Niebezpieczna praktyka terrorystyczna\". Kreml grzmi ws. działań na Bałtyku",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQNjBhdi1WMGdoXzEzTk15dFlGZkhjSVh5RElsOFlzVWttTV9LVEIxLXJvX1I0WFhlWnU3VnhpSjBtWnpSMjNBbHBPck9KTk1NcnVtSGZFMjZQb2piV1VxNWlmbzd1NFN3VG1GbThpQVAyRzZKR1YwdlhSUjZ4QnFvRzNYZ2lSRnVQUGsxRERDYmZqeUdCVjlFamU3M1pkb0pnMkd5NFFnX05HXzhteXJYOWQ3MEF3clFRN2NsOGlLNA?oc=5",
+     "source": "Interia Wydarzenia",
+     "sourceUrl": "https://wydarzenia.interia.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-23T13:27:54.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "konu:TECHNOLOGY",
+      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
      }
     },
     {
@@ -163,174 +323,14 @@
       "provider": "google-news-rss",
       "query": "konu:TECHNOLOGY",
       "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:35.329Z"
-     }
-    },
-    {
-     "id": "technology-0011739894dcc4f0f8a5",
-     "title": "Bańka AI zaczyna pękać? Potężny partner Nvidii tonie w długach",
-     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPOG5BWS1Qa3FjQnJMZHdMRDhXZUtVckFDaDNMMy1NdnJFdnBaZFA0Tk9rdVZKRkdjYmhSeG9QMG9XdEljbUlRRkRkMUc1U3dPZWV4aE5hcE9UdkxVS3c2TFRKaXI3NTNzV0FvaXV2VlBaM1ltN2ZkMUdwM1Y2V2d0WGVsTTVwT3MxWkRLT0VnY1BucDJ4UGVZNWFxMXZYM3hRdGNidmc0akN3dkh4VVdKS3JB?oc=5",
-     "source": "Rzeczpospolita",
-     "sourceUrl": "https://cyfrowa.rp.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-23T12:00:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:35.329Z"
-     }
-    },
-    {
-     "id": "technology-2576382366c88cb0757d",
-     "title": "Największe zagrożenie dla ludzkości. Wybitny fizyk: jeśli cywilizacja ludzka ulegnie zniszczeniu, będzie to nasza wina",
-     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQNWsyaElPaVRmT3ViZFZZUEpYUXNPUXBZcHlCNHQ2OG5Vb29CUTNYdi1HVFQ0ZEFKQ29OVEw3RWJmUjdqY25ScDZoZWxGQzY0SlJoRUZiOFBIMXc1MEJQLUdlTXM0SHdaalAyY1BGU28wOW94QmRVS0ZMUWdLTlFsS1BYZUc1UHM5OWFaRllNR0U2QUo3YTAtUDdvMWNDdU5uZXU1Q0tzM3htaXVEX2hXeXlubU1IZ3RmelFYYThR?oc=5",
-     "source": "Wiadomości Onet",
-     "sourceUrl": "https://wiadomosci.onet.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-23T11:15:21.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:35.329Z"
-     }
-    },
-    {
-     "id": "technology-dc215bcffb13df22c038",
-     "title": "Rosji została jedna droga na Krym. Tak wygląda jej codzienność [WIDEO]",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOZnQzcE9yRGVfZzZhYUZJWEpCUjNjSTlGUHQ2b0MtUG03UDFDcDdOcHpsay13M09KaW9IclFrS0VCU1pfU3Y3cF96T3ZWdWFQb0x1cVc5aDBGOU5lalVzaXN4MEtEQnRseV81bk15R0RhQ283YXdibVNqT1NrUkl3MFZyeEU0N0V6Y1FVVEhRclhZY3VoRWRabWthejFaeWJQX0h2QW1kZlliSjI1?oc=5",
-     "source": "Wiadomości Onet",
-     "sourceUrl": "https://wiadomosci.onet.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-23T11:00:32.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:35.329Z"
-     }
-    },
-    {
-     "id": "technology-aa1afef71f8701735905",
-     "title": "Latał dronem nad gdyńskim portem i nagrywał. 40-latek zatrzymany",
-     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQelFmMXlLQjFBZm5Mdk9yelZROGhSM2xVU09xN3pRRl9jQ054SExnX25CQURFU21MNlNkaERGZnNfVUVvbV9jQWQtZUJsclozOUI3R0RLYlo4UFRTS3FNRnRIUGlWVzBJYW1LdFVvSlVWNzBVN3doLUpGWWp3WDBrODNISkl6a1VhZktSNlhZbW9lcGstMnRsMGZCRVZfZHFKckhmNkNWMEFZS0RLY1JkZEZQcUNrX0JxdjY1MXRHOVRabTFINnU0?oc=5",
-     "source": "Onet",
-     "sourceUrl": "https://www.onet.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-23T10:48:53.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-23T12:58:24.194Z"
-     }
-    },
-    {
-     "id": "technology-fc199ac8eebdbb046de9",
-     "title": "Niemieckie media: Rosja może umieścić broń jądrową na orbicie",
-     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZ0ROSFV1dWhRY1dxNjhNa0dBNFI2MFhqaEgwRk9XRUVGRzB6TmprenlkaGR2ZERvU1hvcEt1VVRKOWl5WDJXUTkwczVTMmhlRG9FRlhWNjUtUVdHYk9CQXlUdURibHVhRW9jQXg1Yzhzbk5VVkpuRHhjbUxKdTRvTHZJOUNTUkRQVC1vWFZFaXBrNGUtc0xxb0t0OWNnQ0FUd3VtVVJ4Y2FiNzQ?oc=5",
-     "source": "o2",
-     "sourceUrl": "https://www.o2.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-23T08:55:12.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-23T12:58:24.194Z"
-     }
-    },
-    {
-     "id": "technology-29dc616bd886a5d9bec8",
-     "title": "Dron uderzył w trybunę podczas pokazu Bundeswehry na Litwie",
-     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQS3l5YmxTdmtsQWVzejVVUk5KYUZkdExDaWlBektNSUZxaUFWVXpEc1VIU0NaTlNkTGgyRVZBS1VwVEUyODFvNkg0VWJqU0JTMVViZE5tZlA1aVJKRjY4cWM0YnN2aWFoY2FSV3luTUM2OTc1dFh2aDZ2N3FjOUY5cjNKUTIzSjRXd2wtQ0RXRkNvNms4M0owdw?oc=5",
-     "source": "Defence24",
-     "sourceUrl": "https://defence24.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-23T07:56:25.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:35.329Z"
-     }
-    },
-    {
-     "id": "technology-99f2e887ac222b6102a4",
-     "title": "Zmiany wchodzą 1 grudnia. Nowa opłata na rachunkach za prąd",
-     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQS1Jtc28xWXh3bHdFYWd0T3dySHVDSW5aWS1oZlp0S2ktWktxaS1VdFAxSXVCZlpwRmVNSE5jTFJyRnMydEdWN1l0MS1vSWxZaEFHRWNVVk1xTnJmOWVtLVI4cnJ4UmVPSXRJSDBVc2EwWnJYaTJuMk11bUJCRGlzQWp3d1N3eE8tZkFrYVN5dkNleGp0OWVJaVMxaENzeXM?oc=5",
-     "source": "WNP.PL",
-     "sourceUrl": "https://www.wnp.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-23T07:46:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-23T12:58:24.194Z"
-     }
-    },
-    {
-     "id": "technology-84290e27a9376df450a1",
-     "title": "Skandal w Nvidii. Nowe ustalenia na temat kochanki Jensen Huanga",
-     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVlp6MDJ1dWhmTFVKMGtNNkRxVnk5N04wWktnRV85MGtvZ09iZldlOUZaMFpuZThCOWl0dFV1dlU3M09sc2llX1M4d2JETXZQOUx6aGJDM0p2cEVqQVFPTnFaQVdEOGgyUGxQSU5PaXlRODZzcmlkUExEWnhDZFBuSGEwUlZsTzBqcmdZa2F0aXhZWFdpZ190TmZOb0ZkZ3ZzNDJNMm56b1hRM2tzSDN3eg?oc=5",
-     "source": "Next Gazeta.pl",
-     "sourceUrl": "https://next.gazeta.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-23T06:40:28.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-23T12:58:24.194Z"
-     }
-    },
-    {
-     "id": "technology-395067e48d2d30159f97",
-     "title": "Nocny atak ukraińskich dronów. Uderzyły w kluczową przepompownię ropy naftowej",
-     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQb3V0bnBySTltR3o2aFNsM0tnbW9SMGNSYmRQMkhCT1h0S1pDa1N4NmFlb3hNSE8wLVhCYi03Z0pLTTVQUk84eVFvaUZGTFYwblpjRHExUGxKQmhaalFoVkpUN2V3N0czWUU5bFZTeHBzbVF4eFFwWHQ4a2tlY3BXM1M4SzQ3cHdwQTVrS1d2TmNKYkktMGp0VEtrTzJab3FEUVYtVEtBN0tJZk1fdU5fXzdVb0ZTUS1STFVDWUlOMjBGWDd4?oc=5",
-     "source": "Onet",
-     "sourceUrl": "https://www.onet.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-23T06:19:54.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:35.329Z"
-     }
-    },
-    {
-     "id": "technology-79103693509606a0f133",
-     "title": "12 ciekawostek o BlackBerry – królu smartfonów, którego zmiótł iPhone",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObEFaMkk4VFBpMVpwZE5MZElENGYzcGZpSmY5OGtxR244bF9sMnVpejVHa1RoRmo5ZVFfclNSN3Z5d1NKTTBEQzB4THlEOXdULW1hRTE3NmdSY1djTHhaZ0J3UGc4c21uVFVsZFR3ODNiNFBwX050ZlU4Y1JWRzAxUjhJVFJJRzFUQVVxSGJVQjhIUGM5Y3BteGtGM0NQS3py0gFPQVVfeXFMTThMOFV2eUQzM29yODdBbnFGc0ZFbUVHUHFFZ3B0NGpUWmp1TlgtbXpnY1VHNF9JWl9wWHBXT3pjXzRSZ0szWS1YRVRaNG0wbw?oc=5",
-     "source": "Joe Monster",
-     "sourceUrl": "https://joemonster.org",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-23T03:47:02.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "konu:TECHNOLOGY",
-      "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:35.329Z"
+      "fetchedAt": "2026-11-24T11:01:06.340Z"
      }
     }
    ],
    "explain": {
     "why": "Google Haberler'in Polonya 'Teknoloji' konu akışı.",
     "provider": "google-news-rss",
-    "lastFetchedAt": "2026-11-24T00:57:35.329Z"
+    "lastFetchedAt": "2026-11-24T11:01:06.340Z"
    }
   },
   "economy": {
@@ -1000,6 +1000,102 @@
    "label": "Hava durumu",
    "articles": [
     {
+     "id": "weather-be08c08e9ceed5426599",
+     "title": "Może porządnie sypnąć śniegiem. Te rejony są w prognozie ostrzeżeń IMGW",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQaEFTc3FXYUVqREdWZi1NczlzUG43cFhpdFJXdjY0Y19oWTFWeEp3Ujh2dFRjVzhzdEF6dzJRTWQ5NzNqclBNQXFielRkek9xVTAwWHJOZThtN0hLdGJnbDdrNTBxdXdXUXBZU2RvaTZXZVRaeGJfTXRXZU1mR2VWMEh2Uk5JdW1VRllSSThzWWhBZEZhbWlycWJKcnVUNEF5RjhNLUVn?oc=5",
+     "source": "Polskie Radio 24",
+     "sourceUrl": "https://polskieradio24.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-24T10:35:17.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
+     }
+    },
+    {
+     "id": "weather-5e3de090a468a81e95ec",
+     "title": "Pogoda na Boże Narodzenie. Prognozy IMGW mogą naprawdę zaskoczyć!",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPR0J3ek12cDdkdjJWQWN0VE5iazVKdGJkWnMyc3pQbGk1QzJLZmxpdXd1dVZBMkh6dVl2SGlHeTZYbWpJZ2dkdXNWUFJCSUN5NWE1ZjlDU3llQXVQUFZVZlVrTW5vM3pYZlhrOFNzRWw1NktmNVRHMElPWmpMallUdExhVkZCWmZpNGdfN2xSV2tLbjNzVmxPNTl2M1FyXzZfeThvbnNzQWJrODd5ZURLalVacHcxeDNvYVE?oc=5",
+     "source": "Radio ESKA",
+     "sourceUrl": "https://www.eska.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-24T09:35:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
+     }
+    },
+    {
+     "id": "weather-6a7b8f0fe5b133fdc06c",
+     "title": "Pogoda w Polsce na 24 listopada 2026: Do 20 cm śniegu i oblodzenie. Alerty IMGW",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPVXlPVWN2WV9aMGpmakF2Q3prMTkxM3VwWGluSTZUdHI0bWltNkZod0YxQnJ1eTFIT1BSNGhTOWEzZlVVaHlDTl9oNDVJV0NBRVZteUl1UG55UUp5SjI5Q2lJV1dKTkRuamdBdXFNcmI5SXo3ZG9rdHhHNkg1UEQ2U2pKZWhVY3ZFMTlLM2FleTlkSmN3cDZaUXlGVUpZb001ZlA4d3ZtZw?oc=5",
+     "source": "TRYBUNA POLSKA",
+     "sourceUrl": "https://trybunapolska.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-24T06:31:42.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
+     }
+    },
+    {
+     "id": "weather-a18c24e184d7d8c72a42",
+     "title": "Tu spadnie śnieg. Ostrzeżenia IMGW",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPZU9GWjIwMU5SMkNtNUFLbHMtSW5LV0tFeVhtaVpKMWhDeF9jYTFyYkpfbFl2cmsyanh2VzBFNVp4VnUtcEJldTFrQmRSMF8tTjgzRjlkcW5abktrVlBHM0ZlVENONThERFowY0c3V2FVZ2UwYUlnbC1LNjlzNGtoTzJHTk8tc2RkRzZxajRIdXV2RlA4UDZnbWxHbUxKSnUwUHFlbWNR?oc=5",
+     "source": "TVN24",
+     "sourceUrl": "https://tvn24.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-24T05:34:00.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
+     }
+    },
+    {
+     "id": "weather-f48ccc690cd006dff343",
+     "title": "Pogoda Bielsko-Biała, Cieszyn 24.11.2026 (wtorek): ostrzeżenie IMGW 1. stopnia, intensywne opady śniegu",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOeXdoWlEwMlJadVpwbzRlMHRlelZCR2IxX2lfalZhMXNzLUYyLXdacVhCMXNoeXp2V3FUd2U4aUQ3WTFxT0JGcFlrYkNKc2dGaFJ3RnUyS3lWeHFpNWw1QW51dXJpYm8tTjdQZ2RwVEU2MldlOXhrb2NFczIzOEZ0UnRZY211TGYxbzRnYWd2TXI1aHZOTTdndkk0cEZBUEho?oc=5",
+     "source": "Tylko Śląsk",
+     "sourceUrl": "https://tylkoslask.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-24T04:30:57.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
+     }
+    },
+    {
+     "id": "weather-9ea3f8955173384ecf79",
+     "title": "Oblodzenie i śnieżyce nadciągną do kilku województw. Synoptycy IMGW wydali nowe ostrzeżenia",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPakVTMGRuWnBoZmFNc19fQV9mLUY5R292dGpEOGtjRExkY3IzMXhIb1NGZEFMWkJfQy1kMU83VmFNRVR3MG1Ka18xWXRxaUFCcWRfam1xaVBWZVNYSUxENGY2TnpnNmhITHQybVJGaGxmSzlkQXdrZTVRU25wSkFLSlNqUllzN2s4anRFMU1oR1lkbGZuSGxHbS15YVVMNnRmQXZic0FLTU1BX3dS?oc=5",
+     "source": "Interia Wydarzenia",
+     "sourceUrl": "https://wydarzenia.interia.pl",
+     "summary": "",
+     "image": "",
+     "publishedAt": "2026-11-23T16:52:37.000Z",
+     "why": {
+      "provider": "google-news-rss",
+      "query": "pogoda prognoza IMGW",
+      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
+     }
+    },
+    {
      "id": "weather-2396c85632e5cd978f14",
      "title": "Silny mróz i śnieg nadciągają nad Polskę! IMGW ostrzega przed spadkiem temperatury do minus 10 stopni",
      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQQm15MmhtYWxUUnVMbWM0cGNwUzZrWXNIRm1KYnViZlFkdmc1X3pNTkRyMG56ckJELWhyUDcxREs0ZEJQUVRJckFaUjJObmY5UWV6R2o3Yy1mQkxWMDNPb3pQQURMZm02aFNsM0xyc25ZaGZ0ZF9HelYyMGpoX2dtaTBUcDNLSU1WSWV4TVdCbnVXdHdLYjVkQzFMc2RXR2hLRlN0OFdJYl9CQmVGQTNSUDQ4a0lHNFE2R3NwR0pwUFo5aWFCTk1pSmUyRXVNMlZmQXdjNjFpbWN1ZkkxN19QNnM2SjJKdl9pSEpN?oc=5",
@@ -1012,7 +1108,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
      }
     },
     {
@@ -1028,7 +1124,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
      }
     },
     {
@@ -1044,7 +1140,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
      }
     },
     {
@@ -1060,7 +1156,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
      }
     },
     {
@@ -1076,7 +1172,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
      }
     },
     {
@@ -1092,7 +1188,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
      }
     },
     {
@@ -1108,23 +1204,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
-     }
-    },
-    {
-     "id": "weather-a18c24e184d7d8c72a42",
-     "title": "Sypnie śniegiem, drogi będą śliskie. Ostrzeżenia IMGW",
-     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPZU9GWjIwMU5SMkNtNUFLbHMtSW5LV0tFeVhtaVpKMWhDeF9jYTFyYkpfbFl2cmsyanh2VzBFNVp4VnUtcEJldTFrQmRSMF8tTjgzRjlkcW5abktrVlBHM0ZlVENONThERFowY0c3V2FVZ2UwYUlnbC1LNjlzNGtoTzJHTk8tc2RkRzZxajRIdXV2RlA4UDZnbWxHbUxKSnUwUHFlbWNR?oc=5",
-     "source": "TVN24",
-     "sourceUrl": "https://tvn24.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-23T05:47:35.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
      }
     },
     {
@@ -1140,7 +1220,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
      }
     },
     {
@@ -1172,7 +1252,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
      }
     },
     {
@@ -1188,7 +1268,7 @@
       "provider": "google-news-rss",
       "query": "pogoda prognoza IMGW",
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
+      "fetchedAt": "2026-11-24T11:01:33.794Z"
      }
     },
     {
@@ -1238,92 +1318,12 @@
       "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
       "fetchedAt": "2026-11-23T02:51:21.214Z"
      }
-    },
-    {
-     "id": "weather-4ce3303089f25e02da5e",
-     "title": "Atak zimy w Polsce. Meteorolodzy pokazali trasę śnieżnego walca",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPYjJVZ0k2Q3pfaWxfZ0pRWlZ2SHBKTVRpdkF0VHl1WFFmZXp6RWxWcS1vcHp3Zm9wVlF5blFYNmVzU1pzbFNMM2F1ZmNXRFdOUmFIUkkwY2FfbW5OYklCSS1sT2ZoRmV0R29Bb3VEWDA1Y2FhVjdvQmtGZmFQRG94bWxjVnN6bVE4VFlqUldHSWpSMV94YmdhQlpHX0xoa1hzd2dpNTBqeExzN0ZF?oc=5",
-     "source": "Polskie Radio 24",
-     "sourceUrl": "https://polskieradio24.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-22T16:47:42.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
-     }
-    },
-    {
-     "id": "weather-866f29110429b4851efc",
-     "title": "Pogoda na poniedziałek. Są ostrzeżenia dla Pomorza",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOdEZSYXNZZi1xWFNVRUJLLTB2LWVkbC0yOW1aNFlJUlU5M1k2WVFRT1RtalFwVHBwalJqRDRqbkZTb3pXMlpBcFhfUFpya3ZaN3BQTHBnV0FzSEl6UENudkJQTHY5d3dpWTNreVlJVlZEb2VrdlhkWGFqSTNMZzRKbnZoRWdjZlBqN05VbGFubnZnemJQRkNKaVNTNA?oc=5",
-     "source": "Radio Gdańsk",
-     "sourceUrl": "https://radiogdansk.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-22T14:11:09.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
-     }
-    },
-    {
-     "id": "weather-28798aea2d8afa73e6f8",
-     "title": "Zaskakująca prognoza pogody dla Polski. Alerty IMGW obejmą cały kraj",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOSXdrTWMxc2tvNEtKbnR4THdCZHgwVGVrc2xEVUUtU3c4MlY3cUI3NlhFRFVKZTFKS1QwRlVCNEJiS3M0SXJpSEc5Yi1PZ1Q1MWtKMU9hRmQ3VUZTRURNUlptNHRtQ1llWnZTdVRUM3F2ekRIZGRWaXRMdTdBWEgxNGR6RjNGdGZ0NmR0dW1SQXA3am5IaHg1YUdOeGtHQUJmZEd5N0JvU1RFSmNE0gGrAUFVX3lxTE5kakpQSENGMm9nSmM0OERkQTRNemt4OHVtLTJTbDQwLTFuZlZ4Sk1fczgyQnAxRHdPTzNvWlZCMUhveWlRc3FiS2FrQ19UV1VOSmQ5T1dpSHhrZldBZU1xQTFpWGJoTzljdWZaVHNHam5IY1pNSy1DT0JtUFVKN3Z4QzlJTVh5RDRqMURwU0ZlNTRPUGNRUkM5cnctbFFfcjQ2Ql95M1lOdTlacw?oc=5",
-     "source": "Wprost",
-     "sourceUrl": "https://www.wprost.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-22T13:43:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
-     }
-    },
-    {
-     "id": "weather-23b4070045c3f924869b",
-     "title": "Niemal cała Polska z zapowiedzią alertów IMGW. Pogoda zrobi się niebezpieczna",
-     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOU9ta25xeV9WNDYtX1ZrRHlQY2N4ckIycjJyQ1ZTcHRtOUhyeXJ4R3RxVE56WHBsMGc0TVZGU0ZwNmxFOEJ5UkFILVk4cXNyYUlQS1I1b3ZBRm1RdzVQQXJ2OVhDclZrV0xMSlFZMjFRYnpiQVAtdkY3Y0xVenZveTRyVEdjYVRVR3FoaDRmbVRrVHJWYWctdUlwMHF6aHNxeW9XcW1zYVdBN0V3TFRqdFJLM18xaWF6UUE?oc=5",
-     "source": "Wiadomości Onet",
-     "sourceUrl": "https://wiadomosci.onet.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-22T12:10:00.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
-     }
-    },
-    {
-     "id": "weather-90b38decd4e5df6d1135",
-     "title": "Jaka będzie wiosna? IMGW podał prognozy aż do czerwca",
-     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOUVZWcU9vaUZyeG55U0wtWU82Z1dtVU9oOHIxVURNM0RzYy05d3U5ck5DSnZCQUpCNG1oTV91NENfRVo3UU1pWEVsVExPQVBhRkxpZWhDN3hqMWs2cTNUclpSTzBVeVUyX2E1UkZ4RDJNa3B2ZVB4LTJvcUhhUkRaX3l3YXZnWUp0TzUyTk1HLWtPLTA0eVZjTS1IUzBJN2RiZTZ5QjE1ay1nSDYwU0ROMWd6NWlOVnZhTHJQb2pRRTQ2NUFYQUE?oc=5",
-     "source": "AgroNews - Wiadomości rolnicze - Ceny rolne",
-     "sourceUrl": "https://agronews.com.pl",
-     "summary": "",
-     "image": "",
-     "publishedAt": "2026-11-22T10:01:12.000Z",
-     "why": {
-      "provider": "google-news-rss",
-      "query": "pogoda prognoza IMGW",
-      "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-      "fetchedAt": "2026-11-24T00:57:42.222Z"
-     }
     }
    ],
    "explain": {
     "why": "Google Haberler'de 'pogoda prognoza IMGW' araması (son 2 gün).",
     "provider": "google-news-rss",
-    "lastFetchedAt": "2026-11-24T00:57:42.222Z"
+    "lastFetchedAt": "2026-11-24T11:01:33.794Z"
    }
   },
   "culture": {
@@ -1661,51 +1661,75 @@
  "runs": [
   {
    "category": "culture",
+   "provider": "gdelt",
+   "at": "2026-11-24T11:01:36.486Z",
+   "status": "error",
+   "count": 0,
+   "durationMs": 10489,
+   "error": "fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  },
+  {
+   "category": "culture",
    "provider": "google-news-rss",
-   "at": "2026-11-24T00:57:44.550Z",
-   "status": "ok",
-   "count": 20,
-   "durationMs": 219,
-   "feedUrl": "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=pl&gl=PL&ceid=PL:pl",
-   "query": "konu:ENTERTAINMENT"
+   "at": "2026-11-24T11:01:36.112Z",
+   "status": "error",
+   "count": 0,
+   "durationMs": 373,
+   "error": "HTTP 429"
   },
   {
    "category": "weather",
    "provider": "google-news-rss",
-   "at": "2026-11-24T00:57:42.222Z",
+   "at": "2026-11-24T11:01:33.794Z",
    "status": "ok",
    "count": 20,
-   "durationMs": 326,
+   "durationMs": 315,
    "feedUrl": "https://news.google.com/rss/search?q=pogoda%20prognoza%20IMGW%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
    "query": "pogoda prognoza IMGW"
   },
   {
    "category": "politics",
+   "provider": "gdelt",
+   "at": "2026-11-24T11:01:21.591Z",
+   "status": "error",
+   "count": 0,
+   "durationMs": 10202,
+   "error": "fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  },
+  {
+   "category": "politics",
    "provider": "google-news-rss",
-   "at": "2026-11-24T00:57:39.938Z",
-   "status": "ok",
-   "count": 1,
-   "durationMs": 275,
-   "feedUrl": "https://news.google.com/rss/search?q=polityka%20Sejm%20rz%C4%85d%20prezydent%20when%3A2d&hl=pl&gl=PL&ceid=PL:pl",
-   "query": "polityka Sejm rząd prezydent"
+   "at": "2026-11-24T11:01:21.300Z",
+   "status": "error",
+   "count": 0,
+   "durationMs": 290,
+   "error": "Kaynak 0 haber döndürdü"
+  },
+  {
+   "category": "economy",
+   "provider": "gdelt",
+   "at": "2026-11-24T11:01:08.807Z",
+   "status": "error",
+   "count": 0,
+   "durationMs": 10491,
+   "error": "fetch failed (UND_ERR_CONNECT_TIMEOUT)"
   },
   {
    "category": "economy",
    "provider": "google-news-rss",
-   "at": "2026-11-24T00:57:37.751Z",
-   "status": "ok",
-   "count": 20,
-   "durationMs": 186,
-   "feedUrl": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=pl&gl=PL&ceid=PL:pl",
-   "query": "konu:BUSINESS"
+   "at": "2026-11-24T11:01:08.549Z",
+   "status": "error",
+   "count": 0,
+   "durationMs": 257,
+   "error": "HTTP 429"
   },
   {
    "category": "technology",
    "provider": "google-news-rss",
-   "at": "2026-11-24T00:57:35.329Z",
+   "at": "2026-11-24T11:01:06.340Z",
    "status": "ok",
    "count": 20,
-   "durationMs": 420,
+   "durationMs": 205,
    "feedUrl": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=pl&gl=PL&ceid=PL:pl",
    "query": "konu:TECHNOLOGY"
   }
